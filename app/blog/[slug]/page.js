@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import { blogPosts } from '../../../data/blogPosts';
 
 // This function is REQUIRED for Static Export to know which paths to build
@@ -14,11 +16,19 @@ export default function BlogPost({ params }) {
     const post = blogPosts.find((p) => p.slug === params.slug);
 
     if (!post) {
-        return <div className="text-center py-40 text-white">Post not found</div>;
+        return (
+            <>
+                <Navbar />
+                <div className="text-center py-40 text-white min-h-screen" style={{ background: '#0a0a0a' }}>Post not found</div>
+                <Footer />
+            </>
+        );
     }
 
     return (
-        <article className="pt-32 pb-20 bg-dark min-h-screen">
+        <>
+            <Navbar />
+            <article className="pt-32 pb-20 bg-dark min-h-screen">
             <div className="container max-w-4xl mx-auto">
                 <Link href="/blog" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors">
                     <ArrowLeft size={18} /> Back to Insights
@@ -59,6 +69,8 @@ export default function BlogPost({ params }) {
                     </div>
                 </div>
             </div>
-        </article>
+            </article>
+            <Footer />
+        </>
     );
 }
