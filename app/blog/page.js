@@ -1,12 +1,16 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { blogPosts } from '../../data/blogPosts';
 
 const BlogPage = () => {
     return (
-        <section className="pt-32 pb-20 bg-dark min-h-screen">
+        <>
+            <Navbar />
+            <section className="pt-32 pb-20 bg-dark min-h-screen">
             <div className="container">
                 <div className="text-center mb-16 max-w-2xl mx-auto">
                     <span className="text-[#a6fd37] font-bold tracking-wider text-sm uppercase mb-4 block">Our Insights</span>
@@ -46,6 +50,8 @@ const BlogPage = () => {
                 </div>
             </div>
         </section>
+            <Footer />
+        </>
     );
 };
 

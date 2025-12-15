@@ -23,8 +23,8 @@ const Footer = () => {
                             <li><Link href="#what-we-do" className="text-gray-400 hover:text-[#a6fd37] transition-colors">What we do</Link></li>
                             <li><Link href="#our-services" className="text-gray-400 hover:text-[#a6fd37] transition-colors">Our Services</Link></li>
                             <li><Link href="#features" className="text-gray-400 hover:text-[#a6fd37] transition-colors">Features</Link></li>
-                            {/* Updated Blog Link to External */}
-                            <li><a href="https://sparkspheartechsolutions.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#a6fd37] transition-colors">Blog</a></li>
+                            {/* Updated Blog Link to Internal */}
+                            <li><Link href="/blog" className="text-gray-400 hover:text-[#a6fd37] transition-colors">Blog</Link></li>
                         </ul>
                     </div>
 
@@ -58,8 +58,8 @@ const Footer = () => {
                         &copy; {new Date().getFullYear()} SparkSphear Tech Solutions. All rights reserved.
                     </p>
                     <div className="flex gap-6">
-                        <Link href="#" className="text-gray-500 hover:text-white text-sm">Privacy Policy</Link>
-                        <Link href="#" className="text-gray-500 hover:text-white text-sm">Terms of Service</Link>
+                        <Link href="/privacy" className="text-gray-500 hover:text-white text-sm">Privacy Policy</Link>
+                        <Link href="/terms" className="text-gray-500 hover:text-white text-sm">Terms of Service</Link>
                     </div>
                 </div>
             </div>

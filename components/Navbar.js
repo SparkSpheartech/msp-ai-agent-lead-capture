@@ -36,7 +36,7 @@ const Navbar = () => {
                         <Link href="/#our-services" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Services</Link>
                         <Link href="/#process" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Process</Link>
                         <Link href="/about" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">About</Link>
-                        <a href="https://sparkspheartechsolutions.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Blog</a>
+                        <Link href="/blog" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Blog</Link>
                         <Link href="/support" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Support</Link>
                     </nav>
                     <Link
@@ -76,9 +76,9 @@ const Navbar = () => {
                                 </Link>
                             </div>
                             <div onClick={closeMenu}>
-                                <a href="https://sparkspheartechsolutions.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
+                                <Link href="/blog" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
                                     Blog
-                                </a>
+                                </Link>
                             </div>
                             <div onClick={closeMenu}>
                                 <Link href="/support" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">

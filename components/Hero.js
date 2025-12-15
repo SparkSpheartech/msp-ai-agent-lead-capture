@@ -13,9 +13,7 @@ const Hero = () => {
                     muted
                     playsInline
                     className="w-full h-full object-cover opacity-30"
-                    poster="/images/video-poster.jpg"
                 >
-                    {/* Using Pexels free tech video - download from: https://www.pexels.com/video/digital-projection-of-abstract-geometrical-lines-3129957/ */}
                     <source src="/videos/tech-background.mp4" type="video/mp4" />
                     {/* Fallback for browsers that don't support video */}
                 </video>
