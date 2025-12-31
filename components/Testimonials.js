@@ -1,100 +1,89 @@
-"use client";
-import React from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+'use client';
+import Image from "next/image";
 
 const testimonials = [
-    {
-        text: "SparkSphear transformed our online presence. We went from invisible to fully booked in three months. Their local SEO strategy is a game changer.",
-        name: "Sarah Jenkins",
-        role: "Local Business Owner",
-        rating: 5
-    },
-    {
-        text: "The best tech partner we've worked with in Fort Wayne. Their 24/7 support gives us total peace of mind, and the team is genuinely helpful.",
-        name: "Mike Ross",
-        role: "Director of Operations",
-        rating: 5
-    },
-    {
-        text: "We needed a custom security audit for our client data. SparkSphear explained everything clearly and secured our network fast.",
-        name: "Emily White",
-        role: "Healthcare Practice Manager",
-        rating: 5
-    }
+  {
+    text: "Shaz brings new perspectives, ideas, and solutions to any conversation we have here at Web One, regardless of the topic. Marketing, technology, AI; you name it, he's got the ideas. As the dedicated technological backbone of Web One, I deal with many different issues: Security in software development, cost efficiency, workflow optimization via automation. Shaz has brought great ideas and insights for every topic without fail. His day-to-day hard and diligent work can be an extremely valuable asset to any business, be it early stage or well-established. If you doubt it, give him a chance. He will prove his worth to you within the first day.",
+    name: "Joshan Christie",
+    role: "Software & Automation",
+    company: "Web One",
+    logo: "https://www.webone.dev/assets/WEBONEWHITELOGO-DrJ7ZUsb.svg"
+  },
+  {
+    text: "Shazaly Musa, the founder of SparkSphearTech, has been a huge help to me and my team at WebOne LLC. He guided us in improving our workflow and paperwork, showing us how established businesses operate. Thanks to his experience in AI, he helped us understand how automation works and how to implement it effectively in our own systems. Shaz is a smart and innovative tech mind who sees things from a unique perspective and always brings fresh ideas that make a real difference. Every time I talk to him, I learn something new. If you get the chance to collaborate with SparkSphearTech, expect real progress, solid systems, and a noticeable difference in how your business operates.",
+    name: "Aseel Batuq",
+    role: "Head of Operations",
+    company: "Web One",
+    logo: "https://www.webone.dev/assets/WEBONEWHITELOGO-DrJ7ZUsb.svg"
+  }
 ];
 
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.1 }
-    }
-};
+export default function Testimonials() {
+  return (
+    <section className="py-24 bg-zinc-950 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-950/0 to-zinc-950/0" />
+      
+      <div className="container mx-auto px-6 mb-16 relative z-10">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-white to-zinc-500 bg-clip-text text-transparent">
+          Trust from our clients
+        </h2>
+        <p className="text-zinc-400 text-center text-lg max-w-2xl mx-auto">
+          See why Fort Wayne businesses choose SparkSphear to drive their technological evolution.
+        </p>
+      </div>
 
-const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6 }
-    }
-};
+      <div className="relative w-full overflow-hidden">
+        {/* Gradient Masks */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-zinc-950 to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-zinc-950 to-transparent z-20 pointer-events-none" />
 
-const Testimonials = () => {
-    return (
-        <section className="section testimonials bg-gray-50">
-            <div className="container">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="section-header"
-                >
-                    <span className="tag">TESTIMONIALS</span>
-                    <h2>Trust from our clients</h2>
-                    <p>See why Fort Wayne businesses choose SparkSphear.</p>
-                </motion.div>
-
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="testimonials-slider grid grid-cols-1 md:grid-cols-3 gap-8"
-                >
-                    {testimonials.map((t, index) => (
-                        <motion.div key={index} variants={itemVariants} className="testimonial-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                            <div className="flex gap-1 text-[#a6fd37] mb-4">
-                                {[...Array(t.rating)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-                            </div>
-                            <p className="text-gray-600 italic mb-6 leading-relaxed">"{t.text}"</p>
-                            <div className="client-info mt-auto">
-                                <h5 className="font-bold text-dark">{t.name}</h5>
-                                <span className="text-sm text-gray-500">{t.role}</span>
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="text-center mt-12"
-                >
-                    <Link
-                        href="#contact-us"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-primary text-dark font-bold hover:bg-primary/90 transition-all duration-300 rounded-md"
-                    >
-                        Become Our Next Success Story
-                    </Link>
-                </motion.div>
+        {/* Scrolling Container */}
+        <div className="flex gap-8 animate-infinite-scroll w-max hover:[animation-play-state:paused]">
+          {[...testimonials, ...testimonials, ...testimonials].map((t, i) => (
+            <div
+              key={i}
+              className="w-[500px] bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl backdrop-blur-sm hover:border-zinc-700 transition-colors group"
+            >
+              <div className="h-full flex flex-col justify-between gap-8">
+                <div>
+                  <div className="mb-6 opacity-50 group-hover:opacity-100 transition-opacity">
+                    <Image
+                      src={t.logo}
+                      alt={`${t.company} Logo`}
+                      width={120}
+                      height={40}
+                      className="h-8 w-auto object-contain"
+                    />
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed text-lg">
+                    "{t.text}"
+                  </p>
+                </div>
+                
+                <div className="flex items-center gap-4 pt-6 border-t border-zinc-800">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-lg font-bold text-white">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">{t.name}</h4>
+                    <p className="text-zinc-500 text-sm">{t.role} @ {t.company}</p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-    );
-};
+          ))}
+        </div>
+      </div>
 
-export default Testimonials;
+      <style jsx global>{`
+        @keyframes infinite-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .animate-infinite-scroll {
+          animation: infinite-scroll 40s linear infinite;
+        }
+      `}</style>
+    </section>
+  );
+}
