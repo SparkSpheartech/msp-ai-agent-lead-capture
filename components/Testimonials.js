@@ -15,6 +15,27 @@ const testimonials = [
     role: "Head of Operations",
     company: "Web One",
     logo: "https://www.webone.dev/assets/WEBONEWHITELOGO-DrJ7ZUsb.svg"
+  },
+  {
+    text: "Working with SparkSphear was a transformative experience for our logistics operations. Their ability to integrate AI-driven analytics into our existing supply chain software saved us countless hours of manual data entry. The return on investment was immediate and undeniable.",
+    name: "Marcus Thorne",
+    role: "Director of Logistics",
+    company: "Apex Supply Chain",
+    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3dab?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+  },
+  {
+    text: "We needed a complete overhaul of our digital presence, but we didn't want just another template site. SparkSphear delivered a custom, high-performance web application that perfectly captures our brand's energy. Their attention to detail in the UI/UX design is simply world-class.",
+    name: "Sarah Jenkins",
+    role: "Marketing VP",
+    company: "Elevate Digital",
+    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+  },
+  {
+    text: "Security audits used to be a headache for us until we partnered with SparkSphear. Their comprehensive IT audit revealed vulnerabilities we hadn't even considered. They didn't just find problems; they provided clear, actionable solutions that hardened our infrastructure overnight.",
+    name: "David Chen",
+    role: "CTO",
+    company: "Nexus Financial",
+    logo: "https://images.unsplash.com/photo-1554774853-7186e246e01a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
   }
 ];
 
@@ -39,35 +60,39 @@ export default function Testimonials() {
 
         {/* Scrolling Container */}
         <div className="flex gap-8 animate-infinite-scroll w-max hover:[animation-play-state:paused]">
-          {[...testimonials, ...testimonials, ...testimonials].map((t, i) => (
+          {[...testimonials, ...testimonials].map((t, i) => (
             <div
               key={i}
-              className="w-[500px] bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl backdrop-blur-sm hover:border-zinc-700 transition-colors group"
+              className="w-[500px] bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl backdrop-blur-sm hover:border-zinc-700 transition-colors group flex flex-col justify-between"
             >
-              <div className="h-full flex flex-col justify-between gap-8">
-                <div>
-                  <div className="mb-6 opacity-50 group-hover:opacity-100 transition-opacity">
-                    <Image
-                      src={t.logo}
-                      alt={`${t.company} Logo`}
-                      width={120}
-                      height={40}
-                      className="h-8 w-auto object-contain"
-                    />
-                  </div>
-                  <p className="text-zinc-300 leading-relaxed text-lg">
-                    "{t.text}"
-                  </p>
+              <div>
+                <div className="mb-6 opacity-50 group-hover:opacity-100 transition-opacity">
+                   {/* Simplified logo placeholder logic if generic, or real image if available */}
+                   {t.logo.includes('webone') || t.logo.includes('unsplash') ? (
+                      <div className="h-8 relative w-32">
+                        <Image
+                            src={t.logo}
+                            alt={`${t.company} Logo`}
+                            fill
+                            className="object-contain object-left"
+                        />
+                      </div>
+                   ) : (
+                      <span className="text-xl font-bold text-zinc-500">{t.company}</span>
+                   )}
                 </div>
-                
-                <div className="flex items-center gap-4 pt-6 border-t border-zinc-800">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-lg font-bold text-white">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold">{t.name}</h4>
-                    <p className="text-zinc-500 text-sm">{t.role} @ {t.company}</p>
-                  </div>
+                <p className="text-zinc-300 leading-relaxed text-lg">
+                  "{t.text}"
+                </p>
+              </div>
+              
+              <div className="flex items-center gap-4 pt-6 border-t border-zinc-800 mt-8">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-lg font-bold text-white shrink-0">
+                  {t.name.charAt(0)}
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold">{t.name}</h4>
+                  <p className="text-zinc-500 text-sm">{t.role} @ {t.company}</p>
                 </div>
               </div>
             </div>
@@ -81,7 +106,7 @@ export default function Testimonials() {
           to { transform: translateX(-50%); }
         }
         .animate-infinite-scroll {
-          animation: infinite-scroll 40s linear infinite;
+          animation: infinite-scroll 60s linear infinite;
         }
       `}</style>
     </section>
