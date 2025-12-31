@@ -1,79 +1,69 @@
 'use client';
-import { useRef, useState, useMemo } from 'react';
+import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Sphere, MeshDistortMaterial, Float } from '@react-three/drei';
+import { OrbitControls, useTexture, Line } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import * as THREE from 'three';
+import Link from 'next/link';
 
-function AnimatedSphere() {
-  const sphereRef = useRef();
-
-  useFrame(({ clock }) => {
-    if (sphereRef.current) {
-      sphereRef.current.rotation.x = clock.getElapsedTime() * 0.15;
-      sphereRef.current.rotation.y = clock.getElapsedTime() * 0.2;
-    }
-  });
-
-  return (
-    <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-      <Sphere visible args={[1, 100, 200]} scale={2.2} ref={sphereRef}>
-        <MeshDistortMaterial
-          color="#0ea5e9" // Sky-500 - Primary brand cyan/blue
-          attach="material"
-          distort={0.5}
-          speed={2}
-          roughness={0.2}
-          metalness={0.9}
-          emissive="#0369a1" // Sky-700
-          emissiveIntensity={0.3}
-        />
-      </Sphere>
-    </Float>
-  );
+// Generate points on a sphere surface
+function fibonacciSphere(samples = 100, radius = 2.5) {
+  const points = [];
+  const phi = Math.PI * (3 - Math.sqrt(5));
+  for (let i = 0; i < samples; i++) {
+    const y = 1 - (i / (samples - 1)) * 2;
+    const r = Math.sqrt(1 - y * y);
+    const theta = phi * i;
+    points.push(new THREE.Vector3(Math.cos(theta) * r * radius, y * radius, Math.sin(theta) * r * radius));
+  }
+  return points;
 }
 
-function ParticleField() {
-  const ref = useRef();
-  const count = 3000;
-
-  const [positions, colors] = useMemo(() => {
-    const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
-    const color = new THREE.Color();
-
-    for (let i = 0; i < count; i++) {
-      const theta = THREE.MathUtils.randFloatSpread(360);
-      const phi = THREE.MathUtils.randFloatSpread(360);
-      const distance = THREE.MathUtils.randFloat(4, 12);
-
-      positions[i * 3] = distance * Math.sin(theta) * Math.cos(phi);
-      positions[i * 3 + 1] = distance * Math.sin(theta) * Math.sin(phi);
-      positions[i * 3 + 2] = distance * Math.cos(theta);
-
-      // Gradient from cyan to blue
-      const t = Math.random();
-      color.lerpColors(new THREE.Color('#22d3ee'), new THREE.Color('#3b82f6'), t); // Cyan-400 to Blue-500
-      colors[i * 3] = color.r;
-      colors[i * 3 + 1] = color.g;
-      colors[i * 3 + 2] = color.b;
+// Generate connections between nearby points
+function generateConnections(points, maxDistance = 1.2) {
+  const lines = [];
+  for (let i = 0; i < points.length; i++) {
+    for (let j = i + 1; j < points.length; j++) {
+      if (points[i].distanceTo(points[j]) < maxDistance) {
+        lines.push([points[i], points[j]]);
+      }
     }
-    return [positions, colors];
-  }, []);
+  }
+  return lines;
+}
 
-  useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 20;
-    ref.current.rotation.y -= delta / 25;
+function NetworkGlobe() {
+  const groupRef = useRef();
+  const nodePoints = useMemo(() => fibonacciSphere(80, 2.5), []);
+  const connections = useMemo(() => generateConnections(nodePoints, 1.1), [nodePoints]);
+
+  useFrame(({ clock }) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y = clock.getElapsedTime() * 0.1;
+    }
   });
 
   return (
-    <points ref={ref}>
-      <bufferGeometry>
-        <bufferAttribute attach="attributes-position" count={count} array={positions} itemSize={3} />
-        <bufferAttribute attach="attributes-color" count={count} array={colors} itemSize={3} />
-      </bufferGeometry>
-      <pointsMaterial size={0.04} vertexColors sizeAttenuation={true} depthWrite={false} transparent opacity={0.7} />
-    </points>
+    <group ref={groupRef}>
+      {/* Core wireframe sphere for earth-like structure */}
+      <mesh>
+        <icosahedronGeometry args={[2.4, 2]} />
+        <meshBasicMaterial color="#0c4a6e" wireframe transparent opacity={0.15} />
+      </mesh>
+
+      {/* Node points */}
+      {nodePoints.map((point, i) => (
+        <mesh key={i} position={point}>
+          <sphereGeometry args={[0.04, 16, 16]} />
+          <meshBasicMaterial color="#22d3ee" />
+        </mesh>
+      ))}
+
+      {/* Connection lines */}
+      {connections.map((line, i) => (
+        <Line key={i} points={line} color="#0ea5e9" lineWidth={0.5} transparent opacity={0.4} />
+      ))}
+    </group>
   );
 }
 
@@ -85,42 +75,40 @@ export default function Hero3D() {
 
       {/* 3D Scene */}
       <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 6], fov: 60 }}>
-          <ambientLight intensity={0.4} />
-          <directionalLight position={[5, 5, 5]} intensity={1.5} color="#ffffff" />
-          <pointLight position={[-5, -5, -5]} intensity={0.5} color="#22d3ee" />
-          <ParticleField />
-          <AnimatedSphere />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.3} />
+        <Canvas camera={{ position: [0, 0, 7], fov: 50 }}>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
+          <pointLight position={[-10, -10, -10]} intensity={0.3} color="#22d3ee" />
+          <NetworkGlobe />
+          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.2} />
         </Canvas>
       </div>
 
       {/* Content Overlay */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center pointer-events-none">
-
         <div className="text-center lg:text-left pointer-events-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="text-cyan-400 font-semibold uppercase tracking-widest mb-4 text-sm">Fort Wayne&apos;s Premier Tech Partner</p>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
-              Ignite Your <br />
+              Rebuilding <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                Digital Future
+                Old Infrastructures
               </span>
             </h1>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
             <p className="text-xl text-slate-400 mb-8 max-w-xl mx-auto lg:mx-0">
-              We engineer intelligent systems that automate your operations, elevate your brand, and secure your digital infrastructure.
+              With state-of-the-art technology. AI automation, web design, digital marketing, and IT audits for businesses ready to evolve.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="/services/ai-automation" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-cyan-500/30">
-                Explore AI Solutions
-              </a>
-              <a href="/support" className="px-8 py-4 border border-slate-700 text-white rounded-full font-semibold hover:bg-slate-800/50 transition-colors">
-                Get Support
-              </a>
+              <Link href="/services" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-cyan-500/30">
+                Explore Services
+              </Link>
+              <Link href="/about" className="px-8 py-4 border border-slate-700 text-white rounded-full font-semibold hover:bg-slate-800/50 transition-colors">
+                Learn More
+              </Link>
             </div>
           </motion.div>
         </div>
