@@ -101,11 +101,11 @@ export default function Hero3D() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link href="#services" className="px-8 py-4 bg-lime-500 text-zinc-950 rounded-md font-bold hover:bg-lime-400 transition-colors shadow-lg shadow-lime-500/20">
+              <Link href="/services" className="px-8 py-4 bg-lime-500 text-zinc-950 rounded-md font-bold hover:bg-lime-400 transition-colors shadow-lg shadow-lime-500/20">
                 Get Started
               </Link>
-              <Link href="/about" className="px-8 py-4 border border-zinc-700 text-white rounded-md font-semibold hover:bg-zinc-800/50 transition-colors">
-                Learn More
+              <Link href="/support" className="px-8 py-4 border border-zinc-700 text-white rounded-md font-semibold hover:bg-zinc-800/50 transition-colors">
+                Contact Us
               </Link>
             </div>
           </motion.div>
