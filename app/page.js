@@ -1,6 +1,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import Hero3D from "@/components/Hero3D"; // Updated to use new 3D Hero
 import WhatWeDo from "@/components/WhatWeDo";
 import Services from "@/components/Services";
 import Features from "@/components/Features";
@@ -19,7 +19,7 @@ export default function Home() {
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
-            <Hero />
+            <Hero3D /> {/* Replaced Hero with Hero3D */}
             <WhatWeDo />
             <Services />
             <Features />
