@@ -1,2 +1,6 @@
 [build]
   command = "npm run build"
+
+# Next.js plugin will auto-detect .next output
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
