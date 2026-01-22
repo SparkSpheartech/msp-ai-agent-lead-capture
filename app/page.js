@@ -1,6 +1,17 @@
 "use client";
+import dynamic from 'next/dynamic';
 import Navbar from "@/components/Navbar";
-import Hero3D from "@/components/Hero3D"; // Updated to use new 3D Hero
+
+// Dynamically import Hero3D with SSR disabled (Canvas requires browser WebGL context)
+const Hero3D = dynamic(() => import("@/components/Hero3D"), {
+    ssr: false,
+    loading: () => (
+        <div className="relative min-h-screen w-full flex items-center justify-center bg-zinc-950">
+            <div className="text-lime-400 text-xl animate-pulse">Loading...</div>
+        </div>
+    ),
+});
+
 import WhatWeDo from "@/components/WhatWeDo";
 import ServiceWizard from "@/components/ServiceWizard";
 import Features from "@/components/Features";
