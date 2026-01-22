@@ -1,8 +1,2 @@
 [build]
   command = "npm run build"
-
-# Disable the 404 plugin as it's incompatible with Next.js SSR mode
-[[plugins]]
-  package = "netlify-plugin-no-more-404"
-  [plugins.inputs]
-    on404 = "warn"  # Change from 'error' to 'warn' to allow SSR deployment
