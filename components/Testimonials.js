@@ -21,7 +21,7 @@ const testimonials = [
     name: "Marcus Thorne",
     role: "Director of Logistics",
     company: "Apex Supply Chain",
-    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3dab?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3dab?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
   },
   {
     text: "We needed a complete overhaul of our digital presence, but we didn't want just another template site. SparkSphear delivered a custom, high-performance web application that perfectly captures our brand's energy. Their attention to detail in the UI/UX design is simply world-class.",
@@ -41,11 +41,11 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-zinc-950 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-950/0 to-zinc-950/0" />
-      
+    <section className="py-24 bg-dark relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-lime-900/10 via-dark to-dark" />
+
       <div className="container mx-auto px-6 mb-16 relative z-10">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-white to-zinc-500 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-white to-lime-500 bg-clip-text text-transparent">
           Trust from our clients
         </h2>
         <p className="text-zinc-400 text-center text-lg max-w-2xl mx-auto">
@@ -55,44 +55,44 @@ export default function Testimonials() {
 
       <div className="relative w-full overflow-hidden">
         {/* Gradient Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-zinc-950 to-transparent z-20 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-zinc-950 to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-dark to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-dark to-transparent z-20 pointer-events-none" />
 
         {/* Scrolling Container */}
         <div className="flex gap-8 animate-infinite-scroll w-max hover:[animation-play-state:paused]">
           {[...testimonials, ...testimonials].map((t, i) => (
             <div
               key={i}
-              className="w-[500px] bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl backdrop-blur-sm hover:border-zinc-700 transition-colors group flex flex-col justify-between"
+              className="w-[500px] bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm hover:border-lime-500/50 transition-colors group flex flex-col justify-between"
             >
               <div>
                 <div className="mb-6 opacity-50 group-hover:opacity-100 transition-opacity">
-                   {/* Simplified logo placeholder logic if generic, or real image if available */}
-                   {t.logo.includes('webone') || t.logo.includes('unsplash') ? (
-                      <div className="h-8 relative w-32">
-                        <Image
-                            src={t.logo}
-                            alt={`${t.company} Logo`}
-                            fill
-                            className="object-contain object-left"
-                        />
-                      </div>
-                   ) : (
-                      <span className="text-xl font-bold text-zinc-500">{t.company}</span>
-                   )}
+                  {/* Simplified logo placeholder logic if generic, or real image if available */}
+                  {t.logo.includes('webone') || t.logo.includes('unsplash') ? (
+                    <div className="h-8 relative w-32">
+                      <Image
+                        src={t.logo}
+                        alt={`${t.company} Logo`}
+                        fill
+                        className="object-contain object-left"
+                      />
+                    </div>
+                  ) : (
+                    <span className="text-xl font-bold text-zinc-500">{t.company}</span>
+                  )}
                 </div>
-                <p className="text-zinc-300 leading-relaxed text-lg">
+                <p className="text-gray-300 leading-relaxed text-lg">
                   "{t.text}"
                 </p>
               </div>
-              
-              <div className="flex items-center gap-4 pt-6 border-t border-zinc-800 mt-8">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-lg font-bold text-white shrink-0">
+
+              <div className="flex items-center gap-4 pt-6 border-t border-white/10 mt-8">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-lime-500 to-green-700 flex items-center justify-center text-lg font-bold text-black shrink-0 shadow-lg">
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">{t.name}</h4>
-                  <p className="text-zinc-500 text-sm">{t.role} @ {t.company}</p>
+                  <h4 className="text-white font-semibold group-hover:text-lime-400 transition-colors">{t.name}</h4>
+                  <p className="text-gray-500 text-sm">{t.role} @ {t.company}</p>
                 </div>
               </div>
             </div>

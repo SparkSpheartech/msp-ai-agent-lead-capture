@@ -3,62 +3,64 @@ import React from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Camera, Video, Image, Award, CheckCircle, ArrowRight } from 'lucide-react';
+import { Camera, Video, Image as ImageIcon, Award, CheckCircle, ArrowRight, Aperture, Film, Users, Zap, Play } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function PhotographyVideography() {
     const services = [
-        'Corporate Photography',
-        'Product Photography',
-        'Event Coverage',
-        'Promotional Videos',
-        'Brand Storytelling',
-        'Social Media Content',
-        'Headshots & Portraits',
-        'Video Editing & Post-Production'
+        { title: 'Corporate Photography', icon: <Users /> },
+        { title: 'Product Photography', icon: <ImageIcon /> },
+        { title: 'Event Coverage', icon: <Camera /> },
+        { title: 'Promotional Videos', icon: <Film /> },
+        { title: 'Brand Storytelling', icon: <Zap /> },
+        { title: 'Social Media Content', icon: <Play /> },
     ];
 
     const benefits = [
-        { icon: <Camera />, title: 'Professional Quality', description: 'Studio-grade equipment and expert techniques for stunning results' },
-        { icon: <Video />, title: 'Engaging Content', description: 'Visual stories that captivate your audience and drive engagement' },
-        { icon: <Image />, title: 'Brand Consistency', description: 'Cohesive visual identity across all your marketing materials' },
-        { icon: <Award />, title: 'Fast Turnaround', description: 'Quick delivery without compromising on quality' }
+        { icon: <Camera />, title: 'Professional Quality', description: 'Studio-grade equipment (Sony/Canon Cinema lines) and expert lighting techniques for cinematic results.' },
+        { icon: <Video />, title: 'Engaging Content', description: 'Visual stories designed to stop the scroll, captivate your audience, and drive real engagement.' },
+        { icon: <ImageIcon />, title: 'Brand Consistency', description: 'We ensure a cohesive visual identity across all your marketing materials, from web to print.' },
+        { icon: <Award />, title: 'Fast Turnaround', description: 'Quick delivery of high-res assets without compromising on quality. We know speed matters.' }
     ];
 
     const packages = [
         {
             name: 'Essential',
-            description: 'Perfect for small projects and social media content',
+            price: 'Starter',
+            description: 'Perfect for small projects and social media content updates.',
             features: [
-                '2-hour session',
-                '20 edited photos',
-                'Basic retouching',
-                'Digital delivery',
+                '2-hour onsite session',
+                '20 professionally edited photos',
+                'Basic color correction',
+                'Digital delivery (Web & High Res)',
                 '2 week turnaround'
             ]
         },
         {
             name: 'Professional',
-            description: 'Ideal for corporate events and product launches',
+            price: 'Most Popular',
+            description: 'Ideal for corporate events, product launches, and brand overhauls.',
             features: [
-                '4-hour session',
-                '50 edited photos',
+                'Half-day coverage (4 hours)',
+                '50+ professionally edited photos',
                 'Advanced retouching',
-                'Digital + print ready',
-                '1 week turnaround',
-                'Social media formats'
+                '1 Promotional Video (30-60s)',
+                'Social media cutdowns',
+                '1 week turnaround'
             ],
             popular: true
         },
         {
             name: 'Premium',
-            description: 'Comprehensive coverage for major campaigns',
+            price: 'Enterprise',
+            description: 'Comprehensive coverage for major campaigns and commercial productions.',
             features: [
-                'Full day coverage',
+                'Full day coverage (8 hours)',
                 'Unlimited edited photos',
-                'Video + photography',
-                'All file formats',
-                '3 day turnaround',
-                'Dedicated project manager'
+                'Full Video Production Crew',
+                'Drone/Aerial footage',
+                'Priority 72-hour turnaround',
+                'Dedicated Creative Director'
             ]
         }
     ];
@@ -66,123 +68,149 @@ export default function PhotographyVideography() {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen" style={{ background: '#0a0a0a' }}>
-                <section className="pt-32 pb-16">
-                    <div className="container max-w-5xl">
-                        <Link href="/services" className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors">
+            <main className="min-h-screen bg-dark">
+                {/* Hero Section */}
+                <section className="relative pt-40 pb-20 overflow-hidden">
+                    {/* Background Accents - Cyan/Blue Theme */}
+                    <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[100px]"></div>
+                        <div className="absolute bottom-[0%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px]"></div>
+                    </div>
+
+                    <div className="container relative z-10 max-w-6xl">
+                        <Link href="/services" className="inline-flex items-center text-gray-400 hover:text-white mb-8 transition-colors text-sm font-mono tracking-wider">
                             <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-                            Back to Services
+                            BACK TO SERVICES
                         </Link>
 
-                        <div className="flex items-center gap-4 mb-6">
-                            <Camera className="w-16 h-16 text-primary" />
-                            <h1 className="text-white text-4xl md:text-5xl font-bold">
-                                Photography & Videography
-                            </h1>
-                        </div>
-                        <p className="text-gray-400 text-xl leading-relaxed">
-                            Professional visual content that tells your brand story and captivates your audience. From corporate photography to promotional videos, we create stunning visuals that elevate your brand.
-                        </p>
-                    </div>
-                </section>
-
-                <section className="py-16 border-t border-dark-2">
-                    <div className="container max-w-5xl">
-                        <h2 className="text-white text-3xl font-bold mb-12">What We Capture</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {services.map((service, index) => (
-                                <div key={index} className="flex items-center gap-3 bg-dark-1 border border-dark-2 rounded-lg p-4">
-                                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
-                                    <span className="text-gray-300">{service}</span>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-6">
+                                    <Aperture className="w-4 h-4" /> Visual Production
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <section className="py-16 border-t border-dark-2">
-                    <div className="container max-w-5xl">
-                        <h2 className="text-white text-3xl font-bold mb-12">Why Choose Us</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {benefits.map((benefit, index) => (
-                                <div key={index} className="flex gap-6">
-                                    <div className="text-primary flex-shrink-0">
-                                        {React.cloneElement(benefit.icon, { className: 'w-12 h-12' })}
-                                    </div>
-                                    <div>
-                                        <h3 className="text-white text-xl font-bold mb-2">{benefit.title}</h3>
-                                        <p className="text-gray-400">{benefit.description}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <section className="py-16 border-t border-dark-2">
-                    <div className="container max-w-6xl">
-                        <div className="text-center mb-12">
-                            <h2 className="text-white text-3xl font-bold mb-4">Photography Packages</h2>
-                            <p className="text-gray-400">Choose the coverage that fits your needs</p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {packages.map((pkg, index) => (
-                                <div
-                                    key={index}
-                                    className={`pricing-card bg-dark-1 border-2 ${pkg.popular ? 'border-primary' : 'border-dark-2'} rounded-lg p-8 relative`}
-                                >
-                                    {pkg.popular && (
-                                        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-dark px-4 py-1 rounded-full text-sm font-bold">
-                                            Most Popular
-                                        </div>
-                                    )}
-                                    <h3 className="text-white text-2xl font-bold mb-2">{pkg.name}</h3>
-                                    <p className="text-gray-400 text-sm mb-6">{pkg.description}</p>
-                                    <ul className="space-y-3 mb-8">
-                                        {pkg.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-start gap-2 text-gray-300 text-sm">
-                                                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                                                <span>{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <Link
-                                        href="#book-meeting"
-                                        className={`block text-center px-6 py-3 rounded-md font-bold transition-all ${pkg.popular
-                                            ? 'bg-primary text-dark hover:bg-primary/90'
-                                            : 'bg-dark-2 text-white border-2 border-dark-2 hover:border-primary'
-                                            }`}
-                                    >
-                                        Book Session
+                                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                                    Capture Your <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Brand Story.</span>
+                                </h1>
+                                <p className="text-gray-400 text-xl leading-relaxed mb-8 max-w-lg">
+                                    Professional photography and videography that elevates your brand. We create stunning visual content that commands attention.
+                                </p>
+                                <div className="flex flex-wrap gap-4">
+                                    <Link href="#book-session" className="bg-cyan-500 hover:bg-cyan-400 text-dark font-bold py-4 px-8 rounded-lg transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+                                        Book A Session
                                     </Link>
                                 </div>
+                            </div>
+                            <div className="relative">
+                                {/* Abstract Camera Lens UI */}
+                                <div className="relative z-10 bg-dark-1 border border-white/10 rounded-2xl p-2 shadow-2xl transform -rotate-2 hover:rotate-1 transition-all duration-500">
+                                    <div className="bg-dark rounded-xl overflow-hidden border border-white/5 aspect-[4/3] flex items-center justify-center relative">
+                                        {/* Lens Elements */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent"></div>
+                                        <div className="relative w-48 h-48 rounded-full border-2 border-cyan-500/30 flex items-center justify-center">
+                                            <div className="w-32 h-32 rounded-full border border-white/10 bg-white/5 flex items-center justify-center backdrop-blur-sm">
+                                                <div className="w-16 h-16 rounded-full bg-cyan-500/20 shadow-[0_0_30px_rgba(6,182,212,0.5)]"></div>
+                                            </div>
+                                            <div className="absolute top-0 left-1/2 -ml-0.5 w-1 h-3 bg-cyan-500/50"></div>
+                                            <div className="absolute bottom-0 left-1/2 -ml-0.5 w-1 h-3 bg-cyan-500/50"></div>
+                                            <div className="absolute left-0 top-1/2 -mt-0.5 h-1 w-3 bg-cyan-500/50"></div>
+                                            <div className="absolute right-0 top-1/2 -mt-0.5 h-1 w-3 bg-cyan-500/50"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 blur-2xl -z-10 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Services Grid */}
+                <section className="py-24 border-t border-white/5 bg-dark-1/50">
+                    <div className="container max-w-6xl">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Capture</h2>
+                            <p className="text-gray-400">Complete visual solutions for modern businesses</p>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {services.map((service, index) => (
+                                <div key={index} className="group bg-dark border border-white/5 hover:border-cyan-500/50 p-6 rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                                    <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+                                        {React.cloneElement(service.icon, { className: 'w-6 h-6' })}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                                    <div className="w-8 h-1 bg-cyan-500/30 rounded group-hover:w-16 transition-all duration-300"></div>
+                                </div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                <section className="py-16 border-t border-dark-2">
-                    <div className="container max-w-4xl text-center">
-                        <h2 className="text-white text-3xl font-bold mb-4">
-                            Ready to Create Stunning Visuals?
-                        </h2>
-                        <p className="text-gray-400 text-lg mb-8">
-                            Let's discuss your photography and video production needs
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link
-                                href="#book-meeting"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-dark font-bold hover:bg-primary/90 transition-all duration-300 rounded-md"
+                {/* Why Choose Us */}
+                <section className="py-24 bg-dark">
+                    <div className="container max-w-6xl">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
+                                    Cinematic <span className="text-cyan-400">Excellence</span>
+                                </h2>
+                                <div className="flex flex-col gap-8">
+                                    {benefits.map((benefit, index) => (
+                                        <div key={index} className="flex gap-6">
+                                            <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 flex-shrink-0 border border-cyan-500/20">
+                                                {React.cloneElement(benefit.icon, { className: 'w-7 h-7' })}
+                                            </div>
+                                            <div>
+                                                <h3 className="text-white text-xl font-bold mb-2">{benefit.title}</h3>
+                                                <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="relative">
+                                {/* Visual placeholder/graphic could go here, keeping it simple for now */}
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="aspect-[3/4] bg-dark-1 rounded-2xl border border-white/5 overflow-hidden relative">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                                        <ImageIcon className="absolute bottom-6 left-6 w-8 h-8 text-white/20" />
+                                    </div>
+                                    <div className="aspect-[3/4] bg-dark-1 rounded-2xl border border-white/5 overflow-hidden relative mt-12">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                                        <Video className="absolute bottom-6 left-6 w-8 h-8 text-white/20" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Integration Section: Google Form */}
+                <section id="book-session" className="py-24 border-t border-white/5 bg-dark relative">
+                    <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+                    <div className="container max-w-5xl relative z-10">
+                        <div className="text-center mb-12">
+                            <span className="text-cyan-400 font-mono text-sm tracking-wider uppercase mb-2 block">Let's Create Together</span>
+                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                                Book Your Session
+                            </h2>
+                            <p className="text-gray-400 max-w-2xl mx-auto">
+                                Fill out the form below to get started. Tell us your vision, and we'll handle the rest.
+                            </p>
+                        </div>
+
+                        <div className="bg-white rounded-xl shadow-2xl overflow-hidden min-h-[800px] md:min-h-[1000px]">
+                            <iframe
+                                src="https://docs.google.com/forms/d/e/1FAIpQLSd5Baz_5QVbjmEyxuoj5EGwLZekORa8wdehDQeLVBiuyvJ6gQ/viewform?embedded=true"
+                                width="100%"
+                                height="1200"
+                                frameBorder="0"
+                                marginHeight="0"
+                                marginWidth="0"
+                                className="w-full h-full min-h-[1200px]"
+                                title="Photography Session Booking Form"
                             >
-                                Schedule Consultation
-                            </Link>
-                            <Link
-                                href="/services"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-dark-2 text-white font-bold border-2 border-dark-2 hover:border-primary transition-all duration-300 rounded-md"
-                            >
-                                View All Services
-                            </Link>
+                                Loading…
+                            </iframe>
                         </div>
                     </div>
                 </section>

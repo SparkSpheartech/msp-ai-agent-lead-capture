@@ -71,14 +71,14 @@ export default function Hero3D() {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-zinc-950">
       {/* Subtle radial gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-zinc-950 to-black" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-lime-950/30 via-zinc-950 to-black" />
 
       {/* 3D Scene */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 opacity-60">
         <Canvas camera={{ position: [0, 0, 7], fov: 50 }}>
           <ambientLight intensity={0.4} />
           <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
-          <pointLight position={[-10, -10, -10]} intensity={0.4} color="#84cc16" />
+          <pointLight position={[-10, -10, -10]} intensity={0.6} color="#84cc16" />
           <NetworkGlobe />
           <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.15} />
         </Canvas>
@@ -88,24 +88,24 @@ export default function Hero3D() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-12 items-center pointer-events-none">
         <div className="text-center lg:text-left pointer-events-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <p className="text-lime-400 font-semibold uppercase tracking-widest mb-4 text-sm">Fort Wayne&apos;s Premier Tech Partner</p>
+            <p className="text-lime-400 font-semibold uppercase tracking-widest mb-4 text-sm">Fort Wayne&apos;s Growth Partner</p>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-              Rebuilding Old<br />
-              <span className="text-lime-400">Infrastructures</span>
+              Audit the System.<br />
+              <span className="text-lime-500">Scale the Business.</span>
             </h1>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
             <p className="text-xl text-zinc-400 mb-8 max-w-xl mx-auto lg:mx-0">
-              With state-of-the-art technology. AI automation, web design, digital marketing, and IT audits for businesses ready to evolve.
+              We don't just build websites. We analyze your entire infrastructure—Web, Marketing, AI, and Brand—to find the hidden levers for growth.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#book-meeting" className="px-8 py-4 bg-lime-500 text-zinc-950 rounded-md font-bold hover:bg-lime-400 transition-colors shadow-lg shadow-lime-500/20">
-                Get Started
-              </a>
-              <Link href="/support" className="px-8 py-4 border border-zinc-700 text-white rounded-md font-semibold hover:bg-zinc-800/50 transition-colors">
-                Contact Us
+              <Link href="/services/it-audits" className="px-8 py-4 bg-lime-500 text-zinc-950 rounded-md font-bold hover:bg-lime-400 transition-colors shadow-lg shadow-lime-500/20">
+                Start Master Audit
+              </Link>
+              <Link href="/services" className="px-8 py-4 border border-zinc-700 text-white rounded-md font-semibold hover:bg-zinc-800/50 transition-colors">
+                View All Services
               </Link>
             </div>
           </motion.div>

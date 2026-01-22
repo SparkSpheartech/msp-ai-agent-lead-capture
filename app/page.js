@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Hero3D from "@/components/Hero3D"; // Updated to use new 3D Hero
 import WhatWeDo from "@/components/WhatWeDo";
-import Services from "@/components/Services";
+import ServiceWizard from "@/components/ServiceWizard";
 import Features from "@/components/Features";
 import Process from "@/components/Process";
 import CoreValues from "@/components/CoreValues";
@@ -21,7 +21,7 @@ export default function Home() {
             <Navbar />
             <Hero3D /> {/* Replaced Hero with Hero3D */}
             <WhatWeDo />
-            <Services />
+            <ServiceWizard />
             <Features />
             <Process />
             <CoreValues />

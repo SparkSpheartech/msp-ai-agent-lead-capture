@@ -32,17 +32,20 @@ const ContactForm = () => {
     };
 
     return (
-        <section id="contact-us" className="section contact-section">
+        <section id="contact-us" className="section contact-section bg-dark py-24 relative overflow-hidden">
+            {/* Gradient Blob for depth */}
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-lime-900/10 rounded-full blur-3xl -z-10"></div>
+
             <div className="container" style={{ maxWidth: '600px' }}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="section-header"
+                    className="section-header text-center mb-12"
                 >
-                    <span className="tag">CONTACT US</span>
-                    <h2>Ready to discuss your project? Drop us a line.</h2>
+                    <span className="tag text-lime-400 font-bold tracking-wider">CONTACT US</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Ready to discuss your project? <span className="text-lime-500">Drop us a line.</span></h2>
                 </motion.div>
 
                 <motion.form
@@ -51,51 +54,50 @@ const ContactForm = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
                     onSubmit={handleSubmit(onSubmit)}
-                    className="contact-form"
+                    className="contact-form bg-white/5 border border-white/10 p-8 rounded-2xl shadow-xl backdrop-blur-sm"
                     style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
                 >
                     <div className="form-group">
+                        <label className="text-gray-300 text-sm font-semibold mb-2 block">Name</label>
                         <input
                             {...register("name")}
                             placeholder="Your Name *"
-                            className="form-input"
-                            style={{ width: '100%', padding: '16px', borderRadius: '4px', border: '1px solid #e0e0e0', backgroundColor: '#f9f9f9' }}
+                            className="form-input w-full p-4 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-600 focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-all outline-none"
                         />
-                        {errors.name && <span style={{ color: 'red', fontSize: '0.875rem' }}>{errors.name.message}</span>}
+                        {errors.name && <span className="text-red-400 text-sm mt-1 block">{errors.name.message}</span>}
                     </div>
 
                     <div className="form-group">
+                        <label className="text-gray-300 text-sm font-semibold mb-2 block">Email</label>
                         <input
                             {...register("email")}
                             placeholder="Type Your Email *"
-                            className="form-input"
-                            style={{ width: '100%', padding: '16px', borderRadius: '4px', border: '1px solid #e0e0e0', backgroundColor: '#f9f9f9' }}
+                            className="form-input w-full p-4 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-600 focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-all outline-none"
                         />
-                        {errors.email && <span style={{ color: 'red', fontSize: '0.875rem' }}>{errors.email.message}</span>}
+                        {errors.email && <span className="text-red-400 text-sm mt-1 block">{errors.email.message}</span>}
                     </div>
 
                     <div className="form-group">
+                        <label className="text-gray-300 text-sm font-semibold mb-2 block">Message</label>
                         <textarea
                             {...register("message")}
-                            placeholder="Ask your question..."
-                            className="form-input"
+                            placeholder="How can we help you?"
+                            className="form-input w-full p-4 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-600 focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-all outline-none"
                             rows={4}
-                            style={{ width: '100%', padding: '16px', borderRadius: '4px', border: '1px solid #e0e0e0', backgroundColor: '#f9f9f9', fontFamily: 'inherit' }}
                         />
-                        {errors.message && <span style={{ color: 'red', fontSize: '0.875rem' }}>{errors.message.message}</span>}
+                        {errors.message && <span className="text-red-400 text-sm mt-1 block">{errors.message.message}</span>}
                     </div>
 
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="btn btn-primary"
-                        style={{ width: '100%', border: 'none' }}
+                        className="w-full py-4 bg-lime-500 text-black font-bold text-lg rounded-lg hover:bg-lime-400 transition-all shadow-[0_0_20px_rgba(132,204,22,0.3)] hover:shadow-[0_0_30px_rgba(132,204,22,0.5)] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
 
-                    <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '1rem', fontWeight: '500' }}>
-                        Or call us at: (260) 267-0641
+                    <p className="mt-4 text-center text-gray-400 font-mono text-sm">
+                        Or call us at: <a href="tel:2602670641" className="text-lime-400 hover:underline">(260) 267-0641</a>
                     </p>
                 </motion.form>
             </div>
