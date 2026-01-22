@@ -20,20 +20,20 @@ const WhatWeDo = () => {
                 <div className="grid grid-cols-1 gap-8 mb-8">
                     {/* FLAGSHIP FEATURE CARD */}
                     <Link href="/services/it-audits" className="group">
-                        <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 to-dark-1 border-2 border-blue-500/30 hover:border-blue-400 rounded-2xl p-8 md:p-12 transition-all duration-300 shadow-[0_0_30px_rgba(37,99,235,0.15)] hover:shadow-[0_0_50px_rgba(37,99,235,0.3)]">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-500/20 transition-all"></div>
+                        <div className="relative overflow-hidden bg-gradient-to-r from-lime-900/40 to-dark-1 border-2 border-lime-500/30 hover:border-lime-400 rounded-2xl p-8 md:p-12 transition-all duration-300 shadow-[0_0_30px_rgba(132,204,22,0.15)] hover:shadow-[0_0_50px_rgba(132,204,22,0.3)]">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-lime-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-lime-500/20 transition-all"></div>
 
                             <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                                 <div>
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-bold uppercase tracking-wider mb-4">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-500/20 border border-lime-400/30 text-lime-300 text-sm font-bold uppercase tracking-wider mb-4">
                                         <ShieldCheck className="w-4 h-4" /> The Master Service
                                     </div>
-                                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-blue-200 transition-colors">IT Infrastructure Audit</h3>
+                                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-lime-200 transition-colors">IT Infrastructure Audit</h3>
                                     <p className="text-gray-300 text-lg max-w-2xl">
                                         The first step for every serious business. We analyze your <strong>Web</strong>, <strong>Marketing</strong>, <strong>AI</strong>, and <strong>Brand</strong> systems to build a unified roadmap for 10x growth.
                                     </p>
                                 </div>
-                                <div className="bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-full transition-all group-hover:scale-110 shadow-lg">
+                                <div className="bg-lime-600 hover:bg-lime-500 text-black p-4 rounded-full transition-all group-hover:scale-110 shadow-lg">
                                     <ArrowRight className="w-6 h-6" />
                                 </div>
                             </div>
