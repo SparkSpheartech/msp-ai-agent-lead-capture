@@ -43,7 +43,7 @@ const CoreValues = () => {
                 <div className="section-header text-center mb-16">
                     <span className="tag text-primary">CORE VALUES</span>
                     <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-                        What Drives <span className="text-primary">SparkSphear</span>
+                        What Drives <span className="text-primary">SPARKSPHEAR</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
                         These principles guide everything we do, from how we work with clients to how we approach challenges.

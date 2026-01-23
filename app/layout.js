@@ -12,8 +12,8 @@ const inter = Inter({
 export const metadata = {
     metadataBase: new URL('https://sparkspheartechsolutions.com'),
     title: {
-        default: "SparkSphear Tech Solutions | Fort Wayne IT Services & Digital Marketing",
-        template: "%s | SparkSphear Tech Solutions"
+        default: "SPARKSPHEAR Tech Solutions | Fort Wayne IT Services & Digital Marketing",
+        template: "%s | SPARKSPHEAR Tech Solutions"
     },
     description: "Fort Wayne's premier IT services company. 24/7 managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana. Fast response times, expert solutions.",
     keywords: [
@@ -38,9 +38,9 @@ export const metadata = {
         "IT consulting Fort Wayne",
         "managed service provider Fort Wayne"
     ],
-    authors: [{ name: "SparkSphear Tech Solutions" }],
-    creator: "SparkSphear Tech Solutions",
-    publisher: "SparkSphear Tech Solutions",
+    authors: [{ name: "SPARKSPHEAR Tech Solutions" }],
+    creator: "SPARKSPHEAR Tech Solutions",
+    publisher: "SPARKSPHEAR Tech Solutions",
     robots: {
         index: true,
         follow: true,
@@ -61,21 +61,21 @@ export const metadata = {
         type: "website",
         locale: "en_US",
         url: "https://sparkspheartechsolutions.com",
-        title: "SparkSphear Tech Solutions | Fort Wayne IT Services & Digital Marketing",
+        title: "SPARKSPHEAR Tech Solutions | Fort Wayne IT Services & Digital Marketing",
         description: "Fort Wayne's premier IT services company. 24/7 managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana.",
-        siteName: 'SparkSphear Tech Solutions',
+        siteName: 'SPARKSPHEAR Tech Solutions',
         images: [
             {
                 url: '/logo.png',
                 width: 1200,
                 height: 630,
-                alt: 'SparkSphear Tech Solutions Logo',
+                alt: 'SPARKSPHEAR Tech Solutions Logo',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: "SparkSphear Tech Solutions | Fort Wayne IT Services",
+        title: "SPARKSPHEAR Tech Solutions | Fort Wayne IT Services",
         description: "24/7 managed IT support, cybersecurity, web design, and digital marketing for Fort Wayne businesses.",
         images: ['/logo.png'],
     },
@@ -119,7 +119,7 @@ export default function RootLayout({ children }) {
                             "@context": "https://schema.org",
                             "@type": "LocalBusiness",
                             "@id": "https://sparkspheartechsolutions.com/#organization",
-                            "name": "SparkSphear Tech Solutions",
+                            "name": "SPARKSPHEAR Tech Solutions",
                             "alternateName": ["SparkSphere Tech Solutions", "Spark Sphear Solutions"],
                             "url": "https://sparkspheartechsolutions.com",
                             "logo": "https://sparkspheartechsolutions.com/logo.png",

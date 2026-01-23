@@ -18,9 +18,9 @@ const ServiceWizard = () => {
             link: "/services/ai-automation"
         },
         photo: {
-            title: "Photography & Videography",
+            title: "Creative Visuals",
             icon: <Camera className="w-16 h-16 text-cyan-400" />,
-            description: "Professional visual content that tells your brand story and captivates your audience.",
+            description: "Premium photography and video to elevate your brand prestige.",
             link: "/services/photography-videography"
         },
         web: {
@@ -30,15 +30,15 @@ const ServiceWizard = () => {
             link: "/services/web-design"
         },
         marketing: {
-            title: "Digital Marketing",
+            title: "Digital Growth",
             icon: <TrendingUp className="w-16 h-16 text-orange-400" />,
-            description: "Data-driven strategies to grow your online presence and drive measurable business results.",
+            description: "Data-driven marketing strategies to dominate your market share.",
             link: "/services/digital-marketing"
         },
         audit: {
-            title: "Master Business Audit",
+            title: "IT Infrastructure Audit",
             icon: <ShieldCheck className="w-16 h-16 text-lime-400" />,
-            description: "The recommended first step. A complete 360° analysis of your web, marketing, and operations to identify the path to growth.",
+            description: "The first step for every serious business. A complete 360° analysis to build a unified roadmap for 10x growth.",
             link: "/services/it-audits"
         }
     };
@@ -64,7 +64,7 @@ const ServiceWizard = () => {
             question: "How do you want to grow?",
             options: [
                 { text: "I need a better website", result: "web" },
-                { text: "I need better content (Photo/Video)", result: "photo" },
+                { text: "I need better content (Creative Visuals)", result: "photo" },
                 { text: "I need more traffic & leads", result: "marketing" }
             ]
         }
@@ -98,7 +98,7 @@ const ServiceWizard = () => {
     };
 
     return (
-        <section id="service-wizard" className="py-24 bg-dark relative overflow-hidden text-white">
+        <section id="service-wizard" className="py-24 bg-zinc-950 relative overflow-hidden text-white">
             {/* Background Accents */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-lime-600/10 rounded-full blur-3xl"></div>

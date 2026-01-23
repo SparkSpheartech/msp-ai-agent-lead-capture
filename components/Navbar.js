@@ -21,19 +21,19 @@ const Navbar = () => {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                    ? 'bg-black/80 backdrop-blur-md border-b border-primary/20 shadow-lg shadow-primary/10'
-                    : 'bg-transparent'
+                ? 'bg-black/80 backdrop-blur-md border-b border-primary/20 shadow-lg shadow-primary/10'
+                : 'bg-transparent'
                 }`}
         >
             <div className="container flex justify-between items-center py-4">
                 <Link href="/" className="logo flex items-center gap-2 transition-transform hover:scale-105">
-                    <img src="/logo.png" alt="SparkSphear Logo" className="h-12 w-auto" />
+                    <img src="/logo.png" alt="SPARKSPHEAR Logo" className="h-12 w-auto" />
                 </Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-8">
                     <nav className="flex gap-8">
-                        <Link href="/#our-services" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Services</Link>
+                        <Link href="/#what-we-do" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Services</Link>
                         <Link href="/#process" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Process</Link>
                         <Link href="/about" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">About</Link>
                         <a href="https://sparkspheartechsolutions.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Blog</a>
@@ -61,7 +61,7 @@ const Navbar = () => {
                     <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-primary/20 shadow-xl z-50 animate-fadeIn">
                         <nav className="flex flex-col p-6 gap-4">
                             <div onClick={closeMenu}>
-                                <Link href="/#our-services" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
+                                <Link href="/#what-we-do" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
                                     Services
                                 </Link>
                             </div>

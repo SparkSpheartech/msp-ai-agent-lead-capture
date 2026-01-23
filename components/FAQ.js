@@ -3,7 +3,7 @@ import React from 'react';
 
 const FAQ = () => {
     return (
-        <section id="faq" className="section faq animate-on-scroll bg-dark py-24 border-t border-white/5">
+        <section id="faq" className="section faq animate-on-scroll bg-zinc-950 py-24 border-t border-white/5">
             <div className="container">
                 <div className="section-header text-center mb-16">
                     <span className="tag text-lime-400">FAQ</span>

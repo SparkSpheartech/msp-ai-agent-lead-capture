@@ -352,12 +352,12 @@ p {
 }
 
 /* Section: What We Do */
-.what-we-do {
+/* .what-we-do {
     padding: 30px;
     background-color: #f9f9f9;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+} */
 
 .features-grid {
     display: grid;
@@ -449,7 +449,7 @@ p {
 }
 
 /* Section: Features List */
-.features-list {
+/* .features-list {
     background-color: var(--color-dark);
     color: var(--color-light);
 }
@@ -457,7 +457,7 @@ p {
 .feature-item p {
     color: rgba(255, 255, 255, 0.7);
     padding-left: 18px;
-}
+} */
 
 /* Section: Stats */
 .stats {
@@ -967,29 +967,36 @@ p {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
+
 /* ========================================
    FUTURISTIC ANIMATIONS
    ======================================== */
 
 /* Glow effect for primary elements */
 @keyframes glow {
-    0%, 100% {
-        box-shadow: 0 0 5px var(--color-primary), 
-                    0 0 10px var(--color-primary);
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px var(--color-primary),
+            0 0 10px var(--color-primary);
     }
+
     50% {
-        box-shadow: 0 0 20px var(--color-primary), 
-                    0 0 30px var(--color-primary), 
-                    0 0 40px var(--color-primary);
+        box-shadow: 0 0 20px var(--color-primary),
+            0 0 30px var(--color-primary),
+            0 0 40px var(--color-primary);
     }
 }
 
 /* Pulse animation */
 @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         transform: scale(1);
     }
+
     50% {
         opacity: 0.8;
         transform: scale(1.02);
@@ -998,18 +1005,26 @@ p {
 
 /* Scan line effect */
 @keyframes scanline {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
 }
 
 /* Text glow */
 @keyframes text-glow {
-    0%, 100% {
+
+    0%,
+    100% {
         text-shadow: 0 0 10px var(--color-primary-glow);
     }
+
     50% {
         text-shadow: 0 0 20px var(--color-primary-glow),
-                     0 0 30px var(--color-primary-glow);
+            0 0 30px var(--color-primary-glow);
     }
 }
 
@@ -1029,8 +1044,7 @@ p {
 }
 
 .logo:hover img {
-    filter: drop-shadow(0 0 20px var(--color-primary))
-            drop-shadow(0 0 30px var(--color-primary-glow));
+    filter: drop-shadow(0 0 20px var(--color-primary)) drop-shadow(0 0 30px var(--color-primary-glow));
 }
 
 /* Card glow on hover */
@@ -1038,7 +1052,7 @@ p {
 .feature-card:hover,
 .testimonial-card:hover {
     box-shadow: 0 0 30px var(--color-primary-glow),
-                0 20px 40px rgba(0, 0, 0, 0.3);
+        0 20px 40px rgba(0, 0, 0, 0.3);
     border-color: var(--color-primary);
 }
 
@@ -1049,8 +1063,13 @@ p {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Page wrapper padding for fixed navbar */
@@ -1066,17 +1085,22 @@ a {
 }
 
 /* Card hover effects */
-.card, .service-card, .support-card, .team-member {
+.card,
+.service-card,
+.support-card,
+.team-member {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover, .service-card:hover {
+.card:hover,
+.service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(166, 253, 55, 0.15);
 }
 
 /* Button glow effect */
-.btn-primary, button[type='submit'] {
+.btn-primary,
+button[type='submit'] {
     position: relative;
     overflow: hidden;
 }
@@ -1092,8 +1116,15 @@ html {
 
 /* Loading state */
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
 .loading {
@@ -1125,17 +1156,22 @@ html {
 }
 
 /* Focus states for accessibility */
-a:focus, button:focus, input:focus {
+a:focus,
+button:focus,
+input:focus {
     outline: 2px solid #a6fd37;
     outline-offset: 2px;
 }
 
 /* Improved form inputs */
-input, textarea, select {
+input,
+textarea,
+select {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: #a6fd37;
     box-shadow: 0 0 0 3px rgba(166, 253, 55, 0.1);
 }

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
     if (!article) return { title: 'Article Not Found' };
 
     return {
-        title: `${article.title} | SparkSphear Knowledge Base`,
+        title: `${article.title} | SPARKSPHEAR Knowledge Base`,
         description: article.excerpt,
     };
 }

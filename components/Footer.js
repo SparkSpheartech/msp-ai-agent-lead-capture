@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div className="footer-col md:col-span-1">
                         <Link href="/" className="logo text-2xl font-bold text-white mb-6 inline-block">
-                            SparkSphear
+                            SPARKSPHEAR
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
                             Your trusted technology partner in the Greater Fort Wayne area. Empowering businesses with smarter technology and real results.
@@ -32,7 +32,7 @@ const Footer = () => {
                         <h4 className="text-white font-bold mb-6">Contact</h4>
                         <ul className="space-y-4 text-gray-400">
                             <li><a href="tel:2602670641" className="hover:text-[#a6fd37] transition-colors">(260) 267-0641</a></li>
-                            <li><a href="mailto:SparkSphear4me@gmail.com" className="hover:text-[#a6fd37] transition-colors">SparkSphear4me@gmail.com</a></li>
+                            <li><a href="mailto:SparkSphear4me@gmail.com" className="hover:text-[#a6fd37] transition-colors">SPARKSPHEAR4me@gmail.com</a></li>
                             <li>Fort Wayne, IN</li>
                         </ul>
                     </div>
@@ -55,7 +55,7 @@ const Footer = () => {
 
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-500 text-sm">
-                        &copy; {new Date().getFullYear()} SparkSphear Tech Solutions. All rights reserved.
+                        &copy; {new Date().getFullYear()} SPARKSPHEAR Tech Solutions. All rights reserved.
                     </p>
                     <div className="flex gap-6">
                         <Link href="#" className="text-gray-500 hover:text-white text-sm">Privacy Policy</Link>

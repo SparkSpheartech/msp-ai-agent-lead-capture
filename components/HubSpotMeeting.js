@@ -26,7 +26,7 @@ const HubSpotMeeting = () => {
                         Schedule a <span className="text-primary">Consultation</span>
                     </h2>
                     <p className="text-gray-400 text-lg">
-                        Book a time that works for you. We're here to help!
+                        Book a time that works for you. We're here to help! <span className="text-sm text-gray-500 block mt-2">(Fees may apply)</span>
                     </p>
                 </div>
 

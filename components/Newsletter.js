@@ -19,14 +19,16 @@ const Newsletter = () => {
     };
 
     return (
-        <section className="newsletter-section py-20" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)' }}>
+        <section className="newsletter-section py-24 bg-zinc-950 border-t border-white/5 relative overflow-hidden">
+            {/* Background Gradient similar to Hero */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900/50 via-zinc-950 to-zinc-950 -z-10" />
             <div className="container max-w-4xl mx-auto text-center">
                 <div className="mb-8">
                     <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
                         Stay <span className="text-primary">Connected</span>
                     </h2>
                     <p className="text-gray-400 text-lg">
-                        Get tech tips, industry insights, and exclusive SparkSphear news delivered to your inbox
+                        Get tech tips, industry insights, and exclusive SPARKSPHEAR news delivered to your inbox
                     </p>
                 </div>
 
