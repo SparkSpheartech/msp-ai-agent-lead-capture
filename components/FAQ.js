@@ -8,7 +8,7 @@ const FAQ = () => {
                 <div className="section-header text-center mb-16">
                     <span className="tag text-lime-400">FAQ</span>
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Common Questions</h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">Everything you need to know about our IT services.</p>
+                    <p className="text-gray-400 max-w-2xl mx-auto">Everything you need to know about our AI and technology services.</p>
                 </div>
 
                 <div className="faq-list max-w-3xl mx-auto space-y-4">

@@ -88,7 +88,7 @@ export default function Hero3D() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-12 items-center pointer-events-none">
         <div className="text-center lg:text-left pointer-events-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <p className="text-lime-400 font-semibold uppercase tracking-widest mb-4 text-sm">Fort Wayne&apos;s Growth Partner</p>
+            <p className="text-lime-400 font-semibold uppercase tracking-widest mb-4 text-sm">Fort Wayne&apos;s Premier AI Partner</p>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
               Audit the System.<br />
               <span className="text-lime-500">Scale the Business.</span>

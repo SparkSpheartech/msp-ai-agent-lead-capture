@@ -12,20 +12,21 @@ const inter = Inter({
 export const metadata = {
     metadataBase: new URL('https://sparkspheartechsolutions.com'),
     title: {
-        default: "SPARKSPHEAR Tech Solutions | Fort Wayne IT Services & Digital Marketing",
+        default: "SPARKSPHEAR Tech Solutions | Fort Wayne's Premier AI Services & Digital Marketing",
         template: "%s | SPARKSPHEAR Tech Solutions"
     },
-    description: "Fort Wayne's premier IT services company. 24/7 managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana. Fast response times, expert solutions.",
+    description: "Fort Wayne's premier AI services company. AI automation, managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana. Fast response times, expert solutions.",
     keywords: [
         // Primary services
-        "IT services Fort Wayne",
+        "AI services Fort Wayne",
+        "AI automation Fort Wayne",
         "managed IT Fort Wayne",
         "cybersecurity Fort Wayne",
         "web design Fort Wayne",
         "digital marketing Fort Wayne",
         "technology support Fort Wayne",
-        "Fort Wayne IT company",
-        "Northeast Indiana IT services",
+        "Fort Wayne AI company",
+        "Northeast Indiana AI services",
         // Common misspellings
         "sparksphare tech solutions",
         "sparksphere tech solutions",
@@ -33,9 +34,8 @@ export const metadata = {
         "spark sphear solutions",
         "sparkspear tech",
         // Additional relevant terms
-        "24/7 IT support",
-        "small business IT",
-        "IT consulting Fort Wayne",
+        "small business AI solutions",
+        "AI consulting Fort Wayne",
         "managed service provider Fort Wayne"
     ],
     authors: [{ name: "SPARKSPHEAR Tech Solutions" }],
@@ -61,8 +61,8 @@ export const metadata = {
         type: "website",
         locale: "en_US",
         url: "https://sparkspheartechsolutions.com",
-        title: "SPARKSPHEAR Tech Solutions | Fort Wayne IT Services & Digital Marketing",
-        description: "Fort Wayne's premier IT services company. 24/7 managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana.",
+        title: "SPARKSPHEAR Tech Solutions | Fort Wayne's Premier AI Services & Digital Marketing",
+        description: "Fort Wayne's premier AI services company. AI automation, managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana.",
         siteName: 'SPARKSPHEAR Tech Solutions',
         images: [
             {
@@ -75,8 +75,8 @@ export const metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: "SPARKSPHEAR Tech Solutions | Fort Wayne IT Services",
-        description: "24/7 managed IT support, cybersecurity, web design, and digital marketing for Fort Wayne businesses.",
+        title: "SPARKSPHEAR Tech Solutions | Fort Wayne's Premier AI Services",
+        description: "AI automation, managed IT support, cybersecurity, web design, and digital marketing for Fort Wayne businesses.",
         images: ['/logo.png'],
     },
     alternates: {
@@ -124,7 +124,7 @@ export default function RootLayout({ children }) {
                             "url": "https://sparkspheartechsolutions.com",
                             "logo": "https://sparkspheartechsolutions.com/logo.png",
                             "image": "https://sparkspheartechsolutions.com/logo.png",
-                            "description": "Fort Wayne's premier IT services company providing 24/7 managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana.",
+                            "description": "Fort Wayne's premier AI services company providing AI automation, managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana.",
                             "priceRange": "$$",
                             "telephone": "+1-260-267-0641",
                             "address": {
@@ -160,7 +160,7 @@ export default function RootLayout({ children }) {
                             ],
                             "hasOfferCatalog": {
                                 "@type": "OfferCatalog",
-                                "name": "IT Services",
+                                "name": "AI & Technology Services",
                                 "itemListElement": [
                                     {
                                         "@type": "Offer",

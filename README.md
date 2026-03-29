@@ -2,12 +2,13 @@
 
 **Your Vision, Structured to Scale.**
 
-SparkSphear Tech Solutions is a premier Managed Service Provider (MSP) and Digital Agency serving the Greater Fort Wayne area. We empower small to mid-sized businesses by bridging the gap between complex technology and real-world business growth.
+SparkSphear Tech Solutions is Fort Wayne's premier AI services company and Digital Agency serving the Greater Fort Wayne area. We empower small to mid-sized businesses by bridging the gap between AI-powered technology and real-world business growth.
 
 ## 🚀 Our Services
 
 We provide a comprehensive suite of services designed to be your single point of contact for all things tech:
 
+*   **AI & Automation**: Cutting-edge AI solutions to automate workflows, enhance decision-making, and scale operations efficiently.
 *   **Managed IT Services**: 24/7 monitoring, helpdesk support, and infrastructure management. We keep your systems running so you can focus on your business.
 *   **Cybersecurity**: Enterprise-grade protection tailored for SMBs. Compliance audits, network security, and data protection.
 *   **Digital Marketing & SEO**: Data-driven strategies to increase your online visibility and drive local traffic.

@@ -13,7 +13,7 @@ const Footer = () => {
                             SPARKSPHEAR
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                            Your trusted technology partner in the Greater Fort Wayne area. Empowering businesses with smarter technology and real results.
+                            Your trusted AI and technology partner in the Greater Fort Wayne area. Empowering businesses with smarter AI solutions and real results.
                         </p>
                     </div>
 
@@ -24,7 +24,7 @@ const Footer = () => {
                             <li><Link href="#our-services" className="text-gray-400 hover:text-[#a6fd37] transition-colors">Our Services</Link></li>
                             <li><Link href="#features" className="text-gray-400 hover:text-[#a6fd37] transition-colors">Features</Link></li>
                             {/* Updated Blog Link to External */}
-                            <li><a href="https://sparkspheartechsolutions.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#a6fd37] transition-colors">Blog</a></li>
+                            <li><a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#a6fd37] transition-colors">Blog</a></li>
                         </ul>
                     </div>
 

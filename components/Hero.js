@@ -30,7 +30,7 @@ const Hero = () => {
                         Structured to <span className="italic font-light text-primary">Scale</span>
                     </h1>
                     <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-                        Empowering small businesses in the Greater Fort Wayne area. We deliver personalized IT services, digital marketing, and creative solutions.
+                        Empowering small businesses in the Greater Fort Wayne area. We deliver AI-powered solutions, digital marketing, and creative services that drive real growth.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10">
                         <Link href="#our-services" className="inline-flex items-center justify-center px-8 py-4 bg-primary text-dark font-bold hover:bg-primary/90 transition-all duration-300 min-w-[200px] rounded-md">
