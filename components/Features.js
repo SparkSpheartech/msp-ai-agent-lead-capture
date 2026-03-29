@@ -19,7 +19,7 @@ const Features = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="bg-zinc-900/50 border border-white/10 p-8 rounded-2xl hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
                         <h3 className="text-xl font-bold text-white mb-4">Local Expertise</h3>
-                        <p className="text-gray-400 leading-relaxed">Proudly serving the Greater Fort Wayne area with personalized, local support.</p>
+                        <p className="text-gray-400 leading-relaxed">Proudly serving the Greater Fort Wayne area with AI-driven solutions and personalized local support.</p>
                     </div>
                     <div className="bg-zinc-900/50 border border-white/10 p-8 rounded-2xl hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
                         <h3 className="text-xl font-bold text-white mb-4">24/7 Availability</h3>
@@ -27,7 +27,7 @@ const Features = () => {
                     </div>
                     <div className="bg-zinc-900/50 border border-white/10 p-8 rounded-2xl hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
                         <h3 className="text-xl font-bold text-white mb-4">Comprehensive Solutions</h3>
-                        <p className="text-gray-400 leading-relaxed">One partner for IT, Marketing, and Creative needs, simplifying your vendor management.</p>
+                        <p className="text-gray-400 leading-relaxed">One partner for AI, IT, Marketing, and Creative needs, simplifying your vendor management.</p>
                     </div>
                 </div>
 
