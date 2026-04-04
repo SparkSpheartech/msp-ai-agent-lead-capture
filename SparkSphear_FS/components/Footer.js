@@ -29,7 +29,7 @@ const Footer = () => {
                         <ul>
                             <li><Link href="#faq">FAQ</Link></li>
                             <li><Link href="#">Terms of Use</Link></li>
-                            <li><Link href="#">Privacy Policy</Link></li>
+                            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">
