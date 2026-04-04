@@ -60,7 +60,7 @@ const Newsletter = () => {
                 </form>
 
                 <p className="text-gray-500 text-sm mt-6">
-                    We respect your privacy. Unsubscribe anytime. No spam, ever.
+                    We respect your <a href="/privacy" className="text-primary hover:underline">privacy</a>. Unsubscribe anytime. No spam, ever.
                 </p>
             </div>
         </section>
