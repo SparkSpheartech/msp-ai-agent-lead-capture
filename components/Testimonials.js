@@ -91,7 +91,7 @@ export default function Testimonials() {
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold group-hover:text-lime-400 transition-colors">{t.name}</h4>
+                  <p className="text-white font-semibold group-hover:text-lime-400 transition-colors">{t.name}</p>
                   <p className="text-gray-500 text-sm">{t.role} @ {t.company}</p>
                 </div>
               </div>

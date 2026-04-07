@@ -29,8 +29,10 @@ export default function KnowledgeBase() {
                         {/* Search Bar (Placeholder) */}
                         <div className="max-w-2xl mx-auto mt-10">
                             <div className="relative">
+                                <label htmlFor="kb-search" className="sr-only">Search knowledge base articles</label>
                                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
                                 <input
+                                    id="kb-search"
                                     type="text"
                                     placeholder="Search articles..."
                                     className="w-full pl-12 pr-4 py-4 bg-dark-1 border-2 border-dark-2 rounded-md text-white placeholder-gray-500 focus:border-primary focus:outline-none"

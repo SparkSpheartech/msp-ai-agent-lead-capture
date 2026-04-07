@@ -34,7 +34,11 @@ const Newsletter = () => {
 
                 <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
                     <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                        <label htmlFor="newsletter-email" className="sr-only">
+                            Email address
+                        </label>
                         <input
+                            id="newsletter-email"
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}

@@ -13,42 +13,42 @@ const Team = () => {
                 <div className="team-grid stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-center">
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-white/10 group-hover:border-lime-500/50 transition-colors">
-                            <img src="/founder-new.png" alt="Team Leader" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <img src="/founder-new.png" alt="Portrait of the SPARKSPHEAR CEO and Tech Lead" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
                         </div>
-                        <h4 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">Expert Leader</h4>
+                        <h3 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">Expert Leader</h3>
                         <p className="text-gray-500 uppercase text-sm tracking-wider">CEO, Tech Lead</p>
                     </div>
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-white/10 group-hover:border-lime-500/50 transition-colors">
-                            <img src="/executive-assistant.jpg" alt="Executive Assistant" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <img src="/executive-assistant.jpg" alt="Portrait of the SPARKSPHEAR Executive Assistant" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
                         </div>
-                        <h4 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">Executive Assistant</h4>
+                        <h3 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">Executive Assistant</h3>
                         <p className="text-gray-500 uppercase text-sm tracking-wider">Operations</p>
                     </div>
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-white/10 group-hover:border-lime-500/50 transition-colors">
-                            <img src="/cto-new.jpg" alt="CTO" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <img src="/cto-new.jpg" alt="Portrait of the SPARKSPHEAR Chief Technology Officer" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
                         </div>
-                        <h4 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">CTO</h4>
+                        <h3 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">CTO</h3>
                         <p className="text-gray-500 uppercase text-sm tracking-wider">Infrastructure</p>
                     </div>
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-white/10 group-hover:border-lime-500/50 transition-colors">
-                            <img src="/digital-marketing.jpg" alt="Digital Marketing" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <img src="/digital-marketing.jpg" alt="Portrait of the SPARKSPHEAR Digital Specialist" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
                         </div>
-                        <h4 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">Digital Specialist</h4>
+                        <h3 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">Digital Specialist</h3>
                         <p className="text-gray-500 uppercase text-sm tracking-wider">Marketing</p>
                     </div>
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-white/10 group-hover:border-lime-500/50 transition-colors">
-                            <img src="/devops-engineer.jpg" alt="DevOps Engineer" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <img src="/devops-engineer.jpg" alt="Portrait of the SPARKSPHEAR DevOps Engineer" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
                         </div>
-                        <h4 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">DevOps Engineer</h4>
+                        <h3 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">DevOps Engineer</h3>
                         <p className="text-gray-500 uppercase text-sm tracking-wider">Hybrid Operations</p>
                     </div>
                 </div>

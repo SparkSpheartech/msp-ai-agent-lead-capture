@@ -68,7 +68,7 @@ export default function KBArticle({ params }) {
 
                         {/* Help Section */}
                         <div className="mt-16 p-8 bg-dark-1 border-2 border-primary/30 rounded-lg">
-                            <h3 className="text-white text-2xl font-bold mb-4">Was this article helpful?</h3>
+                            <h2 className="text-white text-2xl font-bold mb-4">Was this article helpful?</h2>
                             <p className="text-gray-400 mb-6">
                                 If you still need assistance, our support team is here to help.
                             </p>

@@ -18,7 +18,7 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-col">
-                        <h4 className="text-white font-bold mb-6">Company</h4>
+                        <p className="text-white font-bold mb-6">Company</p>
                         <ul className="space-y-4">
                             <li><Link href="#what-we-do" className="text-gray-400 hover:text-[#a6fd37] transition-colors">What we do</Link></li>
                             <li><Link href="#our-services" className="text-gray-400 hover:text-[#a6fd37] transition-colors">Our Services</Link></li>
@@ -29,7 +29,7 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-col">
-                        <h4 className="text-white font-bold mb-6">Contact</h4>
+                        <p className="text-white font-bold mb-6">Contact</p>
                         <ul className="space-y-4 text-gray-400">
                             <li><a href="tel:2602670641" className="hover:text-[#a6fd37] transition-colors">(260) 267-0641</a></li>
                             <li><a href="mailto:SparkSphear4me@gmail.com" className="hover:text-[#a6fd37] transition-colors">SPARKSPHEAR4me@gmail.com</a></li>
@@ -38,15 +38,15 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-col">
-                        <h4 className="text-white font-bold mb-6">Follow Us</h4>
+                        <p className="text-white font-bold mb-6">Follow Us</p>
                         <div className="flex gap-4">
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-[#a6fd37] hover:text-dark transition-all">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn profile" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-[#a6fd37] hover:text-dark transition-all">
                                 <Linkedin size={18} />
                             </a>
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-[#a6fd37] hover:text-dark transition-all">
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook profile" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-[#a6fd37] hover:text-dark transition-all">
                                 <Facebook size={18} />
                             </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-[#a6fd37] hover:text-dark transition-all">
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram profile" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-[#a6fd37] hover:text-dark transition-all">
                                 <Instagram size={18} />
                             </a>
                         </div>
