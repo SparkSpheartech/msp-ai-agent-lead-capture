@@ -69,7 +69,7 @@ export default function SupportCenter() {
                                         <div className="text-gray-600 mb-6 flex justify-center">
                                             {option.icon}
                                         </div>
-                                        <h3 className="text-white text-2xl font-bold mb-3">{option.title}</h3>
+                                        <p className="text-white text-2xl font-bold mb-3">{option.title}</p>
                                         <p className="text-gray-500">{option.description}</p>
                                     </div>
                                 ) : (
@@ -81,7 +81,7 @@ export default function SupportCenter() {
                                         <div className="text-lime-500 mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
                                             {option.icon}
                                         </div>
-                                        <h3 className="text-white text-2xl font-bold mb-3 group-hover:text-lime-400 transition-colors">{option.title}</h3>
+                                        <p className="text-white text-2xl font-bold mb-3 group-hover:text-lime-400 transition-colors">{option.title}</p>
                                         <p className="text-gray-400">{option.description}</p>
                                     </Link>
                                 )

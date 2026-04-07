@@ -102,9 +102,12 @@ const Process = () => {
                             key={index}
                             className={`process-step relative mb-12 ${index % 2 === 0 ? 'md:pr-1/2' : 'md:pl-1/2 md:flex md:justify-end'}`}
                         >
-                            <div
-                                className={`process-card bg-dark-1 border-2 ${activeStep === index ? 'border-primary' : 'border-dark-2'} rounded-lg p-8 hover:border-primary transition-all duration-300 cursor-pointer max-w-lg ${activeStep === index ? 'shadow-lg shadow-primary/20' : ''}`}
+                            <button
+                                type="button"
+                                className={`process-card w-full text-left bg-dark-1 border-2 ${activeStep === index ? 'border-primary' : 'border-dark-2'} rounded-lg p-8 hover:border-primary transition-all duration-300 cursor-pointer max-w-lg ${activeStep === index ? 'shadow-lg shadow-primary/20' : ''}`}
                                 onClick={() => setActiveStep(activeStep === index ? null : index)}
+                                aria-expanded={activeStep === index}
+                                aria-controls={`process-step-details-${index}`}
                             >
                                 {/* Number Badge */}
                                 <div className="flex items-center gap-4 mb-4">
@@ -122,7 +125,7 @@ const Process = () => {
 
                                 {/* Expandable Details */}
                                 {activeStep === index && (
-                                    <ul className="mt-6 space-y-2 border-t border-primary/20 pt-4">
+                                    <ul id={`process-step-details-${index}`} className="mt-6 space-y-2 border-t border-primary/20 pt-4">
                                         {step.details.map((detail, idx) => (
                                             <li key={idx} className="flex items-start gap-3 text-gray-300">
                                                 <span className="text-primary text-lg">→</span>
@@ -136,7 +139,7 @@ const Process = () => {
                                 <div className="mt-4 text-primary text-sm font-semibold">
                                     {activeStep === index ? '- Click to collapse' : '+ Click to expand'}
                                 </div>
-                            </div>
+                            </button>
                         </div>
                     ))}
                 </div>

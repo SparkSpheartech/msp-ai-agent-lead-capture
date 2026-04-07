@@ -49,7 +49,7 @@ export default function BlogPost({ params }) {
                 />
 
                 <div className="mt-20 pt-10 border-t border-gray-800">
-                    <h4 className="text-white font-bold mb-6">Related Topics</h4>
+                    <h2 className="text-white font-bold mb-6">Related Topics</h2>
                     <div className="flex gap-4 flex-wrap">
                         {post.keywords.map((keyword, index) => (
                             <span key={index} className="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 hover:bg-[#a6fd37] hover:text-dark transition-colors cursor-default">

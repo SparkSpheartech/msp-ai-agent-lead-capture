@@ -48,10 +48,10 @@ export default function About() {
                             {/* CEO / Tech Lead */}
                             <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300">
                                 <div className="aspect-[4/5] relative overflow-hidden">
-                                    <img src="/founder-new.png" alt="CEO" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src="/founder-new.png" alt="Portrait of the SPARKSPHEAR CEO and Tech Lead" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
                                     <div className="absolute bottom-0 left-0 w-full p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1">CEO / Tech Lead</h3>
+                                        <p className="text-2xl font-bold text-white mb-1">CEO / Tech Lead</p>
                                         <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">Start & Scale</p>
                                     </div>
                                 </div>
@@ -65,10 +65,10 @@ export default function About() {
                             {/* Executive Assistant */}
                             <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300">
                                 <div className="aspect-[4/5] relative overflow-hidden">
-                                    <img src="/executive-assistant.jpg" alt="Executive Assistant" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src="/executive-assistant.jpg" alt="Portrait of the SPARKSPHEAR Executive Assistant" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
                                     <div className="absolute bottom-0 left-0 w-full p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1">Executive Assistant</h3>
+                                        <p className="text-2xl font-bold text-white mb-1">Executive Assistant</p>
                                         <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">Operations</p>
                                     </div>
                                 </div>
@@ -82,10 +82,10 @@ export default function About() {
                             {/* CTO */}
                             <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300">
                                 <div className="aspect-[4/5] relative overflow-hidden">
-                                    <img src="/cto-new.jpg" alt="CTO" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src="/cto-new.jpg" alt="Portrait of the SPARKSPHEAR Chief Technology Officer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
                                     <div className="absolute bottom-0 left-0 w-full p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1">CTO</h3>
+                                        <p className="text-2xl font-bold text-white mb-1">CTO</p>
                                         <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">Infrastructure</p>
                                     </div>
                                 </div>
@@ -99,10 +99,10 @@ export default function About() {
                             {/* Digital Specialist */}
                             <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300 lg:col-start-1 lg:justify-self-end">
                                 <div className="aspect-[4/5] relative overflow-hidden">
-                                    <img src="/digital-marketing.jpg" alt="Digital Specialist" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src="/digital-marketing.jpg" alt="Portrait of the SPARKSPHEAR Digital Specialist" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
                                     <div className="absolute bottom-0 left-0 w-full p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1">Digital Specialist</h3>
+                                        <p className="text-2xl font-bold text-white mb-1">Digital Specialist</p>
                                         <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">Marketing</p>
                                     </div>
                                 </div>
@@ -116,10 +116,10 @@ export default function About() {
                             {/* DevOps Engineer */}
                             <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300 lg:col-start-2 lg:justify-self-start">
                                 <div className="aspect-[4/5] relative overflow-hidden">
-                                    <img src="/devops-engineer.jpg" alt="DevOps Engineer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src="/devops-engineer.jpg" alt="Portrait of the SPARKSPHEAR DevOps Engineer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
                                     <div className="absolute bottom-0 left-0 w-full p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1">DevOps Engineer</h3>
+                                        <p className="text-2xl font-bold text-white mb-1">DevOps Engineer</p>
                                         <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">Hybrid Operations</p>
                                     </div>
                                 </div>
