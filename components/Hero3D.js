@@ -97,7 +97,7 @@ export default function Hero3D() {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
             <p className="text-xl text-zinc-400 mb-8 max-w-xl mx-auto lg:mx-0">
-              We don't just build websites. We transform businesses with AI—automating workflows, scaling operations, and driving real growth through intelligent solutions.
+              We don't just build chatbots. We transform businesses with AI—automating workflows, scaling operations, and driving real growth through intelligent solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
