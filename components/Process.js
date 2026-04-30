@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import { Search, ClipboardCheck, Rocket, Cog, TrendingUp, HeadphonesIcon } from 'lucide-react';
+import Link from 'next/link';
+import { Search, ClipboardCheck, Rocket, Cog, TrendingUp, HeadphonesIcon, ArrowRight, Play } from 'lucide-react';
 
 const Process = () => {
     const [activeStep, setActiveStep] = useState(null);
@@ -16,7 +17,9 @@ const Process = () => {
                 "Business goals assessment",
                 "Current IT infrastructure review",
                 "Pain points identification"
-            ]
+            ],
+            ctaText: "Schedule Consultation",
+            ctaLink: "https://docs.google.com/forms/d/1eYMjWkzKncACWYoB0RpXuOU0eaSFu-EoeywYNdttLIw/edit"
         },
         {
             number: 2,
@@ -28,7 +31,9 @@ const Process = () => {
                 "Technology recommendations",
                 "Cost-benefit analysis",
                 "Implementation timeline creation"
-            ]
+            ],
+            ctaText: "Learn About Planning",
+            ctaLink: "/services/it-audits"
         },
         {
             number: 3,
@@ -40,7 +45,9 @@ const Process = () => {
                 "Access and permissions setup",
                 "Communication channels established",
                 "Initial baseline assessment"
-            ]
+            ],
+            ctaText: "See How We Onboard",
+            ctaLink: "/services/it-audits"
         },
         {
             number: 4,
@@ -52,7 +59,9 @@ const Process = () => {
                 "Team training and support",
                 "Quality assurance testing",
                 "Documentation and handoff"
-            ]
+            ],
+            ctaText: "View Implementation",
+            ctaLink: "/services/it-audits"
         },
         {
             number: 5,
@@ -64,7 +73,9 @@ const Process = () => {
                 "Regular system updates",
                 "Efficiency improvements",
                 "ROI tracking and reporting"
-            ]
+            ],
+            ctaText: "See Optimization",
+            ctaLink: "/services/it-audits"
         },
         {
             number: 6,
@@ -76,21 +87,49 @@ const Process = () => {
                 "Rapid response to issues",
                 "Regular check-ins",
                 "Strategic quarterly reviews"
-            ]
+            ],
+            ctaText: "Explore Support Plans",
+            ctaLink: "/support"
         }
     ];
 
     return (
-        <section id="process" className="section process-section py-20 bg-gray-100 dark:bg-zinc-950">
-            <div className="container">
+        <section id="process" className="section process-section py-20 bg-gray-100 dark:bg-zinc-950 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-1/4 left-0 w-64 h-64 bg-lime-200 dark:bg-lime-900/20 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-lime-200 dark:bg-lime-900/20 rounded-full blur-3xl"></div>
+            </div>
+
+            <div className="container relative z-10">
                 <div className="section-header text-center mb-16">
                     <span className="tag text-lime-600 dark:text-primary">OUR PROCESS</span>
                     <h2 className="text-gray-900 dark:text-white text-4xl md:text-5xl font-bold mb-4">
                         A Proven Path to <span className="text-lime-600 dark:text-primary">Success</span>
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
                         Experience you would expect and the process that proves it. Our systematic approach ensures your technology works for you.
                     </p>
+                    
+                    {/* CTA to start the process */}
+                    <div className="inline-flex flex-col sm:flex-row items-center gap-4 justify-center">
+                        <a
+                            href="https://docs.google.com/forms/d/1eYMjWkzKncACWYoB0RpXuOU0eaSFu-EoeywYNdttLIw/edit"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 px-8 py-5 bg-lime-500 text-zinc-950 font-bold text-lg rounded-full hover:bg-lime-400 transition-all duration-300 shadow-lg shadow-lime-500/30 hover:shadow-lime-500/50 hover:scale-105"
+                        >
+                            <Play className="w-5 h-5 fill-current" />
+                            Start Your Journey
+                        </a>
+                        <Link
+                            href="#service-wizard"
+                            className="inline-flex items-center gap-2 px-6 py-4 border-2 border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-gray-300 font-semibold rounded-full hover:border-lime-500 dark:hover:border-primary hover:text-lime-600 dark:hover:text-primary transition-all duration-300"
+                        >
+                            Find Your Path
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </div>
                 </div>
 
                 <div className="process-timeline relative max-w-5xl mx-auto">
@@ -107,7 +146,7 @@ const Process = () => {
                                     activeStep === index 
                                         ? 'border-lime-500 dark:border-primary' 
                                         : 'border-gray-200 dark:border-zinc-800'
-                                } rounded-lg p-8 hover:border-lime-500 dark:hover:border-primary transition-all duration-300 cursor-pointer max-w-lg ${
+                                } rounded-2xl p-8 hover:border-lime-500 dark:hover:border-primary transition-all duration-300 cursor-pointer max-w-lg ${
                                     activeStep === index ? 'shadow-lg shadow-lime-500/20 dark:shadow-primary/20' : ''
                                 }`}
                                 onClick={() => setActiveStep(activeStep === index ? null : index)}
@@ -128,23 +167,68 @@ const Process = () => {
 
                                 {/* Expandable Details */}
                                 {activeStep === index && (
-                                    <ul className="mt-6 space-y-2 border-t border-lime-200 dark:border-primary/20 pt-4">
-                                        {step.details.map((detail, idx) => (
-                                            <li key={idx} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
-                                                <span className="text-lime-600 dark:text-primary text-lg">→</span>
-                                                <span>{detail}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                    <>
+                                        <ul className="mt-6 space-y-2 border-t border-lime-200 dark:border-primary/20 pt-4">
+                                            {step.details.map((detail, idx) => (
+                                                <li key={idx} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                                                    <span className="text-lime-600 dark:text-primary text-lg">→</span>
+                                                    <span>{detail}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        
+                                        {/* Action Button - Show when expanded */}
+                                        {index === 0 ? (
+                                            <a
+                                                href={step.ctaLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="mt-6 inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-lime-500 text-zinc-950 font-bold rounded-lg hover:bg-lime-400 transition-all duration-300"
+                                            >
+                                                {step.ctaText}
+                                                <ArrowRight className="w-4 h-4" />
+                                            </a>
+                                        ) : (
+                                            <Link
+                                                href={step.ctaLink}
+                                                className="mt-6 inline-flex items-center justify-center gap-2 w-full px-6 py-3 border-2 border-lime-500 dark:border-primary text-lime-600 dark:text-primary font-bold rounded-lg hover:bg-lime-500 hover:text-zinc-950 dark:hover:text-zinc-950 transition-all duration-300"
+                                            >
+                                                {step.ctaText}
+                                                <ArrowRight className="w-4 h-4" />
+                                            </Link>
+                                        )}
+                                    </>
                                 )}
 
                                 {/* Click indicator */}
-                                <div className="mt-4 text-lime-600 dark:text-primary text-sm font-semibold">
-                                    {activeStep === index ? '- Click to collapse' : '+ Click to expand'}
+                                <div className="mt-4 text-lime-600 dark:text-primary text-sm font-semibold flex items-center gap-2">
+                                    {activeStep === index ? (
+                                        <>
+                                            <span>- Click to collapse</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <span>+ Click to expand</span>
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* Bottom CTA */}
+                <div className="text-center mt-16">
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Ready to begin your transformation?</p>
+                    <a
+                        href="https://docs.google.com/forms/d/1eYMjWkzKncACWYoB0RpXuOU0eaSFu-EoeywYNdttLIw/edit"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-lime-500 text-zinc-950 font-bold rounded-lg hover:bg-lime-400 transition-all duration-300"
+                    >
+                        Start Your Free Consultation
+                        <ArrowRight className="w-5 h-5" />
+                    </a>
                 </div>
             </div>
         </section>
