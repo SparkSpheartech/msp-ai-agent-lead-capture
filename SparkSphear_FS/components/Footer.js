@@ -12,7 +12,7 @@ const Footer = () => {
                             SparkSphearTechSolutions
                         </Link>
                         <p style={{ marginTop: '20px', color: 'rgba(255,255,255,0.7)' }}>
-                            Your trusted technology partner in the Greater Fort Wayne area.
+                            Your trusted AI Services partner in the Greater Fort Wayne area.
                         </p>
                     </div>
                     <div className="footer-col">
