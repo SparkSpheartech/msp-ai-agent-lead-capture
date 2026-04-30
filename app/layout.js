@@ -12,31 +12,38 @@ const inter = Inter({
 export const metadata = {
     metadataBase: new URL('https://sparkspheartechsolutions.com'),
     title: {
-        default: "SPARKSPHEAR Tech Solutions | Fort Wayne IT Services & Digital Marketing",
-        template: "%s | SPARKSPHEAR Tech Solutions"
+        default: "SPARKSPHEAR | Fort Wayne AI Services & Business Automation",
+        template: "%s | SPARKSPHEAR"
     },
-    description: "Fort Wayne's premier IT services company. 24/7 managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana. Fast response times, expert solutions.",
+    description: "Fort Wayne's premier AI services company. Transform your business with AI automation, custom AI solutions, workflows, and intelligent systems that drive real growth. Also serving Northeast Indiana.",
     keywords: [
-        // Primary services
+        // AI Services (Primary now)
+        "AI services Fort Wayne",
+        "AI automation Fort Wayne",
+        "business automation Fort Wayne",
+        "AI solutions Fort Wayne",
+        "custom AI development",
+        "AI chatbot development",
+        "workflow automation",
+        "AI integration services",
+        // Original IT services (secondary)
         "IT services Fort Wayne",
         "managed IT Fort Wayne",
         "cybersecurity Fort Wayne",
         "web design Fort Wayne",
         "digital marketing Fort Wayne",
-        "technology support Fort Wayne",
-        "Fort Wayne IT company",
-        "Northeast Indiana IT services",
+        // Additional AI terms
+        "machine learning Fort Wayne",
+        "AI implementation",
+        "business transformation AI",
+        "Fort Wayne AI company",
+        "Northeast Indiana AI services",
         // Common misspellings
         "sparksphare tech solutions",
         "sparksphere tech solutions",
         "spark sphere tech",
         "spark sphear solutions",
         "sparkspear tech",
-        // Additional relevant terms
-        "24/7 IT support",
-        "small business IT",
-        "IT consulting Fort Wayne",
-        "managed service provider Fort Wayne"
     ],
     authors: [{ name: "SPARKSPHEAR Tech Solutions" }],
     creator: "SPARKSPHEAR Tech Solutions",
@@ -61,22 +68,22 @@ export const metadata = {
         type: "website",
         locale: "en_US",
         url: "https://sparkspheartechsolutions.com",
-        title: "SPARKSPHEAR Tech Solutions | Fort Wayne IT Services & Digital Marketing",
-        description: "Fort Wayne's premier IT services company. 24/7 managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana.",
-        siteName: 'SPARKSPHEAR Tech Solutions',
+        title: "SPARKSPHEAR | Fort Wayne AI Services & Business Automation",
+        description: "Transform your business with AI automation and intelligent solutions. Fort Wayne's premier AI services company.",
+        siteName: 'SPARKSPHEAR',
         images: [
             {
                 url: '/logo.png',
                 width: 1200,
                 height: 630,
-                alt: 'SPARKSPHEAR Tech Solutions Logo',
+                alt: 'SPARKSPHEAR Logo',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: "SPARKSPHEAR Tech Solutions | Fort Wayne IT Services",
-        description: "24/7 managed IT support, cybersecurity, web design, and digital marketing for Fort Wayne businesses.",
+        title: "SPARKSPHEAR | Fort Wayne AI Services",
+        description: "Transform your business with AI automation. Fort Wayne's premier AI services company.",
         images: ['/logo.png'],
     },
     alternates: {
@@ -124,7 +131,7 @@ export default function RootLayout({ children }) {
                             "url": "https://sparkspheartechsolutions.com",
                             "logo": "https://sparkspheartechsolutions.com/logo.png",
                             "image": "https://sparkspheartechsolutions.com/logo.png",
-                            "description": "Fort Wayne's premier IT services company providing 24/7 managed IT support, cybersecurity, web design, and digital marketing for small businesses in Northeast Indiana.",
+                            "description": "Fort Wayne's premier AI services company. Transform your business with AI automation, custom AI solutions, workflows, and intelligent systems that drive real growth.",
                             "priceRange": "$$",
                             "telephone": "+1-260-267-0641",
                             "address": {
@@ -160,8 +167,32 @@ export default function RootLayout({ children }) {
                             ],
                             "hasOfferCatalog": {
                                 "@type": "OfferCatalog",
-                                "name": "IT Services",
+                                "name": "AI & Technology Services",
                                 "itemListElement": [
+                                    {
+                                        "@type": "Offer",
+                                        "itemOffered": {
+                                            "@type": "Service",
+                                            "name": "AI Automation & Workflows",
+                                            "description": "Business process automation using AI and n8n integrations"
+                                        }
+                                    },
+                                    {
+                                        "@type": "Offer",
+                                        "itemOffered": {
+                                            "@type": "Service",
+                                            "name": "Custom AI Solutions",
+                                            "description": "Tailored AI applications for your specific business needs"
+                                        }
+                                    },
+                                    {
+                                        "@type": "Offer",
+                                        "itemOffered": {
+                                            "@type": "Service",
+                                            "name": "AI Chatbots",
+                                            "description": "Intelligent chatbots powered by GPT, Claude, and other AI models"
+                                        }
+                                    },
                                     {
                                         "@type": "Offer",
                                         "itemOffered": {
@@ -174,32 +205,8 @@ export default function RootLayout({ children }) {
                                         "@type": "Offer",
                                         "itemOffered": {
                                             "@type": "Service",
-                                            "name": "Data Engineering",
-                                            "description": "Data pipeline development and analytics solutions"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Web Design",
-                                            "description": "Custom website design and development"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Digital Marketing",
-                                            "description": "SEO, social media, and online marketing"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "AI and Automation",
-                                            "description": "AI-powered solutions and business automation"
+                                            "name": "Web Design & Development",
+                                            "description": "Custom websites and web applications"
                                         }
                                     }
                                 ]
@@ -225,10 +232,26 @@ export default function RootLayout({ children }) {
                                 },
                                 {
                                     "@type": "Question",
+                                    "name": "What AI services do you offer?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "We offer AI automation, custom AI solutions, AI chatbots, workflow automation using n8n, and integration with leading AI providers like OpenAI, Anthropic, and Google Gemini."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "How can AI help my business?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "AI can automate repetitive tasks, improve customer service with chatbots, analyze data for insights, streamline operations, and scale your business without proportional cost increases."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
                                     "name": "Do you offer 24/7 support?",
                                     "acceptedAnswer": {
                                         "@type": "Answer",
-                                        "text": "Yes, our Managed IT packages include round-the-clock monitoring and emergency support to ensure your business never stops running."
+                                        "text": "Yes, our Managed IT and AI services include round-the-clock monitoring and emergency support to ensure your business never stops running."
                                     }
                                 },
                                 {
@@ -236,23 +259,7 @@ export default function RootLayout({ children }) {
                                     "name": "How does your pricing work?",
                                     "acceptedAnswer": {
                                         "@type": "Answer",
-                                        "text": "We offer flexible flat-rate monthly packages for Managed Services, so you have a predictable budget. Project work (like web design) is quoted upfront."
-                                    }
-                                },
-                                {
-                                    "@type": "Question",
-                                    "name": "Can you help with cybersecurity compliance?",
-                                    "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "Absolutely. We help businesses meet industry standards (like HIPAA or PCI-DSS) through rigorous security audits and protocol implementation."
-                                    }
-                                },
-                                {
-                                    "@type": "Question",
-                                    "name": "How fast is your response time?",
-                                    "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "For critical issues, our average response time is under 15 minutes. We prioritize keeping your operations moving."
+                                        "text": "We offer flexible flat-rate monthly packages for Managed Services and AI automation, so you have a predictable budget. Project work is quoted upfront."
                                     }
                                 }
                             ]
