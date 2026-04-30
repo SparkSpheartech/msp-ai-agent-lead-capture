@@ -23,7 +23,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-white dark:bg-zinc-950">
             <Navbar />
             <Hero3D /> {/* Replaced Hero with Hero3D */}
             <WhatWeDo />

@@ -20,10 +20,11 @@ const Navbar = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                ? 'bg-black/80 backdrop-blur-md border-b border-primary/20 shadow-lg shadow-primary/10'
-                : 'bg-transparent'
-                }`}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+                scrolled
+                    ? 'dark:bg-black/80 bg-white/80 backdrop-blur-md border-b dark:border-primary/20 border-gray-200 shadow-lg'
+                    : 'bg-transparent'
+            }`}
         >
             <div className="container flex justify-between items-center py-4">
                 <Link href="/" className="logo flex items-center gap-2 transition-transform hover:scale-105">
@@ -33,16 +34,16 @@ const Navbar = () => {
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-8">
                     <nav className="flex gap-8">
-                        <Link href="/#what-we-do" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Services</Link>
-                        <Link href="/#process" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Process</Link>
-                        <Link href="/about" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">About</Link>
-                        <Link href="/use-cases" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Use Cases</Link>
-                        <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Blog</a>
-                        <Link href="/support" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Support</Link>
+                        <Link href="/#what-we-do" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-all duration-300 font-medium">Services</Link>
+                        <Link href="/#process" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-all duration-300 font-medium">Process</Link>
+                        <Link href="/about" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-all duration-300 font-medium">About</Link>
+                        <Link href="/use-cases" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-all duration-300 font-medium">Use Cases</Link>
+                        <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-all duration-300 font-medium">Blog</a>
+                        <Link href="/support" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-all duration-300 font-medium">Support</Link>
                     </nav>
                     <Link
                         href="/#book-meeting"
-                        className="px-6 py-3 bg-primary text-black font-bold rounded-md hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105"
+                        className="px-6 py-3 bg-primary dark:text-black text-black font-bold rounded-md hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105"
                     >
                         Get Started →
                     </Link>
@@ -50,7 +51,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="lg:hidden text-white p-2 hover:text-primary transition-colors"
+                    className="lg:hidden dark:text-white text-gray-900 p-2 hover:text-primary transition-colors"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="Toggle menu"
                 >
@@ -59,35 +60,35 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 {isMenuOpen && (
-                    <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-primary/20 shadow-xl z-50 animate-fadeIn">
+                    <div className="lg:hidden absolute top-full left-0 right-0 dark:bg-black/95 bg-white/95 backdrop-blur-lg border-b dark:border-primary/20 border-gray-200 shadow-xl z-50 animate-fadeIn">
                         <nav className="flex flex-col p-6 gap-4">
                             <div onClick={closeMenu}>
-                                <Link href="/#what-we-do" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
+                                <Link href="/#what-we-do" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-colors py-3 block border-b dark:border-gray-800 border-gray-200">
                                     Services
                                 </Link>
                             </div>
                             <div onClick={closeMenu}>
-                                <Link href="/#process" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
+                                <Link href="/#process" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-colors py-3 block border-b dark:border-gray-800 border-gray-200">
                                     Process
                                 </Link>
                             </div>
                             <div onClick={closeMenu}>
-                                <Link href="/about" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
+                                <Link href="/about" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-colors py-3 block border-b dark:border-gray-800 border-gray-200">
                                     About
                                 </Link>
                             </div>
                             <div onClick={closeMenu}>
-                                <Link href="/use-cases" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
+                                <Link href="/use-cases" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-colors py-3 block border-b dark:border-gray-800 border-gray-200">
                                     Use Cases
                                 </Link>
                             </div>
                             <div onClick={closeMenu}>
-                                <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
+                                <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-colors py-3 block border-b dark:border-gray-800 border-gray-200">
                                     Blog
                                 </a>
                             </div>
                             <div onClick={closeMenu}>
-                                <Link href="/support" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
+                                <Link href="/support" className="dark:text-gray-300 text-gray-700 hover:dark:text-primary hover:text-primary transition-colors py-3 block border-b dark:border-gray-800 border-gray-200">
                                     Support
                                 </Link>
                             </div>

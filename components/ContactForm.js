@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 
 const ContactForm = () => {
     return (
-        <section id="contact-us" className="section contact-section bg-dark py-24 relative overflow-hidden">
+        <section id="contact-us" className="section contact-section bg-gray-100 dark:bg-dark py-24 relative overflow-hidden">
             {/* Gradient Blob for depth */}
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-lime-900/10 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-lime-900/10 dark:bg-lime-900/10 rounded-full blur-3xl -z-10"></div>
 
             <div className="container" style={{ maxWidth: '800px' }}>
                 <motion.div
@@ -16,9 +16,9 @@ const ContactForm = () => {
                     viewport={{ once: true }}
                     className="section-header text-center mb-12"
                 >
-                    <span className="tag text-lime-400 font-bold tracking-wider">CONTACT US</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to discuss your project? <span className="text-lime-500">Drop us a line.</span></h2>
-                    <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+                    <span className="tag text-lime-600 dark:text-lime-400 font-bold tracking-wider">CONTACT US</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Ready to discuss your project? <span className="text-lime-600 dark:text-lime-500">Drop us a line.</span></h2>
+                    <p className="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
                         We'd love to hear about your vision. Fill out our project inquiry form to get started, and our team will get back to you with a tailored strategy.
                     </p>
 

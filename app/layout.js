@@ -95,6 +95,20 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
+                {/* Theme detection - prevents flash of wrong theme */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function() {
+                                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                                    document.documentElement.classList.add('dark');
+                                }
+                                // Store preference for JS components
+                                window.__themePreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                            })();
+                        `,
+                    }}
+                />
                 {/* HubSpot Tracking Script */}
                 <script
                     type="text/javascript"

@@ -38,14 +38,14 @@ const CoreValues = () => {
     ];
 
     return (
-        <section id="core-values" className="section py-20" style={{ background: '#1a1a1a' }}>
+        <section id="core-values" className="section py-20 bg-gray-200 dark:bg-zinc-900">
             <div className="container">
                 <div className="section-header text-center mb-16">
-                    <span className="tag text-primary">CORE VALUES</span>
-                    <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-                        What Drives <span className="text-primary">SPARKSPHEAR</span>
+                    <span className="tag text-lime-600 dark:text-primary">CORE VALUES</span>
+                    <h2 className="text-gray-900 dark:text-white text-4xl md:text-5xl font-bold mb-4">
+                        What Drives <span className="text-lime-600 dark:text-primary">SPARKSPHEAR</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                         These principles guide everything we do, from how we work with clients to how we approach challenges.
                     </p>
                 </div>
@@ -54,20 +54,20 @@ const CoreValues = () => {
                     {values.map((value, index) => (
                         <div
                             key={index}
-                            className="value-card bg-dark-1 border-2 border-dark-2 rounded-lg p-8 hover:border-primary transition-all duration-300 group"
+                            className="value-card bg-white dark:bg-zinc-800 border-2 border-gray-300 dark:border-zinc-700 rounded-lg p-8 hover:border-lime-500 dark:hover:border-primary transition-all duration-300 group"
                         >
-                            <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <div className="text-lime-600 dark:text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
                                 {value.icon}
                             </div>
-                            <h3 className="text-white text-2xl font-bold mb-4">{value.title}</h3>
-                            <p className="text-gray-400 leading-relaxed">{value.description}</p>
+                            <h3 className="text-gray-900 dark:text-white text-2xl font-bold mb-4">{value.title}</h3>
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{value.description}</p>
                         </div>
                     ))}
                 </div>
                 <div className="text-center mt-12">
                     <Link
                         href="/about"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-primary text-dark font-bold hover:bg-primary/90 transition-all duration-300 rounded-md"
+                        className="inline-flex items-center justify-center px-8 py-4 bg-lime-500 dark:bg-primary text-dark font-bold hover:bg-lime-400 dark:hover:bg-primary/90 transition-all duration-300 rounded-md"
                     >
                         Learn About Our Team
                     </Link>

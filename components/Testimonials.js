@@ -41,29 +41,29 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-dark relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-lime-900/10 via-dark to-dark" />
+    <section className="py-24 bg-gray-100 dark:bg-dark relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-lime-200 dark:from-lime-900/10 via-gray-100 dark:via-dark to-gray-100 dark:to-dark" />
 
       <div className="container mx-auto px-6 mb-16 relative z-10">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-white to-lime-500 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-gray-900 dark:from-white to-lime-600 dark:to-lime-500 bg-clip-text text-transparent">
           Trust from our clients
         </h2>
-        <p className="text-zinc-400 text-center text-lg max-w-2xl mx-auto">
+        <p className="text-gray-600 dark:text-zinc-400 text-center text-lg max-w-2xl mx-auto">
           See why Fort Wayne businesses choose SPARKSPHEAR to drive their technological evolution.
         </p>
       </div>
 
       <div className="relative w-full overflow-hidden">
-        {/* Gradient Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-dark to-transparent z-20 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-dark to-transparent z-20 pointer-events-none" />
+        {/* Gradient Masks - light/dark */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-100 dark:from-dark to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-100 dark:from-dark to-transparent z-20 pointer-events-none" />
 
         {/* Scrolling Container */}
         <div className="flex gap-8 animate-infinite-scroll w-max hover:[animation-play-state:paused]">
           {[...testimonials, ...testimonials].map((t, i) => (
             <div
               key={i}
-              className="w-[500px] bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm hover:border-lime-500/50 transition-colors group flex flex-col justify-between"
+              className="w-[500px] bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 p-8 rounded-2xl backdrop-blur-sm hover:border-lime-500 dark:hover:border-lime-500/50 transition-colors group flex flex-col justify-between"
             >
               <div>
                 <div className="mb-6 opacity-50 group-hover:opacity-100 transition-opacity">
@@ -78,21 +78,21 @@ export default function Testimonials() {
                       />
                     </div>
                   ) : (
-                    <span className="text-xl font-bold text-zinc-500">{t.company}</span>
+                    <span className="text-xl font-bold text-gray-400 dark:text-zinc-500">{t.company}</span>
                   )}
                 </div>
-                <p className="text-gray-300 leading-relaxed text-lg">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
                   "{t.text}"
                 </p>
               </div>
 
-              <div className="flex items-center gap-4 pt-6 border-t border-white/10 mt-8">
+              <div className="flex items-center gap-4 pt-6 border-t border-gray-200 dark:border-white/10 mt-8">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-lime-500 to-green-700 flex items-center justify-center text-lg font-bold text-black shrink-0 shadow-lg">
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold group-hover:text-lime-400 transition-colors">{t.name}</h4>
-                  <p className="text-gray-500 text-sm">{t.role} @ {t.company}</p>
+                  <h4 className="text-gray-900 dark:text-white font-semibold group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">{t.name}</h4>
+                  <p className="text-gray-500 dark:text-gray-500 text-sm">{t.role} @ {t.company}</p>
                 </div>
               </div>
             </div>

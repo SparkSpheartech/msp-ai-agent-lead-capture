@@ -13,31 +13,31 @@ const ServiceWizard = () => {
     const services = {
         ai: {
             title: "AI & Automation",
-            icon: <Brain className="w-16 h-16 text-purple-400" />,
+            icon: <Brain className="w-16 h-16 text-purple-600 dark:text-purple-400" />,
             description: "Leverage cutting-edge AI to automate workflows, enhance decision-making, and scale your operations efficiently.",
             link: "/services/ai-automation"
         },
         photo: {
             title: "Creative Visuals",
-            icon: <Camera className="w-16 h-16 text-cyan-400" />,
+            icon: <Camera className="w-16 h-16 text-cyan-600 dark:text-cyan-400" />,
             description: "Premium photography and video to elevate your brand prestige.",
             link: "/services/photography-videography"
         },
         web: {
             title: "Web Design",
-            icon: <Monitor className="w-16 h-16 text-green-400" />,
+            icon: <Monitor className="w-16 h-16 text-green-600 dark:text-green-400" />,
             description: "Modern, high-converting websites built with stunning design and cutting-edge technology.",
             link: "/services/web-design"
         },
         marketing: {
             title: "Digital Growth",
-            icon: <TrendingUp className="w-16 h-16 text-orange-400" />,
+            icon: <TrendingUp className="w-16 h-16 text-orange-600 dark:text-orange-400" />,
             description: "Data-driven marketing strategies to dominate your market share.",
             link: "/services/digital-marketing"
         },
         audit: {
             title: "IT Infrastructure Audit",
-            icon: <ShieldCheck className="w-16 h-16 text-lime-400" />,
+            icon: <ShieldCheck className="w-16 h-16 text-lime-600 dark:text-lime-400" />,
             description: "The first step for every serious business. A complete 360° analysis to build a unified roadmap for 10x growth.",
             link: "/services/it-audits"
         }
@@ -98,26 +98,26 @@ const ServiceWizard = () => {
     };
 
     return (
-        <section id="service-wizard" className="py-24 bg-zinc-950 relative overflow-hidden text-white">
-            {/* Background Accents */}
+        <section id="service-wizard" className="py-24 bg-gray-100 dark:bg-zinc-950 relative overflow-hidden text-gray-900 dark:text-white">
+            {/* Background Accents - light/dark */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-lime-600/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-green-600/10 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-lime-300/30 dark:bg-lime-600/10 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-green-300/30 dark:bg-green-600/10 rounded-full blur-3xl"></div>
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-12">
-                    <span className="text-lime-400 font-mono text-sm tracking-wider uppercase mb-2 block">Discovery Engine</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                        Find Your <span className="text-lime-500">Path to Growth</span>
+                    <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-2 block">Discovery Engine</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                        Find Your <span className="text-lime-600 dark:text-lime-500">Path to Growth</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                         A quick diagnostic to point you in the right direction.
                     </p>
                 </div>
 
                 <div className="max-w-3xl mx-auto">
-                    <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center shadow-2xl">
+                    <div className="bg-white dark:bg-white/5 backdrop-blur-lg border border-gray-200 dark:border-white/10 rounded-2xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center shadow-2xl">
                         <AnimatePresence mode="wait">
                             {step !== 'result' ? (
                                 <motion.div
@@ -128,7 +128,7 @@ const ServiceWizard = () => {
                                     transition={{ duration: 0.3 }}
                                     className="w-full text-center"
                                 >
-                                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 leading-tight">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
                                         {questions[step]?.question}
                                     </h3>
                                     <div className="grid gap-4 max-w-lg mx-auto">
@@ -136,13 +136,13 @@ const ServiceWizard = () => {
                                             <button
                                                 key={idx}
                                                 onClick={() => handleOptionClick(option)}
-                                                className="group relative overflow-hidden bg-white/5 hover:bg-lime-600/20 border border-white/10 hover:border-lime-400/50 p-6 rounded-xl text-left transition-all duration-300 shadow-lg hover:shadow-lime-500/10"
+                                                className="group relative overflow-hidden bg-gray-50 dark:bg-white/5 hover:bg-lime-100 dark:hover:bg-lime-600/20 border border-gray-200 dark:border-white/10 hover:border-lime-500 dark:hover:border-lime-400/50 p-6 rounded-xl text-left transition-all duration-300 shadow-lg hover:shadow-lime-500/10"
                                             >
                                                 <div className="flex items-center justify-between">
-                                                    <span className="text-lg text-white font-medium group-hover:text-lime-200 transition-colors">
+                                                    <span className="text-lg text-gray-700 dark:text-white font-medium group-hover:text-lime-700 dark:group-hover:text-lime-200 transition-colors">
                                                         {option.text}
                                                     </span>
-                                                    <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-lime-300 transform group-hover:translate-x-1 transition-all" />
+                                                    <ArrowRight className="w-5 h-5 text-gray-400 dark:text-gray-500 group-hover:text-lime-600 dark:group-hover:text-lime-300 transform group-hover:translate-x-1 transition-all" />
                                                 </div>
                                             </button>
                                         ))}
@@ -155,14 +155,14 @@ const ServiceWizard = () => {
                                     animate={{ opacity: 1, scale: 1 }}
                                     className="w-full text-center"
                                 >
-                                    <div className="inline-flex items-center justify-center p-6 bg-white/5 rounded-full mb-6 border-2 border-white/10">
+                                    <div className="inline-flex items-center justify-center p-6 bg-gray-100 dark:bg-white/5 rounded-full mb-6 border-2 border-gray-200 dark:border-white/10">
                                         {result.icon}
                                     </div>
-                                    <div className="mb-2 text-gray-400 font-mono text-sm uppercase tracking-wider">Recommended Strategy</div>
-                                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                                    <div className="mb-2 text-gray-500 dark:text-gray-400 font-mono text-sm uppercase tracking-wider">Recommended Strategy</div>
+                                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                                         {result.title}
                                     </h3>
-                                    <p className="text-gray-300 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+                                    <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
                                         {result.description}
                                     </p>
 
@@ -175,7 +175,7 @@ const ServiceWizard = () => {
                                         </Link>
                                         <button
                                             onClick={handleRestart}
-                                            className="px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 transition-all flex items-center justify-center gap-2"
+                                            className="px-8 py-4 bg-transparent border border-gray-300 dark:border-white/20 text-gray-700 dark:text-white font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-all flex items-center justify-center gap-2"
                                         >
                                             <RefreshCcw className="w-4 h-4" /> Start Over
                                         </button>
@@ -185,11 +185,11 @@ const ServiceWizard = () => {
                         </AnimatePresence>
 
                         {/* Navigation Footer */}
-                        <div className="absolute bottom-6 w-full px-12 flex justify-between text-gray-500 text-sm">
+                        <div className="absolute bottom-6 w-full px-12 flex justify-between text-gray-400 dark:text-gray-500 text-sm">
                             {history.length > 0 && step !== 'result' && (
                                 <button
                                     onClick={handleBack}
-                                    className="hover:text-white transition-colors flex items-center gap-2"
+                                    className="hover:text-gray-700 dark:hover:text-white transition-colors flex items-center gap-2"
                                 >
                                     ← Back
                                 </button>
@@ -197,7 +197,7 @@ const ServiceWizard = () => {
                             {step !== 'intro' && step !== 'result' && (
                                 <button
                                     onClick={handleRestart}
-                                    className="ml-auto hover:text-white transition-colors flex items-center gap-2"
+                                    className="ml-auto hover:text-gray-700 dark:hover:text-white transition-colors flex items-center gap-2"
                                 >
                                     Reset <RefreshCcw className="w-3 h-3" />
                                 </button>

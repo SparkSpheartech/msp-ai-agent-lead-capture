@@ -81,21 +81,21 @@ const Process = () => {
     ];
 
     return (
-        <section id="process" className="section process-section py-20" style={{ background: '#0a0a0a' }}>
+        <section id="process" className="section process-section py-20 bg-gray-100 dark:bg-zinc-950">
             <div className="container">
                 <div className="section-header text-center mb-16">
-                    <span className="tag text-primary">OUR PROCESS</span>
-                    <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-                        A Proven Path to <span className="text-primary">Success</span>
+                    <span className="tag text-lime-600 dark:text-primary">OUR PROCESS</span>
+                    <h2 className="text-gray-900 dark:text-white text-4xl md:text-5xl font-bold mb-4">
+                        A Proven Path to <span className="text-lime-600 dark:text-primary">Success</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                         Experience you would expect and the process that proves it. Our systematic approach ensures your technology works for you.
                     </p>
                 </div>
 
                 <div className="process-timeline relative max-w-5xl mx-auto">
                     {/* Vertical Timeline Line */}
-                    <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-primary/30 to-primary/10 hidden md:block transform -translate-x-1/2"></div>
+                    <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-lime-500/50 via-lime-500/30 to-lime-500/10 hidden md:block transform -translate-x-1/2"></div>
 
                     {steps.map((step, index) => (
                         <div
@@ -103,29 +103,35 @@ const Process = () => {
                             className={`process-step relative mb-12 ${index % 2 === 0 ? 'md:pr-1/2' : 'md:pl-1/2 md:flex md:justify-end'}`}
                         >
                             <div
-                                className={`process-card bg-dark-1 border-2 ${activeStep === index ? 'border-primary' : 'border-dark-2'} rounded-lg p-8 hover:border-primary transition-all duration-300 cursor-pointer max-w-lg ${activeStep === index ? 'shadow-lg shadow-primary/20' : ''}`}
+                                className={`process-card bg-white dark:bg-zinc-900 border-2 ${
+                                    activeStep === index 
+                                        ? 'border-lime-500 dark:border-primary' 
+                                        : 'border-gray-200 dark:border-zinc-800'
+                                } rounded-lg p-8 hover:border-lime-500 dark:hover:border-primary transition-all duration-300 cursor-pointer max-w-lg ${
+                                    activeStep === index ? 'shadow-lg shadow-lime-500/20 dark:shadow-primary/20' : ''
+                                }`}
                                 onClick={() => setActiveStep(activeStep === index ? null : index)}
                             >
                                 {/* Number Badge */}
                                 <div className="flex items-center gap-4 mb-4">
-                                    <div className="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary">
-                                        <span className="text-primary font-bold text-2xl">{step.number}</span>
+                                    <div className="flex-shrink-0 w-16 h-16 bg-lime-100 dark:bg-primary/10 rounded-full flex items-center justify-center border-2 border-lime-500 dark:border-primary">
+                                        <span className="text-lime-600 dark:text-primary font-bold text-2xl">{step.number}</span>
                                     </div>
-                                    <div className="text-primary">
+                                    <div className="text-lime-600 dark:text-primary">
                                         {step.icon}
                                     </div>
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-white text-2xl font-bold mb-3">{step.title}</h3>
-                                <p className="text-gray-400 mb-4">{step.description}</p>
+                                <h3 className="text-gray-900 dark:text-white text-2xl font-bold mb-3">{step.title}</h3>
+                                <p className="text-gray-600 dark:text-gray-400 mb-4">{step.description}</p>
 
                                 {/* Expandable Details */}
                                 {activeStep === index && (
-                                    <ul className="mt-6 space-y-2 border-t border-primary/20 pt-4">
+                                    <ul className="mt-6 space-y-2 border-t border-lime-200 dark:border-primary/20 pt-4">
                                         {step.details.map((detail, idx) => (
-                                            <li key={idx} className="flex items-start gap-3 text-gray-300">
-                                                <span className="text-primary text-lg">→</span>
+                                            <li key={idx} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                                                <span className="text-lime-600 dark:text-primary text-lg">→</span>
                                                 <span>{detail}</span>
                                             </li>
                                         ))}
@@ -133,15 +139,13 @@ const Process = () => {
                                 )}
 
                                 {/* Click indicator */}
-                                <div className="mt-4 text-primary text-sm font-semibold">
+                                <div className="mt-4 text-lime-600 dark:text-primary text-sm font-semibold">
                                     {activeStep === index ? '- Click to collapse' : '+ Click to expand'}
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-
-                
             </div>
         </section>
     );

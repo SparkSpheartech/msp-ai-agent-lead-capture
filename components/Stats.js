@@ -72,14 +72,14 @@ const PartnerCarousel = () => {
     };
 
     return (
-        <section className="py-20 bg-zinc-950 border-y border-white/5 overflow-hidden">
+        <section className="py-20 bg-gray-50 dark:bg-zinc-950 border-t border-gray-200 dark:border-white/5 overflow-hidden">
             <div className="container mb-12">
                 <div className="text-center">
-                    <span className="text-lime-400 font-mono text-sm tracking-wider uppercase mb-4 block">TRUSTED BY</span>
-                    <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
-                        Our <span className="text-lime-500">Partners</span> & <span className="text-lime-500">Integrations</span>
+                    <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-4 block">TRUSTED BY</span>
+                    <h2 className="text-gray-900 dark:text-white text-3xl md:text-4xl font-bold mb-4">
+                        Our <span className="text-lime-600 dark:text-lime-500">Partners</span> & <span className="text-lime-600 dark:text-lime-500">Integrations</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                         We work with industry-leading AI providers and automation tools to deliver powerful solutions
                     </p>
                 </div>
@@ -92,15 +92,15 @@ const PartnerCarousel = () => {
                 onMouseLeave={() => setIsPaused(false)}
             >
                 {/* Gradient Overlays */}
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none" />
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 dark:from-zinc-950 to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 dark:from-zinc-950 to-transparent z-10 pointer-events-none" />
 
                 {/* Logo Track */}
                 <div className="flex justify-center items-center gap-8 md:gap-12 px-4">
                     {getVisiblePartners().map((partner, index) => (
                         <div
                             key={`${partner.name}-${index}`}
-                            className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 bg-zinc-900/50 border border-white/10 rounded-xl flex items-center justify-center p-4 hover:border-lime-500/50 hover:bg-zinc-800/50 transition-all duration-300 group"
+                            className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 bg-white dark:bg-zinc-900/50 border border-gray-200 dark:border-white/10 rounded-xl flex items-center justify-center p-4 hover:border-lime-500 dark:hover:border-lime-500/50 hover:bg-gray-100 dark:hover:bg-zinc-800/50 transition-all duration-300 group"
                         >
                             <img
                                 src={partner.logo}
@@ -112,7 +112,7 @@ const PartnerCarousel = () => {
                                 }}
                             />
                             {/* Fallback text if image fails */}
-                            <span className="hidden text-gray-400 font-bold text-sm text-center">{partner.name}</span>
+                            <span className="hidden text-gray-600 dark:text-gray-400 font-bold text-sm text-center">{partner.name}</span>
                         </div>
                     ))}
                 </div>
@@ -120,13 +120,13 @@ const PartnerCarousel = () => {
                 {/* Navigation Arrows */}
                 <button
                     onClick={prevSlide}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-zinc-900/80 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-lime-500 hover:text-zinc-950 transition-all duration-300 z-20"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white dark:bg-zinc-900/80 border border-gray-200 dark:border-white/10 rounded-full flex items-center justify-center text-gray-700 dark:text-white hover:bg-lime-500 hover:text-zinc-950 transition-all duration-300 z-20"
                 >
                     <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                     onClick={nextSlide}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-zinc-900/80 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-lime-500 hover:text-zinc-950 transition-all duration-300 z-20"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white dark:bg-zinc-900/80 border border-gray-200 dark:border-white/10 rounded-full flex items-center justify-center text-gray-700 dark:text-white hover:bg-lime-500 hover:text-zinc-950 transition-all duration-300 z-20"
                 >
                     <ChevronRight className="w-6 h-6" />
                 </button>
@@ -137,7 +137,7 @@ const PartnerCarousel = () => {
                 {['AI', 'Automation', 'Productivity', 'Cloud', 'Dev'].map((cat) => (
                     <span
                         key={cat}
-                        className="px-4 py-1 bg-zinc-900 border border-white/10 rounded-full text-gray-400 text-xs"
+                        className="px-4 py-1 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-white/10 rounded-full text-gray-600 dark:text-gray-400 text-xs"
                     >
                         {cat}
                     </span>
@@ -146,7 +146,7 @@ const PartnerCarousel = () => {
 
             {/* Pause/Play indicator */}
             <div className="text-center mt-4">
-                <span className="text-gray-500 text-sm">
+                <span className="text-gray-500 dark:text-gray-500 text-sm">
                     {isPaused ? 'Paused - Hover to resume' : 'Auto-scrolling'}
                 </span>
             </div>
