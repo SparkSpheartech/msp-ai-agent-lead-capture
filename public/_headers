@@ -1,0 +1,57 @@
+# Netlify Headers for SparkSphear Tech Solutions
+# https://sparkspheartechsolutions.com
+
+# ========== SECURITY HEADERS ==========
+
+# HSTS - Force HTTPS for 1 year (31536000 seconds)
+# Includes subdomains and preload for maximum security
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-XSS-Protection: 1; mode=block
+
+# ========== CACHE CONTROL ==========
+
+# Static assets - cache for 1 year
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images - cache for 1 year
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Videos - cache for 1 month
+/videos/*
+  Cache-Control: public, max-age=2592000
+
+# Fonts - cache for 1 year
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML - no cache for dynamic content
+/*
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+
+# ========== CONTENT SECURITY POLICY ==========
+# Note: Adjust these based on your actual third-party integrations
+
+/*
+  Content-Security-Policy: 
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.googletagmanager.com https://js-na2.hs-scripts.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: https:;
+    frame-src https://www.youtube.com https://www.google.com;
+    connect-src 'self' https://www.google-analytics.com https://api.hsforms.com;
+
+# ========== PERMISSIONS POLICY ==========
+/*
+  Permissions-Policy: 
+    camera=(),
+    microphone=(),
+    geolocation=(),
+    payment=()
