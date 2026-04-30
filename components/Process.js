@@ -141,16 +141,7 @@ const Process = () => {
                     ))}
                 </div>
 
-                {/* CTA */}
-                <div className="text-center mt-16">
-                    <p className="text-gray-400 mb-6">Ready to get started?</p>
-                    <a
-                        href="#contact-us"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-primary text-dark font-bold hover:bg-primary/90 transition-all duration-300 rounded-md"
-                    >
-                        Schedule a Consultation
-                    </a>
-                </div>
+                
             </div>
         </section>
     );
