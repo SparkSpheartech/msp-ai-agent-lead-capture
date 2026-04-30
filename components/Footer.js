@@ -58,7 +58,7 @@ const Footer = () => {
                         &copy; {new Date().getFullYear()} SPARKSPHEAR Tech Solutions. All rights reserved.
                     </p>
                     <div className="flex gap-6">
-                        <Link href="#" className="text-gray-500 hover:text-white text-sm">Privacy Policy</Link>
+                        <Link href="/privacy" className="text-gray-500 hover:text-white text-sm">Privacy Policy</Link>
                         <Link href="#" className="text-gray-500 hover:text-white text-sm">Terms of Service</Link>
                     </div>
                 </div>
