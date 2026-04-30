@@ -10,7 +10,7 @@ const teamMembers = [
         name: 'Shazaly Musa',
         role: 'Founder & Tech Lead',
         subtitle: 'Start & Scale',
-        image: '/founder-new.png',
+        image: '/founder-new.webp',
         video: '/videos/founder.mp4',
         description: 'Visionary leader with a passion for integrating complex tech stacks into seamless business solutions. Dedicated to driving growth for local enterprises.'
     },
@@ -18,7 +18,7 @@ const teamMembers = [
         name: 'Daisy',
         role: 'Executive Assistant',
         subtitle: 'Operations',
-        image: '/executive-assistant.jpg',
+        image: '/executive-assistant.webp',
         video: '/videos/executive-assistant.mp4',
         description: 'The organizational backbone ensuring smooth operations and client communication. She makes sure every project stays on track and on time.'
     },
@@ -26,7 +26,7 @@ const teamMembers = [
         name: 'Travis',
         role: 'CTO',
         subtitle: 'Infrastructure',
-        image: '/cto-new.jpg',
+        image: '/cto-new.webp',
         video: '/videos/cto.mp4',
         description: 'Architect of our robust infrastructure, ensuring security and scalability for every client. He transforms technical complexity into reliable stability.'
     },
@@ -34,7 +34,7 @@ const teamMembers = [
         name: 'Shima',
         role: 'Digital Specialist',
         subtitle: 'Marketing',
-        image: '/digital-marketing.jpg',
+        image: '/digital-marketing.webp',
         video: '/videos/digital-specialist.mp4',
         description: 'Strategies that turn clicks into customers. She masters the art of digital presence to ensure your brand gets the attention it deserves.'
     },
@@ -42,7 +42,7 @@ const teamMembers = [
         name: 'Eissa',
         role: 'DevOps Engineer',
         subtitle: 'Hybrid Operations',
-        image: '/devops-engineer.jpg',
+        image: '/devops-engineer.webp',
         video: '/videos/devops.mp4',
         description: 'Bridging the gap between development and operations for continuous, reliable delivery. He ensures your systems are always available.'
     }
