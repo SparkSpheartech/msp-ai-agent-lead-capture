@@ -27,7 +27,7 @@ const Navbar = () => {
         >
             <div className="container flex justify-between items-center py-4">
                 <Link href="/" className="logo flex items-center gap-2 transition-transform hover:scale-105">
-                    <img src="/logo.png" alt="SPARKSPHEAR Logo" className="h-12 w-auto" />
+                    <img src="/logo.png" alt="SPARKSPHEAR Logo" className="h-12 w-auto" width={48} height={48} />
                 </Link>
 
                 {/* Desktop Menu */}

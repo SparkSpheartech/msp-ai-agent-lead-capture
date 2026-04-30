@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Line } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -68,27 +68,44 @@ function NetworkGlobe() {
 }
 
 export default function Hero3D() {
+  const [is3DLoaded, setIs3DLoaded] = useState(false);
+
+  // Lazy load 3D canvas after page is interactive
+  useEffect(() => {
+    // Delay loading of 3D to prioritize LCP
+    const timer = setTimeout(() => {
+      setIs3DLoaded(true);
+    }, 1500); // Load after 1.5 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-zinc-950">
       {/* Subtle radial gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-lime-950/30 via-zinc-950 to-black" />
 
-      {/* 3D Scene */}
-      <div className="absolute inset-0 z-0 opacity-60">
-        <Canvas camera={{ position: [0, 0, 7], fov: 50 }}>
-          <ambientLight intensity={0.4} />
-          <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
-          <pointLight position={[-10, -10, -10]} intensity={0.6} color="#84cc16" />
-          <NetworkGlobe />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.15} />
-        </Canvas>
-      </div>
+      {/* 3D Scene - Lazy loaded */}
+      {is3DLoaded ? (
+        <div className="absolute inset-0 z-0 opacity-60">
+          <Canvas camera={{ position: [0, 0, 7], fov: 50 }}>
+            <ambientLight intensity={0.4} />
+            <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
+            <pointLight position={[-10, -10, -10]} intensity={0.6} color="#84cc16" />
+            <NetworkGlobe />
+            <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.15} />
+          </Canvas>
+        </div>
+      ) : (
+        /* Placeholder - shows gradient while 3D loads */
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black" />
+      )}
 
       {/* Content Overlay */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-12 items-center pointer-events-none">
         <div className="text-center lg:text-left pointer-events-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <p className="text-lime-400 font-semibold uppercase tracking-widest mb-4 text-sm">Fort Wayne&apos;s Growth Partner</p>
+            <p className="text-lime-400 font-semibold uppercase tracking-widest mb-4 text-sm">Fort Wayne&apos;s AI Partner</p>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
               Audit the System.<br />
               <span className="text-lime-500">Scale the Business.</span>

@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font display swap - prevents CLS from font loading */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+  src: local('Inter');
+}
+
+/* Fallback font while loading */
+body {
+  font-display: swap;
+}
+
 :root {
     /* PRIMARY COLORS - Indigo Theme (Reference Site) */
     --color-primary: #a6fd37;
