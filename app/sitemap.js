@@ -1,6 +1,4 @@
-import { MetadataRoute } from 'next';
-
-export default function sitemap(): MetadataRoute.Sitemap {
+export default function sitemap() {
     const baseUrl = 'https://sparkspheartechsolutions.com';
 
     // Main pages
@@ -71,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ].map((service) => ({
         url: `${baseUrl}/services/${service}`,
         lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
+        changeFrequency: 'monthly',
         priority: 0.8,
     }));
 
