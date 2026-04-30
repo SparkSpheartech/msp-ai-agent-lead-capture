@@ -1,9 +1,113 @@
 "use client";
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ArrowRight, Linkedin, Mail, Award, Target, Heart } from 'lucide-react';
+import { ArrowRight, Linkedin, Mail, Award, Target, Heart, Play } from 'lucide-react';
+
+const teamMembers = [
+    {
+        name: 'Shazaly Musa',
+        role: 'Founder & Tech Lead',
+        subtitle: 'Start & Scale',
+        image: '/founder-new.png',
+        video: '/videos/founder.mp4',
+        description: 'Visionary leader with a passion for integrating complex tech stacks into seamless business solutions. Dedicated to driving growth for local enterprises.'
+    },
+    {
+        name: 'Daisy',
+        role: 'Executive Assistant',
+        subtitle: 'Operations',
+        image: '/executive-assistant.jpg',
+        video: '/videos/executive-assistant.mp4',
+        description: 'The organizational backbone ensuring smooth operations and client communication. She makes sure every project stays on track and on time.'
+    },
+    {
+        name: 'Travis',
+        role: 'CTO',
+        subtitle: 'Infrastructure',
+        image: '/cto-new.jpg',
+        video: '/videos/cto.mp4',
+        description: 'Architect of our robust infrastructure, ensuring security and scalability for every client. He transforms technical complexity into reliable stability.'
+    },
+    {
+        name: 'Shima',
+        role: 'Digital Specialist',
+        subtitle: 'Marketing',
+        image: '/digital-marketing.jpg',
+        video: '/videos/digital-specialist.mp4',
+        description: 'Strategies that turn clicks into customers. She masters the art of digital presence to ensure your brand gets the attention it deserves.'
+    },
+    {
+        name: 'Eissa',
+        role: 'DevOps Engineer',
+        subtitle: 'Hybrid Operations',
+        image: '/devops-engineer.jpg',
+        video: '/videos/devops.mp4',
+        description: 'Bridging the gap between development and operations for continuous, reliable delivery. He ensures your systems are always available.'
+    }
+];
+
+function TeamCard({ member, index }) {
+    const [isHovered, setIsHovered] = useState(false);
+    const videoRef = useRef(null);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+        if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play().catch(() => {});
+        }
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+        if (videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+        }
+    };
+
+    return (
+        <div 
+            className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
+            <div className="aspect-[4/5] relative overflow-hidden">
+                {/* Static Image */}
+                <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className={`w-full h-full object-cover transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`} 
+                />
+                {/* Video on Hover */}
+                <video
+                    ref={videoRef}
+                    src={member.video}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+                    muted
+                    loop
+                    playsInline
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
+                <div className="absolute bottom-0 left-0 w-full p-6">
+                    <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
+                    <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">{member.subtitle}</p>
+                </div>
+                {/* Play indicator */}
+                <div className={`absolute top-4 right-4 w-10 h-10 rounded-full bg-lime-500/80 flex items-center justify-center transition-opacity ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
+                    <Play className="w-4 h-4 text-zinc-950 ml-1" />
+                </div>
+            </div>
+            <div className="p-6 pt-2">
+                <p className="text-gray-400 leading-relaxed text-sm">
+                    {member.description}
+                </p>
+            </div>
+        </div>
+    );
+}
 
 export default function About() {
     const values = [
@@ -45,90 +149,9 @@ export default function About() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                            {/* CEO / Tech Lead */}
-                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300">
-                                <div className="aspect-[4/5] relative overflow-hidden">
-                                    <img src="/founder-new.png" alt="CEO" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
-                                    <div className="absolute bottom-0 left-0 w-full p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1">CEO / Tech Lead</h3>
-                                        <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">Start & Scale</p>
-                                    </div>
-                                </div>
-                                <div className="p-6 pt-2">
-                                    <p className="text-gray-400 leading-relaxed text-sm">
-                                        Visionary leader with a passion for integrating complex tech stacks into seamless business solutions. Dedicated to driving growth for local enterprises.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Executive Assistant */}
-                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300">
-                                <div className="aspect-[4/5] relative overflow-hidden">
-                                    <img src="/executive-assistant.jpg" alt="Executive Assistant" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
-                                    <div className="absolute bottom-0 left-0 w-full p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1">Executive Assistant</h3>
-                                        <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">Operations</p>
-                                    </div>
-                                </div>
-                                <div className="p-6 pt-2">
-                                    <p className="text-gray-400 leading-relaxed text-sm">
-                                        The organizational backbone ensuring smooth operations and client communication. She makes sure every project stays on track and on time.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* CTO */}
-                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300">
-                                <div className="aspect-[4/5] relative overflow-hidden">
-                                    <img src="/cto-new.jpg" alt="CTO" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
-                                    <div className="absolute bottom-0 left-0 w-full p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1">CTO</h3>
-                                        <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">Infrastructure</p>
-                                    </div>
-                                </div>
-                                <div className="p-6 pt-2">
-                                    <p className="text-gray-400 leading-relaxed text-sm">
-                                        Architect of our robust infrastructure, ensuring security and scalability for every client. He transforms technical complexity into reliable stability.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Digital Specialist */}
-                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300 lg:col-start-1 lg:justify-self-end">
-                                <div className="aspect-[4/5] relative overflow-hidden">
-                                    <img src="/digital-marketing.jpg" alt="Digital Specialist" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
-                                    <div className="absolute bottom-0 left-0 w-full p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1">Digital Specialist</h3>
-                                        <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">Marketing</p>
-                                    </div>
-                                </div>
-                                <div className="p-6 pt-2">
-                                    <p className="text-gray-400 leading-relaxed text-sm">
-                                        Strategies that turn clicks into customers. She masters the art of digital presence to ensure your brand gets the attention it deserves.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* DevOps Engineer */}
-                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-lime-500/50 transition-all duration-300 lg:col-start-2 lg:justify-self-start">
-                                <div className="aspect-[4/5] relative overflow-hidden">
-                                    <img src="/devops-engineer.jpg" alt="DevOps Engineer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
-                                    <div className="absolute bottom-0 left-0 w-full p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1">DevOps Engineer</h3>
-                                        <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">Hybrid Operations</p>
-                                    </div>
-                                </div>
-                                <div className="p-6 pt-2">
-                                    <p className="text-gray-400 leading-relaxed text-sm">
-                                        Bridging the gap between development and operations for continuous, reliable delivery. He ensures your systems are always available.
-                                    </p>
-                                </div>
-                            </div>
+                            {teamMembers.map((member, index) => (
+                                <TeamCard key={index} member={member} index={index} />
+                            ))}
                         </div>
                     </div>
                 </section>
