@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FAQ from '@/components/FAQ';
-import { BookOpen, Ticket, MessageCircle, Phone, Mail, Clock } from 'lucide-react';
+import AIChat from '@/components/AIChat';
+import { BookOpen, Ticket, Phone, Mail, Clock, Bot } from 'lucide-react';
 
 export default function SupportCenter() {
     const supportOptions = [
@@ -13,22 +14,14 @@ export default function SupportCenter() {
             title: "Knowledge Base",
             description: "Browse articles, guides, and tutorials",
             link: "/support/kb",
-            color: "primary"
+            color: "lime"
         },
         {
             icon: <Ticket className="w-12 h-12" />,
             title: "Submit a Ticket",
             description: "Get help from our support team",
             link: "/support/ticket",
-            color: "primary"
-        },
-        {
-            icon: <MessageCircle className="w-12 h-12" />,
-            title: "Live Chat",
-            description: "Chat with support (Coming Soon)",
-            link: "#",
-            color: "gray",
-            disabled: true
+            color: "lime"
         }
     ];
 
@@ -36,7 +29,6 @@ export default function SupportCenter() {
         <>
             <Navbar />
             <main className="min-h-screen bg-zinc-950 relative overflow-hidden">
-
                 {/* Background Effects */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                     <div className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-lime-900/10 rounded-full blur-[120px] mix-blend-screen"></div>
@@ -48,43 +40,48 @@ export default function SupportCenter() {
                     <div className="container text-center">
                         <span className="text-lime-400 font-mono text-sm tracking-wider uppercase mb-4 block">SUPPORT CENTER</span>
                         <h1 className="text-white text-5xl md:text-7xl font-bold mb-8">
-                            How Can We <span className="text-lime-500">Help?</span>
+                            Get <span className="text-lime-500">Help</span> Now
                         </h1>
                         <p className="text-gray-400 text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-                            Find answers, submit tickets, or contact our dedicated support team directly. We're standing by.
+                            Find answers, submit tickets, or chat with our AI assistant. We're here to help.
                         </p>
+                    </div>
+                </section>
+
+                {/* AI Chat Preview Section */}
+                <section className="pb-16 relative z-10">
+                    <div className="container">
+                        <div className="max-w-4xl mx-auto text-center">
+                            <div className="inline-flex items-center gap-3 px-6 py-3 bg-lime-500/10 border border-lime-500/30 rounded-full mb-8">
+                                <Bot className="w-5 h-5 text-lime-500" />
+                                <span className="text-lime-400 font-semibold">24/7 AI Support Available</span>
+                            </div>
+                            <h2 className="text-white text-3xl md:text-4xl font-bold mb-6">
+                                Have Questions? <span className="text-lime-500">Chat with Our AI</span>
+                            </h2>
+                            <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
+                                Our AI assistant can help answer your questions, guide you through our services, and provide instant support. Look for the chat button in the bottom right corner!
+                            </p>
+                        </div>
                     </div>
                 </section>
 
                 {/* Support Options Grid */}
                 <section className="pb-24 relative z-10">
                     <div className="container">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                             {supportOptions.map((option, index) => (
-                                option.disabled ? (
-                                    <div
-                                        key={index}
-                                        className="support-card bg-zinc-900/50 border border-white/5 opacity-50 cursor-not-allowed rounded-2xl p-10 text-center"
-                                    >
-                                        <div className="text-gray-600 mb-6 flex justify-center">
-                                            {option.icon}
-                                        </div>
-                                        <h3 className="text-white text-2xl font-bold mb-3">{option.title}</h3>
-                                        <p className="text-gray-500">{option.description}</p>
+                                <Link
+                                    key={index}
+                                    href={option.link}
+                                    className="support-card bg-zinc-900/50 border border-white/10 hover:border-lime-500/50 rounded-2xl p-10 text-center transition-all duration-300 group hover:-translate-y-2 hover:shadow-2xl hover:shadow-lime-500/10"
+                                >
+                                    <div className="text-lime-500 mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                                        {option.icon}
                                     </div>
-                                ) : (
-                                    <Link
-                                        key={index}
-                                        href={option.link}
-                                        className="support-card bg-zinc-900/50 border border-white/10 hover:border-lime-500/50 rounded-2xl p-10 text-center transition-all duration-300 group hover:-translate-y-2 hover:shadow-2xl hover:shadow-lime-500/10"
-                                    >
-                                        <div className="text-lime-500 mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                                            {option.icon}
-                                        </div>
-                                        <h3 className="text-white text-2xl font-bold mb-3 group-hover:text-lime-400 transition-colors">{option.title}</h3>
-                                        <p className="text-gray-400">{option.description}</p>
-                                    </Link>
-                                )
+                                    <h3 className="text-white text-2xl font-bold mb-3 group-hover:text-lime-400 transition-colors">{option.title}</h3>
+                                    <p className="text-gray-400">{option.description}</p>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -136,6 +133,9 @@ export default function SupportCenter() {
                 </section>
             </main>
             <Footer />
+            
+            {/* AI Chat Widget - Shows on all pages */}
+            <AIChat />
         </>
     );
 }
