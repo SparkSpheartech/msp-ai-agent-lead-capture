@@ -36,6 +36,7 @@ const Navbar = () => {
                         <Link href="/#what-we-do" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Services</Link>
                         <Link href="/#process" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Process</Link>
                         <Link href="/about" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">About</Link>
+                        <Link href="/use-cases" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Use Cases</Link>
                         <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Blog</a>
                         <Link href="/support" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Support</Link>
                     </nav>
@@ -73,6 +74,11 @@ const Navbar = () => {
                             <div onClick={closeMenu}>
                                 <Link href="/about" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
                                     About
+                                </Link>
+                            </div>
+                            <div onClick={closeMenu}>
+                                <Link href="/use-cases" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
+                                    Use Cases
                                 </Link>
                             </div>
                             <div onClick={closeMenu}>
