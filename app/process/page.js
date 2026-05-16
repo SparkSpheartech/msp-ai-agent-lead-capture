@@ -1,5 +1,4 @@
 "use client";
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -47,23 +46,18 @@ export default function Process() {
 
           <div className="space-y-6">
             {steps.map((step, index) => (
-              <div key={index} className="flex flex-col md:flex-row gap-8 border border-gray-800 hover:border-primary/40 rounded-2xl p-8 md:p-10 transition">
-                <div className="md:w-1/4">
-                  <div className="text-primary text-6xl font-black mb-2 tracking-tighter">{step.number}</div>
-                  <h3 className="text-2xl font-bold">{step.title}</h3>
-                </div>
-                <div className="md:w-3/4">
-                  <p className="text-lg text-gray-300 leading-relaxed">{step.description}</p>
+              <div key={index} className="bg-black/60 border border-gray-800 rounded-2xl p-8 flex gap-6">
+                <div className="text-4xl font-mono text-primary/90">{step.number}</div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="mt-16 text-center">
-            <a href="/contact" className="inline-block px-10 py-4 bg-primary text-black font-bold rounded-lg text-lg hover:bg-white transition">
-              Book Your Discovery Call →
-            </a>
-            <p className="mt-4 text-sm text-gray-500">Most clients get their first win within 10-14 days.</p>
+            <a href="/contact" className="inline-block px-10 py-4 rounded-lg bg-primary font-bold text-black text-lg">Start Your Discovery Call</a>
           </div>
         </div>
       </main>

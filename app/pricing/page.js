@@ -1,5 +1,4 @@
 "use client";
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -54,35 +53,39 @@ export default function Pricing() {
     <>
       <Navbar />
       <main className="min-h-screen pt-20 pb-16 bg-dark text-white">
-        <div className="container text-center mb-14">
-          <h1 className="text-5xl font-black mb-3">Transparent Pricing</h1>
-          <p className="text-xl text-gray-400">Flat monthly rates. No surprises. Results you can measure.</p>
-        </div>
+        <div className="container max-w-6xl mx-auto px-6 pt-8">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl font-bold mb-3">Simple, Transparent Pricing</h1>
+            <p className="text-xl text-gray-400">Flat monthly rates. No surprises. No hidden fees.</p>
+          </div>
 
-        <div className="container grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-          {plans.map((plan, idx) => (
-            <div key={idx} className={`rounded-3xl p-9 border flex flex-col ${plan.popular ? "border-primary bg-primary/5 scale-[1.02]" : "border-gray-800"}`}>
-              <div className="mb-8">
-                <div className="uppercase font-bold text-sm tracking-widest text-primary mb-2">{plan.tier}</div>
-                <div className="text-6xl font-black tabular-nums tracking-tighter">{plan.price}<span className="text-xl font-normal align-super">{plan.period}</span></div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {plans.map((plan, i) => (
+              <div key={i} className={`border border-gray-800 bg-black/70 rounded-3xl p-8 flex flex-col ${plan.popular ? 'ring-2 ring-primary relative' : ''}`}>
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-xs tracking-widest bg-primary text-black px-3 py-0.5 rounded-full font-bold">POPULAR</div>
+                )}
+                <div>
+                  <div className="text-3xl font-bold mb-1">{plan.tier}</div>
+                  <div className="text-6xl font-bold tracking-tighter mt-3">
+                    {plan.price} <span className="font-normal text-3xl align-super">{plan.period}</span>
+                  </div>
+                </div>
+                <ul className="mt-8 mb-auto text-sm space-y-2">
+                  {plan.features.map((f, idx) => (
+                    <li key={idx} className="flex gap-2"><span className="text-primary">●</span> {f}</li>
+                  ))}
+                </ul>
+                <a href="/contact" className="block mt-9 bg-primary hover:bg-blue-600 py-3 text-center text-black font-bold rounded-xl transition">
+                  {plan.cta}
+                </a>
               </div>
+            ))}
+          </div>
 
-              <ul className="space-y-3 mb-auto text-lg">
-                {plan.features.map((feature, fIdx) => (
-                  <li key={fIdx} className="flex items-start gap-3">✓ {feature}</li>
-                ))}
-              </ul>
-
-              <a href="/contact" className={`mt-10 block text-center py-4 font-bold text-lg rounded-xl transition ${plan.popular ? "bg-primary text-black hover:bg-white" : "bg-gray-800 hover:bg-gray-700"}`}>
-                {plan.cta}
-              </a>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-16 container px-6">
-          <p className="text-gray-500 text-sm">All plans include a full discovery audit after the first month. Cancel anytime with 30-day notice.</p>
-          <a href="/contact" className="mt-6 inline-block text-primary underline">Need a custom quote or Master Audit? Contact us →</a>
+          <div className="mt-14 text-center text-gray-400 text-sm max-w-md mx-auto">
+            All plans include discovery call, onboarding support, and 30-day money-back guarantee.<br />Need something between tiers? <a href="/contact" className="text-primary underline">Contact us</a>.
+          </div>
         </div>
       </main>
       <Footer />
