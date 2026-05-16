@@ -32,11 +32,12 @@ const Navbar = () => {
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-8">
-                    <nav className="flex gap-8">
+                    <nav className="flex gap-8 items-center">
+                        <Link href="tel:2602670641" className="hidden xl:block text-sm font-mono text-primary hover:text-white transition-colors">(260) 267-0641</Link>
                         <Link href="/#what-we-do" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Services</Link>
-                        <Link href="/#process" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Process</Link>
+                        <Link href="/process" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Process</Link>
+                        <Link href="/pricing" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Pricing</Link>
                         <Link href="/about" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">About</Link>
-                        <Link href="/use-cases" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Use Cases</Link>
                         <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Blog</a>
                         <Link href="/support" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Support</Link>
                     </nav>
