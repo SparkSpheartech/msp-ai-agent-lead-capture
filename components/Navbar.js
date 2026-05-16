@@ -1,105 +1,77 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-
+        const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const closeMenu = () => setIsMenuOpen(false);
 
+    const phone = "(260) 267-0641";
+    const phoneRaw = "2602670641";
+    const email = "contact@sparkspheartechsolutions.com";
+
     return (
-        <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                ? 'bg-black/80 backdrop-blur-md border-b border-primary/20 shadow-lg shadow-primary/10'
-                : 'bg-transparent'
-                }`}
-        >
-            <div className="container flex justify-between items-center py-4">
-                <Link href="/" className="logo flex items-center gap-2 transition-transform hover:scale-105">
-                    <img src="/logo.png" alt="SPARKSPHEAR Logo" className="h-12 w-auto" width={48} height={48} />
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-md border-b border-primary/20' : 'bg-black/60'}`}>
+            <div className="container flex justify-between items-center py-3.5">
+                <Link href="/" className="logo flex items-center">
+                    <img src="/logo.png" alt="SPARKSPHEAR" className="h-11 w-auto" />
                 </Link>
 
-                {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center gap-8">
-                    <nav className="flex gap-8">
-                        <Link href="/#what-we-do" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Services</Link>
-                        <Link href="/#process" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Process</Link>
-                        <Link href="/about" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">About</Link>
-                        <Link href="/use-cases" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Use Cases</Link>
-                        <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Blog</a>
-                        <Link href="/support" className="text-gray-300 hover:text-primary transition-all duration-300 font-medium">Support</Link>
-                    </nav>
-                    <Link
-                        href="/#book-meeting"
-                        className="px-6 py-3 bg-primary text-black font-bold rounded-md hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105"
-                    >
-                        Get Started →
+                {/* Desktop Nav */}
+                <div className="hidden lg:flex items-center gap-x-9 text-sm font-medium">
+                    <Link href="/#what-we-do" className="hover:text-primary transition">Services</Link>
+                    <Link href="/process" className="hover:text-primary transition">Process</Link>
+                    <Link href="/pricing" className="hover:text-primary transition">Pricing</Link>
+                    <Link href="/about" className="hover:text-primary transition">About</Link>
+                    <Link href="/support" className="hover:text-primary transition">Support</Link>
+                    <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener" className="hover:text-primary transition">Blog</a>
+                </div>
+
+                {/* Desktop CTA + Phone */}
+                <div className="hidden lg:flex items-center gap-4">
+                    <a href={`tel:${phoneRaw}`} className="flex items-center gap-2 text-sm font-medium text-white/90 hover:text-primary transition">
+                        <Phone size={16} /> {phone}
+                    </a>
+                    <Link href="/contact" className="btn-primary px-6 py-2.5 rounded-lg text-sm font-bold bg-primary text-black hover:bg-primary/90 transition">
+                        Book 15-min Call
                     </Link>
                 </div>
 
-                {/* Mobile Menu Button */}
-                <button
-                    className="lg:hidden text-white p-2 hover:text-primary transition-colors"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    aria-label="Toggle menu"
-                >
+                {/* Mobile Nav Icon */}
+                <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-white p-2" aria-label="Menu">
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
-
-                {/* Mobile Menu */}
-                {isMenuOpen && (
-                    <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-primary/20 shadow-xl z-50 animate-fadeIn">
-                        <nav className="flex flex-col p-6 gap-4">
-                            <div onClick={closeMenu}>
-                                <Link href="/#what-we-do" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
-                                    Services
-                                </Link>
-                            </div>
-                            <div onClick={closeMenu}>
-                                <Link href="/#process" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
-                                    Process
-                                </Link>
-                            </div>
-                            <div onClick={closeMenu}>
-                                <Link href="/about" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
-                                    About
-                                </Link>
-                            </div>
-                            <div onClick={closeMenu}>
-                                <Link href="/use-cases" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
-                                    Use Cases
-                                </Link>
-                            </div>
-                            <div onClick={closeMenu}>
-                                <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
-                                    Blog
-                                </a>
-                            </div>
-                            <div onClick={closeMenu}>
-                                <Link href="/support" className="text-gray-300 hover:text-primary transition-colors py-3 block border-b border-gray-800">
-                                    Support
-                                </Link>
-                            </div>
-                            <div onClick={closeMenu}>
-                                <Link href="/#book-meeting" className="px-6 py-3 bg-primary text-black font-bold rounded-md hover:bg-primary/90 transition-all duration-300 mt-4 block text-center">
-                                    Get Started →
-                                </Link>
-                            </div>
-                        </nav>
-                    </div>
-                )}
             </div>
+
+            {/* Mobile Menu */}
+            {isMenuOpen && (
+                <div className="lg:hidden bg-black/98 border-t border-gray-800 px-5 py-8 text-[15px]">
+                    <nav className="flex flex-col gap-y-5 text-gray-200">
+                        <Link href="/#what-we-do" onClick={closeMenu}>Services</Link>
+                        <Link href="/process" onClick={closeMenu}>Process</Link>
+                        <Link href="/pricing" onClick={closeMenu}>Pricing</Link>
+                        <Link href="/about" onClick={closeMenu}>About</Link>
+                        <Link href="/support" onClick={closeMenu}>Support</Link>
+                        <a href="https://sparkspheartech.blogspot.com/" onClick={closeMenu} target="_blank">Blog</a>
+
+                        <div className="pt-4 border-t border-gray-800 space-y-4">
+                            <a href={`tel:${phoneRaw}`} className="flex items-center gap-2 font-medium text-primary">📞 {phone}</a>
+                            <Link href="/contact" onClick={closeMenu} className="btn-primary block text-center py-3 bg-primary text-black rounded-lg font-bold">
+                                Book 15-min Call
+                            </Link>
+                        </div>
+                    </nav>
+                </div>
+            )}
         </header>
     );
 };
