@@ -1,12 +1,18 @@
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-    apiVersion: '2024-12-18',
-});
+const stripeKey = process.env.STRIPE_SECRET_KEY;
+const stripe = stripeKey ? new Stripe(stripeKey, { apiVersion: '2024-12-18' }) : null;
 
 export async function POST(request) {
     try {
         const { plan, email, name } = await request.json();
+
+        if (!stripe) {
+            return Response.json({ 
+                error: 'Stripe not configured',
+                devMessage: 'Add STRIPE_SECRET_KEY to environment variables'
+            }, { status: 500 });
+        }
 
         const prices = {
             Essentials: 19700,
@@ -40,9 +46,17 @@ export async function POST(request) {
             },
         });
 
-        return Response.json({ url: session.url });
+        return Response.json({ 
+            url: session.url,
+            message: 'Redirecting to Stripe checkout...',
+            plan,
+            amount: prices[plan]
+        });
     } catch (error) {
         console.error('Stripe error:', error);
-        return Response.json({ error: error.message }, { status: 400 });
+        return Response.json({ 
+            error: error.message,
+            devMessage: 'Check Stripe logs for details'
+        }, { status: 400 });
     }
 }

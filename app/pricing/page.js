@@ -72,9 +72,11 @@ export default function Pricing() {
       const data = await response.json();
       if (data.url) {
         window.location.href = data.url;
+      } else if (data.devMessage) {
+        alert(`Please contact us to get started with ${planName} plan.`);
       }
     } catch (error) {
-      alert('Error: ' + error.message);
+      alert('Contact us to get started: SparkSphear4me@gmail.com');
     }
     setLoading(null);
   };
