@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 const Hero3D = dynamic(() => import("@/components/Hero3D"), {
   ssr: false,
 });
-
+import HeroV2 from "@/components/HeroV2";
 import WhatWeDo from "@/components/WhatWeDo";
 import ServiceWizard from "@/components/ServiceWizard";
 import Features from "@/components/Features";
@@ -16,6 +16,7 @@ import Stats from "@/components/Stats";
 import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
+import EfficiencyEngine from "@/components/EfficiencyEngine";
 
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
@@ -24,8 +25,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
-      <Hero3D /> {/* Replaced Hero with Hero3D */}
+      <Hero3D /> {/* Current 3D hero */}
+      {/* <HeroV2 /> */} {/* Alternative: toggle between V1 and V2 */}
       <WhatWeDo />
+      <EfficiencyEngine /> {/* New: Shows AI automation results */}
       <ServiceWizard />
       <Features />
       <Process />
