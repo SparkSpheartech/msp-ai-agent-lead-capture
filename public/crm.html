@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SparkSphear CRM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#a6fd37',
+            dark: '#0a0a0a'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-dark text-white min-h-screen">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-2 text-primary">SparkSphear CRM</h1>
+    <p class="text-gray-400 mb-6">Fort Wayne Prospects</p>
+    
+    <div class="mb-4 flex gap-2">
+      <input id="searchInput" type="text" placeholder="Search businesses..." class="flex-1 px-4 py-2 bg-zinc-900 border border-gray-700 rounded-lg" onkeyup="searchLeads()">
+      <select id="statusFilter" class="px-4 py-2 bg-zinc-900 border border-gray-700 rounded-lg" onchange="filterStatus()">
+        <option>All Status</option>
+        <option>New</option>
+        <option>Contacted</option>
+        <option>Demo</option>
+        <option>Pilot</option>
+        <option>Closed</option>
+      </select>
+    </div>
+    
+    <div id="leadsTable" class="bg-zinc-900/50 rounded-xl overflow-hidden">
+      <table class="w-full">
+        <thead class="bg-black/50">
+          <tr>
+            <th class="px-4 py-3 text-left">Business</th>
+            <th class="px-4 py-3 text-left">Phone</th>
+            <th class="px-4 py-3 text-left">Product Fit</th>
+            <th class="px-4 py-3 text-left">Status</th>
+            <th class="px-4 py-3 text-left">Action</th>
+          </tr>
+        </thead>
+        <tbody id="leadsBody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const leads = [
+      {business: 'Smooth Move Movers & Junk Removal', phone: '(260) 206-0434', product: 'Waste CallGuard', status: 'New', notes: 'High missed-call potential'},
+      {business: 'Junk Dawgs', phone: '(260) 410-7297', product: 'DumpsterQuote Bot', status: 'New', notes: 'No online booking'},
+      {business: '1-800-GOT-JUNK Fort Wayne', phone: '(260) 999-5466', product: 'RouteSync Driver Bot', status: 'New', notes: 'Franchise locally operated'},
+      {business: 'A+ Junk Removal', phone: '(260) 615-4506', product: 'Waste CallGuard', status: 'New', notes: 'Answering machine'},
+      {business: 'Affordable Dumpster Rental', phone: '(260) 399-6200', product: 'DumpsterQuote Bot', status: 'New', notes: 'No online booking'}
+    ];
+
+    function renderLeads(list) {
+      const tbody = document.getElementById('leadsBody');
+      tbody.innerHTML = list.map(l => `
+        <tr class="border-t border-gray-800">
+          <td class="px-4 py-3 font-bold">${l.business}</td>
+          <td class="px-4 py-3 font-mono">${l.phone}</td>
+          <td class="px-4 py-3">${l.product}</td>
+          <td class="px-4 py-3">
+            <select onchange="updateStatus(this)" class="bg-black border border-gray-600 rounded px-2 py-1">
+              <option ${l.status === 'New' ? 'selected' : ''}>New</option>
+              <option ${l.status === 'Contacted' ? 'selected' : ''}>Contacted</option>
+              <option ${l.status === 'Demo' ? 'selected' : ''}>Demo</option>
+              <option ${l.status === 'Pilot' ? 'selected' : ''}>Pilot</option>
+              <option ${l.status === 'Closed' ? 'selected' : ''}>Closed</option>
+            </select>
+          </td>
+          <td class="px-4 py-3">
+            <button onclick="callBusiness('${l.phone}')" class="px-3 py-1 bg-primary text-black rounded font-bold">Call</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function searchLeads() {
+      const term = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = leads.filter(l => l.business.toLowerCase().includes(term));
+      renderLeads(filtered);
+    }
+
+    function filterStatus() {
+      const status = document.getElementById('statusFilter').value;
+      if (status === 'All Status') return renderLeads(leads);
+      const filtered = leads.filter(l => l.status === status);
+      renderLeads(filtered);
+    }
+
+    function callBusiness(phone) {
+      window.location.href = 'tel:' + phone;
+    }
+
+    function updateStatus(el) {
+      // In a real CRM, this would update the backend
+      alert('Status updated - save to CSV when ready');
+    }
+
+    renderLeads(leads);
+  </script>
+</body>
+</html>
