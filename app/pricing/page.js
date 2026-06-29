@@ -58,7 +58,8 @@ export default function Pricing() {
         "Full Tech Stack Assessment"
       ],
       cta: "Scale Enterprise",
-      icon: <Clock className="w-8 h-8 text-lime-400" />
+            stripeUrl: "https://buy.stripe.com/test_cNi7sL5XX0YN5JqgRffYY02",
+            icon: <Clock className="w-8 h-8 text-lime-400" />
     }
   ];
 
