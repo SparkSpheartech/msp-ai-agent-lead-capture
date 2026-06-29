@@ -136,7 +136,7 @@ export default function Pricing() {
 
           <div className="mt-14 text-center text-gray-400 text-sm max-w-2xl mx-auto">
             <p className="mb-3">All plans include discovery call, onboarding, and 30-day satisfaction guarantee.</p>
-            <p>Need something custom? <a href="/contact" className="text-primary underline">Let's talk</a> - we'll build the right package for your business.</p>
+            <p>Need something custom? <a href="/support" className="text-primary underline">Let's talk</a> - we'll build the right package for your business.</p>
           </div>
 
           <div className="mt-16 bg-zinc-900/50 border border-primary/20 rounded-xl p-8 text-center">
@@ -144,7 +144,7 @@ export default function Pricing() {
             <p className="text-gray-400 mb-4">
               Most businesses save $2,400+ per month with our automation. Use our ROI calculator to see your potential time/cost savings.
             </p>
-            <a href="/tools/roi-calculator" className="inline-block px-6 py-2 bg-primary text-black font-bold rounded-md hover:bg-primary/90 transition">
+            <a href="/support" className="inline-block px-6 py-2 bg-primary text-black font-bold rounded-md hover:bg-primary/90 transition">
               Calculate Your Savings
             </a>
           </div>
