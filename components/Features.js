@@ -17,19 +17,6 @@ const Features = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-<<<<<<< Updated upstream
-                    <div className="bg-zinc-900/50 border border-white/10 p-8 rounded-2xl hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
-                        <h3 className="text-xl font-bold text-white mb-4">Local Expertise</h3>
-                        <p className="text-gray-400 leading-relaxed">Proudly serving the Greater Fort Wayne area with personalized, local support.</p>
-                    </div>
-                    <div className="bg-zinc-900/50 border border-white/10 p-8 rounded-2xl hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
-                        <h3 className="text-xl font-bold text-white mb-4">24/7 Availability</h3>
-                        <p className="text-gray-400 leading-relaxed">We are always here to ensure your technology never lets you down.</p>
-                    </div>
-                    <div className="bg-zinc-900/50 border border-white/10 p-8 rounded-2xl hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
-                        <h3 className="text-xl font-bold text-white mb-4">Comprehensive Solutions</h3>
-                        <p className="text-gray-400 leading-relaxed">One partner for IT, Marketing, and Creative needs, simplifying your vendor management.</p>
-=======
                     <div className="bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-white/10 p-8 rounded-2xl hover:border-lime-500 dark:hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Enterprise Scalability</h3>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">Built for growth. Our solutions are designed to scale with your organization, from local startups to global enterprises.</p>
@@ -41,7 +28,6 @@ const Features = () => {
                     <div className="bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-white/10 p-8 rounded-2xl hover:border-lime-500 dark:hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Integrated Ecosystem</h3>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">A unified approach to IT, Marketing, and Operations that eliminates silos and maximizes efficiency.</p>
->>>>>>> Stashed changes
                     </div>
                 </div>
 
