@@ -11,7 +11,7 @@ const SF_CONFIG = {
 };
 
 // In-memory lead store (replace with database when scaled)
-const leads: any[] = [];
+const leads = [];
 
 export async function GET() {
   return NextResponse.json({
@@ -25,7 +25,7 @@ export async function GET() {
   });
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request) {
   try {
     const data = await request.json();
     
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
       lead,
       next: 'Add SALESFORCE_* env vars to Netlify for auto-sync to Salesforce'
     });
-  } catch (error: any) {
+  } catch (error) {
     return NextResponse.json({ 
       error: error.message || 'Failed to process lead' 
     }, { status: 400 });
