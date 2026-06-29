@@ -1,0 +1,3 @@
+feat: add TrustSignals with user's LinkedIn certifications
+
+Includes 9 key certifications (CWTS, AWS Solutions Architect, Terraform Associate, CompTIA Network+, ISC2, Microsoft 365, NSLS Leadership, etc.).

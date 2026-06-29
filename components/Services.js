@@ -1,21 +1,22 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { Brain, Camera, Monitor, TrendingUp, Database } from 'lucide-react';
+import { Brain, Camera, Monitor, TrendingUp, Database, Zap } from 'lucide-react';
 
 const Services = () => {
     const services = [
         {
-            icon: <Brain className="w-12 h-12" />,
-            title: "AI & Automation",
-            description: "Leverage cutting-edge AI to automate workflows, enhance decision-making, and scale your operations efficiently.",
-            link: "/services/ai-automation"
+            icon: <Zap className="w-12 h-12" />,
+            title: "AI Automation",
+            description: "Eliminate 10-20 hours of manual work weekly. We build intelligent workflows that scale your business without adding headcount.",
+            link: "/services/ai-automation",
+            highlight: "Most Popular"
         },
         {
-            icon: <Camera className="w-12 h-12" />,
-            title: "Photography & Videography",
-            description: "Professional visual content that tells your brand story and captivates your audience.",
-            link: "/services/photography-videography"
+            icon: <Database className="w-12 h-12" />,
+            title: "IT Infrastructure Audits",
+            description: "Identify bottlenecks, streamline systems, and create unified tech roadmaps for 10x growth.",
+            link: "/services/it-audits"
         },
         {
             icon: <Monitor className="w-12 h-12" />,
@@ -30,10 +31,10 @@ const Services = () => {
             link: "/services/digital-marketing"
         },
         {
-            icon: <Database className="w-12 h-12" />,
-            title: "IT Infrastructure Audits",
-            description: "Comprehensive technology assessments with actionable insights for optimization and growth.",
-            link: "/services/it-audits"
+            icon: <Camera className="w-12 h-12" />,
+            title: "Photography & Videography",
+            description: "Professional visual content that tells your brand story and captivates your audience.",
+            link: "/services/photography-videography"
         }
     ];
 
@@ -46,7 +47,7 @@ const Services = () => {
                         Strategic Services for <span className="text-primary">Modern Businesses</span>
                     </h2>
                     <p className="text-gray-600">
-                        From AI-powered automation to stunning visual content, we provide the strategic solutions your business needs to thrive.
+                        From AI-powered automation to stunning visual content, we provide operational solutions that reduce costs and scale your business.
                     </p>
                 </div>
 
@@ -59,6 +60,11 @@ const Services = () => {
                             <div className="text-primary mb-6">
                                 {service.icon}
                             </div>
+                            {service.highlight && (
+                                <div className="inline-block px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded mb-3">
+                                    {service.highlight}
+                                </div>
+                            )}
                             <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                             <p className="text-gray-600 mb-6">{service.description}</p>
                             <Link
@@ -71,7 +77,6 @@ const Services = () => {
                     ))}
                 </div>
 
-                {/* Second Row - Centered */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
                     {services.slice(3).map((service, index) => (
                         <div
@@ -81,6 +86,11 @@ const Services = () => {
                             <div className="text-primary mb-6">
                                 {service.icon}
                             </div>
+                            {service.highlight && (
+                                <div className="inline-block px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded mb-3">
+                                    {service.highlight}
+                                </div>
+                            )}
                             <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                             <p className="text-gray-600 mb-6">{service.description}</p>
                             <Link
