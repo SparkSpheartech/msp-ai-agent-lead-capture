@@ -26,20 +26,21 @@ export default function Pricing() {
     },
     {
       tier: "Growth",
-      price: "$497",
-      period: "/month",
-      setup: "$2,997",
-      popular: true,
-      features: [
-        "15 Workflow Automations",
-        "Advanced AI Bots (5)",
-        "Weekly Optimization Calls",
-        "Priority Phone + Chat Support",
-        "CRM Integration Included",
-        "Time saved: 20-30 hrs/week",
-        "ROI Tracking Dashboard"
-      ],
-      cta: "Start Growing",
+            price: "$497",
+            period: "/month",
+            setup: "$2,997",
+            popular: true,
+            features: [
+              "15 Workflow Automations",
+              "Advanced AI Bots (5)",
+              "Weekly Optimization Calls",
+              "Priority Phone + Chat Support",
+              "CRM Integration Included",
+              "Time saved: 20-30 hrs/week",
+              "ROI Tracking Dashboard"
+            ],
+            cta: "Start Growing",
+            stripeUrl: "https://buy.stripe.com/test_7sY6oH5XXazn3BifNbfYY01",
       icon: <BarChart3 className="w-8 h-8 text-lime-400" />
     },
     {
