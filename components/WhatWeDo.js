@@ -31,9 +31,15 @@ const WhatWeDo = () => {
                                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-500/10 border border-lime-500/20 text-lime-400 text-sm font-bold uppercase tracking-wider mb-4">
                                         <ShieldCheck className="w-4 h-4" /> The Master Service
                                     </div>
+<<<<<<< Updated upstream
                                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-lime-300 transition-colors">IT Infrastructure Audit</h3>
                                     <p className="text-gray-400 text-lg max-w-2xl">
                                         The first step for every serious business. We analyze your <strong>Web</strong>, <strong>Marketing</strong>, <strong>AI</strong>, and <strong>Brand</strong> systems to build a unified roadmap for 10x growth.
+=======
+                                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-lime-600 dark:group-hover:text-lime-300 transition-colors">IT Infrastructure Audit</h3>
+                                    <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl">
+                                        The definitive first step for enterprise and public sector partners. We conduct a <strong>Security</strong>, <strong>Compliance</strong>, and <strong>Efficiency</strong> analysis to build a roadmap for scalable, mission-critical operations.
+>>>>>>> Stashed changes
                                     </p>
                                 </div>
                                 <div className="bg-lime-500 text-black p-4 rounded-full transition-all group-hover:scale-110 shadow-lg shadow-lime-500/20">

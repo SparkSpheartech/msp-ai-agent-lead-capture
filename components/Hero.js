@@ -27,10 +27,10 @@ const Hero = () => {
                     {/* Main Heading */}
                     <h1 className="text-white font-bold mb-6 text-4xl md:text-6xl leading-tight">
                         Your Vision,<br />
-                        Structured to <span className="italic font-light text-primary">Scale</span>
+                        Engineered to <span className="italic font-light text-primary">Win</span>
                     </h1>
                     <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-                        Empowering small businesses in the Greater Fort Wayne area. We deliver personalized IT services, digital marketing, and creative solutions.
+                        Precision-engineered solutions for Fort Wayne's ambitious enterprises. We deliver government-grade IT infrastructure, scalable AI automation, and high-impact brand strategies.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10">
                         <Link href="#our-services" className="inline-flex items-center justify-center px-8 py-4 bg-primary text-dark font-bold hover:bg-primary/90 transition-all duration-300 min-w-[200px] rounded-md">
