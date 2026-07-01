@@ -7,3 +7,11 @@
 # Next.js plugin will auto-detect .next output
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-checklinks"
+
+  [plugins.inputs]
+    skipPatterns = [
+      ".next/pricing"
+    ]
