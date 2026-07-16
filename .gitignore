@@ -16,6 +16,13 @@
 # misc
 .DS_Store
 *.pem
+desktop.ini
+Thumbs.db
+
+# local env
+.env
+.env.local
+.env*.local
 
 # debug
 npm-debug.log*
