@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import HashScrollHandler from "@/components/HashScrollHandler";
@@ -110,28 +111,23 @@ export default function RootLayout({ children }) {
                     }}
                 />
                 {/* HubSpot Tracking Script */}
-                <script
+                <Script
                     type="text/javascript"
                     id="hs-script-loader"
-                    async
-                    defer
+                    strategy="afterInteractive"
                     src="//js-na2.hs-scripts.com/244539453.js"
                 />
                 {/* Google Analytics */}
-                <script
-                    async
+                <Script
                     src="https://www.googletagmanager.com/gtag/js?id=G-XFW1TLBRQS"
+                    strategy="afterInteractive"
                 />
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
-                            gtag('config', 'G-XFW1TLBRQS');
-                        `,
-                    }}
-                />
+                <Script id="ga-init" strategy="afterInteractive">
+                    {`window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-XFW1TLBRQS');`}
+                </Script>
                 {/* Schema.org Structured Data - LocalBusiness */}
                 <script
                     type="application/ld+json"

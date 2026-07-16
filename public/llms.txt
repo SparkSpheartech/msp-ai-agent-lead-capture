@@ -1,0 +1,29 @@
+# SparkSphear Tech Solutions
+
+SparkSphear Tech Solutions is a Fort Wayne, Indiana AI services and business automation company. We help local businesses eliminate manual work, improve customer experience, and grow with AI automation, web design, digital marketing, and creative media.
+
+## Services
+
+- AI & Automation: https://sparkspheartechsolutions.com/services/ai-automation
+  Custom AI chatbots, workflow automation (n8n), and intelligent data processing that save 10-40+ hours per week.
+- Digital Marketing: https://sparkspheartechsolutions.com/services/digital-marketing
+  Social media, PPC ads, and content strategy that turn attention into customers.
+- Web Design & Development: https://sparkspheartechsolutions.com/services/web-design
+  High-performance, SEO-ready websites and e-commerce that convert visitors into customers.
+- Creative Media: https://sparkspheartechsolutions.com/services/photography-videography
+  Brand photography, commercial video, and event coverage.
+- Master Business Audit: https://sparkspheartechsolutions.com/services/it-audits
+  A unified infrastructure audit of your web, marketing, AI, and brand systems.
+
+## Pricing
+
+Plans (one-time setup + monthly): https://sparkspheartechsolutions.com/pricing
+Sovern AI ($97/mo), Essentials ($197/mo), Growth ($497/mo), Enterprise ($997/mo).
+
+## Contact
+
+https://sparkspheartechsolutions.com/contact
+Phone: (260) 267-0641
+Email: SparkSphear4me@gmail.com
+Location: 1427 Park Ave, Fort Wayne, IN 46807
+Hours: Mon-Fri 8AM-5PM
