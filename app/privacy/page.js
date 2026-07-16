@@ -89,7 +89,7 @@ export default function PrivacyPolicy() {
                             If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us:
                         </p>
                         <div className="mt-4 text-gray-300">
-                            <p><strong>Email:</strong> SparkSphear4me@gmail.com</p>
+                            <p><strong>Email:</strong> contact@sparkspheartechsolutions.com</p>
                             <p><strong>Phone:</strong> (260) 267-0641</p>
                             <p><strong>Location:</strong> Fort Wayne, IN</p>
                         </div>

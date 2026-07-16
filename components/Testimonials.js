@@ -3,35 +3,35 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    text: "Shaz brings new perspectives, ideas, and solutions to any conversation we have here at Web One, regardless of the topic. Marketing, technology, AI; you name it, he's got the ideas. As the dedicated technological backbone of Web One, I deal with many different issues: Security in software development, cost efficiency, workflow optimization via automation. Shaz has brought great ideas and insights for every topic without fail. His day-to-day hard and diligent work can be an extremely valuable asset to any business, be it early stage or well-established. If you doubt it, give him a chance. He will prove his worth to you within the first day.",
-    name: "Joshan Christie",
-    role: "Software & Automation",
-    company: "Web One",
-    logo: "https://www.webone.dev/assets/WEBONEWHITELOGO-DrJ7ZUsb.svg"
-  },
-  {
-    text: "Shazaly Musa, the founder of SPARKSPHEAR Tech, has been a huge help to me and my team at WebOne LLC. He guided us in improving our workflow and paperwork, showing us how established businesses operate. Thanks to his experience in AI, he helped us understand how automation works and how to implement it effectively in our own systems. Shaz is a smart and innovative tech mind who sees things from a unique perspective and always brings fresh ideas that make a real difference. Every time I talk to him, I learn something new. If you get the chance to collaborate with SPARKSPHEAR Tech, expect real progress, solid systems, and a noticeable difference in how your business operates.",
+    text: "Shazaly and SparkSphear have been instrumental in our growth. Their AI-driven workflow optimization didn't just save us time—it completely redefined how we handle operations. Their technical depth and innovative perspective are assets to any established business.",
     name: "Aseel Batuq",
     role: "Head of Operations",
     company: "Web One",
     logo: "https://www.webone.dev/assets/WEBONEWHITELOGO-DrJ7ZUsb.svg"
   },
   {
-    text: "Working with SPARKSPHEAR was a transformative experience for our logistics operations. Their ability to integrate AI-driven analytics into our existing supply chain software saved us countless hours of manual data entry. The return on investment was immediate and undeniable.",
+    text: "SparkSphear's AI-driven lead generation was a game-changer for GigaPulse. Their agents didn't just find leads; they found the right leads, allowing our sales team to focus on closing rather than cold calling. The 285% ROI speaks for itself.",
+    name: "Michael Sterling",
+    role: "Founder",
+    company: "GigaPulse",
+    logo: "/images/partners/gigapulse.png"
+  },
+  {
+    text: "Shaz brings new perspectives, ideas, and solutions to any conversation. Regardless of the topic—Marketing, technology, AI—he's got the insights. His work on our infrastructure and automation has been extremely valuable. If you want real progress, give him a chance.",
+    name: "Joshan Christie",
+    role: "Software & Automation Lead",
+    company: "Web One",
+    logo: "https://www.webone.dev/assets/WEBONEWHITELOGO-DrJ7ZUsb.svg"
+  },
+  {
+    text: "Working with SparkSphear was a transformative experience. Their ability to integrate AI-driven analytics into our supply chain software saved us thousands in manual entry costs. The return on investment was immediate and undeniable.",
     name: "Marcus Thorne",
     role: "Director of Logistics",
     company: "Apex Supply Chain",
     logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3dab?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
   },
   {
-    text: "We needed a complete overhaul of our digital presence, but we didn't want just another template site. SPARKSPHEAR delivered a custom, high-performance web application that perfectly captures our brand's energy. Their attention to detail in the UI/UX design is simply world-class.",
-    name: "Sarah Jenkins",
-    role: "Marketing VP",
-    company: "Elevate Digital",
-    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
-  },
-  {
-    text: "Security audits used to be a headache for us until we partnered with SPARKSPHEAR. Their comprehensive IT audit revealed vulnerabilities we hadn't even considered. They didn't just find problems; they provided clear, actionable solutions that hardened our infrastructure overnight.",
+    text: "Security audits used to be a headache until we partnered with SparkSphear. Their comprehensive IT audit revealed vulnerabilities we hadn't even considered. They didn't just find problems; they provided clear, actionable solutions that hardened our infrastructure.",
     name: "David Chen",
     role: "CTO",
     company: "Nexus Financial",

@@ -32,7 +32,7 @@ const Footer = () => {
                         <h4 className="text-gray-900 dark:text-white font-bold mb-6">Contact</h4>
                         <ul className="space-y-4 text-gray-600 dark:text-gray-400">
                             <li><a href="tel:2602670641" className="hover:text-[#a6fd37] transition-colors">(260) 267-0641</a></li>
-                            <li><a href="mailto:SparkSphear4me@gmail.com" className="hover:text-[#a6fd37] transition-colors">SPARKSPHEAR4me@gmail.com</a></li>
+                            <li><a href="mailto:contact@sparkspheartechsolutions.com" className="hover:text-[#a6fd37] transition-colors">contact@sparkspheartechsolutions.com</a></li>
                             <li>Fort Wayne, IN</li>
                         </ul>
                     </div>

@@ -7,7 +7,7 @@ const CallToAction = () => {
         <section id="contact-us" className="section cta-final animate-on-scroll">
             <div className="container">
                 <h2>Ready to scale your vision? Drop us a line</h2>
-                <Link href="mailto:SparkSphear4me@gmail.com" className="btn btn-primary" style={{ marginTop: '20px' }}>
+                <Link href="mailto:contact@sparkspheartechsolutions.com" className="btn btn-primary" style={{ marginTop: '20px' }}>
                     Contact Us
                 </Link>
                 <p style={{ marginTop: '20px', fontSize: '1.2rem', fontWeight: '500' }}>
