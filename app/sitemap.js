@@ -28,12 +28,6 @@ export default function sitemap() {
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/use-cases`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
             url: `${baseUrl}/blog`,
             lastModified: new Date(),
             changeFrequency: 'daily',

@@ -3,7 +3,6 @@ import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import HashScrollHandler from "@/components/HashScrollHandler";
 import PageTransition from "@/components/PageTransition";
-import { AuthProvider } from "@/context/AuthContext";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -286,14 +285,12 @@ export default function RootLayout({ children }) {
                 className={inter.className}
                 style={{ margin: 0 }}
             >
-                <AuthProvider>
-                    <SmoothScrolling>
-                        <HashScrollHandler />
-                        <PageTransition>
-                            {children}
-                        </PageTransition>
-                    </SmoothScrolling>
-                </AuthProvider>
+                <SmoothScrolling>
+                    <HashScrollHandler />
+                    <PageTransition>
+                        {children}
+                    </PageTransition>
+                </SmoothScrolling>
             </body>
         </html>
     );
