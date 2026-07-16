@@ -15,6 +15,7 @@ export async function POST(request) {
         }
 
         const prices = {
+            "Sovern AI": 9700,
             Essentials: 19700,
             Growth: 49700,
             Enterprise: 99700

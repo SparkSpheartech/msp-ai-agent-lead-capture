@@ -2,12 +2,28 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Zap, Clock, BarChart3, Loader2 } from 'lucide-react';
+import { Zap, Clock, BarChart3, Sparkles, Loader2 } from 'lucide-react';
 
 export default function Pricing() {
   const [loading, setLoading] = useState(null);
 
   const plans = [
+    {
+      tier: "Sovern AI",
+      price: "$97",
+      period: "/month",
+      setup: "$497",
+      features: [
+        "2 Core Workflow Automations",
+        "1 AI Chatbot (Starter)",
+        "Sovereign Data Handling",
+        "Email Support (48hr response)",
+        "1 Standard Integration",
+        "Time saved: 5-8 hrs/week"
+      ],
+      cta: "Get Sovern AI",
+      icon: <Sparkles className="w-8 h-8 text-lime-400" />
+    },
     {
       tier: "Essentials",
       price: "$197",
@@ -95,9 +111,9 @@ export default function Pricing() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {plans.map((plan, i) => (
-              <div key={i} className={`border border-gray-800 bg-black/70 rounded-3xl p-8 flex flex-col ${plan.popular ? 'ring-2 ring-primary relative' : ''}`}>
+              <div key={i} className={`border border-gray-800 bg-black/70 rounded-3xl p-6 flex flex-col ${plan.popular ? 'ring-2 ring-primary relative' : ''}`}>
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-xs tracking-widest bg-primary text-black px-3 py-0.5 rounded-full font-bold">MOST POPULAR</div>
                 )}
