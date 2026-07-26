@@ -3,6 +3,7 @@ import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import HashScrollHandler from "@/components/HashScrollHandler";
 import PageTransition from "@/components/PageTransition";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
     subsets: ["latin"],
@@ -277,6 +278,7 @@ export default function RootLayout({ children }) {
                         {children}
                     </PageTransition>
                 </SmoothScrolling>
+                <SpeedInsights />
             </body>
         </html>
     );
