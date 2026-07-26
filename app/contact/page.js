@@ -35,7 +35,7 @@ export default function Contact() {
 
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <form onSubmit={handleSubmit} className="space-y-6" netlify>
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium mb-2">Full Name</label>
                   <input
