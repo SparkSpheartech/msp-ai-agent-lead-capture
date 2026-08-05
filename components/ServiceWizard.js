@@ -168,14 +168,20 @@ const ServiceWizard = () => {
 
                                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                         <Link
-                                            href={result.link}
-                                            className="px-8 py-4 bg-lime-500 text-zinc-950 font-bold rounded-lg hover:bg-lime-400 transition-all shadow-[0_0_20px_rgba(132,204,22,0.3)] hover:shadow-[0_0_30px_rgba(132,204,22,0.5)] flex items-center justify-center gap-2"
+                                            href={`/onboarding?goal=${encodeURIComponent(result.title)}`}
+                                            className="px-8 py-4 bg-gradient-to-r from-lime-500 to-green-500 text-zinc-950 font-extrabold rounded-lg hover:opacity-90 transition-all shadow-[0_0_20px_rgba(132,204,22,0.3)] hover:shadow-[0_0_30px_rgba(132,204,22,0.5)] flex items-center justify-center gap-2"
                                         >
-                                            View Solution <ArrowRight className="w-4 h-4" />
+                                            Start Client Onboarding <ArrowRight className="w-4 h-4" />
+                                        </Link>
+                                        <Link
+                                            href={result.link}
+                                            className="px-8 py-4 bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white font-bold rounded-lg hover:bg-gray-200 dark:hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+                                        >
+                                            View Solution
                                         </Link>
                                         <button
                                             onClick={handleRestart}
-                                            className="px-8 py-4 bg-transparent border border-gray-300 dark:border-white/20 text-gray-700 dark:text-white font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-all flex items-center justify-center gap-2"
+                                            className="px-6 py-4 bg-transparent border border-gray-300 dark:border-white/20 text-gray-700 dark:text-white font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-all flex items-center justify-center gap-2"
                                         >
                                             <RefreshCcw className="w-4 h-4" /> Start Over
                                         </button>

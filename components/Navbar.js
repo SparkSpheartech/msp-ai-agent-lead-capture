@@ -32,6 +32,7 @@ const Navbar = () => {
           <Link href="/process" className="hover:text-primary transition">Process</Link>
           <Link href="/pricing" className="hover:text-primary transition">Pricing</Link>
           <Link href="/about" className="hover:text-primary transition">About</Link>
+          <Link href="/onboarding" className="hover:text-primary transition text-lime-400 font-semibold">Onboarding</Link>
           <Link href="/support" className="hover:text-primary transition">Support</Link>
           <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">Blog</a>
         </div>
@@ -60,6 +61,7 @@ const Navbar = () => {
             <Link href="/process" onClick={closeMenu}>Process</Link>
             <Link href="/pricing" onClick={closeMenu}>Pricing</Link>
             <Link href="/about" onClick={closeMenu}>About</Link>
+            <Link href="/onboarding" onClick={closeMenu} className="text-lime-400 font-semibold">Client Onboarding</Link>
             <Link href="/support" onClick={closeMenu}>Support</Link>
             <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a>
             <a href={`tel:${phoneRaw}`} className="flex items-center gap-2 text-primary font-medium" onClick={closeMenu}>
