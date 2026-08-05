@@ -16,7 +16,6 @@ import Stats from "@/components/Stats";
 import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
-import EfficiencyEngine from "@/components/EfficiencyEngine";
 
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
@@ -28,7 +27,6 @@ export default function Home() {
       <Hero3D /> {/* Current 3D hero */}
       {/* <HeroV2 /> */} {/* Alternative: toggle between V1 and V2 */}
       <WhatWeDo />
-      <EfficiencyEngine /> {/* New: Shows AI automation results */}
       <ServiceWizard />
       <Features />
       <Process />
