@@ -29,7 +29,7 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-x-9 text-sm font-medium">
           <Link href="/markets" className="hover:text-primary transition text-lime-400 font-semibold">Markets We Service</Link>
-          <Link href="/process" className="hover:text-primary transition">Process</Link>
+          <Link href="/projects" className="hover:text-primary transition">Projects</Link>
           <Link href="/pricing" className="hover:text-primary transition">Pricing</Link>
           <Link href="/about" className="hover:text-primary transition">About</Link>
           <Link href="/support" className="hover:text-primary transition">Support</Link>
@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="lg:hidden bg-black/98 border-t border-gray-800 px-5 py-8 text-[15px]">
           <nav className="flex flex-col gap-y-5 text-gray-200">
             <Link href="/markets" onClick={closeMenu} className="text-lime-400 font-semibold">Markets We Service</Link>
-            <Link href="/process" onClick={closeMenu}>Process</Link>
+            <Link href="/projects" onClick={closeMenu}>Projects</Link>
             <Link href="/pricing" onClick={closeMenu}>Pricing</Link>
             <Link href="/about" onClick={closeMenu}>About</Link>
             <Link href="/support" onClick={closeMenu}>Support</Link>
