@@ -1,11 +1,11 @@
 "use client";
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { FolderGit2, ArrowRight } from 'lucide-react';
+import { FolderGit2, ArrowRight, Lock, Mail, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 
 function ProjectsContent() {
@@ -36,6 +36,105 @@ function ProjectsContent() {
     const filteredProjects = market === 'All' 
         ? projects 
         : projects.filter(p => p.market === market);
+
+    const [isUnlocked, setIsUnlocked] = useState(false);
+    const [email, setEmail] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+        // Check local storage so they don't have to enter it again on refresh
+        const unlocked = localStorage.getItem('projects_unlocked');
+        if (unlocked === 'true') {
+            setIsUnlocked(true);
+        }
+    }, []);
+
+    const handleUnlock = async (e) => {
+        e.preventDefault();
+        if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+            setError('Please enter a valid email address.');
+            return;
+        }
+
+        setLoading(true);
+        setError('');
+
+        try {
+            // Send email to our newsletter/leads webhook
+            const res = await fetch('/api/newsletter', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, source: 'Projects Gate' })
+            });
+
+            if (res.ok) {
+                localStorage.setItem('projects_unlocked', 'true');
+                setIsUnlocked(true);
+            } else {
+                setError('Something went wrong. Please try again.');
+            }
+        } catch (err) {
+            setError('Failed to connect. Please try again later.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    if (!isUnlocked) {
+        return (
+            <div className="min-h-screen bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-white flex flex-col">
+                <Navbar />
+                <main className="flex-grow flex items-center justify-center px-6 pt-32 pb-20">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="max-w-md w-full bg-white dark:bg-zinc-900/80 border border-gray-200 dark:border-white/10 p-8 md:p-10 rounded-3xl shadow-2xl text-center"
+                    >
+                        <div className="w-16 h-16 bg-lime-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-lime-500">
+                            <Lock size={32} />
+                        </div>
+                        <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-4">
+                            Unlock Our Portfolio
+                        </h1>
+                        <p className="text-gray-500 dark:text-gray-400 mb-8 text-sm md:text-base">
+                            Enter your email to view our exclusive {market !== 'All' ? market : ''} project case studies, Agentic workflows, and automated system demonstrations.
+                        </p>
+
+                        <form onSubmit={handleUnlock} className="flex flex-col gap-4">
+                            <div className="relative">
+                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                <input 
+                                    type="email" 
+                                    placeholder="Enter your work email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-zinc-950 border border-gray-200 dark:border-white/10 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500 transition-colors"
+                                    required
+                                />
+                            </div>
+                            
+                            {error && (
+                                <p className="text-red-500 text-sm text-left">{error}</p>
+                            )}
+
+                            <button 
+                                type="submit"
+                                disabled={loading}
+                                className="w-full py-3.5 bg-lime-500 text-zinc-950 font-bold rounded-xl hover:bg-lime-400 transition-all flex justify-center items-center gap-2"
+                            >
+                                {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Gain Access'}
+                            </button>
+                        </form>
+                        <p className="text-xs text-gray-400 dark:text-gray-500 mt-6">
+                            We respect your privacy. No spam, ever.
+                        </p>
+                    </motion.div>
+                </main>
+                <Footer />
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-white flex flex-col">
