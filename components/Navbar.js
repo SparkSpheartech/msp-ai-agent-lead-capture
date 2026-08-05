@@ -34,6 +34,7 @@ const Navbar = () => {
           <Link href="/about" className="hover:text-primary transition">About</Link>
           <Link href="/support" className="hover:text-primary transition">Support</Link>
           <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">Blog</a>
+          <Link href="/affiliate" className="hover:text-primary transition font-bold text-lime-400">Affiliate Tools</Link>
         </div>
 
         {/* Desktop CTA + Phone */}
@@ -62,6 +63,7 @@ const Navbar = () => {
             <Link href="/about" onClick={closeMenu}>About</Link>
             <Link href="/support" onClick={closeMenu}>Support</Link>
             <a href="https://sparkspheartech.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a>
+            <Link href="/affiliate" onClick={closeMenu} className="text-lime-400 font-bold">Affiliate Tools</Link>
             <a href={`tel:${phoneRaw}`} className="flex items-center gap-2 text-primary font-medium" onClick={closeMenu}>
               <Phone size={16} /> {phone}
             </a>
