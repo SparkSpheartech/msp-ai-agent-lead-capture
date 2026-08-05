@@ -16,6 +16,30 @@ function ProjectsContent() {
     const projects = [
         {
             id: 1,
+            title: "MC Racing Sim FW",
+            market: "General", 
+            description: "A dynamic website built for a local racing simulation center in Fort Wayne.",
+            image: "https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&w=800&q=80",
+            link: "https://mcracingsim-fw.surge.sh"
+        },
+        {
+            id: 2,
+            title: "Wildman Tattoo PA",
+            market: "General",
+            description: "A stunning portfolio and booking site for Wildman Tattoo in Pennsylvania.",
+            image: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=800&q=80",
+            link: "https://wildmantatoopa.surge.sh"
+        },
+        {
+            id: 3,
+            title: "Pakito's Taqueria Demo",
+            market: "General",
+            description: "A fast, modern restaurant demo site tailored for Pakito's Taqueria.",
+            image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
+            link: "https://pakitos-taqueria-demo.surge.sh"
+        },
+        {
+            id: 4,
             title: "HVAC Automated Dispatcher",
             market: "Market Strategy", // Matches the Blogger category for HVAC
             description: "An intelligent agent that automatically schedules and dispatches HVAC technicians based on location and skill set, saving 15 hours a week.",
@@ -23,14 +47,13 @@ function ProjectsContent() {
             link: "#"
         },
         {
-            id: 2,
+            id: 5,
             title: "Lead Nurture AI",
             market: "Market Strategy",
             description: "A specialized AI agent that follows up with inbound leads within 5 minutes, boosting conversion rates by 35%.",
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
             link: "#"
-        },
-        // Add more projects here
+        }
     ];
 
     const filteredProjects = market === 'All' 
