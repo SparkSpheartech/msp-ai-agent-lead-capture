@@ -110,13 +110,7 @@ export default function RootLayout({ children }) {
                         `,
                     }}
                 />
-                {/* HubSpot Tracking Script */}
-                <Script
-                    type="text/javascript"
-                    id="hs-script-loader"
-                    strategy="afterInteractive"
-                    src="//js-na2.hs-scripts.com/244539453.js"
-                />
+
                 {/* Google Analytics */}
                 <Script
                     src="https://www.googletagmanager.com/gtag/js?id=G-XFW1TLBRQS"

@@ -705,7 +705,7 @@ export default function ClientOnboardingForm() {
                                     <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">(e.g., website CMS, CRM, booking software, spreadsheets, internal tools)</p>
                                     <textarea 
                                         rows={3}
-                                        placeholder="HubSpot CRM, Google Sheets, Twilio, QuickBooks, WordPress..."
+                                        placeholder="Salesforce, Google Sheets, Twilio, QuickBooks, WordPress..."
                                         value={formData.existingTools}
                                         onChange={(e) => handleTextChange('existingTools', e.target.value)}
                                         className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800/80 border border-gray-300 dark:border-white/15 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500"

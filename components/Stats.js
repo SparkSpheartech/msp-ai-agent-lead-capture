@@ -19,7 +19,7 @@ const partners = [
     { name: 'Discord', logo: '/images/partners/discord.png', category: 'Automation' },
     { name: 'Notion', logo: '/images/partners/notion.png', category: 'Productivity' },
     { name: 'Airtable', logo: '/images/partners/airtable.png', category: 'Productivity' },
-    { name: 'HubSpot', logo: '/images/partners/hubspot.png', category: 'CRM' },
+
     { name: 'Salesforce', logo: '/images/partners/salesforce.png', category: 'CRM' },
     { name: 'Stripe', logo: '/images/partners/stripe.png', category: 'Payments' },
     { name: 'Shopify', logo: '/images/partners/shopify.png', category: 'E-commerce' },
