@@ -12,7 +12,6 @@ import ServiceWizard from "@/components/ServiceWizard";
 import Features from "@/components/Features";
 import Process from "@/components/Process";
 import CoreValues from "@/components/CoreValues";
-import Stats from "@/components/Stats";
 import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
@@ -31,7 +30,6 @@ export default function Home() {
       <Features />
       <Process />
       <CoreValues />
-      <Stats />
       <Team />
       <Testimonials />
       <Newsletter />
