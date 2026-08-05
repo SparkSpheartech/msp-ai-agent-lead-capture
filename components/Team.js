@@ -13,7 +13,7 @@ const Team = () => {
                 <div className="team-grid stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-gray-200 dark:border-white/10 group-hover:border-lime-500 dark:group-hover:border-lime-500/50 transition-colors">
-                            <img src="/images/team/shazaly.jpg" alt="Shazaly Musa" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <img src="/founder-new.png" alt="Shazaly Musa" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-dark to-transparent opacity-60"></div>
                         </div>
                         <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">Shazaly Musa</h4>
@@ -21,7 +21,7 @@ const Team = () => {
                     </div>
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-gray-200 dark:border-white/10 group-hover:border-lime-500 dark:group-hover:border-lime-500/50 transition-colors">
-                            <img src="/images/team/daisy.jpg" alt="Daisy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <img src="/executive-assistant.jpg" alt="Daisy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-dark to-transparent opacity-60"></div>
                         </div>
                         <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">Daisy</h4>
@@ -29,7 +29,7 @@ const Team = () => {
                     </div>
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-gray-200 dark:border-white/10 group-hover:border-lime-500 dark:group-hover:border-lime-500/50 transition-colors">
-                            <img src="/images/team/eissa.png" alt="Eissa" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <img src="/cto-new.jpg" alt="Eissa" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-dark to-transparent opacity-60"></div>
                         </div>
                         <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">Eissa</h4>
@@ -37,7 +37,7 @@ const Team = () => {
                     </div>
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-gray-200 dark:border-white/10 group-hover:border-lime-500 dark:group-hover:border-lime-500/50 transition-colors">
-                            <img src="/images/team/shima.png" alt="Shima" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <img src="/digital-marketing.jpg" alt="Shima" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-dark to-transparent opacity-60"></div>
                         </div>
                         <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">Shima</h4>
