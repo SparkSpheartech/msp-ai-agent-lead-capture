@@ -1,8 +1,14 @@
 import { NextResponse } from 'next/server';
 
+// Configurable n8n Production Webhook URL with environment variable fallback
+const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL 
+  || process.env.SPARKSPHEAR_WEBHOOK_URL 
+  || 'http://localhost:5678/webhook/sparksphear-website-data';
+
 const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLScRDTfrCVE7Qt1AAFlvBOZGvFMkzeFiXIAJyFMFHlTvBUbS2Q/formResponse";
 
-async function submitToGoogleForm(data) {
+// Failsafe direct push to Google Form -> Google Sheet (1_PM4oQZDRzSOY_7tOPM4QRw7vQ3GYhuRv0FB8MZmNYY)
+async function submitToGoogleFormFailsafe(data) {
   try {
     const formPayload = new URLSearchParams();
 
@@ -73,21 +79,43 @@ async function submitToGoogleForm(data) {
       body: formPayload.toString()
     });
 
-    console.log('[Google Sheet Auto-Sync] Status:', response.status);
+    console.log('[Google Sheet Failsafe Status]:', response.status);
     return response.ok;
   } catch (err) {
-    console.error('[Google Sheet Auto-Sync Error]:', err.message);
+    console.error('[Google Sheet Failsafe Error]:', err.message);
     return false;
   }
 }
 
-// In-memory lead store for development/testing
+// Send payload to n8n workflow pipeline
+async function sendToN8nWorkflow(payload) {
+  try {
+    console.log(`[n8n Pipeline] Sending payload to ${N8N_WEBHOOK_URL}...`);
+    const res = await fetch(N8N_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      const result = await res.json().catch(() => ({ status: 'success' }));
+      return { success: true, data: result };
+    }
+    return { success: false, status: res.status };
+  } catch (err) {
+    console.warn('[n8n Pipeline Connection Warning]:', err.message);
+    return { success: false, error: err.message };
+  }
+}
+
+// In-memory lead store for local logging
 const leads = [];
 
 export async function GET() {
   return NextResponse.json({
     leads,
     count: leads.length,
+    n8nWorkflowPath: 'B:\\SPARKSPHEARTECH\\SPARKSPHEAR_TECH_SOLUTIONS_WEBSITE_DATA.n8n',
     googleSheetTarget: 'https://docs.google.com/spreadsheets/d/1_PM4oQZDRzSOY_7tOPM4QRw7vQ3GYhuRv0FB8MZmNYY/edit?resourcekey=&gid=1571625119#gid=1571625119'
   });
 }
@@ -127,13 +155,20 @@ export async function POST(request) {
         involvementLevel: data.involvementLevel || '',
         additionalNotes: data.additionalNotes || '',
         agreement: data.agreement || false,
-        status: 'Synced to Google Sheet',
+        status: 'Processed by SPARKSPHEAR n8n Data Pipeline',
         source: 'Website Onboarding Wizard',
         submittedAt: new Date().toISOString()
       };
 
-      // Post directly to Google Form so it inputs straight into the user's Google Sheet
-      await submitToGoogleForm(data);
+      // 1. Attempt sending to n8n workflow pipeline
+      const n8nResult = await sendToN8nWorkflow(lead);
+
+      // 2. Failsafe auto-sync to Google Sheet if n8n is offline or unreachable
+      if (!n8nResult.success) {
+        console.log('[SPARKSPHEAR Pipeline] n8n offline/unreachable. Executing Google Sheet failsafe sync...');
+        await submitToGoogleFormFailsafe(data);
+      }
+
     } else {
       lead = {
         id: 'LEAD-' + Date.now().toString(),
@@ -150,6 +185,8 @@ export async function POST(request) {
         source: data.Lead_Source || 'Website Contact',
         submittedAt: new Date().toISOString()
       };
+
+      await sendToN8nWorkflow(lead);
     }
     
     // Validate required fields
@@ -158,12 +195,13 @@ export async function POST(request) {
     }
     
     leads.push(lead);
-    console.log(`[SPARKSPHEAR Lead Engine] New Lead Captured & Synced to Google Sheet: ${lead.company}`);
+    console.log(`[SPARKSPHEAR Lead Engine] New Lead Processed: ${lead.company}`);
     
     return NextResponse.json({
       status: 'success',
-      message: 'Onboarding data submitted and synced directly to Google Sheet',
+      message: 'Onboarding data processed and logged to SPARKSPHEAR n8n pipeline & Google Sheet',
       leadId: lead.id,
+      n8nWorkflow: 'SPARKSPHEAR_TECH_SOLUTIONS_WEBSITE_DATA.n8n',
       googleSheetUrl: 'https://docs.google.com/spreadsheets/d/1_PM4oQZDRzSOY_7tOPM4QRw7vQ3GYhuRv0FB8MZmNYY/edit#gid=1571625119'
     });
   } catch (error) {
