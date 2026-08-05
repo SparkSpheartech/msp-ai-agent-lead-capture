@@ -10,22 +10,14 @@ const Team = () => {
                     <span className="tag text-lime-400">OUR TEAM</span>
                     <h2 className="text-4xl md:text-5xl font-bold">Dedicated experts ready to serve you</h2>
                 </div>
-                <div className="team-grid stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-center">
+                <div className="team-grid stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-gray-200 dark:border-white/10 group-hover:border-lime-500 dark:group-hover:border-lime-500/50 transition-colors">
                             <img src="/images/team/shazaly.jpg" alt="Shazaly Musa" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-dark to-transparent opacity-60"></div>
                         </div>
                         <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">Shazaly Musa</h4>
-                        <p className="text-gray-500 dark:text-gray-500 uppercase text-sm tracking-wider">Founder & CEO</p>
-                    </div>
-                    <div className="team-member group">
-                        <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-gray-200 dark:border-white/10 group-hover:border-lime-500 dark:group-hover:border-lime-500/50 transition-colors">
-                            <img src="/images/team/onyx.jpg" alt="Onyx" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-dark to-transparent opacity-60"></div>
-                        </div>
-                        <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">Onyx</h4>
-                        <p className="text-gray-500 dark:text-gray-500 uppercase text-sm tracking-wider">Business Architect (AI)</p>
+                        <p className="text-gray-500 dark:text-gray-500 uppercase text-sm tracking-wider">Founder</p>
                     </div>
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-gray-200 dark:border-white/10 group-hover:border-lime-500 dark:group-hover:border-lime-500/50 transition-colors">
@@ -33,7 +25,7 @@ const Team = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-dark to-transparent opacity-60"></div>
                         </div>
                         <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">Daisy</h4>
-                        <p className="text-gray-500 dark:text-gray-500 uppercase text-sm tracking-wider">Operations Lead (AI)</p>
+                        <p className="text-gray-500 dark:text-gray-500 uppercase text-sm tracking-wider">Operations Lead</p>
                     </div>
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-gray-200 dark:border-white/10 group-hover:border-lime-500 dark:group-hover:border-lime-500/50 transition-colors">
@@ -41,7 +33,7 @@ const Team = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-dark to-transparent opacity-60"></div>
                         </div>
                         <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">Eissa</h4>
-                        <p className="text-gray-500 dark:text-gray-500 uppercase text-sm tracking-wider">Finance & Legal (AI)</p>
+                        <p className="text-gray-500 dark:text-gray-500 uppercase text-sm tracking-wider">Finance & Legal</p>
                     </div>
                     <div className="team-member group">
                         <div className="member-image relative overflow-hidden rounded-xl aspect-square mb-6 border border-gray-200 dark:border-white/10 group-hover:border-lime-500 dark:group-hover:border-lime-500/50 transition-colors">
@@ -49,7 +41,7 @@ const Team = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-dark to-transparent opacity-60"></div>
                         </div>
                         <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">Shima</h4>
-                        <p className="text-gray-500 dark:text-gray-500 uppercase text-sm tracking-wider">Marketing Lead (AI)</p>
+                        <p className="text-gray-500 dark:text-gray-500 uppercase text-sm tracking-wider">GTM</p>
                     </div>
                 </div>
                 <div className="text-center mt-16">
