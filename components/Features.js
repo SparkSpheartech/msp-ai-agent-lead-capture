@@ -18,16 +18,16 @@ const Features = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-white/10 p-8 rounded-2xl hover:border-lime-500 dark:hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Enterprise Scalability</h3>
-                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">Built for growth. Our solutions are designed to scale with your organization, from local startups to global enterprises.</p>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Built to Scale</h3>
+                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">Workflows designed to handle expanding call volume, customer intake, and daily transactions without adding headcount.</p>
                     </div>
                     <div className="bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-white/10 p-8 rounded-2xl hover:border-lime-500 dark:hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Compliance First</h3>
-                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">We prioritize data security and regulatory compliance, ensuring your business meets the highest industry standards.</p>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Security & Stability</h3>
+                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">Your client records, billing data, and internal credentials remain protected with strict security standards.</p>
                     </div>
                     <div className="bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-white/10 p-8 rounded-2xl hover:border-lime-500 dark:hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Integrated Ecosystem</h3>
-                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">A unified approach to IT, Marketing, and Operations that eliminates silos and maximizes efficiency.</p>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Connected Tools</h3>
+                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">We connect your CRM, dispatch software, spreadsheets, and phone lines so data updates everywhere automatically.</p>
                     </div>
                 </div>
 

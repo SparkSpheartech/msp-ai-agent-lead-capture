@@ -108,20 +108,18 @@ const Process = () => {
                         A Proven Path to <span className="text-lime-600 dark:text-primary">Success</span>
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
-                        Experience you would expect and the process that proves it. Our systematic approach ensures your technology works for you.
+                        A clear, battle-tested 6-step framework designed to automate manual tasks and protect operational uptime.
                     </p>
                     
                     {/* CTA to start the process */}
                     <div className="inline-flex flex-col sm:flex-row items-center gap-4 justify-center">
-                        <a
-                            href="https://docs.google.com/forms/d/1eYMjWkzKncACWYoB0RpXuOU0eaSFu-EoeywYNdttLIw/edit"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            href="/onboarding"
                             className="inline-flex items-center gap-3 px-8 py-5 bg-lime-500 text-zinc-950 font-bold text-lg rounded-full hover:bg-lime-400 transition-all duration-300 shadow-lg shadow-lime-500/30 hover:shadow-lime-500/50 hover:scale-105"
                         >
                             <Play className="w-5 h-5 fill-current" />
-                            Start Your Journey
-                        </a>
+                            Start Client Onboarding
+                        </Link>
                         <Link
                             href="#service-wizard"
                             className="inline-flex items-center gap-2 px-6 py-4 border-2 border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-gray-300 font-semibold rounded-full hover:border-lime-500 dark:hover:border-primary hover:text-lime-600 dark:hover:text-primary transition-all duration-300"
@@ -219,16 +217,14 @@ const Process = () => {
 
                 {/* Bottom CTA */}
                 <div className="text-center mt-16">
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">Ready to begin your transformation?</p>
-                    <a
-                        href="https://docs.google.com/forms/d/1eYMjWkzKncACWYoB0RpXuOU0eaSFu-EoeywYNdttLIw/edit"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Ready to automate your operations?</p>
+                    <Link
+                        href="/onboarding"
                         className="inline-flex items-center gap-2 px-8 py-4 bg-lime-500 text-zinc-950 font-bold rounded-lg hover:bg-lime-400 transition-all duration-300"
                     >
-                        Start Your Free Consultation
+                        Start Client Onboarding
                         <ArrowRight className="w-5 h-5" />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

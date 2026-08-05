@@ -7,33 +7,33 @@ const CoreValues = () => {
     const values = [
         {
             icon: <Lightbulb className="w-12 h-12" />,
-            title: "Innovation First",
-            description: "Always seeking cutting-edge solutions that give our clients a competitive advantage"
+            title: "Practical Automation",
+            description: "We build systems that save time and reduce costs, never technology for its own sake."
         },
         {
             icon: <Users className="w-12 h-12" />,
-            title: "Client Partnership",
-            description: "Your success is our success. We're in this together for the long haul"
+            title: "Direct Partnership",
+            description: "You work directly with the founders and technical leads building your solution."
         },
         {
             icon: <Shield className="w-12 h-12" />,
-            title: "Transparency",
-            description: "Clear communication at every step. No hidden fees, no surprises"
+            title: "Clear Communication",
+            description: "No technobabble, no hidden charges. Just straight answers and clear scope."
         },
         {
             icon: <Award className="w-12 h-12" />,
-            title: "Excellence",
-            description: "Quality over quantity, always. We take pride in delivering exceptional results"
+            title: "Proven Results",
+            description: "Every tool we deploy is tested for high reliability and measurable time savings."
         },
         {
             icon: <TrendingUp className="w-12 h-12" />,
-            title: "Continuous Learning",
-            description: "Staying ahead of tech trends so you don't have to worry about falling behind"
+            title: "Continuous Maintenance",
+            description: "We monitor and update your workflows so your operations never break down."
         },
         {
             icon: <Heart className="w-12 h-12" />,
-            title: "Local Commitment",
-            description: "Proud to serve Fort Wayne businesses with personalized, face-to-face support"
+            title: "Fort Wayne Local",
+            description: "Proudly based in Northeast Indiana, offering responsive local support when you need it."
         }
     ];
 

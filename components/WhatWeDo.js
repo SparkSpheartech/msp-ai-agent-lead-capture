@@ -15,9 +15,9 @@ const WhatWeDo = () => {
 
             <div className="container relative z-10 mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="text-lime-400 font-mono text-sm tracking-wider uppercase mb-3 block">THE MASTER STRATEGY</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">We Don't Guess. We Scan.</h2>
-                    <p className="text-gray-400 text-lg leading-relaxed">Stop fixing symptoms. Our 360° Infrastructure Audit identifies the root cause of your growth bottlenecks—whether it's code, copy, or compliance.</p>
+                    <span className="text-lime-400 font-mono text-sm tracking-wider uppercase mb-3 block">OUR APPROACH</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">We Don't Guess. We Inspect.</h2>
+                    <p className="text-gray-400 text-lg leading-relaxed">We find where your time and money are leaking. Our 360° IT & Operations audit inspects your tools, dispatching, and workflows to pinpoint exactly what to automate first.</p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-8 mb-8">
@@ -51,8 +51,8 @@ const WhatWeDo = () => {
                             <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 <Globe className="w-6 h-6 text-orange-400" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">Digital Growth</h3>
-                            <p className="text-gray-400">Data-driven marketing strategies to dominate your market share.</p>
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">Digital Marketing</h3>
+                            <p className="text-gray-400">Targeted lead generation and local search optimization so qualified clients call you first.</p>
                         </div>
                     </Link>
                     <Link href="/services/ai-automation">
@@ -60,8 +60,8 @@ const WhatWeDo = () => {
                             <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 <Database className="w-6 h-6 text-purple-400" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">AI Automation</h3>
-                            <p className="text-gray-400">Eliminate manual work with intelligent workflow automation.</p>
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">AI & Workflow Automation</h3>
+                            <p className="text-gray-400">Automate dispatch, missed call SMS auto-replies, and invoice logging without extra software clutter.</p>
                         </div>
                     </Link>
                     <Link href="/services/photography-videography">
@@ -69,8 +69,8 @@ const WhatWeDo = () => {
                             <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 <Camera className="w-6 h-6 text-cyan-400" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">Creative Visuals</h3>
-                            <p className="text-gray-400">Premium photography and video to elevate your brand prestige.</p>
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">Commercial Media & Video</h3>
+                            <p className="text-gray-400">Professional photography and video production for your fleet, team, and client promos.</p>
                         </div>
                     </Link>
                 </div>
