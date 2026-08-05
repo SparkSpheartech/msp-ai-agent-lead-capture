@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { Facebook, Instagram, Linkedin, Mail } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, Youtube } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -48,6 +48,9 @@ const Footer = () => {
                             </a>
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-white hover:bg-[#a6fd37] hover:text-dark transition-all">
                                 <Instagram size={18} />
+                            </a>
+                            <a href="https://www.youtube.com/@SparkSphearVisionaries" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-white hover:bg-[#a6fd37] hover:text-dark transition-all">
+                                <Youtube size={18} />
                             </a>
                         </div>
                     </div>
