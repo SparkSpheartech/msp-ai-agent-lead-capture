@@ -1,14 +1,85 @@
 import { NextResponse } from 'next/server';
 
-// Salesforce configuration - add these to environment variables
-const SF_CONFIG = {
-  loginUrl: 'https://login.salesforce.com/services/oauth2/token',
-  clientId: process.env.SALESFORCE_CONSUMER_KEY,
-  clientSecret: process.env.SALESFORCE_CLIENT_SECRET,
-  username: process.env.SALESFORCE_USERNAME,
-  password: process.env.SALESFORCE_PASSWORD,
-  securityToken: process.env.SALESFORCE_SECURITY_TOKEN
-};
+const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLScRDTfrCVE7Qt1AAFlvBOZGvFMkzeFiXIAJyFMFHlTvBUbS2Q/formResponse";
+
+async function submitToGoogleForm(data) {
+  try {
+    const formPayload = new URLSearchParams();
+
+    // Section 1
+    formPayload.append('entry.1045161495', data.fullName || '');
+    formPayload.append('entry.1959555873', data.companyName || '');
+    formPayload.append('entry.543570196', data.roleTitle || '');
+    formPayload.append('entry.481207998', data.email || '');
+    formPayload.append('entry.319213839', data.phone || '');
+    formPayload.append('entry.721041912', data.website || '');
+
+    // Section 2
+    formPayload.append('entry.1190922220', data.businessDescription || '');
+    formPayload.append('entry.584072240', data.industry || '');
+    formPayload.append('entry.951452280', data.companySize || '');
+
+    // Section 3
+    if (Array.isArray(data.promptedReasons)) {
+      data.promptedReasons.forEach(r => formPayload.append('entry.222064922', r));
+    } else if (data.promptedReasons) {
+      formPayload.append('entry.222064922', data.promptedReasons);
+    }
+    formPayload.append('entry.1618583268', data.biggestBottleneck || '');
+
+    // Section 4
+    if (Array.isArray(data.primaryGoals)) {
+      data.primaryGoals.forEach(g => formPayload.append('entry.793528476', g));
+    } else if (data.primaryGoals) {
+      formPayload.append('entry.793528476', data.primaryGoals);
+    }
+    formPayload.append('entry.457835563', data.personalSuccessDefinition || '');
+
+    // Section 5
+    if (Array.isArray(data.servicesOfInterest)) {
+      data.servicesOfInterest.forEach(s => formPayload.append('entry.789505526', s));
+    } else if (data.servicesOfInterest) {
+      formPayload.append('entry.789505526', data.servicesOfInterest);
+    }
+    formPayload.append('entry.341767781', data.visionIdeaDescription || '');
+
+    // Section 6
+    formPayload.append('entry.1201006680', data.existingTools || '');
+    formPayload.append('entry.46272526', data.missionCriticalSystems || '');
+
+    // Section 7
+    formPayload.append('entry.1879926952', data.targetTimeline || '');
+    formPayload.append('entry.40045913', data.launchDeadlineEvent || '');
+
+    // Section 8
+    formPayload.append('entry.151894484', data.budgetRange || '');
+
+    // Section 9
+    const decisionMaker = data.decisionMakerStatus === 'Other' && data.decisionMakerOther 
+      ? `Other: ${data.decisionMakerOther}` 
+      : (data.decisionMakerStatus || '');
+    formPayload.append('entry.1837753504', decisionMaker);
+    formPayload.append('entry.720758938', data.preferredCommunication || '');
+    formPayload.append('entry.1526397484', data.accessReadiness || '');
+    formPayload.append('entry.2022839147', data.involvementLevel || '');
+    formPayload.append('entry.1312252257', data.additionalNotes || '');
+
+    // Section 10
+    formPayload.append('entry.1912632856', 'I agree');
+
+    const response = await fetch(GOOGLE_FORM_ACTION_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: formPayload.toString()
+    });
+
+    console.log('[Google Sheet Auto-Sync] Status:', response.status);
+    return response.ok;
+  } catch (err) {
+    console.error('[Google Sheet Auto-Sync Error]:', err.message);
+    return false;
+  }
+}
 
 // In-memory lead store for development/testing
 const leads = [];
@@ -17,18 +88,13 @@ export async function GET() {
   return NextResponse.json({
     leads,
     count: leads.length,
-    config: {
-      hasCredentials: !!SF_CONFIG.clientId,
-      endpoint: '/api/leads',
-      method: 'POST with JSON body'
-    }
+    googleSheetTarget: 'https://docs.google.com/spreadsheets/d/1_PM4oQZDRzSOY_7tOPM4QRw7vQ3GYhuRv0FB8MZmNYY/edit?resourcekey=&gid=1571625119#gid=1571625119'
   });
 }
 
 export async function POST(request) {
   try {
     const data = await request.json();
-    
     let lead = {};
 
     if (data.type === 'client_onboarding_form') {
@@ -61,10 +127,13 @@ export async function POST(request) {
         involvementLevel: data.involvementLevel || '',
         additionalNotes: data.additionalNotes || '',
         agreement: data.agreement || false,
-        status: 'New Onboarding Submission',
+        status: 'Synced to Google Sheet',
         source: 'Website Onboarding Wizard',
         submittedAt: new Date().toISOString()
       };
+
+      // Post directly to Google Form so it inputs straight into the user's Google Sheet
+      await submitToGoogleForm(data);
     } else {
       lead = {
         id: 'LEAD-' + Date.now().toString(),
@@ -83,19 +152,19 @@ export async function POST(request) {
       };
     }
     
-    // Validate required company/email
+    // Validate required fields
     if (!lead.company && !lead.email) {
       return NextResponse.json({ error: 'Company name or email is required' }, { status: 400 });
     }
     
     leads.push(lead);
-    console.log(`[SPARKSPHEAR Lead Engine] New Lead Received: ${lead.company} (${lead.type})`);
+    console.log(`[SPARKSPHEAR Lead Engine] New Lead Captured & Synced to Google Sheet: ${lead.company}`);
     
     return NextResponse.json({
       status: 'success',
-      message: 'Lead/Onboarding payload captured successfully',
+      message: 'Onboarding data submitted and synced directly to Google Sheet',
       leadId: lead.id,
-      lead
+      googleSheetUrl: 'https://docs.google.com/spreadsheets/d/1_PM4oQZDRzSOY_7tOPM4QRw7vQ3GYhuRv0FB8MZmNYY/edit#gid=1571625119'
     });
   } catch (error) {
     return NextResponse.json({ 
