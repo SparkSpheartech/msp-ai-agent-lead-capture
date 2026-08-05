@@ -28,7 +28,7 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-x-9 text-sm font-medium">
-          <Link href="/#what-we-do" className="hover:text-primary transition">Services</Link>
+          <Link href="/markets" className="hover:text-primary transition text-lime-400 font-semibold">Markets We Service</Link>
           <Link href="/process" className="hover:text-primary transition">Process</Link>
           <Link href="/pricing" className="hover:text-primary transition">Pricing</Link>
           <Link href="/about" className="hover:text-primary transition">About</Link>
@@ -56,7 +56,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="lg:hidden bg-black/98 border-t border-gray-800 px-5 py-8 text-[15px]">
           <nav className="flex flex-col gap-y-5 text-gray-200">
-            <Link href="/#what-we-do" onClick={closeMenu}>Services</Link>
+            <Link href="/markets" onClick={closeMenu} className="text-lime-400 font-semibold">Markets We Service</Link>
             <Link href="/process" onClick={closeMenu}>Process</Link>
             <Link href="/pricing" onClick={closeMenu}>Pricing</Link>
             <Link href="/about" onClick={closeMenu}>About</Link>

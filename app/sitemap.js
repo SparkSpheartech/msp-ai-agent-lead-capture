@@ -22,6 +22,12 @@ export default function sitemap() {
             priority: 0.9,
         },
         {
+            url: `${baseUrl}/markets`,
+            lastModified: new Date(),
+            changeFrequency: 'daily',
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/pricing`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
