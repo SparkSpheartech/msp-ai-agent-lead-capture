@@ -16,7 +16,6 @@ import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 
-import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -33,7 +32,6 @@ export default function Home() {
       <Team />
       <Testimonials />
       <Newsletter />
-      <ContactForm />
       <Footer />
     </main>
   );
