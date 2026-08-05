@@ -8,7 +8,7 @@ import { ArrowRight, Linkedin, Mail, Award, Target, Heart, Play } from 'lucide-r
 const teamMembers = [
     {
         name: 'Shazaly Musa',
-        role: 'Founder & Tech Lead',
+        role: 'Founder',
         subtitle: 'Start & Scale',
         image: '/founder-new.webp',
         video: '/videos/founder.mp4',
@@ -16,7 +16,7 @@ const teamMembers = [
     },
     {
         name: 'Daisy',
-        role: 'Executive Assistant',
+        role: 'Coo',
         subtitle: 'Operations',
         image: '/executive-assistant.webp',
         video: '/videos/executive-assistant.mp4',
@@ -24,7 +24,7 @@ const teamMembers = [
     },
     {
         name: 'Travis',
-        role: 'CTO',
+        role: 'CIO',
         subtitle: 'Infrastructure',
         image: '/cto-new.webp',
         video: '/videos/cto.mp4',
@@ -32,20 +32,13 @@ const teamMembers = [
     },
     {
         name: 'Shima',
-        role: 'Digital Specialist',
+        role: 'GTM',
         subtitle: 'Marketing',
         image: '/digital-marketing.webp',
         video: '/videos/digital-specialist.mp4',
         description: 'Strategies that turn clicks into customers. She masters the art of digital presence to ensure your brand gets the attention it deserves.'
     },
-    {
-        name: 'Eissa',
-        role: 'DevOps Engineer',
-        subtitle: 'Hybrid Operations',
-        image: '/devops-engineer.webp',
-        video: '/videos/devops.mp4',
-        description: 'Bridging the gap between development and operations for continuous, reliable delivery. He ensures your systems are always available.'
-    }
+
 ];
 
 function TeamCard({ member, index }) {
@@ -124,7 +117,7 @@ export default function About() {
         {
             icon: <Heart />,
             title: 'Community',
-            description: 'Dedicated to empowering local Fort Wayne businesses to thrive'
+            description: 'Dedicated to empowering small businesses to thrive, fostering community growth and customer well-being'
         }
     ];
 
@@ -161,10 +154,10 @@ export default function About() {
                     <div className="container max-w-6xl">
                         <div className="text-center mb-16">
                             <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
-                                What Drives <span className="text-primary">Me</span>
+                                Our <span className="text-primary">Driving Force</span>
                             </h2>
                             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                                The principles that guide everything we do at SPARKSPHEAR
+                                We're passionate about working with small businesses to make a meaningful difference, helping them thrive so their customers can live better lives.
                             </p>
                         </div>
 
@@ -191,7 +184,7 @@ export default function About() {
                         <div className="bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/30 rounded-2xl p-12 text-center">
                             <h2 className="text-white text-3xl font-bold mb-6">Our Mission</h2>
                             <p className="text-gray-300 text-xl leading-relaxed">
-                                "To empower businesses with innovative technology solutions that drive growth, efficiency, and success—delivered with integrity, expertise, and a personal touch."
+                                "To empower small businesses with innovative technology solutions that drive growth, efficiency, and success, enabling them to make a positive impact on their customers' lives and contribute to a better world."
                             </p>
                         </div>
                     </div>
