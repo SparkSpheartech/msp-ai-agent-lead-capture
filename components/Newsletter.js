@@ -16,18 +16,17 @@ const Newsletter = () => {
         setMessage('');
 
         try {
-            // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-            // See instructions below to create it
-            const GOOGLE_APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
-            
-            const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+            const response = await fetch('/api/newsletter', {
                 method: 'POST',
-                mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Content-Type': 'application/json',
                 },
-                body: `email=${encodeURIComponent(email)}`
+                body: JSON.stringify({ email })
             });
+
+            if (!response.ok) {
+                throw new Error('Failed to subscribe');
+            }
 
             setStatus('success');
             setMessage('Thanks for subscribing! You\'re now connected.');
