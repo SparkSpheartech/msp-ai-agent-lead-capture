@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    text: "Shazaly and SparkSphear have been instrumental in our growth. Their AI-driven workflow optimization didn't just save us time—it completely redefined how we handle operations. Their technical depth and innovative perspective are assets to any established business.",
+    text: "Shazaly and SparkSphear have been instrumental in our growth. Their deployment of Agentic systems and specialized AI agents didn't just save us time—it completely redefined how we handle operations. Their technical depth and innovative perspective are assets to any established business.",
     name: "Aseel Batuq",
     role: "Head of Operations",
     company: "Web One",

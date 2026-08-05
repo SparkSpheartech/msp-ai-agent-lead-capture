@@ -641,7 +641,7 @@ export default function ClientOnboardingForm() {
                                     </label>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                         {[
-                                            'AI automation & workflows',
+                                            'Agentic systems & specialized AI agents',
                                             'Custom AI tools or agents',
                                             'Business process optimization',
                                             'Data analysis & dashboards',

@@ -60,8 +60,8 @@ const WhatWeDo = () => {
                             <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 <Database className="w-6 h-6 text-purple-400" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">AI & Workflow Automation</h3>
-                            <p className="text-gray-400">Automate dispatch, missed call SMS auto-replies, and invoice logging without extra software clutter.</p>
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">Agentic Systems & Specialized AI Agents</h3>
+                            <p className="text-gray-400">Deploy specialized AI agents for automated dispatch, missed call SMS auto-replies, and intelligent invoice logging.</p>
                         </div>
                     </Link>
                     <Link href="/services/photography-videography">

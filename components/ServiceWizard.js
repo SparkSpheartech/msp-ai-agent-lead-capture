@@ -12,9 +12,9 @@ const ServiceWizard = () => {
     // Service Data
     const services = {
         ai: {
-            title: "AI & Automation",
+            title: "Agentic Systems & Specialized AI Agents",
             icon: <Brain className="w-16 h-16 text-purple-600 dark:text-purple-400" />,
-            description: "Leverage cutting-edge AI to automate workflows, enhance decision-making, and scale your operations efficiently.",
+            description: "Deploy Agentic systems and specialized AI agents to automate operations, enhance decision-making, and scale efficiently.",
             link: "/services/ai-automation"
         },
         photo: {
