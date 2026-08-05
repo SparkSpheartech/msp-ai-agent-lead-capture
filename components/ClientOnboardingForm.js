@@ -29,11 +29,16 @@ export default function ClientOnboardingForm() {
         businessDescription: '',
         industry: '',
         companySize: '',
+        annualRevenue: '',
+        locationsCount: '',
+        leadSource: '',
 
         // Section 3
         promptedReasons: [],
         promptedOther: '',
         biggestBottleneck: '',
+        weeklyMissedCalls: '',
+        currentResponseTime: '',
 
         // Section 4
         primaryGoals: [],
@@ -46,6 +51,7 @@ export default function ClientOnboardingForm() {
         // Section 6
         existingTools: '',
         missionCriticalSystems: '',
+        phoneSystem: '',
 
         // Section 7
         targetTimeline: '',
@@ -53,6 +59,7 @@ export default function ClientOnboardingForm() {
 
         // Section 8
         budgetRange: '',
+        engagementModel: '',
 
         // Section 9
         decisionMakerStatus: '',
@@ -60,6 +67,7 @@ export default function ClientOnboardingForm() {
         preferredCommunication: '',
         accessReadiness: '',
         involvementLevel: '',
+        clientTimezone: '',
         additionalNotes: '',
 
         // Section 10
@@ -408,6 +416,56 @@ export default function ClientOnboardingForm() {
                                         ))}
                                     </div>
                                 </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Estimated Annual Revenue Scale</label>
+                                        <select 
+                                            value={formData.annualRevenue}
+                                            onChange={(e) => handleTextChange('annualRevenue', e.target.value)}
+                                            className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800/80 border border-gray-300 dark:border-white/15 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500"
+                                        >
+                                            <option value="">Select Revenue Scale...</option>
+                                            <option value="Under $100k">Under $100k</option>
+                                            <option value="$100k–$500k">$100k–$500k</option>
+                                            <option value="$500k–$1M">$500k–$1M</option>
+                                            <option value="$1M–$5M">$1M–$5M</option>
+                                            <option value="$5M+">$5M+</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Number of Locations / Sites</label>
+                                        <select 
+                                            value={formData.locationsCount}
+                                            onChange={(e) => handleTextChange('locationsCount', e.target.value)}
+                                            className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800/80 border border-gray-300 dark:border-white/15 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500"
+                                        >
+                                            <option value="">Select Locations Count...</option>
+                                            <option value="1 location">1 Location</option>
+                                            <option value="2–5 locations">2–5 Locations</option>
+                                            <option value="6–10 locations">6–10 Locations</option>
+                                            <option value="10+ locations">10+ Locations</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">How did you find SPARKSPHEAR Tech Solutions?</label>
+                                    <select 
+                                        value={formData.leadSource}
+                                        onChange={(e) => handleTextChange('leadSource', e.target.value)}
+                                        className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800/80 border border-gray-300 dark:border-white/15 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500"
+                                    >
+                                        <option value="">Select Source...</option>
+                                        <option value="Google Search">Google Search</option>
+                                        <option value="Website / Blog">Website / Blog</option>
+                                        <option value="Referral / Word of mouth">Referral / Word of mouth</option>
+                                        <option value="Cold Outreach / Call">Cold Outreach / Call</option>
+                                        <option value="Social Media (Instagram / LinkedIn / YouTube)">Social Media (Instagram / LinkedIn / YouTube)</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
                             </div>
                         </motion.div>
                     )}
@@ -468,6 +526,38 @@ export default function ClientOnboardingForm() {
                                         onChange={(e) => handleTextChange('biggestBottleneck', e.target.value)}
                                         className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800/80 border border-gray-300 dark:border-white/15 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500"
                                     />
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Estimated Weekly Missed Calls / Inquiries</label>
+                                        <select 
+                                            value={formData.weeklyMissedCalls}
+                                            onChange={(e) => handleTextChange('weeklyMissedCalls', e.target.value)}
+                                            className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800/80 border border-gray-300 dark:border-white/15 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500"
+                                        >
+                                            <option value="">Select Missed Calls Range...</option>
+                                            <option value="0–5 calls/week">0–5 calls/week</option>
+                                            <option value="6–20 calls/week">6–20 calls/week</option>
+                                            <option value="21–50 calls/week">21–50 calls/week</option>
+                                            <option value="50+ calls/week">50+ calls/week</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Current Average Lead Response Time</label>
+                                        <select 
+                                            value={formData.currentResponseTime}
+                                            onChange={(e) => handleTextChange('currentResponseTime', e.target.value)}
+                                            className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800/80 border border-gray-300 dark:border-white/15 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500"
+                                        >
+                                            <option value="">Select Response Time...</option>
+                                            <option value="Under 5 minutes">Under 5 minutes</option>
+                                            <option value="5–30 minutes">5–30 minutes</option>
+                                            <option value="1–4 hours">1–4 hours</option>
+                                            <option value="24+ hours / Next day">24+ hours / Next day</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -635,6 +725,19 @@ export default function ClientOnboardingForm() {
                                         className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800/80 border border-gray-300 dark:border-white/15 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500"
                                     />
                                 </div>
+
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                                        Primary Phone System & Dispatch Tools
+                                    </label>
+                                    <input 
+                                        type="text"
+                                        placeholder="e.g. Google Voice, RingCentral, ServiceTitan, DispatchTrack, OpenPhone, Twilio..."
+                                        value={formData.phoneSystem}
+                                        onChange={(e) => handleTextChange('phoneSystem', e.target.value)}
+                                        className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800/80 border border-gray-300 dark:border-white/15 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500"
+                                    />
+                                </div>
                             </div>
                         </motion.div>
                     )}
@@ -721,6 +824,31 @@ export default function ClientOnboardingForm() {
                                         ))}
                                     </div>
                                 </div>
+
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Preferred Engagement Model</label>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        {[
+                                            '$297/mo 30-Day Pilot Program',
+                                            'Custom Automation Buildout',
+                                            'Ongoing Managed Retainer',
+                                            'Undecided / Need Recommendation'
+                                        ].map((model) => (
+                                            <button
+                                                type="button"
+                                                key={model}
+                                                onClick={() => handleTextChange('engagementModel', model)}
+                                                className={`p-4 rounded-xl border text-left transition-all font-medium text-sm ${
+                                                    formData.engagementModel === model 
+                                                        ? 'bg-lime-500/20 border-lime-500 text-lime-600 dark:text-lime-400 font-bold'
+                                                        : 'bg-gray-50 dark:bg-zinc-800/60 border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:border-lime-400'
+                                                }`}
+                                            >
+                                                {model}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     )}
@@ -787,6 +915,22 @@ export default function ClientOnboardingForm() {
                                             </button>
                                         ))}
                                     </div>
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Timezone for Dedicated Communication & Check-ins</label>
+                                    <select 
+                                        value={formData.clientTimezone}
+                                        onChange={(e) => handleTextChange('clientTimezone', e.target.value)}
+                                        className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800/80 border border-gray-300 dark:border-white/15 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500"
+                                    >
+                                        <option value="">Select Timezone...</option>
+                                        <option value="EST (Eastern Standard Time)">EST (Eastern Standard Time)</option>
+                                        <option value="CST (Central Standard Time)">CST (Central Standard Time)</option>
+                                        <option value="MST (Mountain Standard Time)">MST (Mountain Standard Time)</option>
+                                        <option value="PST (Pacific Standard Time)">PST (Pacific Standard Time)</option>
+                                        <option value="Other">Other International Timezone</option>
+                                    </select>
                                 </div>
 
                                 <div>
