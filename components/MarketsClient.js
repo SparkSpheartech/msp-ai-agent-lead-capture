@@ -225,7 +225,7 @@ export default function MarketsClient({ initialPosts = [] }) {
                                 </div>
 
                                 {/* Article Footer Action */}
-                                <div className="p-6 pt-0 border-t border-gray-100 dark:border-white/5 mt-auto flex items-center justify-between">
+                                <div className="p-6 pt-0 border-t border-gray-100 dark:border-white/5 mt-auto flex flex-col sm:flex-row items-center justify-between gap-4">
                                     <a 
                                         href={post.link} 
                                         target="_blank" 
@@ -234,6 +234,12 @@ export default function MarketsClient({ initialPosts = [] }) {
                                     >
                                         Read Full Market Analysis <ExternalLink size={14} />
                                     </a>
+                                    <Link
+                                        href={`/projects?market=${encodeURIComponent(post.categories[0] || 'General')}`}
+                                        className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-100 dark:bg-zinc-800 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-lg text-sm font-semibold hover:bg-lime-500 hover:border-lime-500 hover:text-zinc-950 transition-colors w-full sm:w-auto justify-center"
+                                    >
+                                        View Projects <ArrowRight size={14} />
+                                    </Link>
                                 </div>
                             </motion.article>
                         ))}
