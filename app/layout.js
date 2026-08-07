@@ -7,6 +7,7 @@ import PageTransition from "@/components/PageTransition";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import SchemaOrg from "@/components/SchemaOrg";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
  subsets: ["latin"],
@@ -284,6 +285,7 @@ export default function RootLayout({ children }) {
  {children}
  </PageTransition>
  <Analytics />
+ <SpeedInsights />
  </SmoothScrolling>
  </ThemeProvider>
  </body>
