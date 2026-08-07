@@ -1,11 +1,11 @@
 export const kbArticles = [
-    {
-        id: 'getting-started',
-        slug: 'getting-started',
-        category: 'Getting Started',
-        title: 'Getting Started with SparkSphear Services',
-        excerpt: 'Learn how to set up your account and get the most out of our services',
-        content: `
+ {
+ id: 'getting-started',
+ slug: 'getting-started',
+ category: 'Getting Started',
+ title: 'Getting Started with SparkSphear Services',
+ excerpt: 'Learn how to set up your account and get the most out of our services',
+ content: `
 # Getting Started with SparkSphear Services
 
 Welcome to SparkSphear! This guide will help you get started with our services.
@@ -33,15 +33,15 @@ Our technical team will work with you to:
 ## Need Help?
 
 Contact our support team at (260) 247-7775 or submit a ticket.
-        `
-    },
-    {
-        id: 'password-reset',
-        slug: 'password-reset',
-        category: 'Troubleshooting',
-        title: 'How to Reset Your Password',
-        excerpt: 'Step-by-step guide for resetting your account password',
-        content: `
+ `
+ },
+ {
+ id: 'password-reset',
+ slug: 'password-reset',
+ category: 'Troubleshooting',
+ title: 'How to Reset Your Password',
+ excerpt: 'Step-by-step guide for resetting your account password',
+ content: `
 # How to Reset Your Password
 
 Having trouble accessing your account? Follow these steps to reset your password.
@@ -67,15 +67,15 @@ If you don't receive the reset email:
 - Check your spam folder
 - Verify you're using the correct email
 - Contact support for assistance
-        `
-    },
-    {
-        id: 'cybersecurity-basics',
-        slug: 'cybersecurity-basics',
-        category: 'Best Practices',
-        title: 'Cybersecurity Best Practices for Small Business',
-        excerpt: 'Essential security practices every business should follow',
-        content: `
+ `
+ },
+ {
+ id: 'cybersecurity-basics',
+ slug: 'cybersecurity-basics',
+ category: 'Best Practices',
+ title: 'Cybersecurity Best Practices for Small Business',
+ excerpt: 'Essential security practices every business should follow',
+ content: `
 # Cybersecurity Best Practices
 
 Protect your business with these essential cybersecurity practices.
@@ -111,15 +111,15 @@ Protect your business with these essential cybersecurity practices.
 ## Need a Security Audit?
 
 Contact our cybersecurity team to assess your current security posture.
-        `
-    },
-    {
-        id: 'cloud-migration',
-        slug: 'cloud-migration',
-        category: 'Best Practices',
-        title: 'Planning Your Cloud Migration',
-        excerpt: 'A comprehensive guide to moving your business to the cloud',
-        content: `
+ `
+ },
+ {
+ id: 'cloud-migration',
+ slug: 'cloud-migration',
+ category: 'Best Practices',
+ title: 'Planning Your Cloud Migration',
+ excerpt: 'A comprehensive guide to moving your business to the cloud',
+ content: `
 # Planning Your Cloud Migration
 
 Moving to the cloud can transform your business. Here's how to plan effectively.
@@ -161,14 +161,14 @@ Moving to the cloud can transform your business. Here's how to plan effectively.
 ## Let Us Help
 
 SparkSphear specializes in seamless cloud migrations. Contact us for a consultation.
-        `
-    }
+ `
+ }
 ];
 
 export const kbCategories = [
-    'Getting Started',
-    'Troubleshooting',
-    'Best Practices',
-    'Billing & Account',
-    'Security'
+ 'Getting Started',
+ 'Troubleshooting',
+ 'Best Practices',
+ 'Billing & Account',
+ 'Security'
 ];

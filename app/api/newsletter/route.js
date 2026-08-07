@@ -1,10 +1,9 @@
 import { NextResponse } from 'next/server';
+import { addSequenzySubscriber } from '@/lib/sequenzy';
 
 // Send payload to n8n workflow pipeline
 async function sendToN8nWorkflow(payload) {
-  // Using localhost for n8n if hosted on the same server, or a production webhook URL
-  // You can change this URL to your production n8n webhook URL
-  const N8N_WEBHOOK_URL = 'http://localhost:5678/webhook/newsletter';
+  const N8N_WEBHOOK_URL = process.env.N8N_NEWSLETTER_WEBHOOK_URL || 'http://localhost:5678/webhook/newsletter';
   
   try {
     const response = await fetch(N8N_WEBHOOK_URL, {
@@ -25,7 +24,7 @@ async function sendToN8nWorkflow(payload) {
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { email } = body;
+    const { email, source } = body;
 
     if (!email) {
       return NextResponse.json(
@@ -34,27 +33,35 @@ export async function POST(request) {
       );
     }
 
-    // Add timestamp
     const payload = {
       email,
       timestamp: new Date().toISOString(),
-      source: 'Website Newsletter Form'
+      source: source || 'Website Newsletter Form'
     };
 
-    // Forward to n8n workflow
+    const tags = source === 'Homepage Footer Newsletter' 
+      ? ['newsletter-subscriber', 'homepage-subscriber', 'website-lead']
+      : ['newsletter-subscriber', 'case-studies-unlocked', 'website-lead'];
+
+    // 1. Push subscriber directly into Sequenzy Email Marketing Platform
+    const sequenzyResult = await addSequenzySubscriber({
+      email,
+      tags,
+      listId: process.env.SEQUENZY_NEWSLETTER_LIST_ID || 'wt2s569lvk6hsjvef0t8biuj'
+    });
+
+    // 2. Forward to n8n workflow fallback
     const n8nResult = await sendToN8nWorkflow(payload);
     
-    // Even if n8n is down, we return success to the user so they don't see an error,
-    // but in a real prod app you might want to queue it or save to a local DB.
     if (!n8nResult.success) {
       console.warn('Newsletter subscription received but n8n webhook failed. Payload:', payload);
-      // For now, we'll still return success to the frontend
     }
 
     return NextResponse.json(
       { 
         success: true, 
         message: 'Successfully subscribed to newsletter',
+        sequenzySynced: sequenzyResult.success
       },
       { status: 200 }
     );

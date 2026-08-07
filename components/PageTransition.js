@@ -3,12 +3,12 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 export default function PageTransition({ children }) {
-    const pathname = usePathname();
+ const pathname = usePathname();
 
-    useEffect(() => {
-        // Scroll to top on page change
-        window.scrollTo(0, 0);
-    }, [pathname]);
+ useEffect(() => {
+ // Scroll to top on page change
+ window.scrollTo(0, 0);
+ }, [pathname]);
 
-    return <>{children}</>;
+ return <>{children}</>;
 }

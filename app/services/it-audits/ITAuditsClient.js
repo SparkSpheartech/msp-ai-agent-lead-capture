@@ -1,334 +1,367 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Shield, Code, TrendingUp, Cpu, Camera, CheckCircle, ArrowRight, Activity, Search, AlertTriangle, Layers, Lock } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { 
+  Shield, Server, Cpu, Database, CheckCircle, ArrowRight, Lock, Eye, 
+  Terminal, Activity, Zap, Check, AlertTriangle, FileSpreadsheet, RefreshCcw, Loader2, Calendar 
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default function ITAudits() {
-    // The 4 Pillars re-framed as Audit Modules
-    const pillars = [
-        {
-            title: 'Digital Presence Audit',
-            icon: <Code />,
-            desc: 'We scan your website for broken code, slow load times, and poor UX that kills conversions.',
-            status: 'Web Infrastructure'
-        },
-        {
-            title: 'Growth Systems Audit',
-            icon: <TrendingUp />,
-            desc: 'We analyze your marketing funnels, ad spend efficiency, and lead retention rates.',
-            status: 'Digital Marketing'
-        },
-        {
-            title: 'Operational Logic Audit',
-            icon: <Cpu />,
-            desc: 'We identify manual bottlenecks in your workflow that should be automated with AI.',
-            status: 'AI & Automation'
-        },
-        {
-            title: 'Brand Consistency Audit',
-            icon: <Camera />,
-            desc: 'We review your visual identity across all platforms to ensure premium perception.',
-            status: 'Visual Identity'
-        },
-    ];
+const auditQuestions = [
+  {
+    id: 'size',
+    title: 'How large is your current operation?',
+    subtitle: 'This helps us gauge the scale of infrastructure and potential tool sprawl.',
+    options: [
+      { label: 'Founding Team (1–4 Employees)', icon: '🚀', desc: 'Focus on speed & low-cost tech stack' },
+      { label: 'Growth Stage (5–15 Employees)', icon: '📈', desc: 'Experiencing bottlenecking in daily admin' },
+      { label: 'Scaling Operation (16–50 Employees)', icon: '🏢', desc: 'Need strict system integrations & SLA' },
+      { label: 'Enterprise (50+ Employees)', icon: '🌐', desc: 'Require custom LLMs & dedicated architecture' }
+    ]
+  },
+  {
+    id: 'bottleneck',
+    title: 'What is your biggest operational bottleneck right now?',
+    subtitle: 'Identify where your team loses the most hours every single week.',
+    options: [
+      { label: 'Manual Lead Intake & Slow Follow-ups', icon: '⚡', desc: 'Losing prospective clients to faster competitors' },
+      { label: 'Disconnected Tools & Manual Data Entry', icon: '🔄', desc: 'Copy-pasting data between CRM, sheets & email' },
+      { label: 'Customer Support & Missed Phone Calls', icon: '📞', desc: 'Staff overwhelmed answering repetitive questions' },
+      { label: 'Slow Client Onboarding & Signature Process', icon: '📝', desc: 'Contracts and intake taking days to complete' }
+    ]
+  },
+  {
+    id: 'stack',
+    title: 'What best describes your current software tech stack?',
+    subtitle: 'We evaluate tool sprawl to eliminate redundant subscriptions.',
+    options: [
+      { label: 'Basic (Email, Spreadsheets & Texting)', icon: '📄', desc: 'No central CRM or automated workflows yet' },
+      { label: 'Fragmented SaaS (5+ Unconnected Subscriptions)', icon: '🧩', desc: 'Paying for software that doesn\'t talk to each other' },
+      { label: 'Legacy On-Premise / Old Systems', icon: '🖥️', desc: 'Outdated databases needing modern cloud/AI bridge' },
+      { label: 'Custom Enterprise / API-Heavy Stack', icon: '⚙️', desc: 'Need advanced AI agent integration' }
+    ]
+  },
+  {
+    id: 'website_role',
+    title: 'What primary role does your website currently play?',
+    subtitle: 'We evaluate whether your site is actively generating revenue or just a digital brochure.',
+    options: [
+      { label: 'Digital Brochure (Passive Info Only)', icon: '🌐', desc: 'Rarely generates direct qualified leads' },
+      { label: 'Lead Generation Engine (Active Forms)', icon: '🎯', desc: 'Generates inquiries but lacks automated routing' },
+      { label: 'E-Commerce / Self-Serve Booking', icon: '💳', desc: 'Processes transactions directly' },
+      { label: 'Need a Complete Redesign & AI Overhaul', icon: '✨', desc: 'Want a high-converting, modern web application' }
+    ]
+  }
+];
 
-    const benefits = [
-        { icon: <Search />, title: 'Full-Spectrum Diagnosis', description: 'We don\'t just look at servers. We look at your business as a living ecosystem.' },
-        { icon: <AlertTriangle />, title: 'Expose Hidden Leaks', description: 'Find where you are losing money—whether it\'s ad spend, server costs, or lost leads.' },
-        { icon: <Layers />, title: 'Unified Strategy', description: 'Stop treating your tech stack as separate silos. Connect everything.' },
-        { icon: <Shield />, title: 'Future-Proof Security', description: 'Lock down your data and infrastructure against modern threats.' }
-    ];
+export default function ITAuditsClient() {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isComplete, setIsComplete] = useState(false);
 
-    return (
-        <>
-            <Navbar />
-            <main className="min-h-screen bg-dark">
-                {/* Hero Section */}
-                <section className="relative pt-40 pb-20 overflow-hidden">
-                    {/* Background Accents - Cyber Defense Theme (Blue/Gold) */}
-                    <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", repeatDelay: 5 }}
-                            className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[100px]"
-                        />
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 2, delay: 1, repeat: Infinity, repeatType: "reverse", repeatDelay: 5 }}
-                            className="absolute bottom-[0%] left-[-10%] w-[500px] h-[500px] bg-yellow-600/10 rounded-full blur-[100px]"
-                        />
-                    </div>
+  const handleOptionSelect = (questionId, optionLabel) => {
+    const updatedAnswers = { ...answers, [questionId]: optionLabel };
+    setAnswers(updatedAnswers);
+    if (step < auditQuestions.length - 1) {
+      setStep(step + 1);
+    } else {
+      setStep(auditQuestions.length);
+    }
+  };
 
-                    <div className="container relative z-10 max-w-6xl">
-                        <Link href="/services" className="inline-flex items-center text-gray-400 hover:text-white mb-8 transition-colors text-sm font-mono tracking-wider">
-                            <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-                            BACK TO SERVICES
-                        </Link>
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <motion.div
-                                initial={{ opacity: 0, x: -50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
-                            >
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.2 }}
-                                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
-                                >
-                                    <Shield className="w-4 h-4" /> The Master Service
-                                </motion.div>
-                                <motion.h1
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.4 }}
-                                    className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
-                                >
-                                    We Audit <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-yellow-500">The Whole System.</span>
-                                </motion.h1>
-                                <motion.p
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 0.6 }}
-                                    className="text-gray-400 text-xl leading-relaxed mb-8 max-w-lg"
-                                >
-                                    Your business is an ecosystem. We scan your Code, your Growth, your Operations, and your Brand to find the truth.
-                                </motion.p>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.8 }}
-                                    className="flex flex-wrap gap-4"
-                                >
-                                    <Link href="#start-audit" className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)]">
-                                        Initiate Master Audit
-                                    </Link>
-                                    <Link href="#pillars" className="bg-transparent border border-white/20 hover:bg-white/5 text-white font-medium py-4 px-8 rounded-lg transition-all">
-                                        View Scope
-                                    </Link>
-                                </motion.div>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 1 }}
-                                className="relative"
-                            >
-                                {/* Animated Radar/Scanner UI - Central Hub Concept */}
-                                <div className="relative z-10 bg-dark-1 border border-white/10 rounded-full p-2 shadow-2xl w-[400px] h-[400px] mx-auto flex items-center justify-center">
-                                    <div className="absolute inset-0 bg-blue-500/5 rounded-full"></div>
-                                    <div className="absolute inset-10 border border-white/5 rounded-full"></div>
-                                    <div className="absolute inset-24 border border-white/5 rounded-full"></div>
+    const payload = {
+      source: 'master-audit',
+      contact: formData,
+      diagnostics: answers,
+      timestamp: new Date().toISOString()
+    };
 
-                                    {/* Rotating Radar Sweep */}
-                                    <motion.div
-                                        animate={{ rotate: 360 }}
-                                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent rounded-full"
-                                        style={{ clipPath: 'polygon(50% 50%, 100% 0, 100% 50%)' }}
-                                    />
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (error) {
+      console.error("Webhook failed to send, but proceeding to result.", error);
+    }
 
-                                    {/* Satellites - The 4 Other Services */}
-                                    <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} className="absolute inset-0">
-                                        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-8 h-8 bg-green-500/20 border border-green-500 rounded-full flex items-center justify-center text-green-500"><Code className="w-4 h-4" /></div>
-                                        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-8 h-8 bg-purple-500/20 border border-purple-500 rounded-full flex items-center justify-center text-purple-500"><Cpu className="w-4 h-4" /></div>
-                                        <div className="absolute top-1/2 right-10 -translate-y-1/2 w-8 h-8 bg-orange-500/20 border border-orange-500 rounded-full flex items-center justify-center text-orange-500"><TrendingUp className="w-4 h-4" /></div>
-                                        <div className="absolute top-1/2 left-10 -translate-y-1/2 w-8 h-8 bg-cyan-500/20 border border-cyan-500 rounded-full flex items-center justify-center text-cyan-500"><Camera className="w-4 h-4" /></div>
-                                    </motion.div>
+    setIsSubmitting(false);
+    setIsComplete(true);
+  };
 
-                                    {/* Central Shield */}
-                                    <div className="relative z-20 bg-dark border border-blue-500/30 p-6 rounded-2xl shadow-[0_0_50px_rgba(59,130,246,0.3)]">
-                                        <Shield className="w-16 h-16 text-blue-400" />
-                                    </div>
-                                </div>
-                                <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-yellow-600 opacity-20 blur-2xl -z-10 rounded-full"></div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
+  const resetAudit = () => {
+    setStep(0);
+    setAnswers({});
+    setFormData({ name: '', email: '', phone: '', company: '' });
+    setIsComplete(false);
+  };
 
-                {/* The 4 Pillars */}
-                <section id="pillars" className="py-24 border-t border-white/5 bg-dark-1/50">
-                    <div className="container max-w-6xl">
-                        <div className="text-center mb-16">
-                            <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="text-3xl md:text-4xl font-bold text-white mb-4"
-                            >
-                                4 Pillars of Analysis
-                            </motion.h2>
-                            <p className="text-gray-400">Our audit covers every vital organ of your business</p>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {pillars.map((pillar, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    whileHover={{ scale: 1.02, borderColor: "rgba(59,130,246,0.5)" }}
-                                    className="group bg-dark border border-white/5 p-8 rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.1)] relative overflow-hidden"
-                                >
-                                    <div className="flex items-start justify-between mb-6">
-                                        <div className="bg-white/5 p-3 rounded-lg text-blue-400 group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-colors">
-                                            {React.cloneElement(pillar.icon, { className: 'w-8 h-8' })}
-                                        </div>
-                                        <span className="text-xs font-mono font-bold uppercase tracking-widest text-gray-500 border border-white/10 px-2 py-1 rounded">
-                                            {pillar.status}
-                                        </span>
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-white mb-3">{pillar.title}</h3>
-                                    <p className="text-gray-400 leading-relaxed mb-6">{pillar.desc}</p>
-                                    <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
-                                        <div className="h-full bg-gradient-to-r from-blue-500 to-yellow-500 w-0 group-hover:w-full transition-all duration-700 ease-out"></div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+  return (
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300">
+        
+        {/* Hero Section */}
+        <section className="relative pt-40 pb-20 overflow-hidden bg-gradient-to-b from-slate-100 via-slate-50 to-white dark:from-black dark:via-zinc-950 dark:to-zinc-950 border-b border-zinc-200 dark:border-lime-500/20">
+          <div className="container relative z-10 max-w-6xl mx-auto px-4">
+            <Link href="/services" className="inline-flex items-center text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white mb-8 transition-colors text-sm font-mono tracking-wider uppercase">
+              <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
+              BACK TO SERVICES
+            </Link>
 
-                {/* Why Audit? */}
-                <section className="py-24 bg-dark">
-                    <div className="container max-w-6xl">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                            <div>
-                                <motion.h2
-                                    initial={{ opacity: 0, x: -50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    className="text-3xl md:text-5xl font-bold text-white mb-8"
-                                >
-                                    The <span className="text-blue-500">First Step</span> to Transformation.
-                                </motion.h2>
-                                <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                                    You can't fix what you can't see. Before we build a website, launch a campaign, or deploy AI, we must first diagnose the infrastructure it stands on.
-                                </p>
-                                <div className="flex flex-col gap-8">
-                                    {benefits.map((benefit, index) => (
-                                        <motion.div
-                                            key={index}
-                                            initial={{ opacity: 0, x: -50 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: index * 0.2 }}
-                                            className="flex gap-6"
-                                        >
-                                            <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 flex-shrink-0 border border-blue-500/20">
-                                                {React.cloneElement(benefit.icon, { className: 'w-7 h-7' })}
-                                            </div>
-                                            <div>
-                                                <h3 className="text-white text-xl font-bold mb-2">{benefit.title}</h3>
-                                                <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </div>
-                            <div className="relative">
-                                {/* Dashboard/Metrics UI */}
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    className="bg-dark-1 border border-white/10 rounded-2xl p-6 shadow-2xl"
-                                >
-                                    <div className="flex items-center justify-between mb-8 border-b border-white/5 pb-4">
-                                        <div className="flex items-center gap-3">
-                                            <Shield className="w-6 h-6 text-yellow-500" />
-                                            <span className="font-bold text-white">System Health Score</span>
-                                        </div>
-                                        <span className="text-3xl font-mono font-bold text-yellow-500">72/100</span>
-                                    </div>
-                                    <div className="space-y-6">
-                                        {[
-                                            { label: 'Web Performance', val: 85, color: 'bg-green-500' },
-                                            { label: 'Security Protocols', val: 45, color: 'bg-red-500' },
-                                            { label: 'SEO Authority', val: 62, color: 'bg-yellow-500' },
-                                            { label: 'Automation Level', val: 30, color: 'bg-red-500' },
-                                        ].map((item, i) => (
-                                            <div key={i}>
-                                                <div className="flex justify-between text-sm mb-2">
-                                                    <span className="text-gray-300">{item.label}</span>
-                                                    <span className="text-gray-500">{item.val}%</span>
-                                                </div>
-                                                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
-                                                    <motion.div
-                                                        initial={{ width: 0 }}
-                                                        whileInView={{ width: `${item.val}%` }}
-                                                        transition={{ duration: 1.5, delay: 0.5 }}
-                                                        className={`h-full ${item.color}`}
-                                                    />
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="mt-8 pt-4 border-t border-white/5 text-center">
-                                        <p className="text-sm text-gray-500">
-                                            <AlertTriangle className="w-4 h-4 inline mr-2 text-yellow-500" />
-                                            2 Critical Vulnerabilities Detected
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Integration Section: General Onboarding Form */}
-                <section id="start-audit" className="py-24 border-t border-white/5 bg-dark relative">
-                    <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
-                    <div className="container max-w-5xl relative z-10">
-                        <div className="text-center mb-12">
-                            <span className="text-blue-500 font-mono text-sm tracking-wider uppercase mb-2 block">Begin The Diagnosis</span>
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                Apply for a Master Audit
-                            </h2>
-                            <p className="text-gray-400 max-w-2xl mx-auto">
-                                Let us scan your business infrastructure. We'll identify the gaps and prescribe the perfect solution stack.
-                            </p>
-                        </div>
-
-                        <div className="bg-white rounded-xl shadow-2xl overflow-hidden min-h-[800px] md:min-h-[1000px]">
-                            {/* General Client Onboarding Form - The "Entry Point" */}
-                            <iframe
-                                src="https://docs.google.com/forms/d/e/1FAIpQLScRDTfrCVE7Qt1AAFlvBOZGvFMkzeFiXIAJyFMFHlTvBUbS2Q/viewform?embedded=true"
-                                width="100%"
-                                height="1200"
-                                frameBorder="0"
-                                marginHeight="0"
-                                marginWidth="0"
-                                className="w-full h-full min-h-[1200px]"
-                                title="Master Audit Application Form"
-                            >
-                                Loading…
-                            </iframe>
-                        </div>
-                    </div>
-                </section>
-            </main>
-                        <section className="py-20 border-t border-white/5 bg-dark-1/30">
-                <div className="container max-w-4xl text-center">
-                    <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">Ready to get started with business audit?</h2>
-                    <p className="text-gray-400 text-lg mb-8">Book a free discovery call or pick a plan that fits. Most clients save 10-40+ hours per week.</p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/pricing" className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.3)] text-white font-bold rounded-lg transition-all">See Plans &amp; Pricing</Link>
-                        <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all rounded-lg">Book a Free Call</Link>
-                    </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-500/10 border border-lime-500/20 text-lime-600 dark:text-lime-400 text-xs font-bold uppercase tracking-wider mb-6">
+                  <Shield className="w-4 h-4" /> The Master Service
                 </div>
-            </section>
+                <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 leading-tight">
+                  The Master <br />
+                  <span className="text-lime-600 dark:text-lime-500">Infrastructure Audit.</span>
+                </h1>
+                <p className="text-zinc-600 dark:text-zinc-400 text-xl mb-8 leading-relaxed">
+                  We don't guess. We scan your business infrastructure, audit your tool sprawl, and prescribe the exact Done-For-You AI system to scale your operations.
+                </p>
+                <div className="flex flex-wrap gap-4 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                  <div className="flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
+                    <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Web & SEO Health
+                  </div>
+                  <div className="flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
+                    <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Tool Sprawl Audit
+                  </div>
+                  <div className="flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
+                    <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-400" /> AI Agent Roadmap
+                  </div>
+                </div>
+              </motion.div>
 
-            <Footer />
-        </>
-    );
+              {/* Discovery Engine Box */}
+              <motion.div id="start-audit" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-lime-500/10 blur-3xl rounded-full pointer-events-none" />
+
+                {!isComplete ? (
+                  step < auditQuestions.length ? (
+                    <div>
+                      <div className="flex justify-between items-center mb-6 border-b border-zinc-100 dark:border-zinc-800 pb-4">
+                        <span className="text-xs font-mono font-bold text-lime-600 dark:text-lime-400 uppercase tracking-widest">
+                          STEP 0{step + 1} OF 0{auditQuestions.length}
+                        </span>
+                        <div className="flex gap-1.5">
+                          {auditQuestions.map((_, idx) => (
+                            <div key={idx} className={`h-1.5 rounded-full transition-all ${idx === step ? 'w-6 bg-lime-500' : 'w-2 bg-zinc-200 dark:bg-zinc-800'}`} />
+                          ))}
+                        </div>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">
+                        {auditQuestions[step].title}
+                      </h3>
+                      <p className="text-zinc-600 dark:text-zinc-400 text-xs mb-6">
+                        {auditQuestions[step].subtitle}
+                      </p>
+
+                      <div className="space-y-3">
+                        {auditQuestions[step].options.map((opt, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => handleOptionSelect(auditQuestions[step].id, opt.label)}
+                            className="w-full text-left p-4 rounded-2xl bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-lime-500 transition-all flex items-start gap-3 group"
+                          >
+                            <span className="text-xl">{opt.icon}</span>
+                            <div>
+                              <div className="font-bold text-zinc-900 dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors text-sm">
+                                {opt.label}
+                              </div>
+                              <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
+                                {opt.desc}
+                              </div>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="text-center mb-6">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lime-500/10 text-lime-600 dark:text-lime-400 text-xs font-bold uppercase mb-2">
+                          <CheckCircle className="w-3.5 h-3.5" /> Diagnostic Complete
+                        </span>
+                        <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
+                          Where Should We Send Your Master Audit Report?
+                        </h3>
+                      </div>
+
+                      <form onSubmit={handleFormSubmit} className="space-y-4">
+                        <input
+                          type="text"
+                          placeholder="Your Full Name"
+                          required
+                          value={formData.name}
+                          onChange={e => setFormData({ ...formData, name: e.target.value })}
+                          className="w-full px-4 py-3 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-400 text-sm focus:outline-none focus:border-lime-500"
+                        />
+                        <input
+                          type="email"
+                          placeholder="Work Email Address"
+                          required
+                          value={formData.email}
+                          onChange={e => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full px-4 py-3 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-400 text-sm focus:outline-none focus:border-lime-500"
+                        />
+                        <input
+                          type="text"
+                          placeholder="Company Name"
+                          required
+                          value={formData.company}
+                          onChange={e => setFormData({ ...formData, company: e.target.value })}
+                          className="w-full px-4 py-3 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-400 text-sm focus:outline-none focus:border-lime-500"
+                        />
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full py-4 bg-lime-500 hover:bg-lime-400 text-zinc-950 font-bold rounded-xl transition-all shadow-lg shadow-lime-500/20 flex items-center justify-center gap-2 text-sm"
+                        >
+                          {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Generate My Master Audit Report'}
+                        </button>
+                      </form>
+                    </div>
+                  )
+                ) : (
+                  <div className="text-center py-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-lime-500/10 rounded-full mb-4 border border-lime-500/30">
+                      <CheckCircle className="w-8 h-8 text-lime-600 dark:text-lime-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">Audit Diagnostic Received!</h3>
+                    <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-6">
+                      Our architecture team is analyzing your inputs. Want to review your audit results live with our founders?
+                    </p>
+                    
+                    {/* INSTANT CALENDLY 15-MIN DEMO BOOKING BUTTON */}
+                    <a
+                      href="https://calendly.com/sparksphear4me/15-min-demo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-4 bg-lime-500 hover:bg-lime-400 text-zinc-950 font-bold rounded-xl transition-all shadow-lg shadow-lime-500/20 flex items-center justify-center gap-2 text-sm mb-4"
+                    >
+                      <Calendar className="w-4 h-4" /> Book Your 15-Min Demo Now &rarr;
+                    </a>
+
+                    <button onClick={resetAudit} className="px-6 py-2 bg-slate-100 dark:bg-zinc-800 text-zinc-900 dark:text-white font-semibold text-xs rounded-xl hover:bg-slate-200 dark:hover:bg-zinc-700">
+                      Submit Another Diagnostic
+                    </button>
+                  </div>
+                )}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* DONE-FOR-YOU AGENCY PACKAGE TIERS SECTION */}
+        <section className="py-20 bg-slate-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-white/5">
+          <div className="container max-w-6xl mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-2 block">TRANSPARENT AGENCY PRICING</span>
+              <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4">
+                Done-For-You <span className="text-lime-600 dark:text-lime-500">Build Packages</span>
+              </h2>
+              <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed mb-6">
+                Your Master Audit prescribes the exact build package your business needs. Simple one-time setup fee + transparent monthly maintenance.
+              </p>
+              <a
+                href="https://calendly.com/sparksphear4me/15-min-demo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-lime-500 text-zinc-950 font-bold text-sm rounded-xl hover:bg-lime-400 transition-all shadow-lg shadow-lime-500/20"
+              >
+                <Calendar className="w-4 h-4" /> Book Your 15-Min Demo &rarr;
+              </a>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  tier: "Essentials",
+                  setup: "$997",
+                  monthly: "$197/mo",
+                  saved: "10–15 hrs/wk",
+                  features: [
+                    "5 Core Workflow Automations",
+                    "2 Basic AI Chatbots",
+                    "Monthly Audit & Performance Report",
+                    "24hr Response Email Support",
+                    "Standard API Integrations"
+                  ]
+                },
+                {
+                  tier: "Growth",
+                  setup: "$2,997",
+                  monthly: "$497/mo",
+                  saved: "20–30 hrs/wk",
+                  popular: true,
+                  features: [
+                    "15 Workflow Automations",
+                    "5 Advanced AI Chatbots",
+                    "CRM & POS System Integration",
+                    "Weekly Optimization Calls",
+                    "Priority Phone + Chat Support",
+                    "ROI Tracking Dashboard"
+                  ]
+                },
+                {
+                  tier: "Enterprise",
+                  setup: "$7,997",
+                  monthly: "$997/mo",
+                  saved: "40+ hrs/wk",
+                  features: [
+                    "Unlimited Workflow Automations",
+                    "Custom Trained LLM & AI Models",
+                    "24/7 SLA Uptime Guarantee",
+                    "Dedicated Account Architect",
+                    "Full Infrastructure Assessment"
+                  ]
+                }
+              ].map((pkg, idx) => (
+                <div key={idx} className={`rounded-3xl p-8 border flex flex-col justify-between relative ${pkg.popular ? 'bg-white dark:bg-zinc-900 border-lime-500 shadow-2xl ring-2 ring-lime-500/30' : 'bg-white dark:bg-zinc-900/60 border-zinc-200 dark:border-white/10'}`}>
+                  {pkg.popular && (
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-lime-500 text-zinc-950 text-xs font-black px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
+                      MOST POPULAR AGENCY BUILD
+                    </div>
+                  )}
+                  <div>
+                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">{pkg.tier}</h3>
+                    <div className="text-3xl font-extrabold text-lime-600 dark:text-lime-400 mb-1">{pkg.setup} <span className="text-xs text-zinc-500 font-normal">one-time setup</span></div>
+                    <div className="text-sm font-mono text-zinc-600 dark:text-zinc-400 mb-6">+ {pkg.monthly} upkeep</div>
+
+                    <ul className="space-y-3 mb-8 text-sm text-zinc-700 dark:text-zinc-300">
+                      <li className="flex items-center gap-2 font-semibold text-lime-600 dark:text-lime-400">
+                        <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-500" /> Time saved: {pkg.saved}
+                      </li>
+                      {pkg.features.map((feat, fIdx) => (
+                        <li key={fIdx} className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-zinc-400" /> {feat}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <a href="https://calendly.com/sparksphear4me/15-min-demo" target="_blank" rel="noopener noreferrer" className={`w-full py-3.5 rounded-xl font-bold text-sm text-center transition-all ${pkg.popular ? 'bg-lime-500 text-zinc-950 hover:bg-lime-400 shadow-lg shadow-lime-500/20' : 'bg-slate-100 dark:bg-zinc-800 text-zinc-900 dark:text-white hover:bg-slate-200 dark:hover:bg-zinc-700'}`}>
+                    Book 15-Min Demo For {pkg.tier} &rarr;
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
 }

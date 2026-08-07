@@ -5,7 +5,7 @@ SparkSphear Tech Solutions is a Fort Wayne, Indiana AI services and business aut
 ## Services
 
 - AI & Automation: https://sparkspheartechsolutions.com/services/ai-automation
-  Custom AI chatbots, workflow automation (n8n), and intelligent data processing that save 10-40+ hours per week.
+  Custom AI chatbots, advanced workflow automation, and intelligent data processing that save 10-40+ hours per week.
 - Digital Marketing: https://sparkspheartechsolutions.com/services/digital-marketing
   Social media, PPC ads, and content strategy that turn attention into customers.
 - Web Design & Development: https://sparkspheartechsolutions.com/services/web-design

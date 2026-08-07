@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "sequenzy-email-marketing": {
+      "source": "Sequenzy/skills",
+      "sourceType": "github",
+      "skillPath": "skills/sequenzy-email-marketing/SKILL.md",
+      "computedHash": "85d800bd1f7abfe5cfde214b9b6f976b3d91bb3f79f29015617bc7d110726c62"
+    }
+  }
+}
