@@ -133,10 +133,10 @@ export default function About() {
               <span className="text-lime-600 dark:text-lime-400 text-xs md:text-sm font-semibold tracking-wider uppercase">OUR MISSION STATEMENT</span>
             </span>
             <blockquote className="text-3xl md:text-5xl font-extrabold text-zinc-900 dark:text-white mb-6 leading-tight tracking-tight italic">
-              "Since 2022, we empower trade contractors, field services, and growing U.S. businesses with expert tech curation, custom AI automation, and guaranteed operational growth."
+              "We bring the spark to small business owners — combining smart technology with hands-on service to help them work faster, save money, and grow."
             </blockquote>
-            <p className="text-zinc-600 dark:text-zinc-400 text-lg max-w-3xl mx-auto leading-relaxed">
-              SPARKSPHEAR Tech Solutions is your strategic partner for eliminating manual admin drag. Whether you need a curated software stack recommendation or a full done-for-you automation overhaul backed by our 90-Day Dream Outcome Guarantee, we build the foundations that let your business scale.
+            <p className="text-zinc-600 dark:text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
+              At SPARKSPHEAR, we exist to bridge the gap between enterprise-grade AI automation and the real daily needs of growing businesses.
             </p>
           </div>
         </section>
