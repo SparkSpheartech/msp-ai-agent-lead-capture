@@ -2,7 +2,7 @@
 import { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Line } from '@react-three/drei';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import * as THREE from 'three';
 import Link from 'next/link';
 
@@ -69,13 +69,26 @@ function NetworkGlobe() {
 
 export default function Hero3D() {
  const [is3DLoaded, setIs3DLoaded] = useState(false);
+ const [headlineIndex, setHeadlineIndex] = useState(0);
+
+ const headlines = [
+   { line1: "Want Us To Build It,", line2: "Or Show You The Tools?" },
+   { line1: "Audit The System.", line2: "Scale The Business." }
+ ];
 
  useEffect(() => {
- const timer = setTimeout(() => {
- setIs3DLoaded(true);
- }, 1000);
+   const timer = setTimeout(() => {
+     setIs3DLoaded(true);
+   }, 1000);
 
- return () => clearTimeout(timer);
+   const headlineTimer = setInterval(() => {
+     setHeadlineIndex((prev) => (prev === 0 ? 1 : 0));
+   }, 4000);
+
+   return () => {
+     clearTimeout(timer);
+     clearInterval(headlineTimer);
+   };
  }, []);
 
  return (
@@ -101,25 +114,39 @@ export default function Hero3D() {
  {/* Content Overlay */}
  <div className="relative z-10 container mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center pointer-events-none">
  <div className="text-center lg:text-left pointer-events-auto">
- <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
- <p className="text-lime-600 dark:text-lime-400 font-semibold uppercase tracking-widest mb-4 text-sm">Automation Architects & Tech Curators</p>
- <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6 leading-tight">
- Audit the System.<br />
- <span className="text-lime-600 dark:text-lime-500">Scale the Business.</span>
- </h1>
- </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <p className="text-lime-600 dark:text-lime-400 font-semibold uppercase tracking-widest mb-3 text-sm">Automation Architects & Tech Curators</p>
+            
+            <div className="min-h-[130px] sm:min-h-[150px] md:min-h-[180px] flex items-center mb-6">
+              <AnimatePresence mode="wait">
+                <motion.h1
+                  key={headlineIndex}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.1]"
+                >
+                  {headlines[headlineIndex].line1}
+                  <span className="text-lime-600 dark:text-lime-500 block mt-1">
+                    {headlines[headlineIndex].line2}
+                  </span>
+                </motion.h1>
+              </AnimatePresence>
+            </div>
+          </motion.div>
 
  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
- <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-8 max-w-xl mx-auto lg:mx-0">
- We audit your operations and build custom Agentic systems and specialized AI agents. Save 15–20 hours a week per employee and stop losing revenue to missed calls and manual admin.
+ <p className="text-xl text-zinc-600 dark:text-zinc-300 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+ You're losing $4,000+ every month to missed calls, delayed quotes, and paper dispatch. Stop the bleed. Get 15–20 hrs/week back per employee on autopilot.
  </p>
 
  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
- <Link href="/tools" className="px-8 py-4 bg-lime-500 text-zinc-950 rounded-md font-bold hover:bg-lime-400 transition-colors shadow-lg shadow-lime-500/20">
- Calculate Your Savings
+ <Link href="/services/it-audits" className="px-8 py-4 bg-lime-500 text-zinc-950 rounded-xl font-extrabold hover:bg-lime-400 transition-all shadow-xl shadow-lime-500/25 text-center text-base">
+ ⚡ Build It For Me (System Audit)
  </Link>
- <Link href="/guides" className="px-8 py-4 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-white rounded-md font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
- Explore Industry Guides
+ <Link href="/guides" className="px-8 py-4 border border-zinc-300 dark:border-white/20 bg-white/10 dark:bg-zinc-900/80 text-zinc-900 dark:text-white rounded-xl font-bold hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-center text-base">
+ 🛠️ Show Me The Tools (DIY Stack)
  </Link>
  </div>
  </motion.div>

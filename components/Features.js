@@ -13,7 +13,7 @@ const Features = () => {
  <div className="container mx-auto px-4 relative z-10">
  <div className="text-center max-w-3xl mx-auto mb-16">
  <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-3 block">WHY CHOOSE US</span>
- <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6">We care about your growth and success</h2>
+ <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6">Stop losing revenue to missed calls. Get 15-20 hrs/week back.</h2>
  </div>
 
  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

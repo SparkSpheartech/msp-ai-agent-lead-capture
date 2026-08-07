@@ -125,14 +125,12 @@ export default function MarketsClient({ initialPosts = [] }) {
  />
  </div>
 
- <a 
- href="https://sparkspheartech.blogspot.com/" 
- target="_blank" 
- rel="noopener noreferrer"
- className="w-full md:w-auto px-6 py-3.5 bg-lime-500 text-zinc-950 font-bold rounded-xl hover:bg-lime-400 transition-all flex items-center justify-center gap-2 whitespace-nowrap shadow-lg shadow-lime-500/20"
- >
- Open Official Blogspot <ExternalLink size={16} />
- </a>
+  <Link 
+    href="/guides" 
+    className="w-full md:w-auto px-6 py-3.5 bg-lime-500 text-zinc-950 font-bold rounded-xl hover:bg-lime-400 transition-all flex items-center justify-center gap-2 whitespace-nowrap shadow-lg shadow-lime-500/20"
+  >
+    See The Industry Stack <ArrowRight size={16} />
+  </Link>
  </div>
  </div>
  </header>
@@ -257,14 +255,12 @@ export default function MarketsClient({ initialPosts = [] }) {
  >
  Start Market Onboarding <ArrowRight className="inline ml-1" size={18} />
  </Link>
- <a 
- href="https://sparkspheartech.blogspot.com/" 
- target="_blank" 
- rel="noopener noreferrer"
- className="px-8 py-4 border border-zinc-300 dark:border-white/20 text-zinc-900 dark:text-white font-semibold rounded-xl hover:bg-zinc-200 dark:bg-white/10 transition-all"
- >
- Visit Blogspot Hub
- </a>
+  <Link 
+    href="/guides" 
+    className="px-8 py-4 border border-zinc-300 dark:border-white/20 text-zinc-900 dark:text-white font-semibold rounded-xl hover:bg-zinc-200 dark:bg-white/10 transition-all"
+  >
+    Browse Industry Stacks
+  </Link>
  </div>
  </div>
  </main>

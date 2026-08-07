@@ -73,15 +73,15 @@ const PartnerCarousel = () => {
  return (
  <section className="py-20 bg-gray-50 dark:bg-zinc-950 border-t border-gray-200 dark:border-white/5 overflow-hidden">
  <div className="container mb-12">
- <div className="text-center">
- <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-4 block">TRUSTED BY</span>
- <h2 className="text-gray-900 dark:text-white text-3xl md:text-4xl font-bold mb-4">
- Our <span className="text-lime-600 dark:text-lime-500">Partners</span> & <span className="text-lime-600 dark:text-lime-500">Integrations</span>
- </h2>
- <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
- We work with industry-leading AI providers and automation tools to deliver powerful solutions
- </p>
- </div>
+  <div className="text-center">
+  <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-4 block">ENTERPRISE-GRADE ARCHITECTURE</span>
+  <h2 className="text-gray-900 dark:text-white text-3xl md:text-4xl font-extrabold mb-4">
+  Powered By The Same AI As <span className="text-lime-600 dark:text-lime-500">OpenAI, Anthropic, Google</span>
+  </h2>
+  <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+  We engineer custom agents on top of world-class foundation models and industry integrations.
+  </p>
+  </div>
  </div>
 
  {/* Carousel Container */}

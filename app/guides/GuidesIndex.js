@@ -11,6 +11,8 @@ import {
 } from 'lucide-react';
 import { getAllVerticals, products } from '@/data/affiliateProducts';
 import { blogPosts } from '@/data/blogPosts';
+import StackQuiz from '@/components/StackQuiz';
+import OpsQuizSurvey from '@/components/OpsQuizSurvey';
 
 export default function GuidesIndex() {
   const verticals = getAllVerticals();
@@ -23,8 +25,8 @@ export default function GuidesIndex() {
   // Categories list for quick chips
   const categories = [
     { id: 'all', label: 'All Guides' },
-    { id: 'hvac', label: 'HVAC & Field Service 🔧' },
-    { id: 'waste-management', label: 'Waste Management & Sanitation 🗑️' },
+    { id: 'hvac', label: 'HVAC & Field Service' },
+    { id: 'waste-management', label: 'Waste Management & Sanitation' },
   ];
 
   // Top Pick of the Month (Spotlight Tool)
@@ -176,15 +178,15 @@ export default function GuidesIndex() {
           <div className="bg-zinc-200 dark:bg-zinc-900 p-1.5 rounded-2xl inline-flex gap-2 border border-zinc-300 dark:border-zinc-800">
             <button
               onClick={() => setActiveTab('diy')}
-              className={`px-6 py-2.5 rounded-xl text-xs md:text-sm font-bold transition-all ${activeTab === 'diy' ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-md' : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'}`}
+              className={`px-6 py-2.5 rounded-xl text-xs md:text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'diy' ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-md' : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'}`}
             >
-              🛠️ Industry Software Guides (DIY)
+              <Cpu className="w-4 h-4 text-lime-500" /> Industry Software Guides (DIY)
             </button>
             <button
               onClick={() => setActiveTab('custom')}
-              className={`px-6 py-2.5 rounded-xl text-xs md:text-sm font-bold transition-all ${activeTab === 'custom' ? 'bg-lime-500 text-zinc-950 shadow-md shadow-lime-500/20' : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'}`}
+              className={`px-6 py-2.5 rounded-xl text-xs md:text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'custom' ? 'bg-lime-500 text-zinc-950 shadow-md shadow-lime-500/20' : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'}`}
             >
-              ⚡ Custom AI Builds (Done-For-You)
+              <Zap className="w-4 h-4" /> Custom AI Builds (Done-For-You)
             </button>
           </div>
         </div>
@@ -273,6 +275,9 @@ export default function GuidesIndex() {
               </section>
             )}
 
+            {/* LEAD MAGNET STACK QUIZ (Funnel #2) */}
+            <StackQuiz />
+
             {/* CATEGORY FILTER CHIPS */}
             <div className="mb-8 flex flex-wrap gap-2 items-center justify-between">
               <h2 className="text-2xl font-extrabold text-zinc-900 dark:text-white">
@@ -316,8 +321,10 @@ export default function GuidesIndex() {
                           <div className="absolute top-4 right-4 bg-lime-500 text-zinc-950 text-xs font-extrabold px-3 py-1 rounded-full shadow-lg">
                             4.9 ★ Rated Stacks
                           </div>
-                          <div className="absolute bottom-4 left-6">
-                            <span className="text-3xl mr-3">{vertical.emoji}</span>
+                          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-xl bg-lime-500/20 border border-lime-500/40 backdrop-blur-md flex items-center justify-center text-lime-400 font-bold">
+                              {vertical.slug === 'hvac' ? <Cpu className="w-5 h-5" /> : <Layers className="w-5 h-5" />}
+                            </div>
                             <span className="text-xl font-bold text-white">{vertical.name}</span>
                           </div>
                         </div>
@@ -350,6 +357,9 @@ export default function GuidesIndex() {
                 </button>
               </div>
             )}
+
+            {/* OPERATIONS SURVEY (Funnel #3) */}
+            <OpsQuizSurvey />
           </>
         ) : (
           /* TAB 2: DONE-FOR-YOU CUSTOM AI BUILDS */

@@ -112,3 +112,36 @@ export default function Testimonials() {
  </section>
  );
 }
+
+export function TestimonialStrip() {
+  const resultBadges = [
+    { industry: "HVAC & Field Service", text: "Saved 22 hrs/wk & boosted accepted quotes by 34%", author: "Joe M. • 5-Truck HVAC Owner" },
+    { industry: "Waste Management", text: "Cut fuel costs 18% & eliminated 90% missed pickups", author: "Marcus T. • Hauling Director" },
+    { industry: "Digital Marketing", text: "285% ROI within 60 days of lead-agent deployment", author: "Michael Sterling • Founder, GigaPulse" },
+  ];
+
+  return (
+    <div className="w-full my-8 bg-zinc-900/90 border border-lime-500/30 rounded-2xl p-4 md:p-6 shadow-xl">
+      <div className="text-center text-xs font-bold uppercase tracking-wider text-lime-400 mb-4 flex items-center justify-center gap-2">
+        <span>⭐ Proof At The Decision Point: Real Client Outcomes</span>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {resultBadges.map((badge, idx) => (
+          <div key={idx} className="bg-black/60 border border-white/10 rounded-xl p-4 flex flex-col justify-between">
+            <div>
+              <span className="inline-block px-2.5 py-0.5 rounded-full bg-lime-500/20 text-lime-400 text-[11px] font-extrabold mb-2">
+                {badge.industry}
+              </span>
+              <p className="text-white text-xs md:text-sm font-semibold leading-snug mb-3">
+                "{badge.text}"
+              </p>
+            </div>
+            <div className="text-[11px] text-zinc-400 font-mono">
+              — {badge.author}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

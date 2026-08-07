@@ -16,7 +16,7 @@ const WhatWeDo = () => {
  <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-3 block">OUR APPROACH</span>
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6">We Don't Guess. We Architect.</h2>
-          <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">We bring the spark to small business owners — combining smart technology with hands-on service to help you work faster, save money, and grow.</p>
+          <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">Stop losing revenue to missed calls. Get 15-20 hrs/week back per employee on autopilot.</p>
         </div>
 
  <div className="grid grid-cols-1 gap-8 mb-8">

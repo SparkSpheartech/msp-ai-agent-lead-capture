@@ -113,7 +113,7 @@ export default function ToolsClient() {
                 className="w-full px-4 py-3.5 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-xl text-zinc-900 dark:text-white focus:outline-none focus:border-lime-500 font-medium transition-colors"
               >
                 {verticalsList.map(v => (
-                  <option key={v.slug} value={v.slug}>{v.name} {v.emoji}</option>
+                  <option key={v.slug} value={v.slug}>{v.name}</option>
                 ))}
               </select>
             </div>

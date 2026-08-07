@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Brain, Camera, Monitor, TrendingUp, Shield, ArrowRight, CheckCircle, Smartphone, Globe, Search, BarChart } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { TestimonialStrip } from '@/components/Testimonials';
 
 export default function ServicesOverview() {
  const individualServices = [
@@ -98,7 +99,7 @@ export default function ServicesOverview() {
  transition={{ delay: 0.4 }}
  className="text-zinc-600 dark:text-zinc-400 text-xl max-w-3xl mx-auto mb-10 leading-relaxed"
  >
- We bring the spark to small business owners — combining smart technology with hands-on service to help you work faster, save money, and grow. Our infrastructure audit scans your Web, Marketing, AI, and Brand systems to identify exact levers for scaling.
+ Stop losing revenue to missed calls. Get 15–20 hrs/week back per employee on autopilot. Our Master Audit scans your Web, Marketing, AI, and Operational systems to identify exact levers for scaling.
  </motion.p>
 
  <motion.div
@@ -108,14 +109,18 @@ export default function ServicesOverview() {
  >
  <Link
  href="/services/it-audits"
- className="group relative inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-zinc-900 dark:text-white text-lg font-bold py-5 px-10 rounded-full transition-all shadow-[0_0_40px_rgba(37,99,235,0.4)] hover:shadow-[0_0_60px_rgba(37,99,235,0.5)]"
+ className="group relative inline-flex items-center gap-3 bg-lime-500 hover:bg-lime-400 text-zinc-950 text-lg font-extrabold py-5 px-10 rounded-full transition-all shadow-[0_0_40px_rgba(132,204,22,0.4)] hover:shadow-[0_0_60px_rgba(132,204,22,0.6)]"
  >
  <Shield className="w-6 h-6" />
- <span>Initiate Master Diagnosis</span>
+ <span>Initiate Master System Audit</span>
  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
  </Link>
- <p className="text-gray-500 text-sm mt-4">Includes analysis of all 4 service areas below</p>
+ <p className="text-gray-500 text-sm mt-4">Backed by our 90-Day Dream Outcome Guarantee: Recover 10 hrs/wk or you don't pay.</p>
  </motion.div>
+
+ <div className="mt-12">
+   <TestimonialStrip />
+ </div>
  </div>
  </div>
  </section>

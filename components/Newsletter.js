@@ -61,7 +61,7 @@ const Newsletter = () => {
             Bring The <span className="text-lime-600 dark:text-lime-500">Spark</span> To Your Business
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            We bring the spark to business owners — combining smart technology with hands-on service to help you work faster, save money, and grow.
+            Stop losing revenue to missed calls. Get 15-20 hrs/week back per employee on autopilot.
           </p>
         </div>
 

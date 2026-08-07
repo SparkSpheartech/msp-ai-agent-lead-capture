@@ -18,7 +18,17 @@ const FAQ = () => {
  <span className="text-lime-600 dark:text-lime-500 text-2xl font-bold group-open:rotate-45 transition-transform">+</span>
  </summary>
  <div className="faq-content px-6 pb-6 pt-2 text-zinc-600 dark:text-gray-400 bg-zinc-100/80 dark:bg-white/5 border-x border-b border-zinc-200 dark:border-white/5 rounded-b-xl -mt-2">
- <p>We primarily serve the area and surrounding communities in nationwide, providing both on-site and remote support.</p>
+ <p>We are based in Fort Wayne, IN and serve trade & service businesses nationwide with 100% remote deployment and dedicated engineering support.</p>
+ </div>
+ </details>
+
+ <details className="faq-item group">
+ <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 bg-zinc-100/80 dark:bg-white/5 rounded-xl hover:bg-zinc-200 dark:bg-white/10 transition-colors border border-zinc-200 dark:border-white/5 hover:border-lime-500/30">
+ <span className="text-zinc-900 dark:text-white text-lg">What if it doesn't work for my business?</span>
+ <span className="text-lime-600 dark:text-lime-500 text-2xl font-bold group-open:rotate-45 transition-transform">+</span>
+ </summary>
+ <div className="faq-content px-6 pb-6 pt-2 text-zinc-600 dark:text-gray-400 bg-zinc-100/80 dark:bg-white/5 border-x border-b border-zinc-200 dark:border-white/5 rounded-b-xl -mt-2">
+ <p>You are protected by our <strong>90-Day Dream Outcome Guarantee</strong>: If we don't recover at least 10 hours/week (or $1,000/mo in lost revenue) in your first 90 days, you don't pay. We take 100% of the operational risk.</p>
  </div>
  </details>
 
