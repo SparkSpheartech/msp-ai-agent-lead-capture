@@ -143,10 +143,10 @@ export default function Hero3D() {
 
  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
  <Link href="/services/it-audits" className="px-8 py-4 bg-lime-500 text-zinc-950 rounded-xl font-extrabold hover:bg-lime-400 transition-all shadow-xl shadow-lime-500/25 text-center text-base">
- ⚡ Build It For Me (System Audit)
+ Build It For Me (System Audit)
  </Link>
  <Link href="/guides" className="px-8 py-4 border border-zinc-300 dark:border-white/20 bg-white/10 dark:bg-zinc-900/80 text-zinc-900 dark:text-white rounded-xl font-bold hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-center text-base">
- 🛠️ Show Me The Tools (DIY Stack)
+ Show Me The Tools (DIY Stack)
  </Link>
  </div>
  </motion.div>

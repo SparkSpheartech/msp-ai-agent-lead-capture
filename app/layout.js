@@ -6,6 +6,7 @@ import HashScrollHandler from "@/components/HashScrollHandler";
 import PageTransition from "@/components/PageTransition";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import SchemaOrg from "@/components/SchemaOrg";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
  subsets: ["latin"],
@@ -282,6 +283,7 @@ export default function RootLayout({ children }) {
  <PageTransition>
  {children}
  </PageTransition>
+ <Analytics />
  </SmoothScrolling>
  </ThemeProvider>
  </body>
