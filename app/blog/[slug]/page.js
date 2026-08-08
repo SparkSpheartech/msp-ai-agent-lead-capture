@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import BookAffiliateCards from '@/components/BookAffiliateCards';
 
 export async function generateStaticParams() {
  const paths = getAllPostIds();
@@ -94,6 +95,8 @@ export default async function Post({ params }) {
  prose-blockquote:border-l-lime-500 prose-blockquote:bg-lime-500/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:not-italic"
  dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
  />
+
+ <BookAffiliateCards />
 
  <div className="mt-20 pt-10 border-t border-gray-200 dark:border-white/10 text-center">
  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Want these results for your {postData.industry || 'business'}?</h3>

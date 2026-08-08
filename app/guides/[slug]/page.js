@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
  }
 
  return {
- title: `Best AI & Automation Tools for ${vertical.name} | SparkSphear Tech`,
+ title: `Best AI & Automation Tools for ${vertical.name} | SPARKSPHEAR Tech`,
  description: vertical.tagline,
  alternates: {
  canonical: `https://sparkspheartechsolutions.com/guides/${params.slug}`,

@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { FolderGit2, ArrowRight, Lock, Mail, Loader2, Layers } from 'lucide-react';
 import Link from 'next/link';
 import { products } from '@/data/affiliateProducts';
+import StackQuiz from '@/components/StackQuiz';
 
 function ProjectsContent() {
   const searchParams = useSearchParams();
@@ -83,8 +84,9 @@ function ProjectsContent() {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    const userEmail = localStorage.getItem('sparksphear_user_email');
     const unlocked = localStorage.getItem('projects_unlocked');
-    if (unlocked === 'true') {
+    if (userEmail || unlocked === 'true') {
       setIsUnlocked(true);
     }
   }, []);
@@ -107,6 +109,7 @@ function ProjectsContent() {
       });
 
       if (res.ok) {
+        localStorage.setItem('sparksphear_user_email', email.trim().toLowerCase());
         localStorage.setItem('projects_unlocked', 'true');
         setIsUnlocked(true);
       } else {
@@ -127,16 +130,16 @@ function ProjectsContent() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-md w-full bg-white dark:bg-zinc-900/80 border border-gray-200 dark:border-white/10 p-8 md:p-10 rounded-3xl shadow-2xl text-center"
+            className="max-w-lg w-full bg-white dark:bg-zinc-900/80 border border-gray-200 dark:border-white/10 p-8 md:p-10 rounded-3xl shadow-2xl text-center"
           >
-            <div className="w-16 h-16 bg-lime-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-lime-600 dark:text-lime-500">
+            <div className="w-16 h-16 bg-lime-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-lime-600 dark:text-lime-500 border border-lime-500/30">
               <Lock size={32} />
             </div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-4">
-              Unlock Our Case Studies
+            <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-3">
+              Unlock B2B Projects & System Blueprints
             </h1>
-            <p className="text-gray-500 dark:text-gray-400 mb-8 text-sm md:text-base">
-              Enter your email to view our exclusive {market !== 'All' ? market : ''} case studies, Agentic workflows, and automated system demonstrations.
+            <p className="text-gray-600 dark:text-gray-300 mb-8 text-sm md:text-base leading-relaxed">
+              Enter your business email to unlock full B2B case studies, system blueprints, and saved software stacks.
             </p>
 
             <form onSubmit={handleUnlock} className="flex flex-col gap-4">
@@ -144,7 +147,7 @@ function ProjectsContent() {
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-600 dark:text-gray-400" />
                 <input 
                   type="email" 
-                  placeholder="Enter your work email"
+                  placeholder="you@company.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-zinc-950 border border-gray-200 dark:border-white/10 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-lime-500 transition-colors"
@@ -159,9 +162,9 @@ function ProjectsContent() {
               <button 
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 bg-lime-500 text-zinc-950 font-bold rounded-xl hover:bg-lime-400 transition-all flex justify-center items-center gap-2"
+                className="w-full py-3.5 bg-lime-500 text-zinc-950 font-extrabold uppercase tracking-wider rounded-xl hover:bg-lime-400 transition-all shadow-lg shadow-lime-500/20 flex justify-center items-center gap-2 cursor-pointer"
               >
-                {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Gain Access'}
+                {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Unlock Access'}
               </button>
             </form>
           </motion.div>
@@ -194,8 +197,13 @@ function ProjectsContent() {
         </div>
       </header>
 
-      {/* Projects Grid */}
-      <main className="max-w-7xl mx-auto px-6 py-20 w-full flex-grow">
+      {/* Projects Grid & System Blueprints */}
+      <main className="max-w-7xl mx-auto px-6 py-12 w-full flex-grow">
+        {/* Customized Industry Software Stack Blueprint Generator */}
+        <div className="mb-12">
+          <StackQuiz />
+        </div>
+
         {filteredProjects.length === 0 ? (
           <div className="text-center py-20 bg-white dark:bg-zinc-900/50 rounded-3xl border border-gray-200 dark:border-white/10 p-12">
             <FolderGit2 className="w-16 h-16 text-lime-600 dark:text-lime-500 mx-auto mb-4 opacity-80" />

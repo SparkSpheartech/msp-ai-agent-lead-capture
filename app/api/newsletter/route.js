@@ -24,7 +24,7 @@ async function sendToN8nWorkflow(payload) {
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { email, source } = body;
+    const { email, source, tags: customTags } = body;
 
     if (!email) {
       return NextResponse.json(
@@ -39,9 +39,11 @@ export async function POST(request) {
       source: source || 'Website Newsletter Form'
     };
 
-    const tags = source === 'Homepage Footer Newsletter' 
-      ? ['newsletter-subscriber', 'homepage-subscriber', 'website-lead']
-      : ['newsletter-subscriber', 'case-studies-unlocked', 'website-lead'];
+    const tags = Array.isArray(customTags) && customTags.length > 0
+      ? customTags
+      : (source === 'Homepage Footer Newsletter' 
+        ? ['newsletter-subscriber', 'homepage-subscriber', 'website-lead']
+        : ['newsletter-subscriber', 'case-studies-unlocked', 'website-lead']);
 
     // 1. Push subscriber directly into Sequenzy Email Marketing Platform
     const sequenzyResult = await addSequenzySubscriber({

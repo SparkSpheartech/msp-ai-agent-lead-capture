@@ -1,8 +1,8 @@
 import GuidesIndex from "./GuidesIndex";
 
 export const metadata = {
- title: "AI & Automation Guides by Industry",
- description: "Discover the best AI, automation, and IT tools for your business. Curated guides for daycares, HVAC, restaurants, salons, and more.",
+ title: "SPARKSPHEAR Industry Guides - Automation Intelligence",
+ description: "Curated AI and automation intelligence for field service, waste management, and trades. Ranked tools, editorial briefings, and custom build guides updated weekly.",
  alternates: {
  canonical: "https://sparkspheartechsolutions.com/guides",
  },

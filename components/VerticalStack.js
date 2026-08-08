@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Star, ShieldCheck, Crown, Layers, ArrowRight, Zap, CheckCircle2, Users, User, TrendingUp, Building2, Cpu, Wrench, Trash2 } from 'lucide-react';
+import { Star, ShieldCheck, Crown, Layers, ArrowRight, Zap, CheckCircle2, Users, User, TrendingUp, Building2, Cpu, Wrench, Trash2, Baby, Scissors, Utensils, Car } from 'lucide-react';
 import { businessSizes, getStackForSize } from '@/data/affiliateProducts';
 import AffiliateClickTracker from '@/components/AffiliateClickTracker';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -12,7 +12,11 @@ const iconMap = {
   TrendingUp: <TrendingUp className="w-5 h-5" />,
   Building2: <Building2 className="w-5 h-5" />,
   Wrench: <Wrench className="w-5 h-5" />,
-  Trash2: <Trash2 className="w-5 h-5" />
+  Trash2: <Trash2 className="w-5 h-5" />,
+  Baby: <Baby className="w-5 h-5" />,
+  Scissors: <Scissors className="w-5 h-5" />,
+  Utensils: <Utensils className="w-5 h-5" />,
+  Car: <Car className="w-5 h-5" />
 };
 
 export default function VerticalStack({ vertical }) {

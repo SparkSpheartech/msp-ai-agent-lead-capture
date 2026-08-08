@@ -31,6 +31,14 @@ const teamMembers = [
     description: 'Manages our secure hosting and backend systems. He makes sure the tools and automations we deploy stay reliable and secure around the clock.'
   },
   {
+    name: 'Eissa',
+    role: 'CFO',
+    subtitle: 'Finance & Legal',
+    image: '/devops-engineer.webp',
+    video: '/videos/devops-engineer.mp4',
+    description: 'Oversees financial operations, compliance, and legal structures to support rapid scaling.'
+  },
+  {
     name: 'Shima',
     role: 'GTM',
     subtitle: 'Software Curation & Marketing',
