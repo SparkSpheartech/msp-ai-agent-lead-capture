@@ -1,1 +1,16 @@
-{"projectId":"prj_uMfFrhkKjvyjGQY6dbUyWAbfYROM","orgId":"team_nV6dKdAYkyH0O0vcNb26TBV8","projectName":"spark-sphear-tech-web"}
+{
+  "projectId": "prj_uMfFrhkKjvyjGQY6dbUyWAbfYROM",
+  "orgId": "team_nV6dKdAYkyH0O0vcNb26TBV8",
+  "projectName": "spark-sphear-tech-web",
+  "settings": {
+    "createdAt": 1785037852571,
+    "framework": "nextjs",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": true,
+    "nodeVersion": "24.x"
+  }
+}

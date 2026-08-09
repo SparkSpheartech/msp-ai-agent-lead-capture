@@ -28,16 +28,22 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/services/it-audits`,
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/services`,
+      url: `${baseUrl}/markets`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/onboarding`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/projects`,
@@ -70,10 +76,22 @@ export default function sitemap() {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/support/ticket`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/support/kb`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/affiliate-disclosure`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.4,
     },
     {
       url: `${baseUrl}/privacy`,
@@ -96,21 +114,29 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  // Industry Guide subpages
-    const guidePages = [
-      'barbershop',
-      'hvac',
-      'waste-management',
-    ].map((guide) => ({
+  // All 7 Industry Guide subpages
+  const guidePages = [
+    'auto-repair',
+    'barbershop',
+    'daycare',
+    'hvac',
+    'restaurant',
+    'salon',
+    'waste-management',
+  ].map((guide) => ({
     url: `${baseUrl}/guides/${guide}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
-  // Blog posts
+  // All 5 Live Blog posts
   const blogPages = [
     'barbershop-owner-automation-guide',
+    'ai-agents-small-business-automation-2025',
+    'digital-marketing-roi-local',
+    'cybersecurity-guide-2025',
+    'managed-it-benefits-fort-wayne',
   ].map((blog) => ({
     url: `${baseUrl}/blog/${blog}`,
     lastModified: new Date(),

@@ -1,6 +1,23 @@
 export const metadata = {
- title: 'Privacy Policy | SparkSphear',
- description: 'SparkSphear Privacy Policy - Your trusted AI Services partner nationwide.',
+  title: 'Privacy Policy',
+  description: 'SPARKSPHEAR Tech Solutions Privacy Policy — learn how we protect your personal and business data.',
+  alternates: {
+    canonical: 'https://sparkspheartechsolutions.com/privacy',
+  },
+  openGraph: {
+    title: 'Privacy Policy',
+    description: 'SPARKSPHEAR Tech Solutions Privacy Policy.',
+    url: 'https://sparkspheartechsolutions.com/privacy',
+    siteName: 'SPARKSPHEAR',
+    images: [
+      {
+        url: 'https://sparkspheartechsolutions.com/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'SPARKSPHEAR Privacy Policy',
+      },
+    ],
+  },
 };
 
 export default function PrivacyPolicy() {

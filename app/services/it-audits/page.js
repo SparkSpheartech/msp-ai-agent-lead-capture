@@ -1,18 +1,32 @@
 import ITAuditsClient from "./ITAuditsClient";
 
 export const metadata = {
- title: "Master Business Audit | SparkSphear Tech",
- description: "A unified infrastructure audit of your web, marketing, AI, and brand systems. Find the exact levers for growth before you spend a dollar.",
- alternates: {
- canonical: "https://sparkspheartechsolutions.com/services/it-audits",
- },
- openGraph: {
- title: "Master Business Audit | SparkSphear Tech",
- description: "A unified infrastructure audit of your web, marketing, AI, and brand systems. Find the exact levers for growth before you spend a dollar.",
- url: "https://sparkspheartechsolutions.com/services/it-audits",
- },
+  title: "Master Business & Infrastructure Audit",
+  description: "A unified infrastructure audit of your web, marketing, AI, and operations systems. Identify exact levers for growth.",
+  alternates: {
+    canonical: "https://sparkspheartechsolutions.com/services/it-audits",
+  },
+  openGraph: {
+    title: "Master Business & Infrastructure Audit",
+    description: "A unified infrastructure audit of your web, marketing, AI, and operations systems.",
+    url: "https://sparkspheartechsolutions.com/services/it-audits",
+    siteName: "SPARKSPHEAR",
+    images: [
+      {
+        url: "https://sparkspheartechsolutions.com/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Master Business Audit",
+      },
+    ],
+  },
 };
 
 export default function Page() {
- return <ITAuditsClient />;
+  return (
+    <>
+      <h1 className="sr-only">Master Business & Infrastructure Audit</h1>
+      <ITAuditsClient />
+    </>
+  );
 }

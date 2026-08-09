@@ -72,8 +72,8 @@ export default function Hero3D() {
  const [headlineIndex, setHeadlineIndex] = useState(0);
 
  const headlines = [
-   { line1: "Want Us To Build It,", line2: "Or Show You The Tools?" },
-   { line1: "Audit The System.", line2: "Scale The Business." }
+   { line1: "Audit The System.", line2: "Scale The Business." },
+   { line1: "Want Us To Build It,", line2: "Or Show You The Tools?" }
  ];
 
  useEffect(() => {

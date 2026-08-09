@@ -15,16 +15,33 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
- const postData = await getPostData(params.slug);
- if (!postData) return { title: 'Post Not Found' };
+  const postData = await getPostData(params.slug);
+  if (!postData) return { title: 'Post Not Found' };
 
- return {
- title: `${postData.title} | SparkSphear Tech`,
- description: postData.excerpt,
- alternates: {
- canonical: `https://sparkspheartechsolutions.com/blog/${params.slug}`,
- },
- };
+  // Keep title concise for template appending
+  const cleanTitle = postData.title.length > 42 ? postData.title.slice(0, 42).trim() + '...' : postData.title;
+
+  return {
+    title: cleanTitle,
+    description: postData.excerpt,
+    alternates: {
+      canonical: `https://sparkspheartechsolutions.com/blog/${params.slug}`,
+    },
+    openGraph: {
+      title: cleanTitle,
+      description: postData.excerpt,
+      url: `https://sparkspheartechsolutions.com/blog/${params.slug}`,
+      siteName: "SPARKSPHEAR",
+      images: [
+        {
+          url: postData.coverImage || "https://sparkspheartechsolutions.com/logo.png",
+          width: 1200,
+          height: 630,
+          alt: postData.title,
+        },
+      ],
+    },
+  };
 }
 
 export default async function Post({ params }) {

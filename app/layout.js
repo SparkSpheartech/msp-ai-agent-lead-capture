@@ -5,7 +5,6 @@ import SmoothScrolling from "@/components/SmoothScrolling";
 import HashScrollHandler from "@/components/HashScrollHandler";
 import PageTransition from "@/components/PageTransition";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import SchemaOrg from "@/components/SchemaOrg";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SequenzyLeadPopup from "@/components/SequenzyLeadPopup";
@@ -131,13 +130,13 @@ export default function RootLayout({ children }) {
           fbq('track', 'PageView');`}
         </Script>
 
-        {/* Schema.org Structured Data - LocalBusiness */}
+        {/* Schema.org Structured Data - Organization & LocalBusiness */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": ["LocalBusiness", "Organization", "ProfessionalService"],
               "@id": "https://sparkspheartechsolutions.com/#organization",
               "name": "SPARKSPHEAR Tech Solutions",
               "alternateName": ["SparkSphere Tech Solutions", "Spark Sphear Solutions"],
@@ -147,10 +146,11 @@ export default function RootLayout({ children }) {
               "description": "Transform your business with AI automation, custom AI solutions, workflows, and intelligent systems that drive real growth.",
               "priceRange": "$$",
               "telephone": "+1-260-267-0641",
+              "email": "SparkSphear4me@gmail.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "",
-                "addressLocality": "Online",
+                "addressLocality": "Fort Wayne",
+                "addressRegion": "IN",
                 "addressCountry": "US"
               },
               "geo": {
@@ -158,126 +158,14 @@ export default function RootLayout({ children }) {
                 "latitude": 41.0793,
                 "longitude": -85.1394
               },
-              "areaServed": {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                  "@type": "GeoCoordinates",
-                  "latitude": 41.0793,
-                  "longitude": -85.1394
-                },
-                "geoRadius": "50000",
-                "description": "Nationwide"
-              },
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  "opens": "08:00",
-                  "closes": "18:00"
-                }
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "AI & Technology Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "AI Automation & Workflows",
-                      "description": "Business process automation using AI and custom integrations"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Custom AI Solutions",
-                      "description": "Tailored AI applications for your specific business needs"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "AI Chatbots",
-                      "description": "Intelligent chatbots powered by GPT, Claude, and other AI models"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Managed IT Services",
-                      "description": "24/7 IT support and monitoring"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Web Design & Development",
-                      "description": "Custom websites and web applications"
-                    }
-                  }
-                ]
-              }
-            })
-          }}
-        />
-        {/* Schema.org Structured Data - FAQPage */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What areas do you serve?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We serve businesses nationwide with remote implementation, custom AI development, and ongoing tech support."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What AI services do you offer?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We offer AI automation, custom AI solutions, AI chatbots, advanced workflow automation, and integration with leading AI providers like OpenAI, Anthropic, and Google Gemini."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How can AI help my business?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "AI can automate repetitive tasks, improve customer service with chatbots, analyze data for insights, streamline operations, and scale your business without proportional cost increases."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do you offer 24/7 support?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, our Managed IT and AI services include round-the-clock monitoring and emergency support to ensure your business never stops running."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How does your pricing work?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We offer flexible flat-rate monthly packages for Managed Services and AI automation, so you have a predictable budget. Project work is quoted upfront."
-                  }
-                }
+              "areaServed": "United States",
+              "sameAs": [
+                "https://www.linkedin.com/company/sparkspheartech",
+                "https://twitter.com/sparksphear"
               ]
             })
           }}
         />
-        <SchemaOrg />
       </head>
       <body className={`${inter.className} antialiased`} style={{ margin: 0 }}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>

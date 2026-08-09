@@ -3,11 +3,25 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata = {
- title: "Affiliate Disclosure | SparkSphear Tech",
- description: "Learn how we use affiliate links to support our free content and research.",
- alternates: {
- canonical: "https://sparkspheartechsolutions.com/affiliate-disclosure",
- },
+  title: "Affiliate Disclosure",
+  description: "Learn how we use affiliate links to support our free content, software reviews, and industry research.",
+  alternates: {
+    canonical: "https://sparkspheartechsolutions.com/affiliate-disclosure",
+  },
+  openGraph: {
+    title: "Affiliate Disclosure",
+    description: "Learn how we use affiliate links to support our free content and research.",
+    url: "https://sparkspheartechsolutions.com/affiliate-disclosure",
+    siteName: "SPARKSPHEAR",
+    images: [
+      {
+        url: "https://sparkspheartechsolutions.com/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "SPARKSPHEAR Affiliate Disclosure",
+      },
+    ],
+  },
 };
 
 export default function AffiliateDisclosurePage() {

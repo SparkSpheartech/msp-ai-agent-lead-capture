@@ -1,15 +1,26 @@
 import MarketsClient from '@/components/MarketsClient';
 
 export const metadata = {
- title: 'Markets We Service | Industry Intelligence & Market Breakdown | SPARKSPHEAR',
- description: 'Explore industry-specific AI automation, market breakdowns, and field insights for HVAC, waste management, property management, and commercial service operations nationwide.',
- openGraph: {
- title: 'Markets We Service | SPARKSPHEAR Tech Solutions',
- description: 'Industry-specific Agentic systems, specialized AI agents, and market breakdowns for scaling businesses.',
- url: 'https://sparkspheartechsolutions.com/markets',
- siteName: 'SPARKSPHEAR Tech Solutions',
- type: 'website',
- },
+  title: 'Markets & Industry Solutions',
+  description: 'Explore industry-specific AI automation, market breakdowns, and field insights for HVAC, waste management, property management, and commercial operations.',
+  alternates: {
+    canonical: 'https://sparkspheartechsolutions.com/markets',
+  },
+  openGraph: {
+    title: 'Markets & Industry Solutions',
+    description: 'Industry-specific Agentic systems, specialized AI agents, and market breakdowns for scaling businesses.',
+    url: 'https://sparkspheartechsolutions.com/markets',
+    siteName: 'SPARKSPHEAR',
+    type: 'website',
+    images: [
+      {
+        url: 'https://sparkspheartechsolutions.com/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'SPARKSPHEAR Industry Markets',
+      },
+    ],
+  },
 };
 
 export default async function MarketsPage() {
@@ -68,5 +79,10 @@ export default async function MarketsPage() {
  console.error('Blogger SSR fetch error:', e.message);
  }
 
- return <MarketsClient initialPosts={initialPosts} />;
+  return (
+    <>
+      <h1 className="sr-only">Markets & Industry Solutions - SPARKSPHEAR</h1>
+      <MarketsClient initialPosts={initialPosts} />
+    </>
+  );
 }
