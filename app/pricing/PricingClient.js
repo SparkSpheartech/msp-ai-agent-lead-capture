@@ -118,7 +118,7 @@ export default function Pricing() {
     }
   ];
 
-  // Brunson's Stack Components (Task 1.10)
+  // Stack Components
   const stackItems = [
     { title: "24/7 AI Missed-Call & Text Receptionist", value: "$1,497/mo value" },
     { title: "Automated Quoting & Dispatch Workflows", value: "$1,997 value" },

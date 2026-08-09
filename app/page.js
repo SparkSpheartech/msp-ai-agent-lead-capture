@@ -20,6 +20,7 @@ export default function Home() {
  return (
  <main className="min-h-screen bg-slate-50 dark:bg-zinc-950 transition-colors duration-300">
  <Navbar />
+ <h1 className="sr-only">AI Automation & Software Stacks for Your Business - SPARKSPHEAR</h1>
  <Hero3D />
  <WhatWeDo />
  <ServiceWizard />

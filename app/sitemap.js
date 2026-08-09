@@ -97,15 +97,26 @@ export default function sitemap() {
   }));
 
   // Industry Guide subpages
-  const guidePages = [
-    'hvac',
-    'waste-management',
-  ].map((guide) => ({
+    const guidePages = [
+      'barbershop',
+      'hvac',
+      'waste-management',
+    ].map((guide) => ({
     url: `${baseUrl}/guides/${guide}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
-  return [...mainPages, ...servicePages, ...guidePages];
+  // Blog posts
+  const blogPages = [
+    'barbershop-owner-automation-guide',
+  ].map((blog) => ({
+    url: `${baseUrl}/blog/${blog}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  return [...mainPages, ...servicePages, ...guidePages, ...blogPages];
 }

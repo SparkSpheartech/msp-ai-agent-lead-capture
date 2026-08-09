@@ -12,7 +12,7 @@ export default function TripwireCTA({ verticalName = "Field Service" }) {
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
         <div className="flex-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-500/20 text-lime-400 text-xs font-extrabold uppercase tracking-wider mb-4 border border-lime-500/30">
-            <Zap className="w-3.5 h-3.5" /> DotCom Secrets Funnel #6: Tripwire Offer
+            <Zap className="w-3.5 h-3.5" /> Setup Offer
           </div>
 
           <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3">

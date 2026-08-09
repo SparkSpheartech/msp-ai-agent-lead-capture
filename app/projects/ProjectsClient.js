@@ -135,9 +135,9 @@ function ProjectsContent() {
             <div className="w-16 h-16 bg-lime-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-lime-600 dark:text-lime-500 border border-lime-500/30">
               <Lock size={32} />
             </div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-3">
-              Unlock B2B Projects & System Blueprints
-            </h1>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-3">
+                          Unlock B2B Projects & System Blueprints
+                        </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-8 text-sm md:text-base leading-relaxed">
               Enter your business email to unlock full B2B case studies, system blueprints, and saved software stacks.
             </p>
@@ -187,9 +187,9 @@ function ProjectsContent() {
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-600 dark:text-lime-400 text-sm font-semibold tracking-wider uppercase mb-4">
               <FolderGit2 className="w-4 h-4" /> Portfolio & Success Stories
             </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-900 dark:text-white mb-6 tracking-tight">
-              {market !== 'All' ? `${market} Case Studies` : 'Our Case Studies'}
-            </h1>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-zinc-900 dark:text-white mb-6 tracking-tight">
+                          {market !== 'All' ? `${market} Case Studies` : 'Our Case Studies'}
+                        </h2>
             <p className="text-zinc-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
               See how we transform operations into scalable automated workflows, using the same tools we recommend in our guides.
             </p>

@@ -136,6 +136,7 @@ export default function About() {
         {/* Mission Statement Anchor Hero Banner */}
         <section className="pt-32 pb-16 bg-gradient-to-b from-slate-100 via-slate-50 to-white dark:from-black dark:via-zinc-950 dark:to-zinc-950 border-b border-zinc-200 dark:border-lime-500/20">
           <div className="container mx-auto px-4 max-w-4xl text-center">
+            <h1 className="sr-only">About SPARKSPHEAR Tech Solutions - AI Automation & IT Services</h1>
             <span className="inline-flex items-center gap-2 bg-lime-500/10 border border-lime-500/30 rounded-full px-4 py-2 mb-6">
               <Sparkles className="w-4 h-4 text-lime-600 dark:text-lime-400" />
               <span className="text-lime-600 dark:text-lime-400 text-xs md:text-sm font-semibold tracking-wider uppercase">OUR MISSION STATEMENT</span>

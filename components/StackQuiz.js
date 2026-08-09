@@ -44,7 +44,7 @@ export default function StackQuiz({ defaultVertical = 'hvac' }) {
 
       <div className="relative z-10 max-w-xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-500/20 text-lime-400 text-xs font-extrabold uppercase tracking-wider mb-4 border border-lime-500/30">
-          <Sparkles className="w-3.5 h-3.5" /> DotCom Secrets Funnel #2: 60-Second Stack Quiz
+          <Sparkles className="w-3.5 h-3.5" /> 60-Second Stack Quiz
         </div>
 
         {step === 1 && (
