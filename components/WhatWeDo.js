@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Brain, Search, Layout } from 'lucide-react';
+import CardSwipe from './CardSwipe';
 
 const WhatWeDo = () => {
   return (
@@ -24,7 +25,12 @@ const WhatWeDo = () => {
           </p>
         </div>
 
-        {/* 3 CORE SERVICE ROUTES */}
+        {/* Interactive CardSwipe Component */}
+        <div className="mb-16">
+          <CardSwipe />
+        </div>
+
+        {/* 3 CORE SERVICE PATHWAY CARDS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* ROUTE 1: FIX OPERATIONS */}

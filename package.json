@@ -10,6 +10,8 @@
  },
  "dependencies": {
   "@hookform/resolvers": "^3.3.4",
+  "@hugeicons/core-free-icons": "^4.2.3",
+  "@hugeicons/react": "^1.1.9",
   "@react-three/drei": "^9.102.0",
   "@react-three/fiber": "^8.15.19",
   "@studio-freight/react-lenis": "^0.0.47",
