@@ -7,8 +7,6 @@ import PageTransition from "@/components/PageTransition";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import SequenzyLeadPopup from "@/components/SequenzyLeadPopup";
-import MasterAuditWidget from "@/components/MasterAuditWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -174,8 +172,6 @@ export default function RootLayout({ children }) {
             <PageTransition>
               {children}
             </PageTransition>
-            <SequenzyLeadPopup />
-            <MasterAuditWidget />
             <Analytics />
             <SpeedInsights />
           </SmoothScrolling>
