@@ -145,44 +145,92 @@ export default function PhotographyVideography() {
  </div>
  </section>
 
- {/* Why Choose Us */}
- <section className="py-24 bg-slate-50 dark:bg-zinc-950">
- <div className="container max-w-6xl">
- <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
- <div>
- <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-8">
- Cinematic <span className="text-cyan-400">Excellence</span>
- </h2>
- <div className="flex flex-col gap-8">
- {benefits.map((benefit, index) => (
- <div key={index} className="flex gap-6">
- <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 flex-shrink-0 border border-cyan-500/20">
- {React.cloneElement(benefit.icon, { className: 'w-7 h-7' })}
- </div>
- <div>
- <h3 className="text-zinc-900 dark:text-white text-xl font-bold mb-2">{benefit.title}</h3>
- <p className="text-zinc-600 dark:text-gray-400 leading-relaxed">{benefit.description}</p>
- </div>
- </div>
- ))}
- </div>
- </div>
- <div className="relative">
- {/* Visual placeholder/graphic could go here, keeping it simple for now */}
- <div className="grid grid-cols-2 gap-4">
- <div className="aspect-[3/4] bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-white/5 overflow-hidden relative">
- <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
- <ImageIcon className="absolute bottom-6 left-6 w-8 h-8 text-zinc-900 dark:text-white/20" />
- </div>
- <div className="aspect-[3/4] bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-white/5 overflow-hidden relative mt-12">
- <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
- <Video className="absolute bottom-6 left-6 w-8 h-8 text-zinc-900 dark:text-white/20" />
- </div>
- </div>
- </div>
- </div>
- </div>
- </section>
+  {/* Why Choose Us */}
+  <section className="py-24 bg-slate-50 dark:bg-zinc-950">
+    <div className="container max-w-6xl">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+        <div>
+          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-8">
+            Cinematic <span className="text-cyan-400">Excellence</span>
+          </h2>
+          <div className="flex flex-col gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex gap-6">
+                <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 flex-shrink-0 border border-cyan-500/20">
+                  {React.cloneElement(benefit.icon, { className: 'w-7 h-7' })}
+                </div>
+                <div>
+                  <h3 className="text-zinc-900 dark:text-white text-xl font-bold mb-2">{benefit.title}</h3>
+                  <p className="text-zinc-600 dark:text-gray-400 leading-relaxed">{benefit.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="relative">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="aspect-[3/4] bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-white/5 overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+              <ImageIcon className="absolute bottom-6 left-6 w-8 h-8 text-zinc-900 dark:text-white/20" />
+            </div>
+            <div className="aspect-[3/4] bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-white/5 overflow-hidden relative mt-12">
+              <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+              <Video className="absolute bottom-6 left-6 w-8 h-8 text-zinc-900 dark:text-white/20" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Production Process Breakdown */}
+      <div className="bg-slate-900 text-white rounded-2xl p-8 md:p-12 border border-cyan-500/20 shadow-2xl">
+        <h3 className="text-2xl md:text-3xl font-bold text-cyan-300 mb-6">Our Onsite Production & Editing Process</h3>
+        <div className="grid md:grid-cols-3 gap-8 text-sm">
+          <div>
+            <div className="text-cyan-400 font-mono font-bold mb-2">01. PRE-PRODUCTION</div>
+            <h4 className="text-lg font-bold mb-2">Creative Direction & Shot List</h4>
+            <p className="text-zinc-400 leading-relaxed">
+              We script hook concepts, plan lighting and audio specs, build shot lists, and schedule talent so every shoot day runs on clockwork schedule.
+            </p>
+          </div>
+          <div>
+            <div className="text-cyan-400 font-mono font-bold mb-2">02. ONSITE SHOOTING</div>
+            <h4 className="text-lg font-bold mb-2">6K Cinema Equipment</h4>
+            <p className="text-zinc-400 leading-relaxed">
+              Captured using cinema cameras, wireless lavalier microphones, gimbal stabilization, and studio lighting to produce pristine commercial media assets.
+            </p>
+          </div>
+          <div>
+            <div className="text-cyan-400 font-mono font-bold mb-2">03. POST-PRODUCTION</div>
+            <h4 className="text-lg font-bold mb-2">Color Grade & Multi-Format Cutdowns</h4>
+            <p className="text-zinc-400 leading-relaxed">
+              Color grading, noise reduction, motion graphics, and audio mastering. Delivered in 16:9 hero landscape and 9:16 vertical shortform for social media.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Frequently Asked Questions */}
+  <section className="py-20 border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-zinc-900/40">
+    <div className="container max-w-4xl mx-auto px-4">
+      <h2 className="text-3xl font-bold text-zinc-900 dark:text-white text-center mb-12">Frequently Asked Questions</h2>
+      <div className="space-y-6">
+        <div className="bg-slate-50 dark:bg-zinc-950 p-6 rounded-xl border border-zinc-200 dark:border-white/5">
+          <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">What is the typical turnaround time for finished commercial media?</h3>
+          <p className="text-zinc-600 dark:text-gray-400 text-sm leading-relaxed">
+            Standard photo galleries are delivered within 5 to 7 business days. Edited brand films and social video packages are completed within 10 to 14 business days following production.
+          </p>
+        </div>
+        <div className="bg-slate-50 dark:bg-zinc-950 p-6 rounded-xl border border-zinc-200 dark:border-white/5">
+          <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">Do we get full commercial usage rights for all media assets?</h3>
+          <p className="text-zinc-600 dark:text-gray-400 text-sm leading-relaxed">
+            Yes. You receive full commercial licensing rights to use all delivered photos, videos, and graphics across your website, social media, paid ads, print marketing, and broadcast channels.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
  {/* Integration Section: Google Form */}
  <section id="book-session" className="py-24 border-t border-zinc-200 dark:border-white/5 bg-slate-50 dark:bg-zinc-950 relative">

@@ -1,7 +1,7 @@
 export default function sitemap() {
   const baseUrl = 'https://sparkspheartechsolutions.com';
 
-  // Main money pages
+  // Core Side B agency pages
   const mainPages = [
     {
       url: baseUrl,
@@ -13,6 +13,12 @@ export default function sitemap() {
       url: `${baseUrl}/guides`,
       lastModified: new Date(),
       changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
@@ -28,10 +34,10 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/services`,
+      url: `${baseUrl}/projects`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/markets`,
@@ -46,12 +52,6 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/projects`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -61,12 +61,6 @@ export default function sitemap() {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
       priority: 0.8,
     },
     {
@@ -114,7 +108,7 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  // All 7 Industry Guide subpages
+  // All 7 Industry Brief subpages
   const guidePages = [
     'auto-repair',
     'barbershop',
@@ -130,19 +124,5 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  // All 5 Live Blog posts
-  const blogPages = [
-    'barbershop-owner-automation-guide',
-    'ai-agents-small-business-automation-2025',
-    'digital-marketing-roi-local',
-    'cybersecurity-guide-2025',
-    'managed-it-benefits-fort-wayne',
-  ].map((blog) => ({
-    url: `${baseUrl}/blog/${blog}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }));
-
-  return [...mainPages, ...servicePages, ...guidePages, ...blogPages];
+  return [...mainPages, ...servicePages, ...guidePages];
 }

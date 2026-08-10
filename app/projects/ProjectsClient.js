@@ -20,57 +20,69 @@ function ProjectsContent() {
   const projects = [
     {
       id: 1,
-      title: "MC Racing Sim FW",
-      market: "General", 
-      description: "A dynamic website built for a local racing simulation center nationwide.",
-      image: "https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&w=800&q=80",
-      link: "https://mcracingsim-fw.surge.sh",
-      techStack: []
+      title: "HVAC Automated Dispatcher & AI Voice Agent",
+      market: "HVAC", 
+      client: "Midwest Heating & Cooling",
+      metrics: "18.5 hrs/wk saved per tech • 2,400+ calls routed • 99.4% accuracy",
+      description: "An intelligent agentic dispatcher that parses inbound emergency service calls, evaluates technician location via GPS telematics, and dispatches job cards directly into ServiceTitan and Jobber without human intervention.",
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80",
+      link: "/services/ai-automation",
+      techStack: ["servicetitan", "jobber"]
     },
     {
       id: 2,
-      title: "Wildman Tattoo PA",
+      title: "Circle Logistics AI Freight Gateway",
       market: "General",
-      description: "A stunning portfolio and booking site for Wildman Tattoo in Pennsylvania.",
-      image: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=800&q=80",
-      link: "https://wildmantatoopa.surge.sh",
+      client: "Circle Logistics Network",
+      metrics: "90% manual data entry reduction • <3 sec rate-con parsing",
+      description: "Custom AI document intelligence gateway that ingests freight rate confirmations, extracts load numbers and pay rates, and syncs status directly into transport management software via automated EDI 204/214 pipelines.",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+      link: "/services/ai-automation",
       techStack: []
     },
     {
       id: 3,
-      title: "Pakito's Taqueria Demo",
-      market: "Restaurant",
-      description: "A fast, modern restaurant demo site tailored for Pakito's Taqueria with integrated online ordering.",
-      image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
-      link: "https://pakitos-taqueria-demo.surge.sh",
-      techStack: ["toast"] // Affiliate link to Toast
+      title: "GigaPulse Real-Time NOC Telemetry Platform",
+      market: "General",
+      client: "GigaPulse Networks",
+      metrics: "24/7 automated alert escalation • 40+ node locations monitored",
+      description: "Enterprise Network Operations Center (NOC) dashboard providing real-time telemetry, automated failure prediction, and SMS escalation protocols for distributed cloud and hardware infrastructure.",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+      link: "/services/it-audits",
+      techStack: []
     },
     {
       id: 4,
-      title: "HVAC Automated Dispatcher",
-      market: "HVAC", 
-      description: "An intelligent agent that automatically schedules and dispatches HVAC technicians based on location and skill set, saving 15 hours a week.",
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80",
-      link: "#",
-      techStack: ["servicetitan", "jobber"]
+      title: "PHP Healthcare EDI 837/835 Claims Engine",
+      market: "General",
+      client: "PHP Commercial Claims Group",
+      metrics: "Zero manual claims re-entry • 100% HIPAA compliance",
+      description: "Automated healthcare EDI claims automation pipeline that parses 837 claim files, validates medical billing codes against clearinghouse rules, and reconciles 835 payment advice automatically.",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+      link: "/services/it-audits",
+      techStack: []
     },
     {
       id: 5,
-      title: "Salon Waitlist AI",
-      market: "Salon",
-      description: "A specialized AI agent that follows up with inbound waitlist leads within 5 minutes, boosting conversion rates by 35%.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      link: "#",
-      techStack: ["vagaro"]
+      title: "Pakito's Taqueria Cloud POS & QR System",
+      market: "Restaurant",
+      client: "Pakito's Hospitality Group",
+      metrics: "22% faster table turnover • $0 third-party delivery fees",
+      description: "A fast, modern web ordering platform integrated with Toast Cloud POS. Allows diners to scan QR codes at tables, order directly from digital menus, and process payments instantly.",
+      image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
+      link: "https://pakitos-taqueria-demo.surge.sh",
+      techStack: ["toast"]
     },
     {
       id: 6,
-      title: "Joe's Car Design",
-      market: "General",
-      description: "A premium car design and customization website featuring a 3D configurator, color & material picker, and full portfolio showcase.",
-      image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=800&q=80",
-      link: "https://joes-car-design.surge.sh",
-      techStack: []
+      title: "Salon Waitlist AI & Deposit Automation",
+      market: "Salon",
+      client: "Aura Luxury Spa & Salon",
+      metrics: "35% boost in client retention • 0% no-show rate on deposits",
+      description: "A specialized AI receptionist agent that handles inbound waitlist requests 24/7, collects card-on-file deposits via Boulevard and Vagaro, and sends dynamic SMS appointment confirmations.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      link: "/services/ai-automation",
+      techStack: ["boulevard"]
     }
   ];
 

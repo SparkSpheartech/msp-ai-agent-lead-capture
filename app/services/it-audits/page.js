@@ -23,10 +23,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return (
-    <>
-      <h1 className="sr-only">Master Business & Infrastructure Audit</h1>
-      <ITAuditsClient />
-    </>
-  );
+  return <ITAuditsClient />;
 }

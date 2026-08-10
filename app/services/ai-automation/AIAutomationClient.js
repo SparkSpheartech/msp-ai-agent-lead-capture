@@ -161,105 +161,166 @@ export default function AIAutomation() {
  </div>
  </section>
 
- {/* Capabilities Grid */}
- <section id="solutions" className="py-24 border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-zinc-900/50">
- <div className="container max-w-6xl">
- <div className="text-center mb-16">
- <motion.h2
- initial={{ opacity: 0, y: 20 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4"
- >
- Our Tech Stack
- </motion.h2>
- <p className="text-zinc-600 dark:text-gray-400">Cutting-edge tools for modern problems</p>
- </div>
- <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
- {services.map((service, index) => (
- <motion.div
- key={index}
- initial={{ opacity: 0, y: 20 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- transition={{ delay: index * 0.1 }}
- whileHover={{ scale: 1.05, borderColor: "rgba(139,92,246,0.5)" }}
- className="group bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/5 p-6 rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)]"
- >
- <div className="w-12 h-12 bg-zinc-100/80 dark:bg-white/5 rounded-lg flex items-center justify-center text-violet-400 mb-4 group-hover:scale-110 transition-transform">
- {React.cloneElement(service.icon, { className: 'w-6 h-6' })}
- </div>
- <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">{service.title}</h3>
- <div className="w-8 h-1 bg-violet-500/30 rounded group-hover:w-16 transition-all duration-300"></div>
- </motion.div>
- ))}
- </div>
- </div>
- </section>
+  {/* Capabilities Grid */}
+  <section id="solutions" className="py-24 border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-zinc-900/50">
+    <div className="container max-w-6xl">
+      <div className="text-center mb-16">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4"
+        >
+          Agentic AI Stack & Automation Architecture
+        </motion.h2>
+        <p className="text-zinc-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+          We don't build standard chatbots. We engineer autonomous agentic systems that connect directly with your core software stack to take action, parse structured data, and make operational decisions.
+        </p>
+      </div>
 
- {/* Why AI? */}
- <section className="py-24 bg-slate-50 dark:bg-zinc-950">
- <div className="container max-w-6xl">
- <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
- <div>
- <motion.h2
- initial={{ opacity: 0, x: -50 }}
- whileInView={{ opacity: 1, x: 0 }}
- viewport={{ once: true }}
- className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-8"
- >
- Why <span className="text-violet-400">Automate?</span>
- </motion.h2>
- <div className="flex flex-col gap-8">
- {benefits.map((benefit, index) => (
- <motion.div
- key={index}
- initial={{ opacity: 0, x: -50 }}
- whileInView={{ opacity: 1, x: 0 }}
- viewport={{ once: true }}
- transition={{ delay: index * 0.2 }}
- className="flex gap-6"
- >
- <div className="w-16 h-16 rounded-full bg-violet-500/10 flex items-center justify-center text-violet-400 flex-shrink-0 border border-violet-500/20">
- {React.cloneElement(benefit.icon, { className: 'w-7 h-7' })}
- </div>
- <div>
- <h3 className="text-zinc-900 dark:text-white text-xl font-bold mb-2">{benefit.title}</h3>
- <p className="text-zinc-600 dark:text-gray-400 leading-relaxed">{benefit.description}</p>
- </div>
- </motion.div>
- ))}
- </div>
- </div>
- <div className="relative">
- {/* Holographic Cards UI */}
- <div className="space-y-6">
- {useCases.map((useCase, index) => (
- <motion.div
- key={index}
- initial={{ opacity: 0, x: 100 }}
- whileInView={{ opacity: 1, x: 0 }}
- viewport={{ once: true }}
- transition={{ delay: index * 0.2 }}
- whileHover={{ x: -10 }}
- className="bg-gradient-to-r from-white/5 to-white/0 border border-zinc-200 dark:border-white/10 rounded-xl p-6 relative overflow-hidden group hover:border-violet-500/50 transition-all cursor-default"
- >
- <div className="absolute top-0 right-0 p-4 opacity-50">
- <Cpu className="w-12 h-12 text-zinc-900 dark:text-white/5 group-hover:text-violet-500/20 transition-colors" />
- </div>
- <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">{useCase.title}</h3>
- <p className="text-zinc-600 dark:text-gray-400 text-sm mb-4 max-w-[90%]">{useCase.description}</p>
- <div className="inline-flex items-center gap-2 bg-violet-500/20 px-3 py-1 rounded-full border border-violet-500/30">
- <TrendingUp className="w-3 h-3 text-violet-400" />
- <span className="text-violet-200 text-xs font-bold uppercase tracking-wider">{useCase.stat}</span>
- </div>
- </motion.div>
- ))}
- </div>
- </div>
- </div>
- </div>
- </section>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {services.map((service, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            whileHover={{ scale: 1.03, borderColor: "rgba(139,92,246,0.5)" }}
+            className="group bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/5 p-6 rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)]"
+          >
+            <div className="w-12 h-12 bg-zinc-100/80 dark:bg-white/5 rounded-lg flex items-center justify-center text-violet-400 mb-4 group-hover:scale-110 transition-transform">
+              {React.cloneElement(service.icon, { className: 'w-6 h-6' })}
+            </div>
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">{service.title}</h3>
+            <p className="text-zinc-600 dark:text-gray-400 text-sm mb-3">
+              Production-grade integrations engineered for high reliability, low latency, and zero data leakage.
+            </p>
+            <div className="w-8 h-1 bg-violet-500/30 rounded group-hover:w-16 transition-all duration-300"></div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Deep Technical Blueprint Section */}
+      <div className="bg-slate-900 text-white rounded-2xl p-8 md:p-12 border border-violet-500/20 shadow-2xl">
+        <h3 className="text-2xl md:text-3xl font-bold text-violet-300 mb-6">How Our Autonomous AI Agents Execute Work</h3>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div>
+            <div className="text-violet-400 font-mono text-sm mb-2">01. INGEST & PARSE</div>
+            <h4 className="text-xl font-semibold mb-2">Multi-Modal Ingestion</h4>
+            <p className="text-zinc-400 text-sm leading-relaxed">
+              Inbound customer emails, voicemail audio, PDF invoices, and webhooks are ingested instantaneously. Natural language algorithms parse intent, extract key entities, and structured parameters.
+            </p>
+          </div>
+          <div>
+            <div className="text-violet-400 font-mono text-sm mb-2">02. REASON & ROUTE</div>
+            <h4 className="text-xl font-semibold mb-2">Function Calling Logic</h4>
+            <p className="text-zinc-400 text-sm leading-relaxed">
+              The AI model references your custom business logic, standard operating procedures (SOPs), and database schema to determine the exact action to execute—from issuing quotes to booking technicians.
+            </p>
+          </div>
+          <div>
+            <div className="text-violet-400 font-mono text-sm mb-2">03. EXECUTE & RECORD</div>
+            <h4 className="text-xl font-semibold mb-2">Bi-Directional Sync</h4>
+            <p className="text-zinc-400 text-sm leading-relaxed">
+              Actions are committed directly into your CRM, ERP, dispatch platform, or accounting software (ServiceTitan, Toast, Quickbooks) with full audit trails and real-time human-in-the-loop fallback.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Why AI? */}
+  <section className="py-24 bg-slate-50 dark:bg-zinc-950">
+    <div className="container max-w-6xl">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <motion.h2
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-8"
+          >
+            Why <span className="text-violet-400">Automate Now?</span>
+          </motion.h2>
+          <div className="flex flex-col gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="flex gap-6"
+              >
+                <div className="w-16 h-16 rounded-full bg-violet-500/10 flex items-center justify-center text-violet-400 flex-shrink-0 border border-violet-500/20">
+                  {React.cloneElement(benefit.icon, { className: 'w-7 h-7' })}
+                </div>
+                <div>
+                  <h3 className="text-zinc-900 dark:text-white text-xl font-bold mb-2">{benefit.title}</h3>
+                  <p className="text-zinc-600 dark:text-gray-400 leading-relaxed">{benefit.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <div className="relative">
+          {/* Holographic Cards UI */}
+          <div className="space-y-6">
+            {useCases.map((useCase, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ x: -10 }}
+                className="bg-gradient-to-r from-white/5 to-white/0 border border-zinc-200 dark:border-white/10 rounded-xl p-6 relative overflow-hidden group hover:border-violet-500/50 transition-all cursor-default"
+              >
+                <div className="absolute top-0 right-0 p-4 opacity-50">
+                  <Cpu className="w-12 h-12 text-zinc-900 dark:text-white/5 group-hover:text-violet-500/20 transition-colors" />
+                </div>
+                <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">{useCase.title}</h3>
+                <p className="text-zinc-600 dark:text-gray-400 text-sm mb-4 max-w-[90%]">{useCase.description}</p>
+                <div className="inline-flex items-center gap-2 bg-violet-500/20 px-3 py-1 rounded-full border border-violet-500/30">
+                  <TrendingUp className="w-3 h-3 text-violet-400" />
+                  <span className="text-violet-200 text-xs font-bold uppercase tracking-wider">{useCase.stat}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Frequently Asked Questions */}
+  <section className="py-20 border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-zinc-900/40">
+    <div className="container max-w-4xl mx-auto px-4">
+      <h2 className="text-3xl font-bold text-zinc-900 dark:text-white text-center mb-12">Frequently Asked Questions</h2>
+      <div className="space-y-6">
+        <div className="bg-slate-50 dark:bg-zinc-950 p-6 rounded-xl border border-zinc-200 dark:border-white/5">
+          <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">How long does custom AI automation deployment take?</h3>
+          <p className="text-zinc-600 dark:text-gray-400 text-sm leading-relaxed">
+            Most custom workflows and AI agents are deployed within 2 to 4 weeks. We begin with a System Audit to map existing data structures, followed by sandbox testing and live deployment with guardrails.
+          </p>
+        </div>
+        <div className="bg-slate-50 dark:bg-zinc-950 p-6 rounded-xl border border-zinc-200 dark:border-white/5">
+          <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">Can AI integrate with our proprietary legacy software?</h3>
+          <p className="text-zinc-600 dark:text-gray-400 text-sm leading-relaxed">
+            Yes. We build custom API connectors, webhooks, and database scripts that interface with legacy SQL databases, on-premise servers, or modern cloud platforms without disrupting existing operations.
+          </p>
+        </div>
+        <div className="bg-slate-50 dark:bg-zinc-950 p-6 rounded-xl border border-zinc-200 dark:border-white/5">
+          <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">Is our business data used to train public models?</h3>
+          <p className="text-zinc-600 dark:text-gray-400 text-sm leading-relaxed">
+            Never. All AI pipelines run through enterprise privacy endpoints with SOC2 compliance. Your company data, customer interactions, and intellectual property remain strictly confidential.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
  {/* Integration Section: General Onboarding Form */}
  <section id="automate" className="py-24 border-t border-zinc-200 dark:border-white/5 bg-slate-50 dark:bg-zinc-950 relative">

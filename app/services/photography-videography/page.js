@@ -23,10 +23,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return (
-    <>
-      <h1 className="sr-only">Creative Media & Brand Video Production</h1>
-      <CreativeMediaClient />
-    </>
-  );
+  return <CreativeMediaClient />;
 }

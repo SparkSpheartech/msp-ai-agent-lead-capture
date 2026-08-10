@@ -88,26 +88,81 @@ export default function WebDesign() {
  </div>
  </section>
 
- {/* What We Build (Capabilities) */}
- <section className="py-24 border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-zinc-900/50">
- <div className="container max-w-6xl">
- <div className="text-center mb-16">
- <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">What We Build</h2>
- <p className="text-zinc-600 dark:text-gray-400">Comprehensive web solutions for every business need</p>
- </div>
- <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
- {services.map((service, index) => (
- <div key={index} className="group bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/5 hover:border-primary/50 p-6 rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.5)]">
- <div className="w-12 h-12 bg-zinc-100/80 dark:bg-white/5 rounded-lg flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
- {React.cloneElement(service.icon, { className: 'w-6 h-6' })}
- </div>
- <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">{service.title}</h3>
- <div className="w-8 h-1 bg-primary/30 rounded group-hover:w-16 transition-all duration-300"></div>
- </div>
- ))}
- </div>
- </div>
- </section>
+  {/* What We Build (Capabilities) */}
+  <section className="py-24 border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-zinc-900/50">
+    <div className="container max-w-6xl">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4">Conversion-First Web Engineering</h2>
+        <p className="text-zinc-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+          We combine modern JavaScript frameworks (Next.js, React, Tailwind CSS) with user-behavior psychology to build fast, secure web applications that rank on Google and convert visitors.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {services.map((service, index) => (
+          <div key={index} className="group bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/5 hover:border-emerald-500/50 p-6 rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]">
+            <div className="w-12 h-12 bg-zinc-100/80 dark:bg-white/5 rounded-lg flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+              {React.cloneElement(service.icon, { className: 'w-6 h-6' })}
+            </div>
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">{service.title}</h3>
+            <p className="text-zinc-600 dark:text-gray-400 text-sm mb-3">
+              Engineered with clean SSR architecture, sub-second page loads, and schema-rich metadata for maximum search performance.
+            </p>
+            <div className="w-8 h-1 bg-emerald-500/30 rounded group-hover:w-16 transition-all duration-300"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Enterprise Web Standards */}
+      <div className="bg-slate-900 text-white rounded-2xl p-8 md:p-12 border border-emerald-500/20 shadow-2xl">
+        <h3 className="text-2xl md:text-3xl font-bold text-emerald-300 mb-6">Our 4 Core Web Performance Guarantees</h3>
+        <div className="grid md:grid-cols-4 gap-6 text-sm">
+          <div>
+            <div className="text-emerald-400 font-mono font-bold mb-1">CORE WEB VITALS</div>
+            <p className="text-zinc-400">Targeting 90+ performance scores on mobile and desktop with zero layout shifts.</p>
+          </div>
+          <div>
+            <div className="text-emerald-400 font-mono font-bold mb-1">SEMANTIC SEO</div>
+            <p className="text-zinc-400">Strict HTML5 semantic hierarchy, JSON-LD structured data, and dynamic OpenGraph assets.</p>
+          </div>
+          <div>
+            <div className="text-emerald-400 font-mono font-bold mb-1">HEADLESS STACK</div>
+            <p className="text-zinc-400">Built on Next.js 14 App Router, Vercel edge deployment, and modular CMS backends.</p>
+          </div>
+          <div>
+            <div className="text-emerald-400 font-mono font-bold mb-1">SECURITY & SSL</div>
+            <p className="text-zinc-400">Automated SSL certification, DDoS mitigation, and encrypted API form routing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Frequently Asked Questions */}
+  <section className="py-20 border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-zinc-900/40">
+    <div className="container max-w-4xl mx-auto px-4">
+      <h2 className="text-3xl font-bold text-zinc-900 dark:text-white text-center mb-12">Frequently Asked Questions</h2>
+      <div className="space-y-6">
+        <div className="bg-slate-50 dark:bg-zinc-950 p-6 rounded-xl border border-zinc-200 dark:border-white/5">
+          <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">How long does a website design and development project take?</h3>
+          <p className="text-zinc-600 dark:text-gray-400 text-sm leading-relaxed">
+            Standard custom business sites take between 2 to 4 weeks from discovery to final deployment. E-commerce platforms or custom web applications with API integrations typically take 4 to 6 weeks.
+          </p>
+        </div>
+        <div className="bg-slate-50 dark:bg-zinc-950 p-6 rounded-xl border border-zinc-200 dark:border-white/5">
+          <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">Will our team be able to update site content after launch?</h3>
+          <p className="text-zinc-600 dark:text-gray-400 text-sm leading-relaxed">
+            Absolutely. We pair custom frontends with friendly headless CMS solutions (or Markdown content repositories) so your team can publish blog posts, update product pricing, or add team members in seconds.
+          </p>
+        </div>
+        <div className="bg-slate-50 dark:bg-zinc-950 p-6 rounded-xl border border-zinc-200 dark:border-white/5">
+          <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">Is search engine optimization (SEO) included in the web build?</h3>
+          <p className="text-zinc-600 dark:text-gray-400 text-sm leading-relaxed">
+            Yes. Every website we build includes foundational technical SEO—canonical URLs, optimized meta tags, XML sitemap generation, structured schema markup, fast image loading, and clean semantic H1-H3 heading tags.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
  {/* Why Our Websites Win */}
  <section className="py-24 bg-slate-50 dark:bg-zinc-950">

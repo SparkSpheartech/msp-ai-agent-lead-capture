@@ -152,21 +152,21 @@ This is the automation playbook's real power: **you don't need to *know* everyth
 
 ---
 
-## Recommended Solution This Week: Squarespace for Your Barbershop's Brand & Booking
+## Recommended Solution This Week: Hostinger Website Builder for Your Barbershop's Brand & Booking
 
-For this article  -  Problem #1, the business-literacy gap  -  we're focusing on **one** affiliate solution that attacks the *brand-building* side of the gap head-on: **Squarespace**. (In later articles of the series we'll route you to booking, POS, and scheduling tools as each pain point demands.)
+For this article - Problem #1, the business-literacy gap - we're focusing on **one single solution for one problem**: building a high-converting digital brand using **Hostinger Website Builder**.
 
-The literacy gap's fourth quadrant is **brand building**  -  and a new barber's single most important brand asset is a clean, high-converting website with integrated scheduling. Squarespace is how new owners build that without a web designer:
+The literacy gap's fourth quadrant is **brand building** - and a new barber's single most important brand asset is a clean, high-converting website with integrated scheduling and business email. Hostinger Website Builder is how new owners build that without a web designer:
 
-- **A polished, professional site in hours**  -  pick a barbershop template, drop in your photos and price list, and you look like a premium operation (not a discount hustler) the moment a potential client lands on you.
-- **Integrated booking**  -  clients book from your site 24/7, which quietly builds the pre-booking habit (and feeds straight into the retention play we detail later in the series).
-- **Your brand, on autopilot**  -  a consistent online presence is what lets you charge premium prices later instead of competing on price now.
+- **AI-Powered Site Generation in Minutes** - generate a custom barbershop site layout, drop in your haircut menu and price list, and look like a premium operation the moment a potential client lands on you.
+- **Free Custom Domain & Business Email** - includes a free domain name and professional @yourshop.com email so your brand looks established from day one.
+- **Your Brand on Autopilot** - a fast, mobile-friendly online presence lets you charge premium rates and capture 24/7 bookings instead of competing on price.
 
-> **Squarespace** *(affiliate link pending  -  placeholder)*  -  we're finalizing the affiliate relationship with Squarespace; the moment the link is issued we'll update this to a direct referral. If you're ready to start today, you can begin with Squarespace's free trial directly at squarespace.com.
+> 👉 **[Build Your Barbershop Website with Hostinger Website Builder (Get Premium Plan Referral Discount)](https://www.hostinger.com/cart?product=hosting%3Ahostinger_premium&period=12&referral_type=cart_link&REFERRALCODE=I0QSPARKSXCF&referral_id=019febed-ca7e-705f-aba6-9e40df620af8&product_type=website-builder)**
 >
-> *(Full disclosure: this is an affiliate recommendation  -  if you purchase through our link once it's live, it costs you nothing extra and supports this free series.)*
+> *(Full disclosure: this is an official partner link. Clicking through gives you the maximum Hostinger discount while supporting our free industry guides.)*
 
-**Why Squarespace for a brand-new owner specifically?** The cheapest time to build a premium brand is *before* you're chasing clients with discounts. A professional site is the difference between being seen as the neighborhood's skilled-but-cheap option and the shop people are *proud* to book. That single shift  -  from commodity to brand  -  is the psychological backbone that breaks the discount loop of Problem #2.
+**Why Hostinger Website Builder for a new owner specifically?** It eliminates complexity and high monthly fees. For less than $3/mo, you get website hosting, AI designer tools, domain registration, and business email in one package—solving your digital brand problem completely.
 
 ---
 
@@ -216,6 +216,6 @@ Problem #1 isn't a talent problem and it isn't a luck problem  -  it's an **educ
 
 **Your first move is simple:** get your real numbers on paper this week, find your breakeven, and let us show you what an AI copilot does for your shop.
 
-[Break the discount-dependency loop next → Problem #2](/blog/barbershop-owner-automation-guide-problem-2)
+[Browse the full barbershop automation series on our blog →](https://blog.sparkspheartechsolutions.com)
 
 *Part 1 of 10. We're breaking down the exact pain points holding barbershop owners back  -  and the automation that fixes them. Follow the series to go from chair-bound barber to 7-figure empire.*

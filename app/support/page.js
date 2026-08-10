@@ -23,10 +23,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return (
-    <>
-      <h1 className="sr-only">Client Support & Knowledge Base</h1>
-      <SupportClient />
-    </>
-  );
+  return <SupportClient />;
 }

@@ -1,14 +1,14 @@
 import GuidesIndex from "./GuidesIndex";
 
 export const metadata = {
-  title: "Industry Software Guides & Stacks",
-  description: "Curated AI and automation intelligence for field service, waste management, barbershops, and trades. Ranked tools and custom build guides.",
+  title: "Industry Operations Briefs",
+  description: "Lightweight operational briefings for small business owners. Evaluate software requirements and explore implementation pathways.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/guides",
   },
   openGraph: {
-    title: "Industry Software Guides & Stacks",
-    description: "Curated AI and automation intelligence for field service, waste management, barbershops, and trades.",
+    title: "Industry Operations Briefs",
+    description: "Lightweight operational briefings for small business owners.",
     url: "https://sparkspheartechsolutions.com/guides",
     siteName: "SPARKSPHEAR",
     images: [
@@ -16,17 +16,12 @@ export const metadata = {
         url: "https://sparkspheartechsolutions.com/logo.png",
         width: 1200,
         height: 630,
-        alt: "SPARKSPHEAR Industry Guides",
+        alt: "SPARKSPHEAR Industry Operations Briefs",
       },
     ],
   },
 };
 
 export default function Page() {
-  return (
-    <>
-      <h1 className="sr-only">SPARKSPHEAR Industry Software Guides & Ranked Stacks</h1>
-      <GuidesIndex />
-    </>
-  );
+  return <GuidesIndex />;
 }

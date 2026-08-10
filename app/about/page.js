@@ -23,10 +23,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return (
-    <>
-      <h1 className="sr-only">About SPARKSPHEAR Tech Solutions & Our Mission</h1>
-      <AboutClient />
-    </>
-  );
+  return <AboutClient />;
 }

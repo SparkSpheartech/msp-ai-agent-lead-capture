@@ -253,6 +253,29 @@ export const products = [
       growth: { rank: 1, note: "Centralized multi-room staff ratios and attendance" },
       enterprise: { rank: 1, note: "Multi-center childcare network management" }
     }
+  },
+
+  // WEBSITE BUILDER & HOSTING
+  {
+    id: "hostinger",
+    name: "Hostinger Website Builder",
+    vertical: "barbershop",
+    rating: 4.9,
+    reviewsCount: 3400,
+    pricing: "From $2.99/mo",
+    affiliateUrl: "https://www.hostinger.com/cart?product=hosting%3Ahostinger_premium&period=12&referral_type=cart_link&REFERRALCODE=I0QSPARKSXCF&referral_id=019febed-ca7e-705f-aba6-9e40df620af8&product_type=website-builder",
+    logo: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=120&q=80",
+    tagline: "AI-powered website builder, free custom domain, business email, and lightning-fast web hosting for small business owners.",
+    bestFor: "Small business owners needing a professional AI-generated website in minutes",
+    badge: "Top Pick for Web",
+    pros: ["AI site creator & logo generator", "Free custom domain & business email", "Unmatched speed & 99.9% uptime SLA"],
+    cons: ["Advanced custom code requires developer access"],
+    stackRecommendations: {
+      solo: { rank: 1, note: "The single best solution for launching your small business website fast" },
+      small: { rank: 1, note: "Includes free domain, email, and SSL out of the box" },
+      growth: { rank: 1, note: "Handles heavy traffic with built-in CDN & security" },
+      enterprise: { rank: 2, note: "Pairs with custom Next.js frontends" }
+    }
   }
 ];
 

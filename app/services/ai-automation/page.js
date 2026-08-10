@@ -2,7 +2,7 @@ import AIAutomationClient from "./AIAutomationClient";
 
 export const metadata = {
   title: "AI & Workflow Automation Services",
-  description: "Eliminate manual work with intelligent workflow automation, AI chatbots, and data processing. Save 10-40+ hours per week.",
+  description: "Eliminate manual work with intelligent workflow automation, AI chatbots, and data processing.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/services/ai-automation",
   },
@@ -23,10 +23,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return (
-    <>
-      <h1 className="sr-only">AI & Workflow Automation Services</h1>
-      <AIAutomationClient />
-    </>
-  );
+  return <AIAutomationClient />;
 }

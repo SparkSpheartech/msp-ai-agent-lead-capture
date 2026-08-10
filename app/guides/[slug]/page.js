@@ -1,37 +1,35 @@
+import { getIndustryBrief } from "@/data/industryBriefs";
 import GuideClient from "./GuideClient";
-import { getVertical } from "@/data/affiliateProducts";
-import { getSortedPostsData } from "@/lib/blog";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
-  const vertical = getVertical(params.slug);
+  const brief = getIndustryBrief(params.slug);
   
-  if (!vertical) {
+  if (!brief) {
     return {
-      title: "Guide Not Found",
+      title: "Industry Brief Not Found",
     };
   }
 
-  const shortName = vertical.name.split('&')[0].trim();
-  const pageTitle = `Best AI Tools for ${shortName}`;
+  const pageTitle = `${brief.name} Operations Brief`;
 
   return {
     title: pageTitle,
-    description: vertical.tagline,
+    description: brief.summary,
     alternates: {
       canonical: `https://sparkspheartechsolutions.com/guides/${params.slug}`,
     },
     openGraph: {
       title: pageTitle,
-      description: vertical.tagline,
+      description: brief.summary,
       url: `https://sparkspheartechsolutions.com/guides/${params.slug}`,
       siteName: "SPARKSPHEAR",
       images: [
         {
-          url: vertical.heroImage || "https://sparkspheartechsolutions.com/logo.png",
+          url: brief.heroImage || "https://sparkspheartechsolutions.com/logo.png",
           width: 1200,
           height: 630,
-          alt: `AI Tools for ${vertical.name}`,
+          alt: `${brief.name} Operations Brief`,
         },
       ],
     },
@@ -39,19 +37,11 @@ export async function generateMetadata({ params }) {
 }
 
 export default function Page({ params }) {
-  const vertical = getVertical(params.slug);
+  const brief = getIndustryBrief(params.slug);
 
-  if (!vertical) {
+  if (!brief) {
     notFound();
   }
 
-  const allPosts = getSortedPostsData();
-  const relatedPosts = allPosts.filter(post => post.industry && post.industry.toLowerCase() === params.slug.toLowerCase());
-
-  return (
-    <>
-      <h1 className="sr-only">Best AI & Automation Tools for {vertical.name}</h1>
-      <GuideClient slug={params.slug} relatedPosts={relatedPosts} />
-    </>
-  );
+  return <GuideClient brief={brief} />;
 }
