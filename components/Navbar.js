@@ -27,6 +27,7 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-x-8 text-sm font-medium text-zinc-700 dark:text-zinc-300">
           <Link href="/services" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Services</Link>
+          <Link href="/pricing" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Pricing</Link>
           <Link href="/projects" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Projects</Link>
           <Link href="/tools" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Tools</Link>
           <a href="https://blog.sparkspheartechsolutions.com" target="_blank" rel="noopener noreferrer" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Blog</a>
@@ -56,6 +57,7 @@ const Navbar = () => {
         <div className="lg:hidden bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 px-5 py-8 text-[15px] shadow-xl">
           <nav className="flex flex-col gap-y-5 text-zinc-800 dark:text-zinc-200">
             <Link href="/services" onClick={closeMenu}>Services</Link>
+            <Link href="/pricing" onClick={closeMenu}>Pricing</Link>
             <Link href="/projects" onClick={closeMenu}>Projects</Link>
             <Link href="/tools" onClick={closeMenu}>Tools</Link>
             <a href="https://blog.sparkspheartechsolutions.com" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Blog</a>

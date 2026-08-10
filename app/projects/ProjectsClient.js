@@ -272,6 +272,9 @@ function ProjectsContent() {
                     {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Get Blueprint'}
                   </button>
                 </div>
+                <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-tight text-center mt-3">
+                  © 2026 SPARKSPHEAR Tech Solutions. Provided for individual evaluation only. By requesting, you agree to our <Link href="/privacy" className="underline hover:text-lime-500">Privacy Policy</Link>.
+                </p>
               </form>
             )}
           </div>
