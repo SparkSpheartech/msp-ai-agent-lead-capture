@@ -234,10 +234,10 @@ export default function Hero3D() {
 
             <motion.div variants={rightItemVariants} className="flex flex-col sm:flex-row gap-4 w-full">
               <Link
-                href="/services/it-audits"
+                href="/contact"
                 className="group flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-lime-500 px-7 py-3.5 text-base font-extrabold text-zinc-950 shadow-xl shadow-lime-500/25 transition-all hover:bg-lime-400 active:scale-[0.97]"
               >
-                Book a 15-Minute Audit
+                Book a Free 15-Minute Fit Call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
