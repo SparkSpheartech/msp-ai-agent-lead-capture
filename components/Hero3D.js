@@ -2,14 +2,36 @@
 
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Activity } from 'lucide-react';
+import { ArrowRight, Activity, ChevronUp, ChevronDown } from 'lucide-react';
 
 const GlobeCanvas = dynamic(() => import('./GlobeCanvas'), { ssr: false });
 
+const carouselItems = [
+  {
+    id: 1,
+    title: "AI Agents for the Work Your Business Repeats Every Day.",
+    tagline: "Audit the System. Scale the Business.",
+    badge: "Operational Workflow Automation",
+  },
+  {
+    id: 2,
+    title: "Audit the System. Scale the Business.",
+    tagline: "Practical AI Systems for Owner-Led Operations.",
+    badge: "Systems Architecture & Auditing",
+  },
+  {
+    id: 3,
+    title: "Controlled Workflows Built for Real Business Work.",
+    tagline: "Eliminate bottlenecked admin without adding overhead.",
+    badge: "Custom Software Bridges",
+  },
+];
+
 export default function Hero3D() {
   const [is3DLoaded, setIs3DLoaded] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -19,54 +41,23 @@ export default function Hero3D() {
     return () => clearTimeout(timer);
   }, []);
 
-  const titleWords = ["AI", "Agents", "for", "the", "Work", "Your", "Business", "Repeats", "Every", "Day."];
-  
-  const titleContainerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: 0.2 },
-    },
-  };
-  
-  const titleWordVariants = {
-    hidden: { opacity: 0, y: 32, filter: 'blur(10px)', rotateX: 8 },
-    show: {
-      opacity: 1, 
-      y: 0, 
-      filter: 'blur(0px)', 
-      rotateX: 0,
-      transition: { type: 'spring', damping: 26, stiffness: 95, mass: 1.1 },
-    },
+  useEffect(() => {
+    const autoPlay = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
+    }, 4500);
+
+    return () => clearInterval(autoPlay);
+  }, []);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
   };
 
-  const statsVariants = {
-    hidden: { opacity: 0, y: 16, filter: 'blur(4px)' },
-    show: {
-      opacity: 1, 
-      y: 0, 
-      filter: 'blur(0px)',
-      transition: { type: 'spring', damping: 24, stiffness: 110, delay: 0.9 },
-    },
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + carouselItems.length) % carouselItems.length);
   };
 
-  const rightContainerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.14, delayChildren: 0.6 },
-    },
-  };
-  
-  const rightItemVariants = {
-    hidden: { opacity: 0, x: 20, filter: 'blur(5px)' },
-    show: {
-      opacity: 1, 
-      x: 0, 
-      filter: 'blur(0px)',
-      transition: { type: 'spring', damping: 20, stiffness: 100, mass: 0.9 },
-    },
-  };
+  const currentItem = carouselItems[currentIndex];
 
   return (
     <section className="relative min-h-[calc(100vh-80px)] w-full flex items-center justify-center overflow-hidden bg-slate-50 dark:bg-zinc-950 font-sans antialiased">
@@ -99,58 +90,92 @@ export default function Hero3D() {
           </span>
         </motion.div>
 
-        {/* Bottom Dual-Column Area */}
+        {/* Bottom Dual-Column Area with Vertical Carousel */}
         <div className="flex flex-col items-end justify-between gap-12 pb-8 lg:flex-row">
 
-          {/* Left Column: Word-by-word cascade H1 + Tagline */}
-          <div className="flex w-full flex-col gap-10 lg:w-3/5" style={{ perspective: '800px' }}>
-            <motion.h1
-              variants={titleContainerVariants}
-              initial="hidden"
-              animate="show"
-              className="text-4xl font-extrabold leading-[1.08] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl xl:text-8xl"
-            >
-              {titleWords.map((word, i) => (
-                <motion.span
-                  key={i}
-                  variants={titleWordVariants}
-                  className={`mr-[0.22em] inline-block last:mr-0 ${
-                    word === "Repeats" || word === "Every" || word === "Day." ? "text-lime-600 dark:text-lime-400" : ""
-                  }`}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </motion.h1>
+          {/* Left Column: Vertical Slide Carousel Heading */}
+          <div className="flex w-full flex-col gap-6 lg:w-3/5">
 
-            {/* Tagline */}
-            <motion.div
-              variants={statsVariants}
-              initial="hidden"
-              animate="show"
-              className="pt-2 border-t border-zinc-200 dark:border-zinc-800/80"
-            >
-              <p className="text-lg sm:text-xl font-bold text-lime-600 dark:text-lime-400 tracking-wide">
-                Audit the System. Scale the Business.
-              </p>
-            </motion.div>
+            {/* Vertical Carousel Controls + Cards Container */}
+            <div className="relative flex items-center gap-4">
+
+              {/* Vertical Progress Indicators & Arrow Controls */}
+              <div className="flex flex-col items-center gap-3 pr-2 border-r border-zinc-200 dark:border-zinc-800">
+                <button
+                  onClick={handlePrev}
+                  className="p-1.5 rounded-lg bg-zinc-200/80 dark:bg-zinc-800/80 hover:bg-lime-500 hover:text-zinc-950 transition-colors cursor-pointer text-zinc-700 dark:text-zinc-300"
+                  aria-label="Previous Slide"
+                >
+                  <ChevronUp className="w-4 h-4" />
+                </button>
+
+                <div className="flex flex-col gap-2 my-1">
+                  {carouselItems.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentIndex(idx)}
+                      className={`w-2.5 transition-all duration-300 rounded-full cursor-pointer ${
+                        idx === currentIndex
+                          ? "h-8 bg-lime-500 shadow-md shadow-lime-500/40"
+                          : "h-2.5 bg-zinc-300 dark:bg-zinc-700 hover:bg-lime-400"
+                      }`}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  onClick={handleNext}
+                  className="p-1.5 rounded-lg bg-zinc-200/80 dark:bg-zinc-800/80 hover:bg-lime-500 hover:text-zinc-950 transition-colors cursor-pointer text-zinc-700 dark:text-zinc-300"
+                  aria-label="Next Slide"
+                >
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Vertical Motion Carousel Text Display */}
+              <div className="relative min-h-[220px] sm:min-h-[260px] md:min-h-[300px] w-full overflow-hidden flex flex-col justify-center">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentItem.id}
+                    initial={{ opacity: 0, y: -45, filter: 'blur(8px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    exit={{ opacity: 0, y: 45, filter: 'blur(8px)' }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col gap-4"
+                  >
+                    <span className="text-xs font-mono font-bold text-lime-600 dark:text-lime-400 tracking-wider uppercase">
+                      {currentItem.badge}
+                    </span>
+
+                    {/* H1 Main Heading */}
+                    <h1 className="text-3xl font-extrabold leading-[1.1] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+                      {currentItem.title}
+                    </h1>
+
+                    {/* Tagline */}
+                    <p className="text-lg sm:text-xl font-bold text-lime-600 dark:text-lime-400 tracking-wide">
+                      {currentItem.tagline}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+
           </div>
 
           {/* Right Column: Narrative + Dual Action CTAs */}
           <motion.div
-            variants={rightContainerVariants}
-            initial="hidden"
-            animate="show"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="flex w-full flex-col items-start gap-8 lg:w-2/5"
           >
-            <motion.p
-              variants={rightItemVariants}
-              className="text-base sm:text-lg leading-relaxed font-normal text-zinc-600 dark:text-zinc-300"
-            >
+            <p className="text-base sm:text-lg leading-relaxed font-normal text-zinc-600 dark:text-zinc-300">
               SPARKSPHEAR audits repetitive workflows, determines whether existing software is enough, and builds controlled AI agents when manual work or disconnected systems remain.
-            </motion.p>
+            </p>
 
-            <motion.div variants={rightItemVariants} className="flex flex-col sm:flex-row gap-4 w-full">
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
               <Link
                 href="/contact"
                 className="group flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-lime-500 px-7 py-3.5 text-base font-extrabold text-zinc-950 shadow-xl shadow-lime-500/25 transition-all hover:bg-lime-400 active:scale-[0.97]"
@@ -164,7 +189,7 @@ export default function Hero3D() {
               >
                 See How We Work
               </Link>
-            </motion.div>
+            </div>
           </motion.div>
 
         </div>
