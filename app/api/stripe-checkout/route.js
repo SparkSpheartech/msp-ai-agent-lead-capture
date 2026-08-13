@@ -5,6 +5,10 @@ const stripe = stripeKey ? new Stripe(stripeKey, { apiVersion: '2024-12-18' }) :
 
 const ALLOWED_PLANS = ['SIGNAL START', 'FLOW CONTROL', 'SYSTEM LIFT', 'SCALE CONTROL'];
 
+const PAYMENT_LINKS = {
+  'FLOW CONTROL': 'https://buy.stripe.com/00w7sM1tbb894C94Jj4AU06',
+};
+
 const PRICE_IDS = {
   'SIGNAL START': process.env.STRIPE_PRICE_SIGNAL_START,
   'FLOW CONTROL': process.env.STRIPE_PRICE_FLOW_CONTROL,
@@ -21,6 +25,13 @@ export async function POST(request) {
         error: 'Unknown or missing plan',
         message: `Plan must be one of: ${ALLOWED_PLANS.join(', ')}`,
       }, { status: 400 });
+    }
+
+    if (PAYMENT_LINKS[plan]) {
+      return Response.json({
+        url: PAYMENT_LINKS[plan],
+        plan,
+      });
     }
 
     if (!stripe) {
