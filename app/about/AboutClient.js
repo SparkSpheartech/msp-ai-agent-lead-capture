@@ -134,28 +134,20 @@ export default function About() {
       <Navbar />
       <main className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300">
         
-        {/* Hero Banner */}
+        {/* Mission Statement Anchor Hero Banner */}
         <section className="pt-32 pb-16 bg-gradient-to-b from-slate-100 via-slate-50 to-white dark:from-black dark:via-zinc-950 dark:to-zinc-950 border-b border-zinc-200 dark:border-lime-500/20">
           <div className="container mx-auto px-4 max-w-4xl text-center">
+            <h1 className="sr-only">About SPARKSPHEAR Tech Solutions - AI Automation & IT Services</h1>
             <span className="inline-flex items-center gap-2 bg-lime-500/10 border border-lime-500/30 rounded-full px-4 py-2 mb-6">
               <Sparkles className="w-4 h-4 text-lime-600 dark:text-lime-400" />
               <span className="text-lime-600 dark:text-lime-400 text-xs md:text-sm font-semibold tracking-wider uppercase">OUR MISSION STATEMENT</span>
             </span>
-            <h1 className="text-3xl md:text-5xl font-extrabold text-zinc-900 dark:text-white mb-6 leading-tight tracking-tight italic">
-              "Practical AI Systems for Real Business Work."
-            </h1>
-            <p className="text-zinc-600 dark:text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed mb-6">
-              SPARKSPHEAR Tech Solutions builds controlled AI agents, chatbots, and digital systems for repetitive business workflows across service and operations-heavy industries.
+            <blockquote className="text-3xl md:text-5xl font-extrabold text-zinc-900 dark:text-white mb-6 leading-tight tracking-tight italic">
+              "We bring the spark to small business owners — combining smart technology with hands-on service to help them work faster, save money, and grow."
+            </blockquote>
+            <p className="text-zinc-600 dark:text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
+              At SPARKSPHEAR, we exist to bridge the gap between enterprise-grade AI automation and the real daily needs of growing businesses.
             </p>
-            <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl max-w-2xl mx-auto text-left text-sm text-zinc-600 dark:text-zinc-400">
-              <h2 className="font-bold text-zinc-900 dark:text-white mb-2">Our Two Divisions</h2>
-              <p className="mb-2">
-                <strong>Side A — SPARKSPHEAR Field Notes:</strong> Our independent editorial research blog where we review software tools, publish software rankings, and write industry tear-downs.
-              </p>
-              <p>
-                <strong>Side B — SPARKSPHEAR Tech Solutions:</strong> Our core agency implementation website where we audit business workflows, build controlled AI agents, and deliver custom digital systems.
-              </p>
-            </div>
           </div>
         </section>
 
