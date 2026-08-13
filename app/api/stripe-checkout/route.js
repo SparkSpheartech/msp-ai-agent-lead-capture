@@ -6,7 +6,10 @@ const stripe = stripeKey ? new Stripe(stripeKey, { apiVersion: '2024-12-18' }) :
 const ALLOWED_PLANS = ['SIGNAL START', 'FLOW CONTROL', 'SYSTEM LIFT', 'SCALE CONTROL'];
 
 const PAYMENT_LINKS = {
+  'SIGNAL START': 'https://buy.stripe.com/5kQaEYdbTa459Wtb7H4AU05',
   'FLOW CONTROL': 'https://buy.stripe.com/00w7sM1tbb894C94Jj4AU06',
+  'SYSTEM LIFT': 'https://buy.stripe.com/14A6oI5Jrfop1pXfnX4AU07',
+  'SCALE CONTROL': 'https://buy.stripe.com/7sYfZi8VDccdfgN5Nn4AU08',
 };
 
 const PRICE_IDS = {
