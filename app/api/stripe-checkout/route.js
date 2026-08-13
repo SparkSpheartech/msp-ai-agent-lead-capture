@@ -3,61 +3,66 @@ import Stripe from 'stripe';
 const stripeKey = process.env.STRIPE_SECRET_KEY;
 const stripe = stripeKey ? new Stripe(stripeKey, { apiVersion: '2024-12-18' }) : null;
 
+const ALLOWED_PLANS = ['SIGNAL START', 'FLOW CONTROL', 'SYSTEM LIFT', 'SCALE CONTROL'];
+
+const PRICE_IDS = {
+  'SIGNAL START': process.env.STRIPE_PRICE_SIGNAL_START,
+  'FLOW CONTROL': process.env.STRIPE_PRICE_FLOW_CONTROL,
+  'SYSTEM LIFT': process.env.STRIPE_PRICE_SYSTEM_LIFT,
+  'SCALE CONTROL': process.env.STRIPE_PRICE_SCALE_CONTROL,
+};
+
 export async function POST(request) {
- try {
- const { plan, email, name } = await request.json();
+  try {
+    const { plan, email } = await request.json();
 
- if (!stripe) {
- return Response.json({ 
- error: 'Stripe not configured',
- devMessage: 'Add STRIPE_SECRET_KEY to environment variables'
- }, { status: 500 });
- }
+    if (!plan || !ALLOWED_PLANS.includes(plan)) {
+      return Response.json({
+        error: 'Unknown or missing plan',
+        message: `Plan must be one of: ${ALLOWED_PLANS.join(', ')}`,
+      }, { status: 400 });
+    }
 
- const prices = {
- "Sovern AI": 9700,
- Essentials: 19700,
- Growth: 49700,
- Enterprise: 99700
- };
+    if (!stripe) {
+      return Response.json({
+        error: 'Stripe not configured',
+        fallback: `/contact?plan=${encodeURIComponent(plan)}`,
+      }, { status: 503 });
+    }
 
- const session = await stripe.checkout.sessions.create({
- payment_method_types: ['card'],
- mode: 'subscription',
- customer_email: email,
- line_items: [{
- price_data: {
- currency: 'usd',
- product_data: {
- name: `SparkSphear ${plan} Plan`,
- description: `${plan} AI Automation Services - Monthly`,
- },
- recurring: {
- interval: 'month',
- },
- unit_amount: prices[plan] || 19700,
- },
- quantity: 1,
- }],
- success_url: 'https://sparkspheartechsolutions.com/success?plan=' + plan,
- cancel_url: 'https://sparkspheartechsolutions.com/pricing',
- metadata: {
- plan,
- name: name || '',
- },
- });
+    const priceId = PRICE_IDS[plan];
 
- return Response.json({ 
- url: session.url,
- message: 'Redirecting to Stripe checkout...',
- plan,
- amount: prices[plan]
- });
- } catch (error) {
- console.error('Stripe error:', error);
- return Response.json({ 
- error: error.message,
- devMessage: 'Check Stripe logs for details'
- }, { status: 400 });
- }
+    if (!priceId) {
+      return Response.json({
+        error: 'Stripe Price ID not configured for this plan',
+        fallback: `/contact?plan=${encodeURIComponent(plan)}`,
+      }, { status: 503 });
+    }
+
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      mode: 'subscription',
+      customer_email: email || undefined,
+      line_items: [{
+        price: priceId,
+        quantity: 1,
+      }],
+      success_url: `https://sparkspheartechsolutions.com/success?plan=${encodeURIComponent(plan)}`,
+      cancel_url: 'https://sparkspheartechsolutions.com/pricing',
+      metadata: {
+        packageName: plan,
+        source: 'pricing-page',
+      },
+    });
+
+    return Response.json({
+      url: session.url,
+      plan,
+    });
+  } catch (error) {
+    console.error('Stripe checkout error:', error);
+    return Response.json({
+      error: error.message,
+    }, { status: 400 });
+  }
 }

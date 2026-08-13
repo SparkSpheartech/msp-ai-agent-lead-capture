@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { 
-  Shield, Server, Cpu, Database, CheckCircle, ArrowRight, Lock, Eye, 
-  Terminal, Activity, Zap, Check, AlertTriangle, FileSpreadsheet, RefreshCcw, Loader2, Calendar 
+import {
+  Shield, CheckCircle, ArrowRight, Eye,
+  Activity, Check, FileSpreadsheet, Loader2, Calendar
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -17,8 +17,8 @@ const auditQuestions = [
     options: [
       { label: 'Founding Team (1–4 Employees)', icon: '🚀', desc: 'Focus on speed & low-cost tech stack' },
       { label: 'Growth Stage (5–15 Employees)', icon: '📈', desc: 'Experiencing bottlenecking in daily admin' },
-      { label: 'Scaling Operation (16–50 Employees)', icon: '🏢', desc: 'Need strict system integrations & SLA' },
-      { label: 'Enterprise (50+ Employees)', icon: '🌐', desc: 'Require custom LLMs & dedicated architecture' }
+      { label: 'Scaling Operation (16–50 Employees)', icon: '🏢', desc: 'Need strict system integrations' },
+      { label: 'Enterprise (50+ Employees)', icon: '🌐', desc: 'Require custom architecture and workflows' }
     ]
   },
   {
@@ -78,7 +78,7 @@ export default function ITAuditsClient() {
     setIsSubmitting(true);
 
     const payload = {
-      source: 'master-audit',
+      source: 'workflow-audit-diagnostic',
       contact: formData,
       diagnostics: answers,
       timestamp: new Date().toISOString()
@@ -109,7 +109,7 @@ export default function ITAuditsClient() {
     <>
       <Navbar />
       <main className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300">
-        
+
         {/* Hero Section */}
         <section className="relative pt-40 pb-20 overflow-hidden bg-gradient-to-b from-slate-100 via-slate-50 to-white dark:from-black dark:via-zinc-950 dark:to-zinc-950 border-b border-zinc-200 dark:border-lime-500/20">
           <div className="container relative z-10 max-w-6xl mx-auto px-4">
@@ -121,24 +121,24 @@ export default function ITAuditsClient() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-500/10 border border-lime-500/20 text-lime-600 dark:text-lime-400 text-xs font-bold uppercase tracking-wider mb-6">
-                  <Shield className="w-4 h-4" /> The Master Service
+                  <Shield className="w-4 h-4" /> Workflow Audit
                 </div>
                 <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 leading-tight">
-                  The Master <br />
-                  <span className="text-lime-600 dark:text-lime-500">Infrastructure Audit.</span>
+                  Audit the System <br />
+                  <span className="text-lime-600 dark:text-lime-500">Before You Automate It.</span>
                 </h1>
                 <p className="text-zinc-600 dark:text-zinc-400 text-xl mb-8 leading-relaxed">
-                  We don't guess. We scan your business infrastructure, audit your tool sprawl, and prescribe the exact Done-For-You AI system to scale your operations.
+                  We map your operational workflow, review existing tools, identify bottlenecks, and determine the right first implementation — before selling a package.
                 </p>
                 <div className="flex flex-wrap gap-4 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
                   <div className="flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
-                    <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Web & SEO Health
+                    <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Workflow Mapping
                   </div>
                   <div className="flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
-                    <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Tool Sprawl Audit
+                    <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Bottleneck Analysis
                   </div>
                   <div className="flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
-                    <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-400" /> AI Agent Roadmap
+                    <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Agent Suitability
                   </div>
                 </div>
               </motion.div>
@@ -195,41 +195,19 @@ export default function ITAuditsClient() {
                           <CheckCircle className="w-3.5 h-3.5" /> Diagnostic Complete
                         </span>
                         <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
-                          Where Should We Send Your Master Audit Report?
+                          Request Your Workflow Audit
                         </h3>
+                        <p className="text-zinc-500 text-xs mt-2">
+                          We will review your diagnostic answers and follow up with next steps.
+                        </p>
                       </div>
 
                       <form onSubmit={handleFormSubmit} className="space-y-4">
-                        <input
-                          type="text"
-                          placeholder="Your Full Name"
-                          required
-                          value={formData.name}
-                          onChange={e => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-4 py-3 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-400 text-sm focus:outline-none focus:border-lime-500"
-                        />
-                        <input
-                          type="email"
-                          placeholder="Work Email Address"
-                          required
-                          value={formData.email}
-                          onChange={e => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-3 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-400 text-sm focus:outline-none focus:border-lime-500"
-                        />
-                        <input
-                          type="text"
-                          placeholder="Company Name"
-                          required
-                          value={formData.company}
-                          onChange={e => setFormData({ ...formData, company: e.target.value })}
-                          className="w-full px-4 py-3 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-400 text-sm focus:outline-none focus:border-lime-500"
-                        />
-                        <button
-                          type="submit"
-                          disabled={isSubmitting}
-                          className="w-full py-4 bg-lime-500 hover:bg-lime-400 text-zinc-950 font-bold rounded-xl transition-all shadow-lg shadow-lime-500/20 flex items-center justify-center gap-2 text-sm"
-                        >
-                          {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Generate My Master Audit Report'}
+                        <input type="text" placeholder="Your Full Name" required value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-400 text-sm focus:outline-none focus:border-lime-500" />
+                        <input type="email" placeholder="Work Email Address" required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-400 text-sm focus:outline-none focus:border-lime-500" />
+                        <input type="text" placeholder="Company Name" required value={formData.company} onChange={e => setFormData({ ...formData, company: e.target.value })} className="w-full px-4 py-3 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-400 text-sm focus:outline-none focus:border-lime-500" />
+                        <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-lime-500 hover:bg-lime-400 text-zinc-950 font-bold rounded-xl transition-all shadow-lg shadow-lime-500/20 flex items-center justify-center gap-2 text-sm">
+                          {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Submit Audit Request'}
                         </button>
                       </form>
                     </div>
@@ -239,20 +217,17 @@ export default function ITAuditsClient() {
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-lime-500/10 rounded-full mb-4 border border-lime-500/30">
                       <CheckCircle className="w-8 h-8 text-lime-600 dark:text-lime-400" />
                     </div>
-                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">Audit Diagnostic Received!</h3>
+                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">Audit Request Received</h3>
                     <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-6">
-                      Our architecture team is analyzing your inputs. Want to review your audit results live with our founders?
+                      We will review your answers and reach out with next steps. Want to schedule a Fit Call?
                     </p>
-                    
-                    {/* INSTANT CALENDLY 15-MIN DEMO BOOKING BUTTON */}
-                    <a
-                      href="https://calendly.com/sparksphear4me/15-min-demo"
-                      target="_blank"
-                      rel="noopener noreferrer"
+
+                    <Link
+                      href="/contact"
                       className="w-full py-4 bg-lime-500 hover:bg-lime-400 text-zinc-950 font-bold rounded-xl transition-all shadow-lg shadow-lime-500/20 flex items-center justify-center gap-2 text-sm mb-4"
                     >
-                      <Calendar className="w-4 h-4" /> Book Your 15-Min Demo Now &rarr;
-                    </a>
+                      <Calendar className="w-4 h-4" /> Book a Fit Call &rarr;
+                    </Link>
 
                     <button onClick={resetAudit} className="px-6 py-2 bg-slate-100 dark:bg-zinc-800 text-zinc-900 dark:text-white font-semibold text-xs rounded-xl hover:bg-slate-200 dark:hover:bg-zinc-700">
                       Submit Another Diagnostic
@@ -264,99 +239,60 @@ export default function ITAuditsClient() {
           </div>
         </section>
 
-        {/* DONE-FOR-YOU AGENCY PACKAGE TIERS SECTION */}
+        {/* Workflow Audit Details */}
         <section className="py-20 bg-slate-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-white/5">
           <div className="container max-w-6xl mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-2 block">TRANSPARENT AGENCY PRICING</span>
+              <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-2 block">WHAT THE AUDIT COVERS</span>
               <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4">
-                Done-For-You <span className="text-lime-600 dark:text-lime-500">Build Packages</span>
+                Workflow Audit <span className="text-lime-600 dark:text-lime-500">Starting at $297</span>
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed mb-6">
-                Your Master Audit prescribes the exact build package your business needs. Simple one-time setup fee + transparent monthly maintenance.
+                We do not start by selling the biggest package. We start by auditing the workflow and identifying the smallest useful agent.
               </p>
-              <a
-                href="https://calendly.com/sparksphear4me/15-min-demo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-lime-500 text-zinc-950 font-bold text-sm rounded-xl hover:bg-lime-400 transition-all shadow-lg shadow-lime-500/20"
-              >
-                <Calendar className="w-4 h-4" /> Book Your 15-Min Demo &rarr;
-              </a>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {[
-                {
-                  tier: "Essentials",
-                  setup: "$997",
-                  monthly: "$197/mo",
-                  saved: "10–15 hrs/wk",
-                  features: [
-                    "5 Core Workflow Automations",
-                    "2 Basic AI Chatbots",
-                    "Monthly Audit & Performance Report",
-                    "24hr Response Email Support",
-                    "Standard API Integrations"
-                  ]
-                },
-                {
-                  tier: "Growth",
-                  setup: "$2,997",
-                  monthly: "$497/mo",
-                  saved: "20–30 hrs/wk",
-                  popular: true,
-                  features: [
-                    "15 Workflow Automations",
-                    "5 Advanced AI Chatbots",
-                    "CRM & POS System Integration",
-                    "Weekly Optimization Calls",
-                    "Priority Phone + Chat Support",
-                    "ROI Tracking Dashboard"
-                  ]
-                },
-                {
-                  tier: "Enterprise",
-                  setup: "$7,997",
-                  monthly: "$997/mo",
-                  saved: "40+ hrs/wk",
-                  features: [
-                    "Unlimited Workflow Automations",
-                    "Custom Trained LLM & AI Models",
-                    "24/7 SLA Uptime Guarantee",
-                    "Dedicated Account Architect",
-                    "Full Infrastructure Assessment"
-                  ]
-                }
-              ].map((pkg, idx) => (
-                <div key={idx} className={`rounded-3xl p-8 border flex flex-col justify-between relative ${pkg.popular ? 'bg-white dark:bg-zinc-900 border-lime-500 shadow-2xl ring-2 ring-lime-500/30' : 'bg-white dark:bg-zinc-900/60 border-zinc-200 dark:border-white/10'}`}>
-                  {pkg.popular && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-lime-500 text-zinc-950 text-xs font-black px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
-                      MOST POPULAR AGENCY BUILD
-                    </div>
-                  )}
-                  <div>
-                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">{pkg.tier}</h3>
-                    <div className="text-3xl font-extrabold text-lime-600 dark:text-lime-400 mb-1">{pkg.setup} <span className="text-xs text-zinc-500 font-normal">one-time setup</span></div>
-                    <div className="text-sm font-mono text-zinc-600 dark:text-zinc-400 mb-6">+ {pkg.monthly} upkeep</div>
-
-                    <ul className="space-y-3 mb-8 text-sm text-zinc-700 dark:text-zinc-300">
-                      <li className="flex items-center gap-2 font-semibold text-lime-600 dark:text-lime-400">
-                        <CheckCircle className="w-4 h-4 text-lime-600 dark:text-lime-500" /> Time saved: {pkg.saved}
-                      </li>
-                      {pkg.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-zinc-400" /> {feat}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <a href="https://calendly.com/sparksphear4me/15-min-demo" target="_blank" rel="noopener noreferrer" className={`w-full py-3.5 rounded-xl font-bold text-sm text-center transition-all ${pkg.popular ? 'bg-lime-500 text-zinc-950 hover:bg-lime-400 shadow-lg shadow-lime-500/20' : 'bg-slate-100 dark:bg-zinc-800 text-zinc-900 dark:text-white hover:bg-slate-200 dark:hover:bg-zinc-700'}`}>
-                    Book 15-Min Demo For {pkg.tier} &rarr;
-                  </a>
+                'Current workflow map',
+                'Bottleneck analysis',
+                'Existing-tool review',
+                'Data and access requirements',
+                'Agent suitability assessment',
+                'Three prioritized automation opportunities',
+                'Recommended first agent',
+                'Implementation scope',
+                'Measurement and acceptance plan',
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 shadow-sm">
+                  <Check className="w-5 h-5 text-lime-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-zinc-700 dark:text-zinc-300 text-sm font-medium">{item}</span>
                 </div>
               ))}
+            </div>
+
+            {/* Free vs Paid distinction */}
+            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 max-w-3xl mx-auto">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-4 text-center">Free Fit Call vs. Paid Workflow Audit</h3>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="bg-slate-50 dark:bg-zinc-950 rounded-xl p-5 border border-zinc-200 dark:border-zinc-800">
+                  <h4 className="font-bold text-zinc-900 dark:text-white mb-2">Free Fit Call</h4>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+                    A 15-minute qualification call to discuss the business, confirm the workflow pain point, and decide if a Workflow Audit makes sense.
+                  </p>
+                </div>
+                <div className="bg-lime-500/5 rounded-xl p-5 border border-lime-500/20">
+                  <h4 className="font-bold text-zinc-900 dark:text-white mb-2">Workflow Audit — $297</h4>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+                    A paid diagnostic that maps the workflow, reviews tools, identifies bottlenecks, and delivers a recommended first implementation.
+                  </p>
+                </div>
+              </div>
+              <div className="text-center mt-6">
+                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-lime-500 text-zinc-950 font-bold text-sm rounded-xl hover:bg-lime-400 transition-all shadow-lg shadow-lime-500/20">
+                  Book a Fit Call <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>

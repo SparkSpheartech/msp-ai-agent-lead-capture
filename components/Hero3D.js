@@ -81,7 +81,7 @@ export default function Hero3D() {
   }, []);
 
   // Title: word-by-word cascade — each word rises with blur & perspective transform
-  const titleWords = ["Recover", "the", "hours", "your", "business", "loses", "to", "manual", "operations."];
+  const titleWords = ["AI", "Agents", "for", "the", "Work", "Your", "Business", "Repeats", "Every", "Day."];
   
   const titleContainerVariants = {
     hidden: { opacity: 0 },
@@ -185,7 +185,7 @@ export default function Hero3D() {
                   key={i}
                   variants={titleWordVariants}
                   className={`mr-[0.22em] inline-block last:mr-0 ${
-                    word === "manual" || word === "operations." ? "text-lime-600 dark:text-lime-400" : ""
+                    word === "Repeats" || word === "Every" || word === "Day." ? "text-lime-600 dark:text-lime-400" : ""
                   }`}
                 >
                   {word}
@@ -193,28 +193,16 @@ export default function Hero3D() {
               ))}
             </motion.h1>
 
-            {/* Stats Row */}
+            {/* Tagline */}
             <motion.div
               variants={statsVariants}
               initial="hidden"
               animate="show"
-              className="flex gap-10 sm:gap-14 pt-2 border-t border-zinc-200 dark:border-zinc-800/80"
+              className="pt-2 border-t border-zinc-200 dark:border-zinc-800/80"
             >
-              {[
-                { value: '15+ Hours', label: 'Saved per Tech Weekly' },
-                { value: '99.4%', label: 'Dispatch Accuracy' },
-              ].map(({ value, label }) => (
-                <div key={label} className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2 text-zinc-900 dark:text-white">
-                    <span className="text-xl sm:text-2xl font-mono font-extrabold text-lime-600 dark:text-lime-400 tabular-nums">
-                      {value}
-                    </span>
-                  </div>
-                  <span className="text-xs font-semibold tracking-wide text-zinc-600 dark:text-zinc-400 uppercase">
-                    {label}
-                  </span>
-                </div>
-              ))}
+              <p className="text-lg sm:text-xl font-bold text-lime-600 dark:text-lime-400 tracking-wide">
+                Audit the System. Scale the Business.
+              </p>
             </motion.div>
           </div>
 
@@ -229,7 +217,7 @@ export default function Hero3D() {
               variants={rightItemVariants}
               className="text-base sm:text-lg leading-relaxed font-normal text-zinc-600 dark:text-zinc-300"
             >
-              We audit the work behind your calls, quotes, scheduling, and reporting, then build the systems that remove repetitive steps.
+              SPARKSPHEAR audits repetitive workflows, determines whether existing software is enough, and builds controlled AI agents when manual work or disconnected systems remain.
             </motion.p>
 
             <motion.div variants={rightItemVariants} className="flex flex-col sm:flex-row gap-4 w-full">

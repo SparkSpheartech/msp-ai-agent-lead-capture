@@ -1,11 +1,15 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Calendar, Phone, Mail, Clock, CheckCircle2 } from 'lucide-react';
+import { Calendar, Phone, Mail, Clock, CheckCircle2, Bot } from 'lucide-react';
 
-export default function ContactClient() {
+function ContactContent() {
+  const searchParams = useSearchParams();
+  const selectedPlan = searchParams.get('plan');
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -15,9 +19,31 @@ export default function ContactClient() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (selectedPlan) {
+      setFormData(prev => ({
+        ...prev,
+        message: prev.message || `Inquiring about ${selectedPlan} package implementation.`
+      }));
+    }
+  }, [selectedPlan]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submission:', formData);
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'contact-form',
+          selectedPlan: selectedPlan || 'General Inquiry',
+          contact: formData,
+          timestamp: new Date().toISOString()
+        })
+      });
+    } catch (err) {
+      console.error('Lead submission failed', err);
+    }
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
@@ -32,25 +58,30 @@ export default function ContactClient() {
         <div className="container max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-600 dark:text-lime-400 text-xs font-bold uppercase tracking-wider mb-4">
-              <Calendar className="w-3.5 h-3.5" /> Direct Scheduling
+              <Calendar className="w-3.5 h-3.5" /> Book a Fit Call
             </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Let's Talk Business</h1>
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Find the Workflow Worth Automating.</h1>
             <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-              Ready to automate operations, eliminate manual bottlenecks, and grow? Book a 15-minute demo directly below or send us a message.
+              We discuss your business operations, existing tools, and bottleneck points to determine if an AI agent workflow makes sense for your business.
             </p>
+            {selectedPlan && (
+              <div className="mt-4 inline-flex items-center gap-2 bg-lime-500/10 border border-lime-500/30 px-4 py-2 rounded-xl text-lime-600 dark:text-lime-400 font-bold text-sm">
+                <Bot className="w-4 h-4" /> Selected Package: {selectedPlan}
+              </div>
+            )}
           </div>
 
           {/* CALENDLY SPOTLIGHT BANNER */}
           <div className="mb-12 bg-gradient-to-r from-zinc-900 via-zinc-950 to-black border border-lime-500/40 rounded-3xl p-8 shadow-2xl relative overflow-hidden text-white flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex-1">
               <div className="flex items-center gap-2 text-lime-400 font-mono text-xs uppercase font-bold mb-2">
-                <Clock className="w-4 h-4 text-lime-400" /> INSTANT 15-MINUTE DEMO
+                <Clock className="w-4 h-4 text-lime-400" /> 15-MINUTE QUALIFICATION CALL
               </div>
               <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2">
-                Book Directly On Our Founder's Calendar
+                Book Directly On Our Calendar
               </h2>
               <p className="text-zinc-300 text-sm max-w-xl">
-                Skip the back-and-forth emails. Pick a 15-minute slot that works for you to review your current tech stack and explore custom AI automations.
+                Pick a 15-minute slot to review your business operations, current software stack, and explore controlled AI agent workflows.
               </p>
             </div>
             <a
@@ -59,18 +90,18 @@ export default function ContactClient() {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-lime-500 text-zinc-950 font-bold rounded-xl hover:bg-lime-400 transition-all text-center text-base shadow-lg shadow-lime-500/20 whitespace-nowrap flex items-center gap-2"
             >
-              <Calendar className="w-5 h-5" /> Book 15-Min Demo &rarr;
+              <Calendar className="w-5 h-5" /> Book 15-Min Fit Call &rarr;
             </a>
           </div>
 
           <div className="grid md:grid-cols-2 gap-10">
-            
+
             {/* Contact Form */}
             <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-3xl p-8 shadow-xl">
               <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-6">Or Send Us A Direct Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider mb-2">Full Name</label>
+                  <label className="block text-xs font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider mb-2">Full Name *</label>
                   <input
                     type="text"
                     required
@@ -81,7 +112,7 @@ export default function ContactClient() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider mb-2">Phone Number</label>
+                  <label className="block text-xs font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider mb-2">Phone Number *</label>
                   <input
                     type="tel"
                     required
@@ -92,7 +123,7 @@ export default function ContactClient() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider mb-2">Work Email</label>
+                  <label className="block text-xs font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider mb-2">Work Email *</label>
                   <input
                     type="email"
                     required
@@ -126,7 +157,7 @@ export default function ContactClient() {
                   type="submit"
                   className="w-full bg-lime-500 hover:bg-lime-400 text-zinc-950 font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-lime-500/20 text-sm"
                 >
-                  {submitted ? "Message Sent! We'll reply within 2 hours." : "Send Message"}
+                  {submitted ? "Message Sent! We'll reply shortly." : "Send Message"}
                 </button>
               </form>
             </div>
@@ -146,20 +177,20 @@ export default function ContactClient() {
                   <h3 className="text-sm font-bold uppercase tracking-wider text-lime-600 dark:text-lime-400 mb-2 flex items-center gap-2">
                     <Mail className="w-4 h-4" /> Email Enquiries
                   </h3>
-                  <div className="text-zinc-900 dark:text-white font-medium text-sm">SparkSphear4me@gmail.com</div>
+                  <div className="text-zinc-900 dark:text-white font-medium text-sm">contact@sparkspheartechsolutions.com</div>
                 </div>
 
                 <div className="border-t border-zinc-100 dark:border-zinc-800 pt-6">
                   <h3 className="text-sm font-bold uppercase tracking-wider text-lime-600 dark:text-lime-400 mb-3">What Happens Next?</h3>
                   <ul className="space-y-2.5 text-xs font-medium text-zinc-600 dark:text-zinc-300">
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Book a 15-minute live demo call
+                      <CheckCircle2 className="w-4 h-4 text-lime-600 dark:text-lime-400" /> 15-minute Fit Call to assess workflow needs
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-lime-600 dark:text-lime-400" /> We analyze your current software & tool sprawl
+                      <CheckCircle2 className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Review tool sprawl and bottleneck points
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Receive a custom Done-For-You AI roadmap
+                      <CheckCircle2 className="w-4 h-4 text-lime-600 dark:text-lime-400" /> Determine if a Workflow Audit or agent package fits
                     </li>
                   </ul>
                 </div>
@@ -171,5 +202,13 @@ export default function ContactClient() {
       </main>
       <Footer />
     </>
+  );
+}
+
+export default function ContactClient() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-slate-50 dark:bg-zinc-950 flex items-center justify-center"><div className="w-12 h-12 border-4 border-lime-500 border-t-transparent rounded-full animate-spin" /></div>}>
+      <ContactContent />
+    </Suspense>
   );
 }

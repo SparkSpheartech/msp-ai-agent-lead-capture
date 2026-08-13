@@ -50,7 +50,7 @@ const EfficiencyEngine = () => {
  </div>
 
  <div className="text-center mt-10">
- <p className="text-zinc-600 dark:text-gray-400 mb-4">Average client saves <strong className="text-primary">15-20 hours per week</strong> per employee</p>
+  <p className="text-zinc-600 dark:text-gray-400 mb-4">Eliminate repetitive steps with <strong className="text-primary">custom AI workflows</strong></p>
  <a href="/contact" className="inline-flex items-center px-8 py-3 bg-primary text-zinc-900 dark:text-white font-bold rounded-md hover:bg-primary/90 transition">
  Get Your Efficiency Audit
  </a>

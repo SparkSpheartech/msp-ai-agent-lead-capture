@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Calculator, ArrowRight, CheckCircle2, TrendingUp, Users, DollarSign, Clock, Mail, Loader2, Sparkles, ShieldCheck } from 'lucide-react';
+import { Calculator, ArrowRight, CheckCircle2, TrendingUp, Users, Mail, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ToolsClient() {
@@ -19,21 +19,21 @@ export default function ToolsClient() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const calculateLosses = () => {
-    const weeklyLossPerEmp = hoursWasted * hourlyWage;
-    const monthlyLossPerEmp = weeklyLossPerEmp * 4.33;
-    const totalMonthlyLoss = monthlyLossPerEmp * employees;
-    const totalAnnualLoss = totalMonthlyLoss * 12;
+  const calculateOpportunity = () => {
+    const weeklyValuePerEmp = hoursWasted * hourlyWage;
+    const monthlyValuePerEmp = weeklyValuePerEmp * 4.33;
+    const totalMonthlyOpportunity = monthlyValuePerEmp * employees;
+    const totalAnnualOpportunity = totalMonthlyOpportunity * 12;
     const totalWeeklyHours = hoursWasted * employees;
 
     return {
-      monthlyLoss: Math.round(totalMonthlyLoss),
-      annualLoss: Math.round(totalAnnualLoss),
+      monthlyOpportunity: Math.round(totalMonthlyOpportunity),
+      annualOpportunity: Math.round(totalAnnualOpportunity),
       totalWeeklyHours,
     };
   };
 
-  const calculations = calculateLosses();
+  const calculations = calculateOpportunity();
 
   const formatCurrency = (val) => {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
@@ -51,8 +51,8 @@ export default function ToolsClient() {
         body: JSON.stringify({
           email,
           company,
-          tags: ['calculator-lead', 'agency-lead', `team-${employees}`, `savings-${calculations.monthlyLoss}`],
-          source: 'Operations Savings Calculator',
+          tags: ['calculator-lead', 'agency-lead', `team-${employees}`, `opportunity-${calculations.monthlyOpportunity}`],
+          source: 'Workflow Opportunity Calculator',
         }),
       });
 
@@ -80,13 +80,13 @@ export default function ToolsClient() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-600 dark:text-lime-400 text-sm font-semibold tracking-wider uppercase mb-4">
-              <Calculator className="w-4 h-4" /> Operations Audit Tool
+              <Calculator className="w-4 h-4" /> Workflow Planning Tool
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-white mb-4 tracking-tight">
-              Operations Savings Calculator
+              Estimate the Workflow Opportunity
             </h1>
             <p className="text-zinc-600 dark:text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Calculate exact hours and payroll lost to repetitive manual dispatching, phone tag, and data entry.
+              Estimate the manual hours and process time across your team that could be suitable for workflow automation and AI agent assistance.
             </p>
           </motion.div>
         </div>
@@ -106,13 +106,13 @@ export default function ToolsClient() {
               <div className="w-10 h-10 rounded-xl bg-lime-500/10 flex items-center justify-center">
                 <Users className="w-5 h-5 text-lime-500" />
               </div>
-              Your Team Metrics
+              Your Operations Inputs
             </h2>
 
             {/* Number of Employees */}
             <div className="mb-8">
               <div className="flex justify-between items-center mb-3">
-                <label className="text-sm font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">Field Techs / Staff</label>
+                <label className="text-sm font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">Team Members / Staff</label>
                 <span className="text-xl font-extrabold text-lime-600 dark:text-lime-400">{employees}</span>
               </div>
               <input 
@@ -128,7 +128,7 @@ export default function ToolsClient() {
             {/* Hours Wasted per Employee */}
             <div className="mb-8">
               <div className="flex justify-between items-center mb-3">
-                <label className="text-sm font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">Manual Hours Lost/Wk</label>
+                <label className="text-sm font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">Manual Hours / Member / Wk</label>
                 <span className="text-xl font-extrabold text-lime-600 dark:text-lime-400">{hoursWasted} hrs</span>
               </div>
               <input 
@@ -144,7 +144,7 @@ export default function ToolsClient() {
             {/* Hourly Wage */}
             <div className="mb-6">
               <div className="flex justify-between items-center mb-3">
-                <label className="text-sm font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">Avg Hourly Wage</label>
+                <label className="text-sm font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">Estimated Hourly Labor Value</label>
                 <span className="text-xl font-extrabold text-lime-600 dark:text-lime-400">${hourlyWage}/hr</span>
               </div>
               <input 
@@ -158,7 +158,7 @@ export default function ToolsClient() {
             </div>
 
             <div className="pt-4 border-t border-zinc-100 dark:border-zinc-800 text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              *Calculations based on 4.33 working weeks per month. Estimates reflect direct payroll loss before accounting for missed call opportunity revenue.
+              * This calculator is an illustrative planning tool, not a revenue promise or financial guarantee. Actual operational improvements depend on workflow design, tool compatibility, and team adoption.
             </div>
           </motion.div>
 
@@ -173,28 +173,28 @@ export default function ToolsClient() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-lime-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
               
               <div>
-                <div className="flex items-center gap-2 text-red-500 dark:text-red-400 text-sm font-bold uppercase tracking-wider mb-4">
-                  <TrendingUp className="w-4 h-4" /> Operational Loss Summary
+                <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 text-sm font-bold uppercase tracking-wider mb-4">
+                  <TrendingUp className="w-4 h-4" /> Illustrative Workflow Opportunity
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                   <div className="bg-white/80 dark:bg-zinc-950/80 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800">
-                    <div className="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Monthly Loss</div>
+                    <div className="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Monthly Labor Opportunity</div>
                     <div className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white">
-                      {formatCurrency(calculations.monthlyLoss)}
+                      {formatCurrency(calculations.monthlyOpportunity)}
                     </div>
                   </div>
                   
                   <div className="bg-white/80 dark:bg-zinc-950/80 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800">
-                    <div className="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Annual Loss</div>
+                    <div className="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Annual Labor Opportunity</div>
                     <div className="text-3xl sm:text-4xl font-extrabold text-lime-600 dark:text-lime-400">
-                      {formatCurrency(calculations.annualLoss)}
+                      {formatCurrency(calculations.annualOpportunity)}
                     </div>
                   </div>
                 </div>
 
                 <p className="text-zinc-600 dark:text-zinc-300 text-base leading-relaxed mb-8">
-                  Your business is currently losing <strong className="text-zinc-900 dark:text-white">{calculations.totalWeeklyHours.toLocaleString()} manual hours</strong> every single week to repetitive data entry, call logging, and manual dispatch.
+                  Your team accumulates approximately <strong className="text-zinc-900 dark:text-white">{calculations.totalWeeklyHours.toLocaleString()} manual hours</strong> every week across repetitive data handling, inquiry responses, and manual coordination.
                 </p>
               </div>
 
@@ -205,13 +205,13 @@ export default function ToolsClient() {
                     href="/contact"
                     className="flex-1 py-4 px-6 bg-lime-500 text-zinc-950 rounded-xl font-extrabold text-center hover:bg-lime-400 transition-all shadow-lg shadow-lime-500/20 inline-flex items-center justify-center gap-2 text-base"
                   >
-                    Book a Free 15-Minute Fit Call <ArrowRight className="w-4 h-4" />
+                    Book a Fit Call <ArrowRight className="w-4 h-4" />
                   </Link>
                   <button 
                     onClick={() => setIsModalOpen(true)}
                     className="flex-1 py-4 px-6 border border-zinc-300 dark:border-zinc-700 bg-white/50 dark:bg-zinc-900/50 text-zinc-900 dark:text-white rounded-xl font-bold hover:border-lime-500 transition-all text-center inline-flex items-center justify-center gap-2 text-base cursor-pointer"
                   >
-                    Get Personalized Operations Report <Mail className="w-4 h-4" />
+                    Get Operations Report <Mail className="w-4 h-4" />
                   </button>
                 </div>
               </div>
@@ -223,16 +223,16 @@ export default function ToolsClient() {
         {/* Audit Next Steps */}
         <section className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 md:p-12 shadow-sm">
           <div className="max-w-3xl">
-            <h3 className="text-2xl font-bold mb-4">How We Fix These Bottlenecks</h3>
+            <h3 className="text-2xl font-bold mb-4">How We Assess Your Workflow</h3>
             <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6">
-              Our <strong>Master Business Audit</strong> inspects your exact software stack, call intake pipelines, and data handoffs. We map the friction points, prioritize the automation opportunities, and build custom AI agent bridges that return 15+ hours weekly per technician.
+              Our <strong>Workflow Audit</strong> maps your operational processes, reviews existing software, and identifies specific automation opportunities before any agent is built.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link 
                 href="/services/it-audits"
                 className="inline-flex items-center gap-2 text-lime-600 dark:text-lime-400 font-bold hover:underline"
               >
-                Learn More About the Master Business Audit <ArrowRight className="w-4 h-4" />
+                Learn More About the Workflow Audit <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -244,17 +244,17 @@ export default function ToolsClient() {
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 max-w-lg w-full shadow-2xl relative">
             <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">
-              Get Your Personalized Report
+              Get Your Operations Summary
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-6">
-              We will send your complete operational breakdown, priority automation roadmap, and custom ROI calculations.
+              We will send your workflow evaluation summary and opportunity breakdown.
             </p>
 
             {submitted ? (
               <div className="p-6 bg-lime-500/10 border border-lime-500/30 rounded-2xl text-center space-y-2">
                 <CheckCircle2 className="w-8 h-8 text-lime-500 mx-auto" />
-                <p className="font-bold text-zinc-900 dark:text-white">Report Sent!</p>
-                <p className="text-xs text-zinc-600 dark:text-zinc-400">Check your inbox for your personalized savings report.</p>
+                <p className="font-bold text-zinc-900 dark:text-white">Summary Sent!</p>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400">Check your inbox for your workflow opportunity summary.</p>
               </div>
             ) : (
               <form onSubmit={handleReportRequest} className="space-y-4">
@@ -262,7 +262,7 @@ export default function ToolsClient() {
                   <label className="block text-xs font-mono font-bold uppercase text-zinc-500 mb-1">Company Name</label>
                   <input 
                     type="text" 
-                    placeholder="Acme Field Services"
+                    placeholder="Acme Operations"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
                     className="w-full px-4 py-3 bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white focus:outline-none focus:border-lime-500 text-sm"
@@ -293,7 +293,7 @@ export default function ToolsClient() {
                     disabled={loading}
                     className="flex-1 py-3 bg-lime-500 text-zinc-950 font-bold rounded-xl text-sm hover:bg-lime-400 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
-                    {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Send Report'}
+                    {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Send Summary'}
                   </button>
                 </div>
                 <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-tight text-center mt-3">

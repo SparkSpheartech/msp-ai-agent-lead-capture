@@ -83,7 +83,7 @@ export default function SupportClient() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-3 px-6 py-3 bg-lime-500/10 border border-lime-500/30 rounded-full mb-8">
                 <Bot className="w-5 h-5 text-lime-600 dark:text-lime-500" />
-                <span className="text-lime-600 dark:text-lime-400 font-semibold">24/7 AI Support Available</span>
+                <span className="text-lime-600 dark:text-lime-400 font-semibold">AI Assistant Available</span>
               </div>
               <h2 className="text-zinc-900 dark:text-white text-3xl md:text-4xl font-bold mb-6">
                 Have Questions? <span className="text-lime-600 dark:text-lime-500">Chat with Our AI</span>

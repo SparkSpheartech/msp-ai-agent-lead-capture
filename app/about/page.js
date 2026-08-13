@@ -1,14 +1,14 @@
 import AboutClient from "./AboutClient";
 
 export const metadata = {
-  title: "About Us & Our Mission",
-  description: "Learn about SPARKSPHEAR Tech Solutions — leading provider of AI services, custom automation, and managed IT for growing businesses.",
+  title: "About SPARKSPHEAR | AI Agents and Workflow Systems",
+  description: "Learn how SPARKSPHEAR audits repetitive operations, builds controlled AI agents, and creates digital systems for growing businesses.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/about",
   },
   openGraph: {
-    title: "About Us & Our Mission",
-    description: "Learn about SPARKSPHEAR Tech Solutions — leading provider of AI services, custom automation, and managed IT for growing businesses.",
+    title: "About SPARKSPHEAR | AI Agents and Workflow Systems",
+    description: "Learn how SPARKSPHEAR audits repetitive operations, builds controlled AI agents, and creates digital systems for growing businesses.",
     url: "https://sparkspheartechsolutions.com/about",
     siteName: "SPARKSPHEAR",
     images: [

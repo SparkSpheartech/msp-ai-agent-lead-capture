@@ -101,15 +101,15 @@ export default function MarketsClient({ initialPosts = [] }) {
  
  <div className="max-w-6xl mx-auto text-center relative z-10">
  <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
- <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-600 dark:text-lime-400 text-sm font-semibold tracking-wider uppercase mb-4">
- <Building2 className="w-4 h-4" /> Industry Intelligence & Market Breakdown
- </span>
- <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-900 dark:text-white mb-6 tracking-tight">
- Markets We Service
- </h1>
- <p className="text-zinc-600 dark:text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
- Discover how SPARKSPHEAR deploys Agentic systems and specialized AI agents across HVAC, commercial waste hauling, property management, and field service operations.
- </p>
+  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-600 dark:text-lime-400 text-sm font-semibold tracking-wider uppercase mb-4">
+  <Building2 className="w-4 h-4" /> Industry Intelligence & Market Opportunities
+  </span>
+  <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-900 dark:text-white mb-6 tracking-tight">
+  Markets and Workflow Opportunities
+  </h1>
+  <p className="text-zinc-600 dark:text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+  Explore how SPARKSPHEAR builds controlled AI agents and workflow automations across HVAC, waste management, childcare, auto repair, barbershops, salons, and restaurants.
+  </p>
  </motion.div>
 
  {/* Search & Category Filter */}

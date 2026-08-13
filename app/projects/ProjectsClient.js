@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { FolderGit2, ArrowRight, Download, Mail, Loader2, CheckCircle2, Cpu } from 'lucide-react';
+import { FolderGit2, ArrowRight, Download, Loader2, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
 function ProjectsContent() {
@@ -24,8 +24,8 @@ function ProjectsContent() {
       title: "HVAC Automated Dispatcher & AI Voice Agent",
       market: "HVAC",
       client: "Midwest Heating & Cooling",
-      metrics: "Saved 18.5 hrs/wk per technician",
-      description: "An intelligent agentic dispatcher that parses inbound emergency service calls, evaluates technician location via GPS telematics, and dispatches job cards directly into CRM without human intervention.",
+      metrics: "Saved hours on manual dispatching",
+      description: "An intelligent agentic dispatcher that parses inbound emergency service calls, evaluates technician location via GPS telematics, and dispatches job cards directly into CRM without manual intervention.",
       category: "AI & Dispatch Automation",
       image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80",
       serviceLink: "/services/ai-automation"
@@ -35,7 +35,7 @@ function ProjectsContent() {
       title: "Circle Logistics AI Freight Gateway",
       market: "Logistics",
       client: "Circle Logistics Network",
-      metrics: "90% manual data entry reduction",
+      metrics: "Significantly reduced manual data entry",
       description: "Custom AI document intelligence gateway that ingests freight rate confirmations, extracts load numbers and pay rates, and syncs status directly into transport management software.",
       category: "Document Intelligence API",
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
@@ -46,7 +46,7 @@ function ProjectsContent() {
       title: "GigaPulse Real-Time NOC Telemetry Platform",
       market: "IT Operations",
       client: "GigaPulse Networks",
-      metrics: "24/7 automated alert escalation",
+      metrics: "Automated alert escalation",
       description: "Enterprise Network Operations Center (NOC) dashboard providing real-time telemetry, automated failure prediction, and SMS escalation protocols for distributed hardware infrastructure.",
       category: "Web Architecture & Telemetry",
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
@@ -57,7 +57,7 @@ function ProjectsContent() {
       title: "PHP Healthcare EDI Claims Engine",
       market: "Healthcare",
       client: "PHP Commercial Claims Group",
-      metrics: "Zero manual claims re-entry",
+      metrics: "Automated claims verification pipeline",
       description: "Automated healthcare EDI claims automation pipeline that parses 837 claim files, validates medical billing codes against clearinghouse rules, and reconciles 835 payment advice automatically.",
       category: "Operational Software Bridges",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
@@ -79,8 +79,8 @@ function ProjectsContent() {
       title: "Salon Waitlist AI & Deposit Automation",
       market: "Beauty & Wellness",
       client: "Aura Luxury Spa & Salon",
-      metrics: "Eliminated deposit no-shows",
-      description: "A specialized AI receptionist agent that handles inbound waitlist requests 24/7, collects card-on-file deposits, and sends dynamic SMS appointment confirmations.",
+      metrics: "Automated deposit collection & scheduling",
+      description: "A specialized receptionist agent that handles inbound waitlist requests, collects card-on-file deposits, and sends dynamic SMS appointment confirmations.",
       category: "AI Customer Re-engagement",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
       serviceLink: "/services/ai-automation"
@@ -134,7 +134,7 @@ function ProjectsContent() {
               <FolderGit2 className="w-4 h-4" /> Client Implementation Case Studies
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-900 dark:text-white mb-6 tracking-tight">
-              Systems We Have Built
+              Selected Workflow and Agent Projects
             </h1>
             <p className="text-zinc-600 dark:text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
               Explore public case studies of automated call dispatchers, API data bridges, and custom web portals built for growing companies.
@@ -213,13 +213,13 @@ function ProjectsContent() {
               href="/contact"
               className="px-8 py-4 bg-lime-500 text-zinc-950 font-extrabold rounded-xl hover:bg-lime-400 transition-all shadow-lg shadow-lime-500/20 text-center"
             >
-              Book a Free 15-Minute Fit Call
+              Book a Fit Call
             </Link>
             <Link 
               href="/services/it-audits"
               className="px-8 py-4 border border-zinc-300 dark:border-zinc-700 bg-white/50 dark:bg-zinc-900/50 text-zinc-900 dark:text-white font-bold rounded-xl hover:border-lime-500 transition-all text-center"
             >
-              Explore Master Business Audit
+              Explore Workflow Audit
             </Link>
           </div>
         </section>

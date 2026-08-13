@@ -10,6 +10,9 @@ import { ArrowRight, CheckCircle2, ShieldAlert, Cpu, ExternalLink, Calendar, Lay
 export default function GuideClient({ brief }) {
   if (!brief) return null;
 
+  const hasSpecificArticle = brief.blogUrl && !brief.blogUrl.endsWith('.com') && !brief.blogUrl.endsWith('.com/');
+  const blogCTALabel = brief.blogLabel || (hasSpecificArticle ? 'Read Full Research on Field Notes' : 'Explore Field Notes Research');
+
   return (
     <>
       <SchemaOrg 
@@ -45,20 +48,20 @@ export default function GuideClient({ brief }) {
           </p>
 
           <div className="flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="px-6 py-3 bg-lime-500 text-zinc-950 rounded-lg font-bold hover:bg-lime-400 transition-all shadow-lg shadow-lime-500/20 inline-flex items-center gap-2"
+            >
+              Book a Fit Call <Calendar className="w-4 h-4" />
+            </Link>
             <a 
               href={brief.blogUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-lime-500 text-zinc-950 rounded-lg font-bold hover:bg-lime-400 transition-all shadow-lg shadow-lime-500/20 inline-flex items-center gap-2"
-            >
-              Read Full Research on Blog <ExternalLink className="w-4 h-4" />
-            </a>
-            <Link 
-              href="/services/it-audits"
               className="px-6 py-3 border border-zinc-300 dark:border-zinc-700 bg-white/50 dark:bg-zinc-900/50 text-zinc-900 dark:text-white rounded-lg font-semibold hover:border-lime-500 transition-all inline-flex items-center gap-2"
             >
-              Book a 15-Minute Audit <Calendar className="w-4 h-4" />
-            </Link>
+              {blogCTALabel} <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
         </section>
 
@@ -104,7 +107,7 @@ export default function GuideClient({ brief }) {
           <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 flex items-center gap-3">
               <CheckCircle2 className="w-6 h-6 text-lime-500" />
-              What to Evaluate Before Buying Software
+              What to Evaluate Before Choosing Software
             </h2>
             <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-base">
               {brief.whatToEvaluate}
@@ -115,7 +118,7 @@ export default function GuideClient({ brief }) {
           <div className="bg-lime-500/10 border border-lime-500/30 rounded-xl p-8">
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-3 flex items-center gap-3">
               <Cpu className="w-6 h-6 text-lime-500" />
-              What SPARKSPHEAR Builds for {brief.name}
+              What SPARKSPHEAR Can Build for {brief.name}
             </h2>
             <p className="text-zinc-800 dark:text-zinc-200 leading-relaxed text-base mb-6">
               {brief.whatWeBuild}
@@ -124,26 +127,34 @@ export default function GuideClient({ brief }) {
               href={brief.serviceRoute}
               className="inline-flex items-center gap-2 text-lime-600 dark:text-lime-400 font-bold hover:underline"
             >
-              Explore {brief.name} Implementation Pathways <ArrowRight className="w-4 h-4" />
+              Explore Agent Workflows <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
           {/* Final Call to Action */}
           <div className="text-center pt-8 border-t border-zinc-200 dark:border-zinc-800">
             <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">
-              Need In-Depth Research & Software Rankings?
+              Want Deeper Research and Software Comparisons?
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 mb-6 max-w-lg mx-auto">
-              Our Side A editorial team publishes full software comparisons, deep-dive teardowns, and implementation playbooks on our research blog.
+              SPARKSPHEAR Field Notes publishes full software reviews, implementation guides, and buying criteria for each industry on our research blog.
             </p>
-            <a 
-              href={brief.blogUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-lime-500 text-zinc-950 font-bold rounded-xl hover:bg-lime-400 transition-all shadow-xl shadow-lime-500/20 inline-flex items-center gap-2 text-base"
-            >
-              Read Full {brief.name} Research on Blog <ExternalLink className="w-5 h-5" />
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={brief.blogUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-white font-bold rounded-xl hover:border-lime-500 transition-all shadow-sm inline-flex items-center justify-center gap-2 text-base"
+              >
+                {blogCTALabel} <ExternalLink className="w-5 h-5" />
+              </a>
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-lime-500 text-zinc-950 font-bold rounded-xl hover:bg-lime-400 transition-all shadow-xl shadow-lime-500/20 inline-flex items-center justify-center gap-2 text-base"
+              >
+                Book a Fit Call <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
           </div>
 
         </section>

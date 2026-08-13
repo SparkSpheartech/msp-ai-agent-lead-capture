@@ -30,7 +30,7 @@ function BackgroundGrid() {
 export default function Newsletter({
   eyebrow = 'B2B Tech & Automation Insights',
   title = 'Bring The Spark To Your Business',
-  description = 'Stop losing revenue to missed calls. Get 15-20 hrs/week back per employee on autopilot.',
+  description = 'Get practical workflow automation insights, agent implementation patterns, and industry research for owner-led businesses.',
   placeholder = 'your@company.com',
   buttonText = 'Join Subscriber List',
   reassurance = 'We respect your privacy. Unsubscribe anytime with 1 click. Zero spam, ever.',

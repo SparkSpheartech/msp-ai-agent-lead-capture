@@ -1,357 +1,394 @@
 "use client";
 
-import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Zap, Clock, BarChart3, Sparkles, Loader2, Calculator, ShieldCheck, Check, Layers, AlertCircle, ArrowRight } from 'lucide-react';
-import { TestimonialStrip } from '@/components/Testimonials';
+import React, { useState } from "react";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import {
+  ArrowRight,
+  Bot,
+  Calculator,
+  Check,
+  Loader2,
+  MessageSquareText,
+  PhoneCall,
+  RefreshCw,
+  ShieldCheck,
+  Sparkles,
+  Workflow,
+  Layers,
+  Building2,
+} from "lucide-react";
 
 export default function Pricing() {
   const [loading, setLoading] = useState(null);
-  const [showStackReveal, setShowStackReveal] = useState(true);
+  const [inquiries, setInquiries] = useState(10);
+  const [avgValue, setAvgValue] = useState(75);
+  const [manualHours, setManualHours] = useState(12);
+  const [automationFit, setAutomationFit] = useState(30);
 
-  // Calculator State
-  const [employees, setEmployees] = useState(5);
-  const [hoursWasted, setHoursWasted] = useState(10);
-  const [hourlyWage, setHourlyWage] = useState(25);
+  const monthlyInquiryValue = inquiries * 4 * avgValue;
+  const monthlyHoursValue = manualHours * 4 * 35;
+  const illustrativeOpportunity = Math.round(
+    (monthlyInquiryValue + monthlyHoursValue) * (automationFit / 100)
+  );
+  const illustrativeHours = Math.round(manualHours * 4 * (automationFit / 100));
 
-  // Calculations
-  const totalWeeklyWasted = employees * hoursWasted;
-  const totalMonthlyWasted = totalWeeklyWasted * 4;
-  const monthlyLoss = totalMonthlyWasted * hourlyWage;
-  const estimatedSavings = Math.round(monthlyLoss * 0.8);
-
-  // Outcome Recommendation Logic (Task 1.2)
-  let recommendedPlan = 'Revenue Operations Engine';
-  if (totalWeeklyWasted < 15) {
-    recommendedPlan = 'Missed-Call Recovery System';
-  } else if (totalWeeklyWasted <= 40) {
-    recommendedPlan = 'Admin Elimination Package';
-  } else if (totalWeeklyWasted <= 100) {
-    recommendedPlan = 'Revenue Operations Engine';
-  } else {
-    recommendedPlan = 'Full CNS Deployment';
+  let recommendedPlan = "SIGNAL START";
+  if (inquiries + manualHours > 40) {
+    recommendedPlan = "SCALE CONTROL";
+  } else if (inquiries + manualHours > 25) {
+    recommendedPlan = "SYSTEM LIFT";
+  } else if (inquiries + manualHours > 12) {
+    recommendedPlan = "FLOW CONTROL";
   }
 
-  // Common Bonus Stack for every tier (Task 1.6)
-  const commonBonuses = [
-    "🎁 FREE: 'Missed-Call Recovery Playbook' PDF ($297 Value)",
-    "🎁 FREE: 30-min Monthly Strategy Call ($150 Value)",
-    "🎁 FREE: Existing-Tools Efficiency Audit ($497 Value)"
-  ];
-
-  // Outcome-based Pricing Tiers (Task 1.2, 1.3, 1.6)
   const plans = [
     {
-      tier: "Missed-Call Recovery System",
-      price: "$97",
+      tier: "SIGNAL START",
+      tagline: "Audit the System. See the First Opportunity.",
+      price: "$297",
       period: "/month",
-      originalSetup: "$497",
-      setupBadge: "FREE $497 Onboarding (Waived)",
+      implementation: "Implementation from $750",
+      bestFor: "One narrow workflow, one primary channel, and one or two approved integrations.",
       features: [
-        "2 Core Workflow Automations",
-        "24/7 Missed-Call & Text Auto-Responder",
-        "Sovereign Data Protection",
-        "Email Support (24hr response)",
-        "Time saved: 5-8 hrs/week",
-        ...commonBonuses
+        "One production AI agent workflow",
+        "One primary channel",
+        "One or two approved integrations after technical review",
+        "Approved response or action rules",
+        "One escalation path",
+        "Basic activity logging",
+        "Test scenarios before launch",
+        "Monthly workflow health review",
+        "Published support-hours language only",
+        "Existing tools remain where they fit",
       ],
-      cta: "Get Missed-Call Recovery",
-      icon: <Sparkles className="w-7 h-7 text-lime-600 dark:text-lime-400" />
+      examples: "Missed-call follow-up, booking-link routing, FAQ chatbot, lead-intake agent",
+      cta: "Start With Signal Start",
+      icon: <PhoneCall className="h-7 w-7 text-lime-600 dark:text-lime-400" />,
     },
     {
-      tier: "Admin Elimination Package",
-      price: "$197",
+      tier: "FLOW CONTROL",
+      tagline: "Audit the System. Control the Workflow.",
+      price: "$697",
       period: "/month",
-      originalSetup: "$997",
-      setupBadge: "FREE $997 Onboarding (Waived)",
+      implementation: "Implementation from $1,500",
+      bestFor: "Several related workflows with routing, follow-up, reporting, and exception handling.",
       features: [
-        "5 Core Workflow Automations",
-        "AI Customer Intake & Dispatch Bots (2)",
-        "Monthly Performance & Revenue Report",
-        "Email + Chat Support (12hr response)",
-        "Time saved: 10-15 hrs/week",
-        ...commonBonuses
+        "Everything in SIGNAL START",
+        "Up to three related workflows",
+        "Up to three approved integrations after technical review",
+        "Missed-call or inquiry handling",
+        "Intake and routing",
+        "Rebooking, follow-up, or retention workflow",
+        "Weekly operations summary",
+        "Exception review",
+        "Monthly optimization review",
+        "Priority support within published boundaries",
       ],
-      cta: "Get Admin Elimination",
-      icon: <Zap className="w-7 h-7 text-lime-600 dark:text-lime-400" />
+      examples: "Barbershop booking + rebooking, HVAC intake + quote follow-up, waste pickup exception + notification",
+      cta: "Start With Flow Control",
+      icon: <Workflow className="h-7 w-7 text-lime-600 dark:text-lime-400" />,
+      recommended: true,
     },
     {
-      tier: "Revenue Operations Engine",
-      price: "$497",
+      tier: "SYSTEM LIFT",
+      tagline: "Audit the System. Lift the Operation.",
+      price: "$1,497",
       period: "/month",
-      originalSetup: "$2,997",
-      setupBadge: "FREE $2,997 Onboarding (Waived)",
+      implementation: "Implementation from $3,500",
+      bestFor: "Multiple workflows, channels, custom rules, multiple integrations, or meaningful reporting requirements.",
       features: [
-        "15 Full-Suite Workflow Automations",
-        "Advanced AI Dispatch & Quoting Bots (5)",
-        "Weekly Optimization & Strategy Calls",
-        "Priority Phone + Instant Slack/Chat Support",
-        "CRM & Accounting Integration Included",
-        "Time saved: 20-30 hrs/week",
-        "Real-Time ROI Tracking Dashboard",
-        ...commonBonuses
+        "Everything in FLOW CONTROL",
+        "Multiple approved channels",
+        "Custom business rules and escalation paths",
+        "Multiple system connections after technical review",
+        "Custom reporting and exception summaries",
+        "Workflow documentation",
+        "Integration monitoring according to agreed scope",
+        "Monthly optimization and review",
+        "Priority implementation support",
       ],
-      cta: "Start Revenue Engine",
-      stripeUrl: "https://buy.stripe.com/test_7sY6oH5XXazn3BifNbfYY01",
-      icon: <BarChart3 className="w-7 h-7 text-lime-600 dark:text-lime-400" />
+      examples: "Multi-channel intake + routing + reporting, custom approval workflows",
+      cta: "Start With System Lift",
+      icon: <Layers className="h-7 w-7 text-lime-600 dark:text-lime-400" />,
+      scopeNote: "Scope and usage limits apply.",
     },
     {
-      tier: "Full CNS Deployment",
-      price: "$997",
+      tier: "SCALE CONTROL",
+      tagline: "Audit the System. Scale the Business.",
+      price: "Starting at $2,997",
       period: "/month",
-      originalSetup: "$7,997",
-      setupBadge: "FREE $7,997 Onboarding (Waived)",
+      implementation: "Scoped after Workflow Audit",
+      bestFor: "Multi-location businesses, operations-heavy companies, custom APIs, multiple approval levels, custom reporting, and ongoing optimization.",
       features: [
-        "Unlimited Custom Automations",
-        "Custom-Trained Autonomous AI Agents",
-        "Dedicated Chief Automation Engineer",
-        "24/7 Active System Monitoring & Support",
-        "99.9% Uptime SLA Guaranteed",
-        "Time saved: 40+ hrs/week",
-        "Full Enterprise Architecture Assessment",
-        ...commonBonuses
+        "Custom agent system design",
+        "Multiple workflows and channels, scoped by agreement",
+        "Multi-location routing and escalation",
+        "Custom API or data connections after technical review",
+        "Role-based approval paths",
+        "Custom dashboards and reporting",
+        "Formal implementation acceptance criteria",
+        "Ongoing optimization plan",
+        "Architecture review cadence",
+        "Support and monitoring level defined in agreement",
       ],
-      cta: "Scale Full CNS",
-      stripeUrl: "https://buy.stripe.com/test_cNi7sL5XX0YN5JqgRffYY02",
-      icon: <Clock className="w-7 h-7 text-lime-600 dark:text-lime-400" />
-    }
-  ];
-
-  // Stack Components
-  const stackItems = [
-    { title: "24/7 AI Missed-Call & Text Receptionist", value: "$1,497/mo value" },
-    { title: "Automated Quoting & Dispatch Workflows", value: "$1,997 value" },
-    { title: "CRM & Accounting API Integrations", value: "$750 value" },
-    { title: "Weekly Revenue Optimization Strategy Calls", value: "$450/mo value" },
-    { title: "Bonus: 'Missed-Call Recovery Playbook' PDF", value: "$297 value" },
-    { title: "Bonus: Full Tech Stack Efficiency Audit", value: "$497 value" },
+      examples: "Multi-location operations, custom architecture, enterprise-level workflow systems",
+      cta: "Discuss Scale Control",
+      icon: <Building2 className="h-7 w-7 text-lime-600 dark:text-lime-400" />,
+      scopeNote: "Custom scope defined after audit.",
+    },
   ];
 
   const handleCheckout = async (planName) => {
     setLoading(planName);
     try {
-      const response = await fetch('/api/stripe-checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan: planName, email: '' }),
+      const response = await fetch("/api/stripe-checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan: planName, email: "" }),
       });
       const data = await response.json();
       if (data.url) {
         window.location.href = data.url;
-      } else if (data.devMessage) {
-        alert(`Please contact us to get started with the ${planName} package.`);
+      } else {
+        window.location.href = `/contact?plan=${encodeURIComponent(planName)}`;
       }
-    } catch (error) {
-      alert('Contact us to get started: SparkSphear4me@gmail.com');
+    } catch {
+      window.location.href = `/contact?plan=${encodeURIComponent(planName)}`;
+    } finally {
+      setLoading(null);
     }
-    setLoading(null);
   };
 
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-24 pb-16 bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
-        <div className="container max-w-6xl mx-auto px-6 pt-4">
+      <main className="min-h-screen bg-slate-50 pb-20 pt-24 text-zinc-900 dark:bg-zinc-950 dark:text-white">
+        <div className="container mx-auto max-w-6xl px-6 pt-6">
 
-          {/* SCARCITY & URGENCY BANNER (Task 1.7) */}
-          <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-4 mb-8 text-center flex flex-col sm:flex-row items-center justify-between gap-3 text-xs md:text-sm font-semibold text-amber-900 dark:text-amber-300">
-            <div className="flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 text-amber-500 flex-shrink-0" />
-              <span><strong>SCARCITY WARNING:</strong> We onboard only 5 new clients/month to protect service quality. <strong>Only 2 spots remaining this month.</strong></span>
+          <header className="mx-auto mb-14 max-w-3xl text-center">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-lime-500/30 bg-lime-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-lime-700 dark:text-lime-300">
+              <Sparkles className="h-4 w-4" /> AI Agent Packages
             </div>
-            <span className="bg-amber-500 text-zinc-950 px-3 py-1 rounded-full text-xs font-black uppercase whitespace-nowrap">
-              $2,997 Onboarding Fee Waived
-            </span>
-          </div>
-
-          <div className="text-center mb-10">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">
-              Operational Outcome Pricing
+            <h1 className="text-4xl font-black tracking-tight md:text-6xl">
+              Start With the Workflow. Scale What Works.
             </h1>
-            <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-              No long-term contracts. No upfront setup fees. Zero risk with our 90-day outcome guarantee.
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-xl">
+              SPARKSPHEAR builds AI agents for repetitive business workflows across service, local, and operations-heavy industries. We audit the system, connect the tools that fit, and automate the work that should not require constant manual attention.
             </p>
-          </div>
-
-          {/* ROI Calculator */}
-          <div className="bg-white dark:bg-zinc-900 border border-lime-500/20 rounded-3xl p-8 md:p-10 mb-16 max-w-4xl mx-auto flex flex-col md:flex-row gap-10 shadow-xl">
-            <div className="flex-1 space-y-8">
-              <h3 className="text-2xl font-bold text-zinc-900 dark:text-white flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-lime-500/10 flex items-center justify-center">
-                  <Calculator className="text-lime-600 dark:text-lime-400 w-5 h-5"/>
-                </div>
-                Calculate Your Monthly Loss
-              </h3>
-              
-              <div>
-                <div className="flex justify-between mb-3">
-                  <label className="text-zinc-700 dark:text-zinc-300 font-semibold text-sm">Number of Employees</label>
-                  <span className="text-lime-600 dark:text-lime-400 font-extrabold text-lg">{employees}</span>
-                </div>
-                <input type="range" min="1" max="50" value={employees} onChange={e => setEmployees(Number(e.target.value))} className="w-full accent-lime-500 h-2 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer" />
-              </div>
-              
-              <div>
-                <div className="flex justify-between mb-3">
-                  <label className="text-zinc-700 dark:text-zinc-300 font-semibold text-sm">Hours Wasted <span className="text-zinc-500 text-xs font-normal">(per employee/wk)</span></label>
-                  <span className="text-lime-600 dark:text-lime-400 font-extrabold text-lg">{hoursWasted} hrs</span>
-                </div>
-                <input type="range" min="1" max="40" value={hoursWasted} onChange={e => setHoursWasted(Number(e.target.value))} className="w-full accent-lime-500 h-2 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer" />
-              </div>
-              
-              <div>
-                <div className="flex justify-between mb-3">
-                  <label className="text-zinc-700 dark:text-zinc-300 font-semibold text-sm">Avg. Hourly Wage</label>
-                  <span className="text-lime-600 dark:text-lime-400 font-extrabold text-lg">${hourlyWage}/hr</span>
-                </div>
-                <input type="range" min="15" max="150" step="1" value={hourlyWage} onChange={e => setHourlyWage(Number(e.target.value))} className="w-full accent-lime-500 h-2 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer" />
-              </div>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-zinc-500 dark:text-zinc-500">
+              Barbershops, HVAC teams, waste operators, auto-repair shops, childcare providers, restaurants, and other businesses can start with one painful workflow and expand only when the system proves useful.
+            </p>
+            <p className="mt-6 text-lg font-bold text-lime-600 dark:text-lime-400 tracking-wide">
+              Audit the System. Scale the Business.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Link href="/contact" className="px-6 py-3 rounded-xl text-sm font-extrabold bg-lime-500 text-zinc-950 hover:bg-lime-400 transition shadow-lg shadow-lime-500/20 inline-flex items-center gap-2">
+                Book a Fit Call <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a href="#agent-packages" className="px-6 py-3 rounded-xl text-sm font-bold border border-zinc-300 dark:border-zinc-700 bg-white/50 dark:bg-zinc-900/60 text-zinc-900 dark:text-white hover:border-lime-500 transition inline-flex items-center gap-2">
+                Explore Agent Packages
+              </a>
             </div>
+          </header>
 
-            <div className="flex-1 bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-2xl p-8 flex flex-col justify-center items-center text-center relative overflow-hidden">
-              <div className="text-red-400 font-semibold text-xs uppercase tracking-wider mb-2">You Are Losing</div>
-              <div className="text-5xl font-black text-white mb-6">${monthlyLoss.toLocaleString()} <span className="text-sm font-normal text-zinc-400">/mo</span></div>
-              
-              <div className="w-full h-px bg-zinc-800 mb-6" />
-              
-              <div className="text-lime-400 text-xs font-mono uppercase tracking-wider mb-2">Recommended Solution</div>
-              <div className="text-xl font-extrabold text-white mb-2">{recommendedPlan}</div>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Based on {totalWeeklyWasted} manual hours wasted across your team every week.
+          {/* Workflow Audit Diagnostic Block */}
+          <section className="mx-auto mb-16 max-w-4xl rounded-3xl border border-lime-500/20 bg-white p-8 shadow-xl dark:bg-zinc-900 md:p-10" aria-labelledby="workflow-audit">
+            <div className="text-center">
+              <ShieldCheck className="mx-auto mb-4 h-10 w-10 text-lime-500" />
+              <h2 id="workflow-audit" className="text-2xl font-black md:text-3xl">Workflow Audit</h2>
+              <p className="mt-2 text-lg font-bold text-lime-600 dark:text-lime-400">Starting at $297 one-time</p>
+              <p className="mx-auto mt-4 max-w-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                We do not start by selling the biggest package. We start by auditing the workflow and identifying the smallest useful agent.
               </p>
             </div>
-          </div>
-
-          {/* BRUNSON'S "THE STACK" REVEAL (Task 1.10) */}
-          <div className="bg-gradient-to-r from-zinc-900 via-zinc-950 to-black border border-lime-500/40 rounded-3xl p-8 md:p-10 mb-12 shadow-2xl relative overflow-hidden">
-            <div className="flex items-center justify-between mb-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-500/20 text-lime-400 text-xs font-extrabold uppercase tracking-wider">
-                <Layers className="w-3.5 h-3.5" /> What You Get (The Total Value Stack)
-              </div>
-              <span className="text-xs text-lime-400 font-bold font-mono">
-                Total Value: $5,488+
-              </span>
-            </div>
-
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Here's Everything Included In Your Engine:
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-              {stackItems.map((item, idx) => (
-                <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-3.5 flex items-center justify-between text-xs md:text-sm text-zinc-200 font-medium">
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-lime-400 flex-shrink-0" />
-                    <span>{item.title}</span>
-                  </div>
-                  <span className="text-lime-400 font-mono font-bold text-[11px] bg-lime-500/10 px-2 py-0.5 rounded ml-2 whitespace-nowrap">
-                    {item.value}
-                  </span>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                "Current workflow map",
+                "Bottleneck analysis",
+                "Existing-tool review",
+                "Data and access requirements",
+                "Agent suitability assessment",
+                "Three prioritized automation opportunities",
+                "Recommended first agent",
+                "Implementation scope",
+                "Measurement and acceptance plan",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2 text-sm text-zinc-700 dark:text-zinc-300">
+                  <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-lime-500" />
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
-
-            <div className="text-center pt-4 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-left text-xs text-zinc-400">
-                <span className="text-white font-bold block text-sm">Combined Perceived Value: $5,488</span>
-                <span>You pay zero onboarding fees. Choose your monthly outcome tier below:</span>
+            <div className="mt-8 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-5">
+              <div className="grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-4">
+                <div><span className="font-bold text-zinc-900 dark:text-white">Free Fit Call</span><br /><span className="text-zinc-500">Qualification only</span></div>
+                <div><span className="font-bold text-zinc-900 dark:text-white">Workflow Audit</span><br /><span className="text-zinc-500">Paid diagnostic</span></div>
+                <div><span className="font-bold text-zinc-900 dark:text-white">Implementation</span><br /><span className="text-zinc-500">One-time build fee</span></div>
+                <div><span className="font-bold text-zinc-900 dark:text-white">Monthly Agent Operation</span><br /><span className="text-zinc-500">Recurring package fee</span></div>
               </div>
-              <a href="#pricing-grid" className="px-6 py-3 bg-lime-500 text-zinc-950 font-bold rounded-xl text-xs hover:bg-lime-400 transition-all shadow-lg shadow-lime-500/20 whitespace-nowrap">
-                See Monthly Tiers &rarr;
-              </a>
             </div>
-          </div>
+          </section>
 
-          {/* TESTIMONIAL STRIP (Task 1.4) */}
-          <TestimonialStrip />
-
-          {/* Pricing Grid */}
-          <div id="pricing-grid" className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10 my-12">
-            {plans.map((plan, i) => {
-              const isRecommended = plan.tier === recommendedPlan;
-              return (
-                <div 
-                  key={i} 
-                  className={`border rounded-3xl p-6 flex flex-col justify-between transition-all duration-500 ${
-                    isRecommended 
-                      ? 'border-lime-500 bg-lime-500/5 ring-4 ring-lime-500/20 scale-[1.02] shadow-2xl z-20' 
-                      : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/90'
-                  }`}
-                >
-                  {isRecommended && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] tracking-[0.15em] bg-lime-500 text-zinc-950 px-4 py-1 rounded-full font-black shadow-lg whitespace-nowrap uppercase">
-                      RECOMMENDED FOR YOUR SCALE
-                    </div>
-                  )}
-
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      {plan.icon}
-                      <h3 className="text-lg font-bold leading-tight">{plan.tier}</h3>
-                    </div>
-                    
-                    {/* Setup Fee Framed As Free Bonus (Task 1.3) */}
-                    <div className="mb-4">
-                      <span className="inline-block px-2.5 py-1 rounded-md bg-lime-500/10 border border-lime-500/30 text-lime-600 dark:text-lime-400 text-[11px] font-extrabold">
-                        {plan.setupBadge}
-                      </span>
-                    </div>
-
-                    <div className="text-5xl font-black tracking-tight mb-6">
-                      {plan.price} <span className="font-normal text-lg text-zinc-500">{plan.period}</span>
-                    </div>
-
-                    <ul className="text-xs space-y-2.5 mb-6">
-                      {plan.features.map((f, idx) => {
-                        const isBonus = f.startsWith("🎁");
-                        return (
-                          <li key={idx} className={`flex gap-2 items-start ${isBonus ? 'text-lime-600 dark:text-lime-400 font-bold bg-lime-500/5 p-1.5 rounded' : 'text-zinc-700 dark:text-zinc-300'}`}>
-                            <span className="text-lime-500 font-bold">✓</span> 
-                            <span className="leading-snug">{f}</span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-
-                  <button 
-                    onClick={() => handleCheckout(plan.tier)}
-                    disabled={loading === plan.tier}
-                    className={`w-full py-3.5 text-center font-extrabold text-xs rounded-xl transition disabled:opacity-50 shadow-lg ${
-                      isRecommended 
-                        ? 'bg-lime-500 text-zinc-950 hover:bg-lime-400 shadow-lime-500/20' 
-                        : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white hover:bg-zinc-700'
-                    }`}
-                  >
-                    {loading === plan.tier ? (
-                      <span className="flex items-center justify-center gap-2">
-                        <Loader2 className="w-4 h-4 animate-spin" /> Processing...
-                      </span>
-                    ) : plan.cta}
-                  </button>
+          {/* Calculator Section */}
+          <section className="mx-auto mb-16 max-w-5xl rounded-3xl border border-lime-500/20 bg-white p-8 shadow-xl dark:bg-zinc-900 md:p-10" aria-labelledby="opportunity-calculator">
+            <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+              <div className="space-y-7">
+                <div>
+                  <h2 id="opportunity-calculator" className="flex items-center gap-3 text-2xl font-bold">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-lime-500/10">
+                      <Calculator className="h-5 w-5 text-lime-600 dark:text-lime-400" />
+                    </span>
+                    Estimate the Workflow Opportunity
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    Replace the defaults with numbers from your operation. This is a planning tool, not a revenue promise.
+                  </p>
                 </div>
-              );
-            })}
-          </div>
 
-          {/* 90-DAY DREAM OUTCOME GUARANTEE (Task 1.5) */}
-          <div className="mt-16 bg-gradient-to-r from-zinc-900 via-zinc-950 to-black border-2 border-lime-500/50 rounded-3xl p-8 text-center max-w-3xl mx-auto shadow-2xl relative overflow-hidden">
-            <ShieldCheck className="w-12 h-12 text-lime-400 mx-auto mb-3" />
-            <h3 className="text-2xl font-extrabold text-white mb-2">
-              90-Day Dream Outcome Guarantee
-            </h3>
-            <p className="text-zinc-300 text-sm md:text-base leading-relaxed mb-4">
-              If our AI systems don't recover at least <strong>10 hours/week</strong> (or $1,000/mo in lost revenue) for your business in the first 90 days, you don't pay. We assume 100% of the operational risk.
-            </p>
-            <p className="text-xs text-zinc-400 font-mono">
-              All plans include discovery call, staff onboarding, and ongoing 24/7 system monitoring.
-            </p>
-          </div>
+                <SliderField label="Repeated inquiries or missed calls per week" value={inquiries} min={0} max={60} suffix=" per week" onChange={setInquiries} />
+                <SliderField label="Average value of related transaction or job" value={avgValue} min={15} max={500} suffix="" prefix="$" onChange={setAvgValue} />
+                <SliderField label="Repeated manual hours per week" value={manualHours} min={0} max={60} suffix=" hrs/week" onChange={setManualHours} />
+                <SliderField label="Estimated percentage suitable for workflow assistance" value={automationFit} min={5} max={70} suffix="%" onChange={setAutomationFit} />
+              </div>
 
+              <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-black p-8 text-center text-white">
+                <div className="absolute -right-14 -top-14 h-40 w-40 rounded-full bg-lime-500/10 blur-3xl" />
+                <div className="relative">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-lime-400">Illustrative monthly opportunity</p>
+                  <p className="mt-3 text-5xl font-black">${illustrativeOpportunity.toLocaleString()}</p>
+                  <p className="mt-2 text-sm text-zinc-400">~{illustrativeHours} hours identified per month</p>
+                  <div className="my-7 h-px bg-zinc-800" />
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-lime-400">Suggested starting point</p>
+                  <p className="mt-2 text-2xl font-black">{recommendedPlan}</p>
+                  <p className="mt-3 text-xs leading-relaxed text-zinc-400">
+                    This is a planning estimate, not a revenue prediction. Actual results depend on volume, client behavior, workflow design, existing tools, access, approval rules, and implementation quality.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Package Cards */}
+          <section className="mb-12" aria-labelledby="agent-packages">
+            <div className="mb-8 text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-lime-600 dark:text-lime-400">Choose the workflow scope</p>
+              <h2 id="agent-packages" className="mt-3 text-3xl font-black md:text-4xl">Four Agent Packages. Clear Operating Boundaries.</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-zinc-600 dark:text-zinc-400">
+                Every package starts with a fit review. We connect approved tools, define escalation rules, and test the workflow before it handles live work.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {plans.map((plan) => {
+                const isRecommended = plan.recommended;
+                return (
+                  <article key={plan.tier} className={`relative flex flex-col rounded-3xl border p-7 transition-all ${isRecommended ? "border-lime-500 bg-lime-500/5 shadow-2xl ring-2 ring-lime-500/20" : "border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900"}`}>
+                    {isRecommended && (
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-lime-500 px-4 py-1 text-[10px] font-black uppercase tracking-[0.15em] text-zinc-950">
+                        Recommended
+                      </span>
+                    )}
+                    <div>
+                      <div className="mb-3 flex items-center gap-3">
+                        {plan.icon}
+                        <h3 className="text-lg font-black">{plan.tier}</h3>
+                      </div>
+                      <p className="mb-2 text-xs font-semibold text-lime-600 dark:text-lime-400 italic">{plan.tagline}</p>
+                      <p className="mb-4 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">Best for: {plan.bestFor}</p>
+                      <div className="my-4 text-4xl font-black tracking-tight">
+                        {plan.price} <span className="text-base font-normal text-zinc-500">{plan.period}</span>
+                      </div>
+                      <span className="inline-block rounded-md border border-lime-500/30 bg-lime-500/10 px-3 py-1 text-[11px] font-extrabold text-lime-700 dark:text-lime-300">{plan.implementation}</span>
+                      {plan.scopeNote && (
+                        <p className="mt-3 text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">{plan.scopeNote}</p>
+                      )}
+                      <ul className="mt-5 space-y-2 text-sm">
+                        {plan.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2 text-zinc-700 dark:text-zinc-300">
+                            <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-lime-500" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => handleCheckout(plan.tier)}
+                      disabled={loading === plan.tier}
+                      className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3.5 text-center text-sm font-extrabold transition disabled:opacity-50 ${isRecommended ? "bg-lime-500 text-zinc-950 hover:bg-lime-400" : "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"}`}
+                    >
+                      {loading === plan.tier ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+                      {loading === plan.tier ? "Preparing..." : plan.cta}
+                    </button>
+                  </article>
+                );
+              })}
+            </div>
+
+            <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
+              Monthly agent fees are separate from implementation fees. Telephony, messaging, email, model/API usage, CRM/POS subscriptions, and other third-party software fees may be billed separately when applicable.
+            </p>
+          </section>
+
+          {/* Workflow Highlight Cards */}
+          <section className="mb-16 grid gap-6 md:grid-cols-3" aria-label="Agent workflow highlights">
+            <WorkflowCard icon={<MessageSquareText />} title="Answer and route" text="The agent handles approved FAQs, captures the inquiry, and sends the right booking or contact path." />
+            <WorkflowCard icon={<RefreshCw />} title="Bring clients back" text="Use service-specific return windows to flag overdue clients and prepare owner-approved follow-up." />
+            <WorkflowCard icon={<ShieldCheck />} title="Keep control" text="Sensitive actions stay behind permissions, escalation rules, and human review. The agent assists; you remain responsible." />
+          </section>
+
+          {/* What We Do Not Promise */}
+          <section className="mx-auto max-w-4xl rounded-3xl border border-zinc-800 bg-zinc-900 p-8 text-center text-white md:p-10">
+            <ShieldCheck className="mx-auto mb-4 h-11 w-11 text-lime-400" />
+            <h2 className="text-3xl font-black">What We Do Not Promise</h2>
+            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-zinc-300">
+              AI cannot guarantee revenue, bookings, retention, or profitability. It does not replace your accountant, attorney, bookkeeper, financial adviser, manager, or professional judgment. We define the workflow, connect approved systems, test the guardrails, and show you what the agent is doing.
+            </p>
+            <p className="mt-5 text-sm text-zinc-400">
+              We configure and test the agreed workflow against documented acceptance criteria before launch. If the workflow does not meet the approved scope, we correct the implementation before expanding the engagement.
+            </p>
+            <p className="mt-4 text-sm text-zinc-500">
+              Telephony, messaging, email, model/API usage, CRM/POS subscriptions, and other third-party software fees may be billed separately when applicable.
+            </p>
+            <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-lime-500 px-6 py-3.5 font-extrabold text-zinc-950 transition hover:bg-lime-400">
+              Book a Fit Call <ArrowRight className="h-4 w-4" />
+            </Link>
+          </section>
         </div>
       </main>
       <Footer />
     </>
+  );
+}
+
+function SliderField({ label, value, min, max, suffix, prefix = "", onChange }) {
+  return (
+    <div>
+      <div className="mb-3 flex items-center justify-between gap-4">
+        <label className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">{label}</label>
+        <span className="whitespace-nowrap text-lg font-extrabold text-lime-600 dark:text-lime-400">{prefix}{value.toLocaleString()}{suffix}</span>
+      </div>
+      <input
+        aria-label={label}
+        type="range"
+        min={min}
+        max={max}
+        value={value}
+        onChange={(event) => onChange(Number(event.target.value))}
+        className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-zinc-200 accent-lime-500 dark:bg-zinc-800"
+      />
+    </div>
+  );
+}
+
+function WorkflowCard({ icon, title, text }) {
+  return (
+    <article className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-lime-500/10 text-lime-600 dark:text-lime-400">{React.cloneElement(icon, { className: "h-5 w-5" })}</div>
+      <h3 className="mb-2 text-lg font-black">{title}</h3>
+      <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{text}</p>
+    </article>
   );
 }

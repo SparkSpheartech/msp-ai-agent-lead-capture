@@ -21,11 +21,11 @@ const steps = [
     name: 'Discovery',
     title: 'Discovery & Consultation',
     icon: IconSearch,
-    description: 'We start by understanding your unique business needs, call workflows, and operational pain points.',
+    description: 'We start by understanding your unique business needs, repetitive workflows, and operational pain points.',
     details: [
       'Initial 15-minute Fit Call',
-      'Business goals and revenue bottlenecks assessment',
-      'Current software & CRM infrastructure review',
+      'Business goals and operational bottlenecks assessment',
+      'Current software & system infrastructure review',
       'Operational friction point identification'
     ],
     ctaText: 'Book a Fit Call',
@@ -39,12 +39,12 @@ const steps = [
     icon: IconClipboardCheck,
     description: 'Create a customized technology roadmap and automation architecture aligned with your objectives.',
     details: [
-      'Master Business Audit & gap analysis',
+      'Workflow Audit & gap analysis',
       'Custom AI agent & integration architecture recommendations',
-      'Cost-benefit and ROI timeline creation',
+      'Cost-benefit and workflow opportunity evaluation',
       'Implementation scope and milestones'
     ],
-    ctaText: 'Explore Master Business Audit',
+    ctaText: 'Explore Workflow Audit',
     ctaLink: '/services/it-audits'
   },
   {
@@ -53,11 +53,11 @@ const steps = [
     name: 'Onboarding',
     title: 'Onboarding & Setup',
     icon: IconRocket,
-    description: 'Seamless integration of our services into your team operations with zero downtime.',
+    description: 'Seamless integration of our services into your team operations with clear communication.',
     details: [
       'Dedicated engineering team introduction',
-      'API keys, CRM, and telematics access setup',
-      'Direct Slack/Teams communication channels established',
+      'API keys, CRM, and system access setup',
+      'Direct communication channels established',
       'Baseline operational performance benchmarking'
     ],
     ctaText: 'Start Client Onboarding',
@@ -71,8 +71,8 @@ const steps = [
     icon: IconSettings,
     description: 'Execute the custom software bridges and AI agent workflows with minimal disruption to your business.',
     details: [
-      'Phased AI dispatcher & workflow rollout approach',
-      'Staff and dispatcher training sessions',
+      'Phased agent & workflow rollout approach',
+      'Staff and operator training sessions',
       'End-to-end quality assurance & edge-case testing',
       'Complete system documentation & handoff'
     ],
@@ -87,10 +87,10 @@ const steps = [
     icon: IconTrendingUp,
     description: 'Continuous improvement and fine-tuning of your operational AI agents for peak throughput.',
     details: [
-      'Real-time prompt and accuracy monitoring',
+      'Agent performance monitoring within published scope',
       'Regular agent model & API updates',
       'Workflow efficiency improvements',
-      'Weekly ROI & time-saved analytics reporting'
+      'Operational analytics reporting'
     ],
     ctaText: 'View Web Architecture',
     ctaLink: '/services/web-design'
@@ -99,14 +99,14 @@ const steps = [
     number: '06',
     value: 'support',
     name: 'Support',
-    title: 'Ongoing Support & SLA',
+    title: 'Ongoing Support & Scope',
     icon: IconHeadphones,
-    description: 'Proactive monitoring and 24/7 technical support to keep your systems running smoothly.',
+    description: 'Ongoing technical support within agreed boundaries to keep your agent workflows running smoothly.',
     details: [
-      '24/7 proactive AI agent monitoring',
-      'Rapid SLA response to API or webhook issues',
-      'Bi-weekly operational check-ins',
-      'Strategic quarterly roadmap reviews'
+      'Workflow monitoring within published support hours',
+      'Rapid response to API or webhook issues within SLA boundaries',
+      'Periodic operational check-ins',
+      'Strategic roadmap reviews'
     ],
     ctaText: 'Explore Support Plans',
     ctaLink: '/support'

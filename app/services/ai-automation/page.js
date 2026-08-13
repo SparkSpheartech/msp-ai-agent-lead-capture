@@ -1,14 +1,14 @@
 import AIAutomationClient from "./AIAutomationClient";
 
 export const metadata = {
-  title: "AI & Workflow Automation Services",
-  description: "Eliminate manual work with intelligent workflow automation, AI chatbots, and data processing.",
+  title: "AI Agents & Agentic Automation for Business Workflows | SPARKSPHEAR",
+  description: "SPARKSPHEAR builds controlled AI agents, chatbots, integrations, and workflow automation for repetitive business operations.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/services/ai-automation",
   },
   openGraph: {
-    title: "AI & Workflow Automation Services",
-    description: "Custom AI chatbots, workflow automation, and intelligent data processing.",
+    title: "AI Agents & Agentic Automation for Business Workflows | SPARKSPHEAR",
+    description: "SPARKSPHEAR builds controlled AI agents, chatbots, integrations, and workflow automation for repetitive business operations.",
     url: "https://sparkspheartechsolutions.com/services/ai-automation",
     siteName: "SPARKSPHEAR",
     images: [
@@ -16,7 +16,7 @@ export const metadata = {
         url: "https://sparkspheartechsolutions.com/logo.png",
         width: 1200,
         height: 630,
-        alt: "AI & Automation Services",
+        alt: "AI Agents & Agentic Automation",
       },
     ],
   },

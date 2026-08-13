@@ -1,14 +1,14 @@
 import ToolsClient from "./ToolsClient";
 
 export const metadata = {
-  title: "ROI & Savings Calculator",
-  description: "Calculate how much your business can save with AI automation. See estimated monthly savings and get a personalized plan recommendation.",
+  title: "Workflow Opportunity Calculator | SPARKSPHEAR",
+  description: "Estimate the workflow opportunity, manual hours, and process improvements suitable for AI agent automation.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/tools",
   },
   openGraph: {
-    title: "ROI & Savings Calculator",
-    description: "Calculate how much your business can save with AI automation.",
+    title: "Workflow Opportunity Calculator | SPARKSPHEAR",
+    description: "Estimate the workflow opportunity, manual hours, and process improvements suitable for AI agent automation.",
     url: "https://sparkspheartechsolutions.com/tools",
     siteName: "SPARKSPHEAR",
     images: [
@@ -16,7 +16,7 @@ export const metadata = {
         url: "https://sparkspheartechsolutions.com/logo.png",
         width: 1200,
         height: 630,
-        alt: "SPARKSPHEAR Savings Calculator",
+        alt: "SPARKSPHEAR Workflow Opportunity Calculator",
       },
     ],
   },

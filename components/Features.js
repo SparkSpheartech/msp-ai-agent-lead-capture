@@ -1,47 +1,51 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import { PhoneCall, RefreshCw, Bot, ShieldCheck, ArrowRight, FileText, BarChart3 } from 'lucide-react';
 
-const Features = () => {
- return (
- <section id="features" className="py-24 bg-white dark:bg-zinc-950 relative overflow-hidden">
- {/* Background Blob Effects */}
- <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
- <div className="absolute bottom-[20%] left-[10%] w-96 h-96 bg-lime-900/10 rounded-full blur-3xl mix-blend-screen"></div>
- </div>
+const agentExamples = [
+  { icon: <PhoneCall />, title: 'Missed-call & inquiry handling', text: 'Respond to missed calls and inquiries with approved next steps. Route bookings, capture leads, and escalate exceptions.' },
+  { icon: <Bot />, title: 'Chatbots & customer intake', text: 'Handle approved FAQs, collect inquiry details, and route customers to the right workflow or contact path.' },
+  { icon: <RefreshCw />, title: 'Follow-up & retention', text: 'Flag overdue clients using service-specific return windows. Prepare owner-approved rebooking and re-engagement messages.' },
+  { icon: <FileText />, title: 'Document & data processing', text: 'Extract, validate, and route data from forms, inspections, tickets, and intake documents.' },
+  { icon: <BarChart3 />, title: 'Reporting & exception management', text: 'Generate operations summaries, flag exceptions, and surface the work that needs human attention.' },
+  { icon: <ShieldCheck />, title: 'Human approval controls', text: 'Sensitive actions stay behind permissions, escalation rules, and human review points.' },
+];
 
- <div className="container mx-auto px-4 relative z-10">
- <div className="text-center max-w-3xl mx-auto mb-16">
- <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-3 block">WHY CHOOSE US</span>
- <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6">Stop losing revenue to missed calls. Get 15-20 hrs/week back.</h2>
- </div>
+export default function Features() {
+  return (
+    <section className="py-24 bg-slate-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
+      <div className="container max-w-6xl mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-lime-600 dark:text-lime-400 font-mono text-xs font-bold tracking-widest uppercase mb-3 block">
+            CROSS-VERTICAL AGENT EXAMPLES
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6">
+            Agents Built for the Work Behind the Business
+          </h2>
+          <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">
+            Barbershops, HVAC teams, waste operators, auto-repair shops, childcare providers, and restaurants can start with one workflow and expand only when the system proves useful.
+          </p>
+        </div>
 
- <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
- <div className="bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-white/10 p-8 rounded-2xl hover:border-lime-500 dark:hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
- <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Built to Scale</h3>
- <p className="text-gray-600 dark:text-gray-400 leading-relaxed">Workflows designed to handle expanding call volume, customer intake, and daily transactions without adding headcount.</p>
- </div>
- <div className="bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-white/10 p-8 rounded-2xl hover:border-lime-500 dark:hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
- <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Security & Stability</h3>
- <p className="text-gray-600 dark:text-gray-400 leading-relaxed">Your client records, billing data, and internal credentials remain protected with strict security standards.</p>
- </div>
- <div className="bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-white/10 p-8 rounded-2xl hover:border-lime-500 dark:hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
- <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Connected Tools</h3>
- <p className="text-gray-600 dark:text-gray-400 leading-relaxed">We connect your CRM, dispatch software, spreadsheets, and phone lines so data updates everywhere automatically.</p>
- </div>
- </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {agentExamples.map((example, index) => (
+            <div key={index} className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 hover:border-lime-500/30 transition-all">
+              <div className="w-11 h-11 bg-lime-500/10 rounded-xl flex items-center justify-center text-lime-600 dark:text-lime-400 mb-4">
+                {React.cloneElement(example.icon, { className: 'w-5 h-5' })}
+              </div>
+              <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">{example.title}</h3>
+              <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{example.text}</p>
+            </div>
+          ))}
+        </div>
 
- <div className="text-center mt-12">
- <Link
- href="/contact"
- className="inline-flex items-center justify-center px-8 py-4 bg-lime-500 text-zinc-950 font-bold hover:bg-lime-400 transition-all duration-300 rounded-lg shadow-lg shadow-lime-500/20"
- >
- Get Started Today
- </Link>
- </div>
- </div>
- </section>
- );
-};
-
-export default Features;
+        <div className="text-center">
+          <Link href="/services/ai-automation" className="inline-flex items-center gap-2 text-lime-600 dark:text-lime-400 font-bold hover:underline">
+            Explore All Agent Capabilities <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -252,7 +252,7 @@ export default function ClientOnboardingForm() {
  SPARKSPHEAR Client Onboarding
  </h1>
  <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
- This form creates an initial vision outlook so that SPARKSPHEAR can tailor its solutions directly to your dream outcome.
+ This form creates an initial vision outlook so that SPARKSPHEAR can tailor its solutions directly to your operational goals.
  </p>
  </div>
 
