@@ -31,9 +31,8 @@ const HeroV2 = () => {
  
  {/* Adjusted subline with AI focus */}
  <p className="text-zinc-600 dark:text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
- Empowering small businesses nationwide. We deliver personalized AI automation, 
- optimized IT services, digital marketing, and creative solutions that eliminate 10-20 hours of 
- manual work per week.
+ Empowering small businesses nationwide. We deliver controlled AI automation,
+ optimized digital systems, and workflow solutions built for real business work.
  </p>
 
  <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10">
@@ -53,8 +52,8 @@ const HeroV2 = () => {
  {/* Stats Grid - Efficiency focused */}
  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto">
  <div className="stat-item text-center p-6 rounded-lg bg-white dark:bg-zinc-900/50 backdrop-blur-sm border border-primary/20">
- <h3 className="text-4xl font-bold text-primary mb-2">10-20hrs</h3>
- <p className="text-zinc-600 dark:text-gray-400">Saved per employee weekly</p>
+ <h3 className="text-4xl font-bold text-primary mb-2">Audit & Scale</h3>
+ <p className="text-zinc-600 dark:text-gray-400">Workflow automation for business</p>
  </div>
  <div className="stat-item text-center p-6 rounded-lg bg-white dark:bg-zinc-900/50 backdrop-blur-sm border border-primary/20">
  <h3 className="text-4xl font-bold text-primary mb-2">85%</h3>

@@ -48,8 +48,8 @@ const Hero = () => {
  {/* Stats Grid */}
  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto">
  <div className="stat-item text-center p-6 rounded-lg bg-white dark:bg-zinc-900/50 backdrop-blur-sm border border-primary/20">
- <h3 className="text-4xl font-bold text-primary mb-2">24/7</h3>
- <p className="text-zinc-600 dark:text-gray-400">Support Available</p>
+ <h3 className="text-4xl font-bold text-primary mb-2">Workflow</h3>
+ <p className="text-zinc-600 dark:text-gray-400">Automation First</p>
  </div>
  <div className="stat-item text-center p-6 rounded-lg bg-white dark:bg-zinc-900/50 backdrop-blur-sm border border-primary/20">
  <h3 className="text-4xl font-bold text-primary mb-2">100%</h3>

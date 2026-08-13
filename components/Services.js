@@ -8,7 +8,7 @@ const Services = () => {
  {
  icon: <Zap className="w-12 h-12" />,
  title: "AI Automation",
- description: "Eliminate 10-20 hours of manual work weekly. We build intelligent workflows that scale your business without adding headcount.",
+ description: "Audit the system and automate repetitive steps. We build controlled AI workflows that scale operations without adding overhead.",
  link: "/services/ai-automation",
  highlight: "Most Popular"
  },

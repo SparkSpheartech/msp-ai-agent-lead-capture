@@ -343,7 +343,7 @@ export default function WebDesign() {
  <section className="py-20 border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-zinc-900/30">
  <div className="container max-w-4xl text-center">
  <h2 className="text-zinc-900 dark:text-white text-3xl md:text-4xl font-bold mb-4">Ready to get started with web design?</h2>
- <p className="text-zinc-600 dark:text-gray-400 text-lg mb-8">Book a free discovery call or pick a plan that fits. Most clients save 10-40+ hours per week.</p>
+ <p className="text-zinc-600 dark:text-gray-400 text-lg mb-8">Book a Fit Call to review your digital system and website requirements.</p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Link href="/pricing" className="inline-flex items-center justify-center px-8 py-4 bg-green-600 hover:bg-green-500 shadow-[0_0_20px_rgba(34,197,94,0.3)] text-zinc-900 dark:text-white font-bold rounded-lg transition-all">See Plans &amp; Pricing</Link>
  <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-zinc-100/80 dark:bg-white/5 text-zinc-900 dark:text-white font-bold border border-zinc-200 dark:border-white/10 hover:bg-zinc-200 dark:bg-white/10 hover:border-zinc-300 dark:border-white/20 transition-all rounded-lg">Book a Free Call</Link>

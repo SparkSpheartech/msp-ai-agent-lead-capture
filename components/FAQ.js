@@ -22,35 +22,35 @@ const FAQ = () => {
  </div>
  </details>
 
- <details className="faq-item group">
- <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 bg-zinc-100/80 dark:bg-white/5 rounded-xl hover:bg-zinc-200 dark:bg-white/10 transition-colors border border-zinc-200 dark:border-white/5 hover:border-lime-500/30">
- <span className="text-zinc-900 dark:text-white text-lg">What if it doesn't work for my business?</span>
- <span className="text-lime-600 dark:text-lime-500 text-2xl font-bold group-open:rotate-45 transition-transform">+</span>
- </summary>
- <div className="faq-content px-6 pb-6 pt-2 text-zinc-600 dark:text-gray-400 bg-zinc-100/80 dark:bg-white/5 border-x border-b border-zinc-200 dark:border-white/5 rounded-b-xl -mt-2">
- <p>You are protected by our <strong>90-Day Dream Outcome Guarantee</strong>: If we don't recover at least 10 hours/week (or $1,000/mo in lost revenue) in your first 90 days, you don't pay. We take 100% of the operational risk.</p>
- </div>
- </details>
+  <details className="faq-item group">
+  <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 bg-zinc-100/80 dark:bg-white/5 rounded-xl hover:bg-zinc-200 dark:bg-white/10 transition-colors border border-zinc-200 dark:border-white/5 hover:border-lime-500/30">
+  <span className="text-zinc-900 dark:text-white text-lg">How do you evaluate if an agent is right for my business?</span>
+  <span className="text-lime-600 dark:text-lime-500 text-2xl font-bold group-open:rotate-45 transition-transform">+</span>
+  </summary>
+  <div className="faq-content px-6 pb-6 pt-2 text-zinc-600 dark:text-gray-400 bg-zinc-100/80 dark:bg-white/5 border-x border-b border-zinc-200 dark:border-white/5 rounded-b-xl -mt-2">
+  <p>We start with a <strong>Workflow Audit</strong> ($297) to map your operational workflow, review existing software tools, and identify specific automation opportunities before any agent is built.</p>
+  </div>
+  </details>
 
- <details className="faq-item group">
- <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 bg-zinc-100/80 dark:bg-white/5 rounded-xl hover:bg-zinc-200 dark:bg-white/10 transition-colors border border-zinc-200 dark:border-white/5 hover:border-lime-500/30">
- <span className="text-zinc-900 dark:text-white text-lg">Do you offer 24/7 support?</span>
- <span className="text-lime-600 dark:text-lime-500 text-2xl font-bold group-open:rotate-45 transition-transform">+</span>
- </summary>
- <div className="faq-content px-6 pb-6 pt-2 text-zinc-600 dark:text-gray-400 bg-zinc-100/80 dark:bg-white/5 border-x border-b border-zinc-200 dark:border-white/5 rounded-b-xl -mt-2">
- <p>Yes, our Managed IT packages include round-the-clock monitoring and emergency support to ensure your business never stops running.</p>
- </div>
- </details>
+  <details className="faq-item group">
+  <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 bg-zinc-100/80 dark:bg-white/5 rounded-xl hover:bg-zinc-200 dark:bg-white/10 transition-colors border border-zinc-200 dark:border-white/5 hover:border-lime-500/30">
+  <span className="text-zinc-900 dark:text-white text-lg">What support hours do you provide?</span>
+  <span className="text-lime-600 dark:text-lime-500 text-2xl font-bold group-open:rotate-45 transition-transform">+</span>
+  </summary>
+  <div className="faq-content px-6 pb-6 pt-2 text-zinc-600 dark:text-gray-400 bg-zinc-100/80 dark:bg-white/5 border-x border-b border-zinc-200 dark:border-white/5 rounded-b-xl -mt-2">
+  <p>We provide ongoing technical support and agent workflow monitoring within agreed SLA boundaries and published business hours (Mon-Fri 8am-6pm EST).</p>
+  </div>
+  </details>
 
- <details className="faq-item group">
- <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 bg-zinc-100/80 dark:bg-white/5 rounded-xl hover:bg-zinc-200 dark:bg-white/10 transition-colors border border-zinc-200 dark:border-white/5 hover:border-lime-500/30">
- <span className="text-zinc-900 dark:text-white text-lg">How does your pricing work?</span>
- <span className="text-lime-600 dark:text-lime-500 text-2xl font-bold group-open:rotate-45 transition-transform">+</span>
- </summary>
- <div className="faq-content px-6 pb-6 pt-2 text-zinc-600 dark:text-gray-400 bg-zinc-100/80 dark:bg-white/5 border-x border-b border-zinc-200 dark:border-white/5 rounded-b-xl -mt-2">
- <p>We offer flexible flat-rate monthly packages for Managed Services, so you have a predictable budget. Project work (like web design) is quoted upfront.</p>
- </div>
- </details>
+  <details className="faq-item group">
+  <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 bg-zinc-100/80 dark:bg-white/5 rounded-xl hover:bg-zinc-200 dark:bg-white/10 transition-colors border border-zinc-200 dark:border-white/5 hover:border-lime-500/30">
+  <span className="text-zinc-900 dark:text-white text-lg">How does your pricing work?</span>
+  <span className="text-lime-600 dark:text-lime-500 text-2xl font-bold group-open:rotate-45 transition-transform">+</span>
+  </summary>
+  <div className="faq-content px-6 pb-6 pt-2 text-zinc-600 dark:text-gray-400 bg-zinc-100/80 dark:bg-white/5 border-x border-b border-zinc-200 dark:border-white/5 rounded-b-xl -mt-2">
+  <p>We offer four distinct monthly plans (SIGNAL START $297/mo, FLOW CONTROL $697/mo, SYSTEM LIFT $1,497/mo, and SCALE CONTROL $2,997/mo+) with explicit one-time implementation fees separate from monthly management.</p>
+  </div>
+  </details>
 
  <details className="faq-item group">
  <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 bg-zinc-100/80 dark:bg-white/5 rounded-xl hover:bg-zinc-200 dark:bg-white/10 transition-colors border border-zinc-200 dark:border-white/5 hover:border-lime-500/30">

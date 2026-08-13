@@ -1,73 +1,12 @@
 'use client';
 
-import { useRef, useMemo, useState, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Line } from '@react-three/drei';
+import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import * as THREE from 'three';
 import Link from 'next/link';
 import { ArrowRight, Activity } from 'lucide-react';
 
-// Generate points on a sphere surface using Fibonacci distribution
-function fibonacciSphere(samples = 100, radius = 2.5) {
-  const points = [];
-  const phi = Math.PI * (3 - Math.sqrt(5));
-  for (let i = 0; i < samples; i++) {
-    const y = 1 - (i / (samples - 1)) * 2;
-    const r = Math.sqrt(1 - y * y);
-    const theta = phi * i;
-    points.push(new THREE.Vector3(Math.cos(theta) * r * radius, y * radius, Math.sin(theta) * r * radius));
-  }
-  return points;
-}
-
-// Generate connections between nearby points
-function generateConnections(points, maxDistance = 1.2) {
-  const lines = [];
-  for (let i = 0; i < points.length; i++) {
-    for (let j = i + 1; j < points.length; j++) {
-      if (points[i].distanceTo(points[j]) < maxDistance) {
-        lines.push([points[i], points[j]]);
-      }
-    }
-  }
-  return lines;
-}
-
-function NetworkGlobe() {
-  const groupRef = useRef(null);
-  const nodePoints = useMemo(() => fibonacciSphere(80, 2.5), []);
-  const connections = useMemo(() => generateConnections(nodePoints, 1.1), [nodePoints]);
-
-  useFrame(({ clock }) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y = clock.getElapsedTime() * 0.08;
-    }
-  });
-
-  return (
-    <group ref={groupRef}>
-      {/* Core wireframe sphere */}
-      <mesh>
-        <icosahedronGeometry args={[2.4, 2]} />
-        <meshBasicMaterial color="#14532d" wireframe transparent opacity={0.25} />
-      </mesh>
-
-      {/* Node points */}
-      {nodePoints.map((point, i) => (
-        <mesh key={i} position={point}>
-          <sphereGeometry args={[0.05, 16, 16]} />
-          <meshBasicMaterial color="#84cc16" />
-        </mesh>
-      ))}
-
-      {/* Connection lines */}
-      {connections.map((line, i) => (
-        <Line key={i} points={line} color="#4ade80" lineWidth={0.6} transparent opacity={0.5} />
-      ))}
-    </group>
-  );
-}
+const GlobeCanvas = dynamic(() => import('./GlobeCanvas'), { ssr: false });
 
 export default function Hero3D() {
   const [is3DLoaded, setIs3DLoaded] = useState(false);
@@ -75,12 +14,11 @@ export default function Hero3D() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIs3DLoaded(true);
-    }, 800);
+    }, 400);
 
     return () => clearTimeout(timer);
   }, []);
 
-  // Title: word-by-word cascade — each word rises with blur & perspective transform
   const titleWords = ["AI", "Agents", "for", "the", "Work", "Your", "Business", "Repeats", "Every", "Day."];
   
   const titleContainerVariants = {
@@ -102,7 +40,6 @@ export default function Hero3D() {
     },
   };
 
-  // Stats row: fades in after title settles
   const statsVariants = {
     hidden: { opacity: 0, y: 16, filter: 'blur(4px)' },
     show: {
@@ -113,7 +50,6 @@ export default function Hero3D() {
     },
   };
 
-  // Right column container
   const rightContainerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -141,13 +77,7 @@ export default function Hero3D() {
       {/* 3D Globe Background Canvas */}
       {is3DLoaded ? (
         <div className="absolute inset-0 z-0 opacity-55">
-          <Canvas camera={{ position: [0, 0, 7], fov: 50 }}>
-            <ambientLight intensity={0.4} />
-            <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
-            <pointLight position={[-10, -10, -10]} intensity={0.6} color="#84cc16" />
-            <NetworkGlobe />
-            <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.15} />
-          </Canvas>
+          <GlobeCanvas />
         </div>
       ) : (
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-slate-100 dark:from-zinc-900 via-slate-50 dark:via-zinc-950 to-slate-200 dark:to-black" />
@@ -169,16 +99,16 @@ export default function Hero3D() {
           </span>
         </motion.div>
 
-        {/* Bottom Dual-Column Area (Hero35 Layout) */}
+        {/* Bottom Dual-Column Area */}
         <div className="flex flex-col items-end justify-between gap-12 pb-8 lg:flex-row">
 
-          {/* Left Column: Word-by-word cascade H1 + Stats */}
+          {/* Left Column: Word-by-word cascade H1 + Tagline */}
           <div className="flex w-full flex-col gap-10 lg:w-3/5" style={{ perspective: '800px' }}>
             <motion.h1
               variants={titleContainerVariants}
               initial="hidden"
               animate="show"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.08]"
+              className="text-4xl font-extrabold leading-[1.08] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl xl:text-8xl"
             >
               {titleWords.map((word, i) => (
                 <motion.span
@@ -206,12 +136,12 @@ export default function Hero3D() {
             </motion.div>
           </div>
 
-          {/* Right Column: Copy + Dual CTAs */}
+          {/* Right Column: Narrative + Dual Action CTAs */}
           <motion.div
             variants={rightContainerVariants}
             initial="hidden"
             animate="show"
-            className="flex w-full flex-col items-start gap-8 lg:w-[460px] lg:items-start"
+            className="flex w-full flex-col items-start gap-8 lg:w-2/5"
           >
             <motion.p
               variants={rightItemVariants}

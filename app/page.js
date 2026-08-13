@@ -1,11 +1,5 @@
-"use client";
-import dynamic from "next/dynamic";
+import Hero3D from "@/components/Hero3D";
 import Navbar from "@/components/Navbar";
-
-// Dynamically import Hero3D with SSR disabled (Canvas requires browser WebGL context)
-const Hero3D = dynamic(() => import("@/components/Hero3D"), {
-  ssr: false,
-});
 import WhatWeDo from "@/components/WhatWeDo";
 import Features from "@/components/Features";
 import Process from "@/components/Process";
@@ -13,6 +7,28 @@ import CoreValues from "@/components/CoreValues";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+
+export const metadata = {
+  title: "AI Agents for Repetitive Business Workflows | SPARKSPHEAR",
+  description: "SPARKSPHEAR builds controlled AI agents, chatbots, integrations, and workflow automation for repetitive business operations.",
+  alternates: {
+    canonical: "https://sparkspheartechsolutions.com",
+  },
+  openGraph: {
+    title: "AI Agents for Repetitive Business Workflows | SPARKSPHEAR",
+    description: "SPARKSPHEAR builds controlled AI agents, chatbots, integrations, and workflow automation for repetitive business operations.",
+    url: "https://sparkspheartechsolutions.com",
+    siteName: "SPARKSPHEAR",
+    images: [
+      {
+        url: "https://sparkspheartechsolutions.com/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "SPARKSPHEAR AI Agents",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (

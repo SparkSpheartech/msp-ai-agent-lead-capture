@@ -25,14 +25,14 @@ export const verticals = {
     name: "Barbershops & Grooming",
     slug: "barbershop",
     iconName: "Scissors",
-    tagline: "Walk-in queue kiosks, 24/7 chair booking, automated deposit holds, and chair rental payouts for barbershop owners.",
+    tagline: "Walk-in queue kiosks, online chair booking, automated deposit holds, and chair rental payouts for barbershop owners.",
     heroImage: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80",
   },
   salon: {
     name: "Salons & Day Spas",
     slug: "salon",
     iconName: "Scissors",
-    tagline: "24/7 online booking, deposit collection, automated SMS reminders, and chair rental software.",
+    tagline: "Online booking, deposit collection, automated SMS reminders, and chair rental software.",
     heroImage: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80",
   },
   restaurant: {
@@ -268,7 +268,7 @@ export const products = [
     tagline: "AI-powered website builder, free custom domain, business email, and lightning-fast web hosting for small business owners.",
     bestFor: "Small business owners needing a professional AI-generated website in minutes",
     badge: "Top Pick for Web",
-    pros: ["AI site creator & logo generator", "Free custom domain & business email", "Unmatched speed & 99.9% uptime SLA"],
+    pros: ["AI site creator & logo generator", "Free custom domain & business email", "Unmatched speed & high availability SLA"],
     cons: ["Advanced custom code requires developer access"],
     stackRecommendations: {
       solo: { rank: 1, note: "The single best solution for launching your small business website fast" },

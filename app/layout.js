@@ -29,8 +29,8 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   metadataBase: new URL('https://sparkspheartechsolutions.com'),
   title: {
-    default: "SPARKSPHEAR | AI Services & Business Automation",
-    template: "%s | SPARKSPHEAR"
+    default: "AI Agents for Repetitive Business Workflows | SPARKSPHEAR",
+    template: "%s"
   },
   description: "Transform your business with AI automation, custom AI solutions, workflows, and intelligent systems that drive real growth.",
   keywords: [
