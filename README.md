@@ -1,5 +1,68 @@
 # SparkSphear Tech Solutions
 
+> **AI-Powered MSP & Digital Agency — Your Vision, Structured to Scale.**
+
+---
+
+## 🧠 AI Agent Architecture
+
+```mermaid
+graph TB
+    subgraph WEB["🌐 Website Layer (Next.js)"]
+        W1[Public Site\nsparkspheartechsolutions.com]
+        W2[Service Pages\nIT, Cyber, Marketing, Web]
+        W3[Contact & Lead Gen\nForms + Chat]
+        W4[Client Portal\nLogin Area]
+    end
+
+    subgraph AGENTS["🤖 SparkSphear AI Agent Fleet"]
+        A1[Lead Capture Agent\nWebsite Form → n8n]
+        A2[Client Onboarding Agent\nAutomated Setup Workflow]
+        A3[Support Ticket Agent\nHelpdesk Automation]
+        A4[SEO & Marketing Agent\nContent Optimization]
+    end
+
+    subgraph BACKEND["⚙️ Backend Infrastructure"]
+        B1[n8n Workflow Engine]
+        B2[CRM / Client DB]
+        B3[Monitoring Stack]
+        B4[Deployment Pipeline]
+    end
+
+    W1 --> A1
+    W2 --> A1
+    W3 --> A1
+    A1 --> B1
+    B1 --> B2
+    A2 --> B1
+    A3 --> B3
+    A4 --> B1
+    W4 --> A2
+    W4 --> A3
+
+    style A1 fill:#4CAF50,stroke:#333,color:#fff
+    style A2 fill:#2196F3,stroke:#333,color:#fff
+    style A3 fill:#FF9800,stroke:#333,color:#fff
+    style A4 fill:#9C27B0,stroke:#333,color:#fff
+```
+
+## 🔄 Before vs After
+
+```mermaid
+graph LR
+    subgraph BEFORE["❌ Before"]
+        BM[Static MSP website\nManual lead handling\nNo agent automation]
+    end
+
+    subgraph AFTER["✅ After (AI Agent Fleet)"]
+        AM[AI-driven lead capture\nAutomated onboarding\n24/7 agent operations]
+    end
+
+    BM -->|SparkSphear AI Agent Fleet| AM
+```
+
+---
+
 **Your Vision, Structured to Scale.**
 
 SparkSphear Tech Solutions is a premier Managed Service Provider (MSP) and Digital Agency serving the area. We empower small to mid-sized businesses by bridging the gap between complex technology and real-world business growth.
