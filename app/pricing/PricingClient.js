@@ -184,6 +184,9 @@ export default function Pricing() {
               Audit the System. Scale the Business.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <a href="https://buy.stripe.com/5kQbJ25Jrb89c4Ba3D4AU0d" className="px-6 py-3 rounded-xl text-sm font-extrabold bg-zinc-900 text-white hover:bg-zinc-800 transition inline-flex items-center gap-2">
+                Start With a $297 Workflow Audit <ArrowRight className="h-4 w-4" />
+              </a>
               <Link href="/contact" className="px-6 py-3 rounded-xl text-sm font-extrabold bg-lime-500 text-zinc-950 hover:bg-lime-400 transition shadow-lg shadow-lime-500/20 inline-flex items-center gap-2">
                 Book a Fit Call <ArrowRight className="h-4 w-4" />
               </Link>

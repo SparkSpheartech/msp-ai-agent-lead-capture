@@ -5,12 +5,18 @@ const stripe = stripeKey ? new Stripe(stripeKey, { apiVersion: '2024-12-18' }) :
 
 const ALLOWED_PLANS = ['SIGNAL START', 'FLOW CONTROL', 'SYSTEM LIFT', 'SCALE CONTROL'];
 
+// Canonical links (verified live 2026-09-11). Flow: customer pays Workflow Audit $297 first,
+// then implementation one-time via these links, then monthly subscription starts after scope is agreed.
+// Entry link for every package = the implementation one-time payment.
 const PAYMENT_LINKS = {
-  'SIGNAL START': 'https://buy.stripe.com/5kQaEYdbTa459Wtb7H4AU05',
-  'FLOW CONTROL': 'https://buy.stripe.com/00w7sM1tbb894C94Jj4AU06',
-  'SYSTEM LIFT': 'https://buy.stripe.com/14A6oI5Jrfop1pXfnX4AU07',
-  'SCALE CONTROL': 'https://buy.stripe.com/7sYfZi8VDccdfgN5Nn4AU08',
+  'SIGNAL START': 'https://buy.stripe.com/00w7sMdbT3FHecJcbL4AU0e',
+  'FLOW CONTROL': 'https://buy.stripe.com/9B6fZiefX2BDecJa3D4AU0f',
+  'SYSTEM LIFT': 'https://buy.stripe.com/28E7sMb3L6RT6Khgs14AU0g',
+  'SCALE CONTROL': 'https://buy.stripe.com/cNi9AU0p74JLecJa3D4AU0h',
 };
+
+// Upfront entry point: the paid Workflow Audit.
+const WORKFLOW_AUDIT_LINK = 'https://buy.stripe.com/5kQbJ25Jrb89c4Ba3D4AU0d';
 
 const PRICE_IDS = {
   'SIGNAL START': process.env.STRIPE_PRICE_SIGNAL_START,
