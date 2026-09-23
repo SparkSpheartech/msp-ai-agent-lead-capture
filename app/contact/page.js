@@ -1,5 +1,9 @@
 import ContactClient from "./ContactClient";
 
+// useSearchParams in ContactClient opts the page out of static prerender;
+// force-dynamic keeps the H1/headings in the server-rendered HTML for SEO.
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Book a Fit Call for AI Agents | SPARKSPHEAR",
   description: "Book a 15-minute Fit Call to discuss your operational bottlenecks, review tool sprawl, and explore custom AI agent workflows.",
