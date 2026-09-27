@@ -5,13 +5,13 @@ import ContactClient from "./ContactClient";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Book a Fit Call for AI Agents | SPARKSPHEAR",
+  title: "Book a Fit Call — AI Agents & Workflow Automation",
   description: "Book a 15-minute Fit Call to discuss your operational bottlenecks, review tool sprawl, and explore custom AI agent workflows.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/contact",
   },
   openGraph: {
-    title: "Book a Fit Call for AI Agents | SPARKSPHEAR",
+    title: "Book a Fit Call — AI Agents & Workflow Automation | SPARKSPHEAR",
     description: "Book a 15-minute Fit Call to discuss your operational bottlenecks, review tool sprawl, and explore custom AI agent workflows.",
     url: "https://sparkspheartechsolutions.com/contact",
     siteName: "SPARKSPHEAR",

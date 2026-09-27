@@ -1,7 +1,7 @@
 import MarketsClient from "@/components/MarketsClient";
 
 export const metadata = {
-  title: "Markets & Workflow Opportunities | SPARKSPHEAR",
+  title: "Markets & Workflow Opportunities",
   description: "Explore market opportunities, industry briefs, and AI agent workflows across HVAC, waste management, childcare, barbershops, auto repair, and hospitality.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/markets",

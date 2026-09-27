@@ -1,7 +1,7 @@
 import ProjectsClient from "./ProjectsClient";
 
 export const metadata = {
-  title: "Selected Workflow & Agent Projects | SPARKSPHEAR",
+  title: "Selected Workflow & Agent Projects",
   description: "Public implementation case studies of automated call dispatchers, API data bridges, and custom web portals built for growing companies.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/projects",

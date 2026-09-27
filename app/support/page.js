@@ -1,7 +1,7 @@
 import SupportClient from "./SupportClient";
 
 export const metadata = {
-  title: "Client Support & Knowledge Base | SPARKSPHEAR",
+  title: "Client Support & Knowledge Base",
   description: "Find setup guides, software tutorials, submit a technical support ticket, or chat with our AI assistant.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/support",

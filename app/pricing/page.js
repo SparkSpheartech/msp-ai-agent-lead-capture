@@ -1,7 +1,7 @@
 import PricingClient from "./PricingClient";
 
 export const metadata = {
-  title: "AI Agent Pricing & Agentic Automation | SPARKSPHEAR",
+  title: "AI Agent Pricing & Agentic Automation",
   description: "Controlled AI agents, chatbots, and workflow automation for repetitive business operations across service and operations-heavy industries.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/pricing",

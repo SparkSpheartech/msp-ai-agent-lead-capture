@@ -1,7 +1,7 @@
 import ToolsClient from "./ToolsClient";
 
 export const metadata = {
-  title: "Workflow Opportunity Calculator | SPARKSPHEAR",
+  title: "Workflow Opportunity Calculator",
   description: "Estimate the workflow opportunity, manual hours, and process improvements suitable for AI agent automation.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/tools",
