@@ -164,7 +164,7 @@ export default function Pricing() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-slate-50 pb-20 pt-24 text-zinc-900 dark:bg-zinc-950 dark:text-white">
+      <main id="main-content" role="main" className="min-h-screen bg-slate-50 pb-20 pt-24 text-zinc-900 dark:bg-zinc-950 dark:text-white">
         <div className="container mx-auto max-w-6xl px-6 pt-6">
 
           <header className="mx-auto mb-14 max-w-3xl text-center">

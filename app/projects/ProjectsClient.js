@@ -202,7 +202,7 @@ export default function ProjectsClient() {
       </header>
 
       {/* Projects Grid with Suspense */}
-      <main className="max-w-7xl mx-auto px-6 py-16 w-full flex-grow">
+      <main id="main-content" role="main" className="max-w-7xl mx-auto px-6 py-16 w-full flex-grow">
         <Suspense fallback={<div className="text-center py-20 text-zinc-500 font-mono">Loading case studies...</div>}>
           <ProjectsList onSelectProject={setSelectedProject} />
         </Suspense>

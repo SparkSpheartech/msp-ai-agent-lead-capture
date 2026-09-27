@@ -8,7 +8,7 @@ export default function Success() {
  return (
  <>
  <Navbar />
- <main className="min-h-screen pt-20 pb-16 bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white flex items-center justify-center">
+ <main id="main-content" role="main" className="min-h-screen pt-20 pb-16 bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white flex items-center justify-center">
  <div className="container max-w-2xl mx-auto px-6 text-center">
  <CheckCircle className="w-20 h-20 text-primary mx-auto mb-6" />
  <h1 className="text-4xl font-bold mb-4">Payment Successful!</h1>

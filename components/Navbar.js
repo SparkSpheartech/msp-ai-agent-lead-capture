@@ -25,7 +25,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-x-8 text-sm font-medium text-zinc-700 dark:text-zinc-300">
+        <nav className="hidden lg:flex items-center gap-x-8 text-sm font-medium text-zinc-700 dark:text-zinc-300" aria-label="Main navigation">
           <Link href="/services" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Services</Link>
           <Link href="/pricing" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Pricing</Link>
           <Link href="/projects" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Projects</Link>
@@ -33,7 +33,7 @@ const Navbar = () => {
           <a href="https://blog.sparkspheartechsolutions.com" target="_blank" rel="noopener noreferrer" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Blog</a>
           <Link href="/about" className="hover:text-lime-600 dark:hover:text-lime-400 transition">About</Link>
           <Link href="/support" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Support</Link>
-        </div>
+        </nav>
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
@@ -46,7 +46,7 @@ const Navbar = () => {
         {/* Mobile Nav Icon */}
         <div className="lg:hidden flex items-center gap-3">
           <ThemeToggle />
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-zinc-800 dark:text-white p-2" aria-label="Menu">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-zinc-800 dark:text-white p-2" aria-label="Open menu" aria-expanded={!isMenuOpen}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -54,8 +54,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 px-5 py-8 text-[15px] shadow-xl">
-          <nav className="flex flex-col gap-y-5 text-zinc-800 dark:text-zinc-200">
+        <nav className="lg:hidden bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 px-5 py-8 text-[15px] shadow-xl" aria-label="Mobile navigation">
+          <div className="flex flex-col gap-y-5 text-zinc-800 dark:text-zinc-200">
             <Link href="/services" onClick={closeMenu}>Services</Link>
             <Link href="/pricing" onClick={closeMenu}>Pricing</Link>
             <Link href="/projects" onClick={closeMenu}>Projects</Link>
@@ -69,8 +69,8 @@ const Navbar = () => {
                 Book a Fit Call
               </Link>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       )}
     </header>
   );

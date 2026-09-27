@@ -35,7 +35,7 @@ export default function BlogClient({ allPosts }) {
  </div>
  </header>
 
- <main className="max-w-7xl mx-auto px-6 py-12 w-full flex-grow">
+ <main id="main-content" role="main" className="max-w-7xl mx-auto px-6 py-12 w-full flex-grow">
  {/* Industry Filter */}
  <div className="flex flex-wrap justify-center gap-3 mb-12">
  {industries.map(ind => (

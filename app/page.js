@@ -32,7 +32,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-zinc-950 transition-colors duration-300">
+    <main id="main-content" className="min-h-screen bg-slate-50 dark:bg-zinc-950 transition-colors duration-300" role="main">
       <Navbar />
       <Hero3D />
       <WhatWeDo />

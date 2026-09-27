@@ -54,7 +54,7 @@ function ContactContent() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-36 pb-16 bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300">
+      <main id="main-content" role="main" className="min-h-screen pt-36 pb-16 bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300">
         <div className="container max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-600 dark:text-lime-400 text-xs font-bold uppercase tracking-wider mb-4">

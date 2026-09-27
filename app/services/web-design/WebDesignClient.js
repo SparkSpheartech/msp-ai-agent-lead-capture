@@ -34,7 +34,7 @@ export default function WebDesign() {
  return (
  <>
  <Navbar />
- <main className="min-h-screen bg-slate-50 dark:bg-zinc-950">
+ <main id="main-content" role="main" className="min-h-screen bg-slate-50 dark:bg-zinc-950">
  {/* Hero Section */}
  <section className="relative pt-40 pb-20 overflow-hidden">
  {/* Background Accents */}

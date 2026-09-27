@@ -36,7 +36,7 @@ export default function SupportClient() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white dark:bg-zinc-950 relative overflow-hidden">
+      <main id="main-content" role="main" className="min-h-screen bg-white dark:bg-zinc-950 relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-lime-900/10 rounded-full blur-[120px] mix-blend-screen"></div>

@@ -7,6 +7,8 @@ import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import BookAffiliateCards from '@/components/BookAffiliateCards';
 
+const BASE_URL = 'https://sparkspheartechsolutions.com';
+
 export async function generateStaticParams() {
  const paths = getAllPostIds();
  return paths.map((path) => ({
@@ -57,12 +59,42 @@ export default async function Post({ params }) {
  day: 'numeric'
  });
 
- return (
- <div className="min-h-screen bg-white dark:bg-zinc-950 text-gray-900 dark:text-gray-100 flex flex-col">
- <Navbar />
+ const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: postData.title,
+  description: postData.excerpt,
+  image: postData.coverImage ? `${BASE_URL}${postData.coverImage}` : `${BASE_URL}/logo.png`,
+  datePublished: postData.date,
+  dateModified: postData.date,
+  author: {
+   '@type': 'Person',
+   name: postData.author || 'SparkSphear Tech Solutions',
+  },
+  publisher: {
+   '@type': 'Organization',
+   name: 'SPARKSPHEAR Tech Solutions',
+   logo: {
+    '@type': 'ImageObject',
+    url: `${BASE_URL}/logo.png`,
+   },
+  },
+  mainEntityOfPage: {
+   '@type': 'WebPage',
+   '@id': `${BASE_URL}/blog/${postData.slug}`,
+  },
+ };
 
- <main className="flex-grow pt-32 pb-20">
- <article className="max-w-3xl mx-auto px-6">
+ return (
+  <div className="min-h-screen bg-white dark:bg-zinc-950 text-gray-900 dark:text-gray-100 flex flex-col">
+   <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+   />
+   <Navbar />
+
+     <main id="main-content" role="main" className="flex-grow pt-32 pb-20">
+       <article className="max-w-3xl mx-auto px-6">
  
  <Link href="/blog" className="inline-flex items-center gap-2 text-lime-600 dark:text-lime-500 hover:underline font-semibold text-sm mb-10 transition-colors">
  <ArrowLeft size={16} /> Back to Blog

@@ -35,7 +35,7 @@ export default function KBArticle({ params }) {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pt-32 pb-20">
+      <main id="main-content" role="main" className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pt-32 pb-20">
         <article className="container max-w-4xl mx-auto px-4">
           {/* Breadcrumb */}
           <div className="mb-8">

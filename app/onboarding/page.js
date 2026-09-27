@@ -27,7 +27,7 @@ export const metadata = {
 
 export default function OnboardingPage() {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-white">
+    <main id="main-content" role="main" className="min-h-screen bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-white">
       <Navbar />
       <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 text-zinc-900 dark:text-white tracking-tight">

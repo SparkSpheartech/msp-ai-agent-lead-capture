@@ -29,7 +29,7 @@ export default function AffiliateDisclosurePage() {
  <div className="min-h-screen bg-white dark:bg-zinc-950 text-gray-900 dark:text-white flex flex-col">
  <Navbar />
 
- <main className="max-w-4xl mx-auto px-6 py-32 flex-grow w-full">
+ <main id="main-content" role="main" className="max-w-4xl mx-auto px-6 py-32 flex-grow w-full">
  <h1 className="text-4xl md:text-5xl font-extrabold mb-8">Affiliate Disclosure</h1>
  
  <div className="prose prose-lg dark:prose-invert prose-lime max-w-none">

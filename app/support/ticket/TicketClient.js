@@ -37,7 +37,7 @@ export default function TicketClient() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
+      <main id="main-content" role="main" className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
         <div className="pt-32 pb-20">
           <div className="container max-w-3xl mx-auto px-6">
             {/* Breadcrumb */}

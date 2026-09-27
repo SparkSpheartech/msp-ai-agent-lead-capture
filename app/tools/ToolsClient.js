@@ -92,7 +92,7 @@ export default function ToolsClient() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-16 w-full flex-grow">
+      <main id="main-content" role="main" className="max-w-7xl mx-auto px-6 py-16 w-full flex-grow">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
           
           {/* Input Controls */}

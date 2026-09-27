@@ -16,7 +16,7 @@ export default function KnowledgeBase() {
  return (
  <>
  <Navbar />
- <main className="min-h-screen" style={{ background: '#0a0a0a' }}>
+ <main id="main-content" role="main" className="min-h-screen" style={{ background: '#0a0a0a' }}>
  {/* Hero */}
  <section className="pt-32 pb-16">
  <div className="container text-center">

@@ -136,7 +136,7 @@ export default function MarketsClient({ initialPosts = [] }) {
  </header>
 
  {/* Main Content Section */}
- <main className="max-w-7xl mx-auto px-6 py-16 w-full flex-grow">
+ <main id="main-content" role="main" className="max-w-7xl mx-auto px-6 py-16 w-full flex-grow">
  {/* Category Filters */}
  {allCategories.length > 1 && (
  <div className="flex flex-wrap items-center justify-center gap-3 mb-12">

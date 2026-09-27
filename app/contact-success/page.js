@@ -34,7 +34,7 @@ export default function ContactSuccessPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white flex flex-col">
       <Navbar />
-      <main className="flex-grow pt-36 pb-20 flex items-center justify-center px-6">
+      <main id="main-content" role="main" className="flex-grow pt-36 pb-20 flex items-center justify-center px-6">
         <div className="max-w-2xl w-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl text-center">
           <div className="w-20 h-20 bg-lime-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-lime-600 dark:text-lime-400 border border-lime-500/30">
             <CheckCircle className="w-10 h-10" />

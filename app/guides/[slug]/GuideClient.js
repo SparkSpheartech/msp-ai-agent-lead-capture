@@ -23,7 +23,7 @@ export default function GuideClient({ brief }) {
         ]}
       />
       <Navbar />
-      <main className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300 pt-32 pb-20">
+      <main id="main-content" role="main" className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300 pt-32 pb-20">
         
         {/* Header Section */}
         <section className="container max-w-4xl mx-auto px-4 mb-12">

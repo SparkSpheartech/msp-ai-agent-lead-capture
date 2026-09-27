@@ -30,7 +30,7 @@ export const metadata = {
   metadataBase: new URL('https://sparkspheartechsolutions.com'),
   title: {
     default: "AI Agents for Repetitive Business Workflows | SPARKSPHEAR",
-    template: "%s"
+    template: "%s | SPARKSPHEAR"
   },
   description: "Transform your business with AI automation, custom AI solutions, workflows, and intelligent systems that drive real growth.",
   keywords: [
@@ -56,6 +56,9 @@ export const metadata = {
   authors: [{ name: "SPARKSPHEAR Tech Solutions" }],
   creator: "SPARKSPHEAR Tech Solutions",
   publisher: "SPARKSPHEAR Tech Solutions",
+  verification: {
+    google: '62419175358087346175',
+  },
   robots: {
     index: true,
     follow: true,
@@ -154,6 +157,13 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.className} antialiased`} style={{ margin: 0 }}>
+        {/* Skip to Content Link - Accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-lime-500 focus:text-zinc-950 focus:font-bold focus:rounded-lg"
+        >
+          Skip to content
+        </a>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <SmoothScrolling>
             <HashScrollHandler />
