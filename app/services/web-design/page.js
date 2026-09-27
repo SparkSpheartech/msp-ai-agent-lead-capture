@@ -1,13 +1,13 @@
 import WebDesignClient from "./WebDesignClient";
 
 export const metadata = {
-  title: "Web Design & Development",
+  title: "Web Design & Development | SPARKSPHEAR",
   description: "High-performance websites that convert visitors into customers. Custom design, e-commerce, and SEO-ready builds.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/services/web-design",
   },
   openGraph: {
-    title: "Web Design & Development",
+    title: "Web Design & Development | SPARKSPHEAR",
     description: "High-performance websites that convert visitors into customers. Custom design, e-commerce, and SEO-ready builds.",
     url: "https://sparkspheartechsolutions.com/services/web-design",
     siteName: "SPARKSPHEAR",

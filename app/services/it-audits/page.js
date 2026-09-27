@@ -1,7 +1,7 @@
 import ITAuditsClient from "./ITAuditsClient";
 
 export const metadata = {
-  title: "Workflow Audit & Master Business Audit",
+  title: "Workflow Audit & Master Business Audit | SPARKSPHEAR",
   description: "Map your operational workflows, identify bottlenecks, review existing tools, and define the right first agent implementation.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/services/it-audits",

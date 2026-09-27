@@ -1,13 +1,13 @@
 import CreativeMediaClient from "./CreativeMediaClient";
 
 export const metadata = {
-  title: "Creative Media & Brand Video",
+  title: "Creative Media & Brand Video | SPARKSPHEAR",
   description: "Premium brand photography, commercial video production, and event coverage that elevates brand authority.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/services/photography-videography",
   },
   openGraph: {
-    title: "Creative Media & Brand Video",
+    title: "Creative Media & Brand Video | SPARKSPHEAR",
     description: "Premium brand photography, commercial video production, and event coverage.",
     url: "https://sparkspheartechsolutions.com/services/photography-videography",
     siteName: "SPARKSPHEAR",

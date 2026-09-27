@@ -1,7 +1,7 @@
 import AIAutomationClient from "./AIAutomationClient";
 
 export const metadata = {
-  title: "AI Agents & Agentic Automation for Business Workflows",
+  title: "AI Agents & Agentic Automation for Business Workflows | SPARKSPHEAR",
   description: "SPARKSPHEAR builds controlled AI agents, chatbots, integrations, and workflow automation for repetitive business operations.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/services/ai-automation",
