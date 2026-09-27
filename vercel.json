@@ -7,5 +7,9 @@
     "deploymentEnabled": {
       "main": true
     }
-  }
+  },
+  "rewrites": [
+    { "source": "/blog/(.*)", "destination": "https://blog.sparkspheartechsolutions.com/$1" },
+    { "source": "/guides/(.*)", "destination": "https://sparkspheartechsolutions.com/guides/$1" }
+  ]
 }
