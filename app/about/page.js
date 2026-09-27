@@ -1,7 +1,7 @@
 import AboutClient from "./AboutClient";
 
 export const metadata = {
-  title: "About SPARKSPHEAR — AI Agents and Workflow Systems",
+  title: "About — AI Agents and Workflow Systems",
   description: "Learn how SPARKSPHEAR audits repetitive operations, builds controlled AI agents, and creates digital systems for growing businesses.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/about",
