@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import ServicesOverviewClient from './ServicesOverviewClient';
 
 export const metadata = {
-  title: "AI Services & Workflow Automation | SPARKSPHEAR",
+  title: "AI Services & Workflow Automation",
   description: "SPARKSPHEAR offers workflow audits, AI agent automation, digital systems, and creative media to transform business operations.",
   alternates: {
     canonical: "https://sparkspheartechsolutions.com/services",
