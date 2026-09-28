@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Brain, Camera, Monitor, Shield, ArrowRight, CheckCircle, Search } from 'lucide-react';
+import { Brain, Camera, Monitor, Shield, ArrowRight, CheckCircle, Search, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ServicesOverviewClient() {
@@ -46,6 +46,19 @@ export default function ServicesOverviewClient() {
       shadow: 'hover:shadow-[0_0_30px_rgba(34,197,94,0.2)]',
       btn: 'text-green-400',
       features: ['Custom Websites', 'Booking Portals', 'Connected Forms']
+    },
+    {
+      slug: 'home-health-care',
+      icon: <Heart />,
+      title: 'Home Health Care Automation',
+      description: 'Scheduling, compliance tracking, care coordination, and billing automation for home health agencies.',
+      color: 'text-teal-400',
+      bg: 'bg-teal-500/10',
+      border: 'border-teal-500/20',
+      hoverBorder: 'hover:border-teal-500/50',
+      shadow: 'hover:shadow-[0_0_30px_rgba(20,184,166,0.2)]',
+      btn: 'text-teal-400',
+      features: ['Smart Scheduling', 'Compliance Tracking', 'Care Coordination']
     },
   ];
 
@@ -125,7 +138,7 @@ export default function ServicesOverviewClient() {
               <p className="text-zinc-600 dark:text-gray-400">Diagnose the operation, build an agent, or create the digital system around it.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {primaryServices.map((service, index) => (
                 <motion.div
                   key={index}

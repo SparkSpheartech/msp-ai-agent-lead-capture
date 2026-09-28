@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -25,8 +26,34 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-x-8 text-sm font-medium text-zinc-700 dark:text-zinc-300" aria-label="Main navigation">
-          <Link href="/services" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Services</Link>
+        <nav className="hidden lg:flex items-center gap-x-6 text-sm font-medium text-zinc-700 dark:text-zinc-300" aria-label="Main navigation">
+          {/* Services Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              className="flex items-center gap-1 hover:text-lime-600 dark:hover:text-lime-400 transition"
+              aria-haspopup="true"
+              aria-expanded={servicesOpen}
+            >
+              Services <ChevronDown className="w-4 h-4 transition-transform duration-200" style={{ transform: servicesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+            </button>
+
+            {/* Dropdown Panel */}
+            <div className={`absolute top-full left-0 pt-3 transition-all duration-200 pointer-events-none ${servicesOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-2 invisible'}`}>
+              <div className="w-72 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-xl pointer-events-auto overflow-hidden">
+                <Link href="/services" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">All Services</Link>
+                <Link href="/services/it-audits" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">Workflow Audit</Link>
+                <Link href="/services/ai-automation" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">AI Agents & Agentic Automation</Link>
+                <Link href="/services/web-design" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">Digital Systems & Portals</Link>
+                <Link href="/services/photography-videography" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">Creative Media</Link>
+                <Link href="/services/home-health-care" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">Home Health Care Automation</Link>
+              </div>
+            </div>
+          </div>
+
           <Link href="/pricing" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Pricing</Link>
           <Link href="/projects" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Projects</Link>
           <Link href="/tools" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Tools</Link>
