@@ -41,7 +41,7 @@ const Footer = () => {
  <h4 className="text-zinc-900 dark:text-white font-bold mb-6">Contact</h4>
  <ul className="space-y-4 text-zinc-600 dark:text-zinc-400 text-sm">
  <li><a href="tel:2602670641" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">(260) 267-0641</a></li>
- <li><a href="mailto:contact@sparkspheartechsolutions.com" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">contact@sparkspheartechsolutions.com</a></li>
+ <li><a href="mailto:team@sparkspheartechsolutions.com" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">team@sparkspheartechsolutions.com</a></li>
  </ul>
  <div className="flex gap-4 mt-6">
  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-700 dark:text-white hover:bg-lime-500 hover:text-zinc-950 transition-all">

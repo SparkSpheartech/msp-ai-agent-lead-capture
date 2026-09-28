@@ -106,7 +106,7 @@ export default function PrivacyPolicy() {
  If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us:
  </p>
  <div className="mt-4 text-zinc-700 dark:text-gray-300">
- <p><strong>Email:</strong> contact@sparkspheartechsolutions.com</p>
+ <p><strong>Email:</strong> team@sparkspheartechsolutions.com</p>
  <p><strong>Phone:</strong> (260) 267-0641</p>
  <p><strong>Location:</strong> , IN</p>
  </div>

@@ -177,7 +177,7 @@ function ContactContent() {
                   <h3 className="text-sm font-bold uppercase tracking-wider text-lime-600 dark:text-lime-400 mb-2 flex items-center gap-2">
                     <Mail className="w-4 h-4" /> Email Enquiries
                   </h3>
-                  <div className="text-zinc-900 dark:text-white font-medium text-sm">contact@sparkspheartechsolutions.com</div>
+                  <div className="text-zinc-900 dark:text-white font-medium text-sm">team@sparkspheartechsolutions.com</div>
                 </div>
 
                 <div className="border-t border-zinc-100 dark:border-zinc-800 pt-6">
