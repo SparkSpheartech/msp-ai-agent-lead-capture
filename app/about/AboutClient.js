@@ -4,48 +4,49 @@ import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ArrowRight, Award, Target, Heart, Play, Sparkles } from 'lucide-react';
+import { ArrowRight, Award, Target, Heart, Play, Sparkles, Linkedin } from 'lucide-react';
 
 const teamMembers = [
   {
     name: 'Shazaly Musa',
-    role: 'Founder',
-    subtitle: 'Automation Architect',
+    role: 'Founder & CEO',
+    subtitle: null,
     image: '/founder-new.webp',
     video: '/videos/founder.mp4',
-    description: 'Builds the technical foundations that help businesses scale. He focuses on connecting different systems together so owners can step away from manual admin work.'
+    description: 'Builds the technical foundations that help businesses scale.',
+    linkedin: 'https://www.linkedin.com/in/shazaly-musa-a4a52524b/'
   },
   {
     name: 'Daisy',
-    role: 'COO',
-    subtitle: 'Client Operations',
+    role: 'CSM',
+    subtitle: null,
     image: '/executive-assistant.webp',
     video: '/videos/executive-assistant.mp4',
-    description: 'The operational backbone of the team. She manages client communications and makes sure every automation project gets delivered on schedule.'
+    description: 'Ensures every project gets delivered on schedule.'
   },
   {
     name: 'Travis',
     role: 'CIO',
-    subtitle: 'Infrastructure',
+    subtitle: null,
     image: '/cto-new.webp',
     video: '/videos/cto.mp4',
-    description: 'Manages our secure hosting and backend systems. He makes sure the tools and automations we deploy stay reliable and secure within agreed SLA boundaries.'
+    description: 'Manages secure hosting and backend systems.'
   },
   {
     name: 'Eissa',
     role: 'CFO',
-    subtitle: 'Finance & Legal',
+    subtitle: null,
     image: '/devops-engineer.webp',
     video: '/videos/devops-engineer.mp4',
-    description: 'Oversees financial operations, compliance, and legal structures to support rapid scaling.'
+    description: 'Oversees financial operations and compliance.'
   },
   {
     name: 'Shima',
     role: 'GTM',
-    subtitle: 'Software Curation & Marketing',
+    subtitle: null,
     image: '/digital-marketing.webp',
     video: '/videos/digital-specialist.mp4',
-    description: 'Tests and reviews the software we recommend to clients. She also handles the digital strategies that help businesses get noticed online.'
+    description: 'Manages software curation and marketing.'
   },
 ];
 
@@ -92,13 +93,29 @@ function TeamCard({ member, index }) {
           playsInline
         />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90"></div>
+        {/* LinkedIn icon for Shazaly */}
+        {member.linkedin && (
+          <a 
+            href={member.linkedin} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-lime-500 hover:text-zinc-950 transition-all"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+        )}
+        {/* Play indicator for non-Shazaly */}
+        {!member.linkedin && (
+          <div className={`absolute top-4 right-4 w-10 h-10 rounded-full bg-lime-500/80 flex items-center justify-center transition-opacity ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
+            <Play className="w-4 h-4 text-zinc-950 ml-1" />
+          </div>
+        )}
         <div className="absolute bottom-0 left-0 w-full p-6">
           <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
-          <p className="text-lime-400 font-mono text-sm tracking-widest uppercase">{member.subtitle}</p>
-        </div>
-        {/* Play indicator */}
-        <div className={`absolute top-4 right-4 w-10 h-10 rounded-full bg-lime-500/80 flex items-center justify-center transition-opacity ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
-          <Play className="w-4 h-4 text-zinc-950 ml-1" />
+          {member.subtitle && (
+            <p className="text-lime-400 font-mono text-sm tracking-widest uppercase mb-1">{member.subtitle}</p>
+          )}
+          <p className="text-white/90 font-medium">{member.role}</p>
         </div>
       </div>
       <div className="p-6 pt-4">
