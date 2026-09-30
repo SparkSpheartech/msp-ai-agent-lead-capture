@@ -332,6 +332,42 @@ export default function HomeHealthCareClient() {
           </div>
         </section>
 
+        {/* Featured Field Notes Post */}
+        <section className="py-24 bg-white dark:bg-zinc-900/50 border-t border-zinc-200 dark:border-white/5">
+         <div className="container max-w-4xl">
+          <div className="text-center mb-12">
+           <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4"
+           >
+            Featured from SPARKSPHEAR Field Notes
+           </motion.h2>
+           <p className="text-zinc-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+            Research and system breakdowns from the SPARKSPHEAR team, written for agency operators.
+           </p>
+          </div>
+          <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           className="bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/5 rounded-xl p-8 hover:border-teal-500/30 transition-all duration-300"
+          >
+           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-wider mb-4">
+            <Heart className="w-4 h-4" /> Field Notes
+           </div>
+           <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-3">Caregiver Capacity and Case-Matching AI Agent</h3>
+           <p className="text-zinc-600 dark:text-gray-400 mb-6 leading-relaxed">
+            Home care agencies are rarely sales constrained. They are capacity constrained. This breakdown covers how a case-matching agent reads shift requirements and caregiver state, broadcasts open shifts to the right few caregivers, locks assignments into the EHR, and protects billable revenue with margin and overtime safeguards.
+           </p>
+           <a href="https://sparkspheartechsolutions.blog/p/caregiver-capacity-case-matching-agent" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-bold hover:gap-3 transition-all">
+            Read the full breakdown <ArrowRight className="w-4 h-4" />
+           </a>
+          </motion.div>
+         </div>
+        </section>
+
         {/* CTA Banner */}
         <section className="py-20 bg-gradient-to-r from-teal-600 to-cyan-600 border-t border-zinc-200 dark:border-white/5">
           <div className="container max-w-4xl text-center">

@@ -101,7 +101,8 @@ export default function sitemap() {
     'it-audits',
     'web-design',
     'photography-videography',
-  ].map((service) => ({
+     'home-health-care',
+     ].map((service) => ({
     url: `${baseUrl}/services/${service}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',

@@ -50,7 +50,7 @@ export default function ServicesOverviewClient() {
     {
       slug: 'home-health-care',
       icon: <Heart />,
-      title: 'Home Health Care Automation',
+      title: 'Health Care Services',
       description: 'Scheduling, compliance tracking, care coordination, and billing automation for home health agencies.',
       color: 'text-teal-400',
       bg: 'bg-teal-500/10',

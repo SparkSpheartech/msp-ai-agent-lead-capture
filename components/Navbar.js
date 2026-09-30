@@ -49,7 +49,8 @@ const Navbar = () => {
                 <Link href="/services/ai-automation" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">AI Agents & Agentic Automation</Link>
                 <Link href="/services/web-design" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">Digital Systems & Portals</Link>
                 <Link href="/services/photography-videography" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">Creative Media</Link>
-                <Link href="/services/home-health-care" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">Home Health Care Automation</Link>
+                <Link href="/services/home-health-care" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">Health Care Services</Link>
+ <Link href="/services/home-health-care" className="block px-5 py-3 text-zinc-700 dark:text-zinc-300 hover:bg-lime-500/10 hover:text-lime-600 dark:hover:text-lime-400 transition-colors text-sm border-b border-zinc-100 dark:border-zinc-800 last:border-b-0">Home Health Care</Link>
               </div>
             </div>
           </div>
