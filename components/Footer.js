@@ -44,10 +44,10 @@ const Footer = () => {
  <li><a href="mailto:team@sparkspheartechsolutions.com" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">team@sparkspheartechsolutions.com</a></li>
  </ul>
  <div className="flex gap-4 mt-6">
- <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-700 dark:text-white hover:bg-lime-500 hover:text-zinc-950 transition-all">
+ <a href="https://www.linkedin.com/company/sparkspheartechsolutions" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-700 dark:text-white hover:bg-lime-500 hover:text-zinc-950 transition-all">
  <Linkedin size={18} />
  </a>
- <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-700 dark:text-white hover:bg-lime-500 hover:text-zinc-950 transition-all">
+ <a href="https://www.facebook.com/SPARKSPHEARTECHSOLUTIONS" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-700 dark:text-white hover:bg-lime-500 hover:text-zinc-950 transition-all">
  <Facebook size={18} />
  </a>
  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-700 dark:text-white hover:bg-lime-500 hover:text-zinc-950 transition-all">

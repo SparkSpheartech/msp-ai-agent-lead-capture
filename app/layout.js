@@ -149,9 +149,9 @@ export default function RootLayout({ children }) {
               },
               "areaServed": "United States",
               "sameAs": [
-                "https://www.linkedin.com/company/sparkspheartech",
-                "https://twitter.com/sparksphear"
-              ]
+                      "https://www.linkedin.com/company/sparkspheartechsolutions",
+                      "https://www.facebook.com/SPARKSPHEARTECHSOLUTIONS"
+                    ]
             })
           }}
         />
