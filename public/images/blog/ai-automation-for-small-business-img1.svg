@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="880" height="480" fill="#0f172a"/>
+  <text x="40" y="48" fill="#f8fafc" font-size="24" font-weight="700">AI Automation ROI: Monthly Math for a 5–20 Person Business</text>
+  <text x="40" y="74" fill="#94a3b8" font-size="14">15 hrs/week manual work × 4.33 weeks × $25/hr loaded rate, 50% recovery assumption</text>
+
+  <!-- Left: manual hours by workflow -->
+  <text x="40" y="120" fill="#e2e8f0" font-size="16" font-weight="600">Manual hours per month (before)</text>
+  <g font-size="14">
+    <text x="40" y="158" fill="#cbd5e1">Support triage — 26.0 hrs ($650)</text>
+    <rect x="40" y="166" width="312" height="24" rx="4" fill="#38bdf8"/>
+    <text x="40" y="214" fill="#cbd5e1">Lead follow-up — 21.7 hrs ($541)</text>
+    <rect x="40" y="222" width="260" height="24" rx="4" fill="#818cf8"/>
+    <text x="40" y="270" fill="#cbd5e1">Invoice processing — 17.3 hrs ($433)</text>
+    <rect x="40" y="278" width="208" height="24" rx="4" fill="#34d399"/>
+  </g>
+  <text x="40" y="336" fill="#f8fafc" font-size="18" font-weight="700">Total: 65 hrs/month = $1,624 of labor</text>
+
+  <!-- Right: after automation -->
+  <text x="480" y="120" fill="#e2e8f0" font-size="16" font-weight="600">After automation (50% recovery)</text>
+  <g font-size="14">
+    <text x="480" y="158" fill="#cbd5e1">Labor value recovered</text>
+    <text x="840" y="158" fill="#34d399" text-anchor="end" font-weight="700">+$812/mo</text>
+    <text x="480" y="196" fill="#cbd5e1">Tool costs (connection layer + AI)</text>
+    <text x="840" y="196" fill="#f87171" text-anchor="end" font-weight="700">−$150/mo</text>
+    <text x="480" y="234" fill="#f8fafc" font-weight="700">Net monthly gain</text>
+    <text x="840" y="234" fill="#fbbf24" text-anchor="end" font-weight="700">$662/mo</text>
+    <text x="480" y="272" fill="#cbd5e1">One-time setup (30 hrs owner time)</text>
+    <text x="840" y="272" fill="#94a3b8" text-anchor="end">≈ $750</text>
+    <text x="480" y="310" fill="#f8fafc" font-weight="700">Payback</text>
+    <text x="840" y="310" fill="#34d399" text-anchor="end" font-weight="700">5–6 weeks</text>
+    <text x="480" y="348" fill="#f8fafc" font-weight="700">First-year net</text>
+    <text x="840" y="348" fill="#fbbf24" text-anchor="end" font-weight="700">≈ $7,200</text>
+  </g>
+
+  <text x="40" y="420" fill="#64748b" font-size="13">Adjust with your own numbers: hours/week, loaded hourly rate, recovery %, tool cost. Payback stays under four months even at 30% recovery and $300/mo in tools.</text>
+</svg>

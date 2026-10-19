@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="880" height="440" fill="#0f172a"/>
+  <text x="40" y="48" fill="#f8fafc" font-size="24" font-weight="700">The 30-Day Rollout: One Workflow at a Time</text>
+  <text x="40" y="74" fill="#94a3b8" font-size="14">Workflow: lead follow-up. One owner. No committee.</text>
+
+  <!-- timeline spine -->
+  <line x1="70" y1="150" x2="810" y2="150" stroke="#334155" stroke-width="4"/>
+  <circle cx="130" cy="150" r="10" fill="#38bdf8"/>
+  <circle cx="330" cy="150" r="10" fill="#818cf8"/>
+  <circle cx="530" cy="150" r="10" fill="#34d399"/>
+  <circle cx="730" cy="150" r="10" fill="#fbbf24"/>
+
+  <!-- Week 1 -->
+  <text x="130" y="110" fill="#38bdf8" text-anchor="middle" font-size="15" font-weight="700">WEEK 1</text>
+  <text x="130" y="130" fill="#e2e8f0" text-anchor="middle" font-size="13" font-weight="600">Map &amp; baseline</text>
+  <g font-size="12" fill="#94a3b8">
+    <text x="60" y="185">One-page process map:</text>
+    <text x="60" y="203">trigger → steps → stalls.</text>
+    <text x="60" y="221">Measure hours, response</text>
+    <text x="60" y="239">time, follow-up rate.</text>
+  </g>
+
+  <!-- Week 2 -->
+  <text x="330" y="110" fill="#818cf8" text-anchor="middle" font-size="15" font-weight="700">WEEK 2</text>
+  <text x="330" y="130" fill="#e2e8f0" text-anchor="middle" font-size="13" font-weight="600">Build the skeleton</text>
+  <g font-size="12" fill="#94a3b8">
+    <text x="262" y="185">Trigger + rules only,</text>
+    <text x="262" y="203">no AI: instant ack,</text>
+    <text x="262" y="221">follow-ups at 48 hrs</text>
+    <text x="262" y="239">and 7 days.</text>
+  </g>
+
+  <!-- Week 3 -->
+  <text x="530" y="110" fill="#34d399" text-anchor="middle" font-size="15" font-weight="700">WEEK 3</text>
+  <text x="530" y="130" fill="#e2e8f0" text-anchor="middle" font-size="13" font-weight="600">Add the AI step</text>
+  <g font-size="12" fill="#94a3b8">
+    <text x="462" y="185">AI drafts the first reply,</text>
+    <text x="462" y="203">grounded in your pages.</text>
+    <text x="462" y="221">Human approves every</text>
+    <text x="462" y="239">send; log all edits.</text>
+  </g>
+
+  <!-- Week 4 -->
+  <text x="730" y="110" fill="#fbbf24" text-anchor="middle" font-size="15" font-weight="700">WEEK 4</text>
+  <text x="730" y="130" fill="#e2e8f0" text-anchor="middle" font-size="13" font-weight="600">Measure &amp; decide</text>
+  <g font-size="12" fill="#94a3b8">
+    <text x="662" y="185">Compare to week-1 base-</text>
+    <text x="662" y="203">line, fix 2 worst failures,</text>
+    <text x="662" y="221">then go/no-go on the</text>
+    <text x="662" y="239">next workflow.</text>
+  </g>
+
+  <rect x="40" y="300" width="800" height="100" rx="10" fill="#1e293b"/>
+  <text x="60" y="330" fill="#f8fafc" font-size="15" font-weight="700">Rule of the month: depth beats breadth.</text>
+  <text x="60" y="355" fill="#94a3b8" font-size="13">One fully wired workflow saves money every month. Ten half-configured tools cost more than they save.</text>
+  <text x="60" y="378" fill="#94a3b8" font-size="13">Next month's workflow: support triage — classification and routing only, before any auto-replies.</text>
+</svg>
