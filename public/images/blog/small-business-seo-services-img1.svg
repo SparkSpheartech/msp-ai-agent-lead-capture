@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" role="img" aria-labelledby="roadmapTitle roadmapDesc">
+  <title id="roadmapTitle">Small business SEO first 6 months: month-by-month roadmap</title>
+  <desc id="roadmapDesc">Timeline with three phases. Month 1: audit and fix. Months 2 to 3: build assets. Months 4 to 6: compound with content and links.</desc>
+  <rect width="820" height="360" fill="#ffffff"/>
+  <text x="30" y="40" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#12141a">Your first 6 months of small business SEO</text>
+  <text x="30" y="64" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#4b5563">What month-by-month work should actually look like</text>
+  <line x1="70" y1="118" x2="750" y2="118" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="170" cy="118" r="9" fill="#ffffff" stroke="#f59e0b" stroke-width="3"/>
+  <circle cx="460" cy="118" r="9" fill="#ffffff" stroke="#10b981" stroke-width="3"/>
+  <circle cx="680" cy="118" r="9" fill="#ffffff" stroke="#3b82f6" stroke-width="3"/>
+  <rect x="60" y="148" width="230" height="180" rx="10" fill="#f8fafc" stroke="#e5e7eb"/>
+  <text x="78" y="178" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#92400e">Month 1: Audit and Fix</text>
+  <text x="78" y="204" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Crawl and index audit</text>
+  <text x="78" y="226" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Speed and mobile fixes</text>
+  <text x="78" y="248" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Keyword and competitor map</text>
+  <text x="78" y="270" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Google Business Profile fix-up</text>
+  <text x="78" y="292" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Analytics and Search Console</text>
+  <rect x="350" y="148" width="230" height="180" rx="10" fill="#f8fafc" stroke="#e5e7eb"/>
+  <text x="368" y="178" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#065f46">Months 2-3: Build</text>
+  <text x="368" y="204" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- One service page per cluster</text>
+  <text x="368" y="226" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Location pages (if local)</text>
+  <text x="368" y="248" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Review generation system</text>
+  <text x="368" y="270" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Citations and directories</text>
+  <text x="368" y="292" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- First content posts</text>
+  <rect x="620" y="148" width="170" height="180" rx="10" fill="#f8fafc" stroke="#e5e7eb"/>
+  <text x="638" y="178" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1e40af">Months 4-6: Compound</text>
+  <text x="638" y="204" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Content cadence</text>
+  <text x="638" y="226" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Local links and partners</text>
+  <text x="638" y="248" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Internal linking passes</text>
+  <text x="638" y="270" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Monthly reporting</text>
+  <text x="638" y="292" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">- Double down on winners</text>
+</svg>

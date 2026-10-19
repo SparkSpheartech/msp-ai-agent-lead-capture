@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" role="img" aria-labelledby="pricingTitle pricingDesc">
+  <title id="pricingTitle">What $500, $1,000 and $2,000 a month buys in small business SEO hours</title>
+  <desc id="pricingDesc">Stacked bar chart comparing monthly work hours across three budget tiers: 500 dollars about 8 hours, 1,000 dollars about 18 hours, 2,000 dollars about 40 hours, split across technical and local fixes, content, links, and reporting.</desc>
+  <rect width="820" height="400" fill="#ffffff"/>
+  <text x="30" y="40" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#12141a">What each budget tier roughly buys, in working hours</text>
+  <text x="30" y="64" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#4b5563">Illustrative monthly breakdown for a local small business (hours are typical ranges, not guarantees)</text>
+  <!-- axis -->
+  <line x1="170" y1="100" x2="170" y2="330" stroke="#9ca3af" stroke-width="2"/>
+  <!-- gridlines: 40h = 550px wide -> 13.75px/hour -->
+  <line x1="170" y1="330" x2="750" y2="330" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="307.5" y1="100" x2="307.5" y2="330" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="445" y1="100" x2="445" y2="330" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="582.5" y1="100" x2="582.5" y2="330" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="720" y1="100" x2="720" y2="330" stroke="#eef2f7" stroke-width="1"/>
+  <text x="170" y="352" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280">0</text>
+  <text x="307.5" y="352" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280">10h</text>
+  <text x="445" y="352" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280">20h</text>
+  <text x="582.5" y="352" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280">30h</text>
+  <text x="720" y="352" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280">40h</text>
+  <!-- Bar 1: $500 -> 8h = 110px : tech 3h(41) content 3h(41) links 1h(14) report 1h(14) -->
+  <text x="160" y="130" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#12141a">$500/mo</text>
+  <rect x="170" y="112" width="41" height="28" fill="#f59e0b"/>
+  <rect x="211" y="112" width="41" height="28" fill="#10b981"/>
+  <rect x="252" y="112" width="14" height="28" fill="#3b82f6"/>
+  <rect x="266" y="112" width="14" height="28" fill="#94a3b8"/>
+  <text x="290" y="131" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">~8h</text>
+  <!-- Bar 2: $1000 -> 18h = 247px : tech 5h(69) content 8h(110) links 3h(41) report 2h(27) -->
+  <text x="160" y="200" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#12141a">$1,000/mo</text>
+  <rect x="170" y="182" width="69" height="28" fill="#f59e0b"/>
+  <rect x="239" y="182" width="110" height="28" fill="#10b981"/>
+  <rect x="349" y="182" width="41" height="28" fill="#3b82f6"/>
+  <rect x="390" y="182" width="27" height="28" fill="#94a3b8"/>
+  <text x="427" y="201" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">~18h</text>
+  <!-- Bar 3: $2000 -> 40h = 550px : tech 10h(138) content 20h(275) links 6h(83) report 4h(55) -->
+  <text x="160" y="270" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#12141a">$2,000/mo</text>
+  <rect x="170" y="252" width="138" height="28" fill="#f59e0b"/>
+  <rect x="308" y="252" width="275" height="28" fill="#10b981"/>
+  <rect x="583" y="252" width="83" height="28" fill="#3b82f6"/>
+  <rect x="666" y="252" width="55" height="28" fill="#94a3b8"/>
+  <text x="731" y="271" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">~40h</text>
+  <!-- legend -->
+  <rect x="170" y="375" width="14" height="14" fill="#f59e0b"/>
+  <text x="190" y="387" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#374151">Technical + local fixes</text>
+  <rect x="340" y="375" width="14" height="14" fill="#10b981"/>
+  <text x="360" y="387" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#374151">Content</text>
+  <rect x="440" y="375" width="14" height="14" fill="#3b82f6"/>
+  <text x="460" y="387" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#374151">Links and promotion</text>
+  <rect x="600" y="375" width="14" height="14" fill="#94a3b8"/>
+  <text x="620" y="387" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#374151">Reporting</text>
+</svg>
