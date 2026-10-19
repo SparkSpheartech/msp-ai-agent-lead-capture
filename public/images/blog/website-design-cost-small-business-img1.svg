@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="880" height="500" fill="#0f172a"/>
+  <text x="40" y="48" fill="#f8fafc" font-size="24" font-weight="700">2026 Small Business Website Cost: Five Tiers Compared</text>
+  <text x="40" y="74" fill="#94a3b8" font-size="14">Typical build price ranges by route. Scale runs $0 to $35,000; bars show min-to-max published ranges.</text>
+
+  <!-- axis gridlines: 0..35000 across 640px starting x=280 -->
+  <g stroke="#334155" stroke-width="1">
+    <line x1="280" y1="100" x2="280" y2="420"/>
+    <line x1="371" y1="100" x2="371" y2="420"/>
+    <line x1="463" y1="100" x2="463" y2="420"/>
+    <line x1="554" y1="100" x2="554" y2="420"/>
+    <line x1="646" y1="100" x2="646" y2="420"/>
+    <line x1="737" y1="100" x2="737" y2="420"/>
+    <line x1="829" y1="100" x2="829" y2="420"/>
+  </g>
+  <g font-size="12" fill="#64748b">
+    <text x="272" y="440">$0</text>
+    <text x="352" y="440">$5k</text>
+    <text x="444" y="440">$10k</text>
+    <text x="535" y="440">$15k</text>
+    <text x="627" y="440">$20k</text>
+    <text x="718" y="440">$25k</text>
+    <text x="810" y="440">$30k+</text>
+  </g>
+
+  <g font-size="14">
+    <!-- Tier 1: DIY builder $200-$600 -> x 280+2.6 to 280+7.9 (tiny) draw min width 8 -->
+    <text x="40" y="128" fill="#cbd5e1">DIY builder</text>
+    <rect x="280" y="108" width="9" height="26" rx="3" fill="#34d399"/>
+    <text x="298" y="127" fill="#e2e8f0">$200–$600</text>
+
+    <!-- Tier 2: template freelancer $1,500-$4,000 -> widths 21..55 -->
+    <text x="40" y="188" fill="#cbd5e1">Template freelancer</text>
+    <rect x="301" y="168" width="34" height="26" rx="3" fill="#38bdf8"/>
+    <text x="345" y="187" fill="#e2e8f0">$1,500–$4,000</text>
+
+    <!-- Tier 3: custom freelancer $4,000-$12,000 -> 51..154 -->
+    <text x="40" y="248" fill="#cbd5e1">Custom freelancer</text>
+    <rect x="331" y="228" width="103" height="26" rx="3" fill="#818cf8"/>
+    <text x="444" y="247" fill="#e2e8f0">$4,000–$12,000</text>
+
+    <!-- Tier 4: boutique agency $6,000-$20,000 -> 77..257 -->
+    <text x="40" y="308" fill="#cbd5e1">Boutique agency</text>
+    <rect x="357" y="288" width="180" height="26" rx="3" fill="#fbbf24"/>
+    <text x="547" y="307" fill="#e2e8f0">$6,000–$20,000</text>
+
+    <!-- Tier 5: full-service agency $10,000-$35,000 -> 128..449 -->
+    <text x="40" y="368" fill="#cbd5e1">Full-service agency</text>
+    <rect x="408" y="348" width="421" height="26" rx="3" fill="#f472b6"/>
+    <text x="620" y="367" fill="#f8fafc">$10,000–$35,000</text>
+  </g>
+
+  <text x="40" y="482" fill="#94a3b8" font-size="13">Sources: Elementor 2026 cost guide; Pitchsite 2026 pricing benchmarks; 99creatix agency census, Aug 2026.</text>
+</svg>

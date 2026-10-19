@@ -8,6 +8,8 @@ const nextConfig = {
   reactStrictMode: false,
   async redirects() {
     return [
+      // Legacy FIELD NOTES index redirect. Main-site blog posts live at
+      // /blog/<slug> (content/blog/*.md) and keep serving there.
       {
         source: '/blog',
         destination: 'https://blog.sparkspheartechsolutions.com',

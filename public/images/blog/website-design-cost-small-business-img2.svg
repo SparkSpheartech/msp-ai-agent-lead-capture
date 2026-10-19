@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="880" height="520" fill="#0f172a"/>
+  <text x="40" y="48" fill="#f8fafc" font-size="24" font-weight="700">Where a $7,000 Small Business Website Budget Actually Goes</text>
+  <text x="40" y="74" fill="#94a3b8" font-size="14">Line-item breakdown of a typical 8-page custom build at the published US median of $7,000 (2026)</text>
+
+  <g font-size="15">
+    <!-- UX/UI design: $2,400 -> 440px -->
+    <text x="40" y="126" fill="#cbd5e1">UX/UI design — $2,400 (34%)</text>
+    <rect x="40" y="136" width="440" height="28" rx="5" fill="#38bdf8"/>
+    <text x="492" y="156" fill="#f8fafc" font-weight="600">$2,400</text>
+
+    <!-- Front-end build: $1,600 -> 293px -->
+    <text x="40" y="202" fill="#cbd5e1">Front-end build — $1,600 (23%)</text>
+    <rect x="40" y="212" width="293" height="28" rx="5" fill="#818cf8"/>
+    <text x="345" y="232" fill="#f8fafc" font-weight="600">$1,600</text>
+
+    <!-- Copywriting: $1,200 -> 220px -->
+    <text x="40" y="278" fill="#cbd5e1">Copywriting (8 pages) — $1,200 (17%)</text>
+    <rect x="40" y="288" width="220" height="28" rx="5" fill="#34d399"/>
+    <text x="272" y="308" fill="#f8fafc" font-weight="600">$1,200</text>
+
+    <!-- CMS setup: $800 -> 147px -->
+    <text x="40" y="354" fill="#cbd5e1">CMS setup &amp; integrations — $800 (11%)</text>
+    <rect x="40" y="364" width="147" height="28" rx="5" fill="#fbbf24"/>
+    <text x="199" y="384" fill="#f8fafc" font-weight="600">$800</text>
+
+    <!-- Imagery licensing: $400 -> 73px -->
+    <text x="40" y="430" fill="#cbd5e1">Imagery &amp; licensing — $400 (6%)</text>
+    <rect x="40" y="440" width="73" height="28" rx="5" fill="#f472b6"/>
+    <text x="125" y="460" fill="#f8fafc" font-weight="600">$400</text>
+
+    <!-- QA/launch: $600 -> 110px -->
+    <text x="490" y="430" fill="#cbd5e1">QA, launch &amp; training — $600 (9%)</text>
+    <rect x="490" y="440" width="110" height="28" rx="5" fill="#fb923c"/>
+    <text x="612" y="460" fill="#f8fafc" font-weight="600">$600</text>
+  </g>
+
+  <text x="40" y="504" fill="#94a3b8" font-size="13">Median custom small-business site price: $7,000 (range $4,000–$18,000). Source: 99creatix Web Design Pricing Transparency study, Aug 2026.</text>
+</svg>
