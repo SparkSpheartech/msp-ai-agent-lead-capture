@@ -30,8 +30,9 @@ function ContactContent() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let saved = false;
     try {
-      await fetch('/api/leads', {
+      const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -41,8 +42,24 @@ function ContactContent() {
           timestamp: new Date().toISOString()
         })
       });
+      saved = res.ok;
     } catch (err) {
       console.error('Lead submission failed', err);
+    }
+    if (saved) {
+      // Meta Pixel Lead conversion + GA4 generate_lead
+      if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead', {
+          content_name: 'Contact Form',
+          content_category: selectedPlan || 'General Inquiry'
+        });
+      }
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', {
+          form_name: 'contact',
+          plan: selectedPlan || 'General Inquiry'
+        });
+      }
     }
     setSubmitted(true);
     setTimeout(() => {
