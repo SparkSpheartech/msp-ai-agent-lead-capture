@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="Arial, Helvetica, sans-serif">
+  <rect width="760" height="420" fill="#0f172a"/>
+  <text x="380" y="40" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="bold">Digital Marketing Agency Hourly Rates, 2026</text>
+  <text x="380" y="62" text-anchor="middle" fill="#94a3b8" font-size="13">USD per hour, by source and market</text>
+  <g font-size="12" fill="#cbd5e1">
+    <text x="30" y="108">Most common global band</text>
+    <text x="30" y="124" font-size="11" fill="#64748b">Clutch, 100,000+ firms</text>
+    <rect x="30" y="132" width="130" height="22" fill="#38bdf8"/>
+    <text x="168" y="148" fill="#f8fafc">$25-$49</text>
+    <text x="30" y="188">US average (all services)</text>
+    <text x="30" y="204" font-size="11" fill="#64748b">Clutch</text>
+    <rect x="30" y="212" width="300" height="22" fill="#22d3ee"/>
+    <text x="338" y="228" fill="#f8fafc">$100-$149</text>
+    <text x="30" y="268">Core services: SEO, PPC, content, email, social</text>
+    <text x="30" y="284" font-size="11" fill="#64748b">Clutch</text>
+    <rect x="30" y="292" width="300" height="22" fill="#34d399"/>
+    <text x="338" y="308" fill="#f8fafc">$100-$149</text>
+    <text x="30" y="348">Most common US agency rate (29% of firms)</text>
+    <text x="30" y="364" font-size="11" fill="#64748b">Promethean Research 2026 survey</text>
+    <rect x="30" y="372" width="380" height="22" fill="#fbbf24"/>
+    <text x="418" y="388" fill="#f8fafc">$175-$199</text>
+  </g>
+  <text x="380" y="412" text-anchor="middle" fill="#64748b" font-size="11">Scale: bar length proportional to upper rate bound; top-tier strategists reach $150-$350/hr (MarketerHire, 2026)</text>
+</svg>
