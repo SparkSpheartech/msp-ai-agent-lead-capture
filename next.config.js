@@ -15,6 +15,12 @@ const nextConfig = {
         destination: 'https://blog.sparkspheartechsolutions.com',
         permanent: true,
       },
+  {
+   // Workflow Opportunity Calculator moved to THE SPARK (blog) 2026-10-25
+  source: '/tools',
+        destination: 'https://sparkspheartechsolutions.blog/tools',
+        permanent: true,
+      },
     ];
   },
 }

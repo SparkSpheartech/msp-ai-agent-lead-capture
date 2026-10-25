@@ -154,7 +154,7 @@ export default async function Post({ params }) {
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Link 
- href="/tools" 
+ href="https://sparkspheartechsolutions.blog/tools" 
  className="px-8 py-3.5 bg-lime-500 text-zinc-950 font-bold rounded-xl hover:bg-lime-400 transition-all shadow-lg shadow-lime-500/20"
  >
  Calculate Your Savings

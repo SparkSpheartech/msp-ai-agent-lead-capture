@@ -56,8 +56,7 @@ const Navbar = () => {
 
           <Link href="/pricing" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Pricing</Link>
           <Link href="/projects" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Projects</Link>
-          <Link href="/tools" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Tools</Link>
-          <a href="https://blog.sparkspheartechsolutions.com" target="_blank" rel="noopener noreferrer" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Blog</a>
+                   <a href="https://blog.sparkspheartechsolutions.com" target="_blank" rel="noopener noreferrer" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Blog</a>
           <Link href="/about" className="hover:text-lime-600 dark:hover:text-lime-400 transition">About</Link>
           <Link href="/support" className="hover:text-lime-600 dark:hover:text-lime-400 transition">Support</Link>
         </nav>
@@ -86,8 +85,7 @@ const Navbar = () => {
             <Link href="/services" onClick={closeMenu}>Services</Link>
             <Link href="/pricing" onClick={closeMenu}>Pricing</Link>
             <Link href="/projects" onClick={closeMenu}>Projects</Link>
-            <Link href="/tools" onClick={closeMenu}>Tools</Link>
-            <a href="https://blog.sparkspheartechsolutions.com" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Blog</a>
+                       <a href="https://blog.sparkspheartechsolutions.com" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Blog</a>
             <Link href="/about" onClick={closeMenu}>About</Link>
             <Link href="/support" onClick={closeMenu}>Support</Link>
 
