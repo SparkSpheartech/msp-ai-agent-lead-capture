@@ -33,7 +33,7 @@ const CoreValues = () => {
  {
  icon: <Heart className="w-12 h-12" />,
  title: "Client-Centric",
- description: "Proudly based in nationwide, offering responsive local support when you need it."
+ description: "Proudly based in Fort Wayne, Indiana, serving clients nationwide — responsive support when you need it."
  }
  ];
 

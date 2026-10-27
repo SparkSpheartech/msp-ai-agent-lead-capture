@@ -246,7 +246,14 @@ export default function ITAuditsClient() {
               <span className="text-lime-600 dark:text-lime-400 font-mono text-sm tracking-wider uppercase mb-2 block">WHAT THE AUDIT COVERS</span>
               <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4">
                 Workflow Audit <span className="text-lime-600 dark:text-lime-500">Starting at $297</span>
-              </h2>
+                      </h2>
+                      <p className="mt-2 text-zinc-600 dark:text-zinc-400 text-sm">
+                        Includes the{' '}
+                        <a href="https://blog.sparkspheartechsolutions.com/p/small-business-systems-starter-kit" className="underline hover:text-lime-600 dark:hover:text-lime-500">
+                          Small Business Systems Starter Kit
+                        </a>
+                        , free with your Audit.
+                      </p>
               <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed mb-6">
                 We do not start by selling the biggest package. We start by auditing the workflow and identifying the smallest useful agent.
               </p>

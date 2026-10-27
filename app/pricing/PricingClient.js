@@ -201,7 +201,10 @@ export default function Pricing() {
             <div className="text-center">
               <ShieldCheck className="mx-auto mb-4 h-10 w-10 text-lime-500" />
               <h2 id="workflow-audit" className="text-2xl font-black md:text-3xl">Workflow Audit</h2>
-              <p className="mt-2 text-lg font-bold text-lime-600 dark:text-lime-400">Starting at $297 one-time</p>
+                      <p className="mt-2 text-lg font-bold text-lime-600 dark:text-lime-400">Starting at $297 one-time</p>
+                      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                        Includes the <a href="https://blog.sparkspheartechsolutions.com/p/small-business-systems-starter-kit" className="underline hover:text-lime-600 dark:hover:text-lime-400">Small Business Systems Starter Kit</a>, free with your Audit.
+                      </p>
               <p className="mx-auto mt-4 max-w-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 We do not start by selling the biggest package. We start by auditing the workflow and identifying the smallest useful agent.
               </p>
