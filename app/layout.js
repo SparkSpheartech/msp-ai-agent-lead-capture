@@ -147,7 +147,7 @@ export default function RootLayout({ children }) {
               "description": "Transform your business with AI automation, custom AI solutions, workflows, and intelligent systems that drive real growth.",
               "priceRange": "$$",
               "telephone": "+1-260-267-0641",
-              "email": "SparkSphear4me@gmail.com",
+              "email": "support@sparkspheartechsolutions.com",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Fort Wayne",

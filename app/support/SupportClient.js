@@ -125,7 +125,7 @@ export default function SupportClient() {
                 </div>
                 <h3 className="text-zinc-900 dark:text-white font-bold mb-2">Email</h3>
                 <p className="text-zinc-600 dark:text-gray-400 hover:text-lime-600 dark:text-lime-400 transition-colors">
-                  <a href="mailto:SparkSphear4me@gmail.com">SparkSphear4me@gmail.com</a>
+                  <a href="mailto:support@sparkspheartechsolutions.com">support@sparkspheartechsolutions.com</a>
                 </p>
               </div>
 

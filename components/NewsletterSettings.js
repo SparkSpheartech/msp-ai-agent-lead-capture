@@ -303,7 +303,7 @@ function SubscriptionPopupTab() {
 function SendingTab() {
   const [senderName, setSenderName] = useState('SPARKSPHEAR Field Notes');
   const [senderEmail, setSenderEmail] = useState('newsletter@sparkspheartechsolutions.com');
-  const [replyTo, setReplyTo] = useState('SparkSphear4me@gmail.com');
+  const [replyTo, setReplyTo] = useState('support@sparkspheartechsolutions.com');
   const [digestFrequency, setDigestFrequency] = useState('instant');
   const [maxPosts, setMaxPosts] = useState('5');
 
