@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { addSequenzySubscriber } from '@/lib/sequenzy';
 
 // Configurable n8n Production Webhook URL with environment variable fallback
 const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL 
@@ -204,23 +203,7 @@ export async function POST(request) {
     }
     leads.push(lead);
     console.log(`[SPARKSPHEAR Lead Engine] New Lead Processed: ${lead.company}`);
-    
-    // Stream lead directly to Sequenzy Email Marketing Platform
-    if (lead.email) {
-      try {
-        await addSequenzySubscriber({
-          email: lead.email,
-          firstName: lead.fullName ? lead.fullName.split(' ')[0] : '',
-          lastName: lead.fullName ? lead.fullName.split(' ').slice(1).join(' ') : '',
-          companyName: lead.company,
-          phone: lead.phone,
-          tags: ['master-audit-lead', 'dfy-prospect', 'high-intent-lead'],
-          listId: process.env.SEQUENZY_PRODUCT_LIST_ID || 'lkdvrxsqeji1sfzxkgb2l67q'
-        });
-      } catch (seqErr) {
-        console.warn('[SPARKSPHEAR Lead Engine] Sequenzy sync warning:', seqErr.message);
-      }
-    }
+
     
     return NextResponse.json({
       status: 'success',

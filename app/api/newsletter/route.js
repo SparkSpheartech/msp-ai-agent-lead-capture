@@ -1,5 +1,26 @@
 import { NextResponse } from 'next/server';
-import { addSequenzySubscriber } from '@/lib/sequenzy';
+
+// Add to the Odoo mailing list (list 1: SPARKSPHEAR Field Notes)
+async function addOdooSubscriber(email) {
+ try {
+ const odooResponse = await fetch(
+ 'https://odoo.sparkspheartechsolutions.com/website_mass_mailing/subscribe',
+ {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({
+ jsonrpc: '2.0',
+ method: 'call',
+ params: { list_id: 1, value: String(email).trim().toLowerCase(), subscription_type: 'email' },
+ }),
+ }
+ );
+ return { success: odooResponse.ok, status: odooResponse.status };
+ } catch (error) {
+ console.error('Error adding subscriber to Odoo mailing list:', error.message);
+ return { success: false, error: error.message };
+ }
+}
 
 // Send payload to n8n workflow pipeline
 async function sendToN8nWorkflow(payload) {
@@ -45,35 +66,10 @@ export async function POST(request) {
         ? ['newsletter-subscriber', 'homepage-subscriber', 'website-lead']
         : ['newsletter-subscriber', 'case-studies-unlocked', 'website-lead']);
 
-    // 1. Push subscriber directly into Sequenzy Email Marketing Platform
-    const sequenzyResult = await addSequenzySubscriber({
-    email,
-    tags,
-    listId: process.env.SEQUENZY_NEWSLETTER_LIST_ID || 'wt2s569lvk6hsjvef0t8biuj'
-    });
+    // 1. Add to the Odoo mailing list (list 1: SPARKSPHEAR Field Notes)
+ const odooResult = await addOdooSubscriber(email);
 
-    // 2. Add to the Odoo mailing list (list 1: SPARKSPHEAR Field Notes)
-    let odooResult = { success: false };
-    try {
-    const odooResponse = await fetch(
-    'https://odoo.sparkspheartechsolutions.com/website_mass_mailing/subscribe',
-    {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-    jsonrpc: '2.0',
-    method: 'call',
-    params: { list_id: 1, value: email.trim().toLowerCase(), subscription_type: 'email' },
-    }),
-    }
-    );
-    odooResult = { success: odooResponse.ok, status: odooResponse.status };
-    } catch (error) {
-    console.error('Error adding subscriber to Odoo mailing list:', error.message);
-    odooResult = { success: false, error: error.message };
-    }
-
-    // 3. Forward to n8n workflow fallback
+ // 2. Forward to n8n workflow fallback
     const n8nResult = await sendToN8nWorkflow(payload);
  
     if (!n8nResult.success) {
@@ -84,8 +80,7 @@ export async function POST(request) {
     { 
     success: true, 
     message: 'Successfully subscribed to newsletter',
-    sequenzySynced: sequenzyResult.success,
-    odooSynced: odooResult.success
+        odooSynced: odooResult.success
     },
     { status: 200 }
     );

@@ -32,7 +32,7 @@ export default function SignInModal({ isOpen, onClose, onSuccess }) {
     setError("");
 
     try {
-      // 1. Sync email directly to Sequenzy CRM via /api/newsletter
+      // 1. Sync email directly to the CRM subscriber list via /api/newsletter
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

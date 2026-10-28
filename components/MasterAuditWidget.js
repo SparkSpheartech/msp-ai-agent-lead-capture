@@ -36,7 +36,7 @@ export default function MasterAuditWidget() {
     setError("");
 
     try {
-      // 1. Submit lead to /api/leads (Sequenzy + n8n + Google Sheet Failsafe)
+      // 1. Submit lead to /api/leads (n8n + Google Sheet Failsafe)
       const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -245,7 +245,7 @@ export default function MasterAuditWidget() {
 
                   <div className="mt-4 text-center flex items-center justify-center gap-2 text-xs text-zinc-400">
                     <ShieldCheck className="w-4 h-4 text-lime-400" />
-                    <span>Instant Sequenzy CRM push. 100% confidential.</span>
+                    <span>Instant CRM push. 100% confidential.</span>
                   </div>
                 </>
               ) : (

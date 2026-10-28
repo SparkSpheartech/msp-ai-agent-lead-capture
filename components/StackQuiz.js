@@ -19,7 +19,7 @@ export default function StackQuiz({ defaultVertical = 'hvac' }) {
     setLoading(true);
 
     try {
-      // Push lead to Sequenzy via /api/newsletter
+      // Push lead to the subscriber list via /api/newsletter
       await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -182,7 +182,7 @@ export default function StackQuiz({ defaultVertical = 'hvac' }) {
             </button>
 
             <p className="text-[10px] text-zinc-500 mt-3">
-              🔒 Zero spam. Unsubscribe at any time. Powered by Sequenzy Email Intelligence.
+              🔒 Zero spam. Unsubscribe at any time. Powered by SPARKSPHEAR Field Notes.
             </p>
           </form>
         )}
