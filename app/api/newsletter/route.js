@@ -47,25 +47,47 @@ export async function POST(request) {
 
     // 1. Push subscriber directly into Sequenzy Email Marketing Platform
     const sequenzyResult = await addSequenzySubscriber({
-      email,
-      tags,
-      listId: process.env.SEQUENZY_NEWSLETTER_LIST_ID || 'wt2s569lvk6hsjvef0t8biuj'
+    email,
+    tags,
+    listId: process.env.SEQUENZY_NEWSLETTER_LIST_ID || 'wt2s569lvk6hsjvef0t8biuj'
     });
 
-    // 2. Forward to n8n workflow fallback
+    // 2. Add to the Odoo mailing list (list 1: SPARKSPHEAR Field Notes)
+    let odooResult = { success: false };
+    try {
+    const odooResponse = await fetch(
+    'https://odoo.sparkspheartechsolutions.com/website_mass_mailing/subscribe',
+    {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+    jsonrpc: '2.0',
+    method: 'call',
+    params: { list_id: 1, value: email.trim().toLowerCase(), subscription_type: 'email' },
+    }),
+    }
+    );
+    odooResult = { success: odooResponse.ok, status: odooResponse.status };
+    } catch (error) {
+    console.error('Error adding subscriber to Odoo mailing list:', error.message);
+    odooResult = { success: false, error: error.message };
+    }
+
+    // 3. Forward to n8n workflow fallback
     const n8nResult = await sendToN8nWorkflow(payload);
-    
+ 
     if (!n8nResult.success) {
-      console.warn('Newsletter subscription received but n8n webhook failed. Payload:', payload);
+    console.warn('Newsletter subscription received but n8n webhook failed. Payload:', payload);
     }
 
     return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Successfully subscribed to newsletter',
-        sequenzySynced: sequenzyResult.success
-      },
-      { status: 200 }
+    { 
+    success: true, 
+    message: 'Successfully subscribed to newsletter',
+    sequenzySynced: sequenzyResult.success,
+    odooSynced: odooResult.success
+    },
+    { status: 200 }
     );
 
   } catch (error) {
